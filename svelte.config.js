@@ -4,9 +4,7 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 const config = {
 	preprocess: [vitePreprocess(), mdsvex()],
-	kit: { adapter: adapter({
-		config: "wrangler.jsonc",
-	})},
+	kit: { adapter: adapter() },
 	extensions: ['.svelte', '.svx']
 };
 
