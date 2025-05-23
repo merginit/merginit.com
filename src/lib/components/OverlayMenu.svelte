@@ -8,27 +8,8 @@
 	import FancyText from './FancyText.svelte';
   import BorderBeam from "./BorderBeam.svelte";
   import CallToAction from '$lib/components/CallToAction.svelte';
-
-  // --- TYPE DEFINITIONS ---
-  interface LinkItem {
-    href: string;
-    text?: string;
-    icon?: string;
-    img?: string;
-    area?: 'lg' | 'sm';
-  }
-
-  interface ProjectItem {
-    projectType: string;
-    category: string;
-    date: string;
-    datetime: string;
-    mainTech: string;
-    description: string;
-    iconSrc: string;
-    url: string;
-    productName: string;
-  }
+	import type { LinkItem, ProjectItem } from '$lib/types';
+  import { isMobile } from '$lib/stores/viewport';
 
   // --- STATE ---
   let isOpen: boolean = false;
@@ -64,12 +45,6 @@
     { text: 'MerginIT e.U.', href: '/legal', area: 'lg' },
     { text: 'Founder', href: 'https://jonasfroeller.is-a.dev', icon: 'https://jonasfroeller.is-a.dev/favicon-dark.ico', area: 'lg' },
     { text: 'Open Source Work', href: 'https://github.com/MerginIT', icon: 'mdi:github', area: 'sm' },
-  ];
-
-  const legalPageLinks: LinkItem[] = [
-    { text: 'Imprint', href: '/legal/imprint' },
-    { text: 'Privacy Policy', href: '/legal/privacy-policy' },
-    /* { text: 'Terms of Service', href: '/legal/tos' }, */
   ];
 
   const defaultPreviewImageSrc = '/taeglichfrischesobst.com.png';
@@ -357,7 +332,7 @@
         opacity: 1,
         duration: 1.5,
         ease: 'expo.out',
-        delay: 0.5,
+        delay: 2.37,
       });
     }
   });
@@ -544,7 +519,9 @@
       </div>
       <CallToAction href="mailto:jonas@merginit.com" text="Contact Us" class="mb-4" bind:element={contactButtonEl} />
       <GradualTextSpacing
-        words="We merge features into reality,<br>one iteration at a time."
+        words={$isMobile 
+          ? "We merge features<br>into reality,<br>one iteration<br>at a time." 
+          : "We merge features into reality,<br>one iteration at a time."}
         class="font-display text-left text-4xl font-bold tracking-[-0.1em] text-white md:text-7xl md:leading-[5rem] w-full md:w-4/5"
       />
       <div class="absolute bottom-10 right-10">
@@ -553,16 +530,16 @@
     </section>
   </div>
   <div class="min-h-screen bg-brand-dark flex flex-col justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36">
-    <section class="ml-auto pt-16">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-bold tracking-tighter">
+    <section class="w-full md:ml-auto md:w-auto pt-16 mb-8 md:mb-0">
+      <h1 class="text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-bold tracking-tighter">
         <FancyText>merginIT</FancyText> e.U.
       </h1>
     </section>
-    <section class="flex flex-col items-center md:flex-row md:items-baseline gap-3">
+    <section class="flex flex-col items-center md:flex-row md:items-baseline gap-1 md:gap-3">
       <div class="whitespace-pre-wrap text-6xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-medium tracking-tighter text-white">
         <NumberTicker value={3} initial={0} duration={1500} />
       </div>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-center text-white mt-4">Websites Built</h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-center text-white mt-2 md:mt-4">Websites Built</h2>
     </section>
     <section class="bg-brand-dark flex flex-col justify-center items-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 py-20">
       <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-[#ffaa40] mb-12 sm:mb-16 text-center tracking-tight">
@@ -611,19 +588,6 @@
       </div>
     </section>
   </div>
-
-  <footer class="w-full bg-brand-dark py-8 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 border-t border-gray-700/50 text-center">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
-      {#each legalPageLinks as link}
-        <a href={link.href} class="text-sm text-neutral-400 hover:text-neutral-200 transition-colors duration-300">
-          {link.text}
-        </a>
-      {/each}
-    </div>
-    <p class="text-xs text-neutral-500 mt-6">
-      &copy; {new Date().getFullYear()} merginIT e.U. All rights reserved.
-    </p>
-  </footer>
 </div>
 
 <style>

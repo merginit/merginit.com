@@ -2,9 +2,9 @@
   import CyberpunkCard from "$lib/components/CyberpunkCard.svelte";
 </script>
 
-<div class="container mx-auto px-4 py-8">
+<div class="container mx-auto px-4 py-8 min-h-screen">
   <h1 class="text-4xl font-bold text-center mb-12">Legal Information</h1>
-  <div class="grid md:grid-cols-2 gap-8">
+  <div class="grid w-xl max-w-full mx-auto gap-4">
     <CyberpunkCard 
       href="/legal/imprint" 
       title="Imprint"
