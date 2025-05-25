@@ -127,3 +127,11 @@ body {
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 }
+
+.noise-overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+}
