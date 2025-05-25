@@ -5,19 +5,15 @@
 <main class="bg-white">
 	<article class="container mx-auto prose px-4 py-8">
 		<LegalBackLink />
-		<h1 class="adsimple-123001832">Impressum</h1>
-		<p class="adsimple-123001832">Informationen über den Diensteanbieter.</p>
+
+		<h1>Impressum</h1>
+		<p>Informationen über den Diensteanbieter.</p>
 		<p>
 			<strong>MerginIT e.U.</strong>
 		</p>
-		<p class="adsimple-123001832">Jonas Fröller</p>
-		<p class="adsimple-123001832">Nußböckstraße 92, <br />4060 Leonding, <br />Österreich</p>
+		<p>Jonas Fröller<br />Nußböckstraße 92<br />4060 Leonding<br />Österreich<br /><strong>Tel.:</strong> +43 6643279885</p>
 		<p>
-			<strong>Tel.:</strong> +43 6643279885
-		</p>
-		<div style="display:none"></div>
-		<p>
-			<strong>Firmenbuchnummer:</strong> [Firmenbuchnummer noch nicht ausgestellt]<br />
+			<!-- <strong>Firmenbuchnummer:</strong> [Firmenbuchnummer noch nicht ausgestellt]<br /> -->
 			<strong>Firmenbuchgericht:</strong> Landesgericht Linz<br />
 			<strong>Firmensitz:</strong> 4060 Leonding<br />
 			<strong>Unternehmensgegenstand:</strong> Dienstleistungen in der automatischen
@@ -40,7 +36,6 @@
 				rel="noopener">http://www.ris.bka.gv.at</a
 			>.
 		</p>
-		<div style="display:none"></div>
 		<p>
 			<strong>Aufsichtsbehörde:</strong>
 			<br />Bezirkshauptmannschaft Linz-Land<br />
@@ -51,12 +46,10 @@
 				>https://www.land-oberoesterreich.gv.at</a
 			>
 		</p>
-		<div style="display:none"></div>
 		<p>
 			<strong>Berufsbezeichnung:</strong> Softwareentwickler und IT-Dienstleister<br />
 			<strong>Verleihungsstaat:</strong> Österreich
 		</p>
-		<div style="display:none"></div>
 		<p>
 			<strong>Datenschutz Verantwortlicher</strong>
 			<br />Jonas Fröller<br />
@@ -70,60 +63,36 @@
 				>https://merginit.com/legal/imprint</a
 			>
 		</p>
-		<div style="display:none"></div>
-		<div style="display:none"></div>
-		<div style="display:none"></div>
-		<div style="display:none"></div>
-		<h2
-			id="eu-streitschlichtung"
-			class="adsimple-123001832 fusion-responsive-typography-calculated"
-			data-fontsize="24"
-			style="--fontSize: 24;line-height: 1.5;--minFontSize: 24"
-			data-lineheight="36px"
-		>
+		<h2>
 			EU-Streitschlichtung
 		</h2>
-		<p class="adsimple-123001832">
+		<p>
 			Gemäß Verordnung über Online-Streitbeilegung in Verbraucherangelegenheiten (ODR-Verordnung)
 			möchten wir Sie über die Online-Streitbeilegungsplattform (OS-Plattform) informieren.<br />
-			Verbraucher haben die Möglichkeit, Beschwerden an die Online Streitbeilegungsplattform der Europäischen
-			Kommission unter
+			Als Verbraucher haben Sie die Möglichkeit, Beschwerden an die Online-Streitbeilegungsplattform der Europäischen
+			Kommission zu richten.<br />Diese Plattform erreichen Sie unter
 			<a
-				class="adsimple-123001832"
 				href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&amp;lng=DE"
 				target="_blank"
 				rel="follow noopener"
 				>https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&amp;lng=DE</a
-			> zu richten. Die dafür notwendigen Kontaktdaten finden Sie oberhalb in unserem Impressum.
+			>.<br />Die hierfür notwendigen Kontaktdaten sind weiter oben in diesem Impressum aufgeführt.
 		</p>
-		<p class="adsimple-123001832">
-			Wir möchten Sie jedoch darauf hinweisen, dass wir nicht bereit oder verpflichtet sind, an
-			Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+		<p>
+			Bitte beachten Sie, dass wir weder bereit noch verpflichtet sind, an Streitbeilegungsverfahren
+			vor einer Verbraucherschlichtungsstelle teilzunehmen.
 		</p>
-		<h2
-			id="bildernachweis"
-			class="adsimple-123001832 fusion-responsive-typography-calculated"
-			data-fontsize="24"
-			style="--fontSize: 24;line-height: 1.5;--minFontSize: 24"
-			data-lineheight="36px"
-		>
+		<h2>
 			Bildernachweis
 		</h2>
-		<p class="adsimple-123001832">
-			Die Bilder, Fotos und Grafiken auf dieser Webseite sind urheberrechtlich geschützt.
+		<p>
+			Die Bilder und Grafiken auf dieser Webseite sind urheberrechtlich geschützt.
 		</p>
 		<p>
 			<strong>Die Bilderrechte liegen bei:</strong>
 			<br />Fotograf Jonas Fröller
 		</p>
-		<div style="display:none"></div>
-		<!-- <h2
-			id="onlineauftritte"
-			class="adsimple-123001832 fusion-responsive-typography-calculated"
-			data-fontsize="24"
-			style="--fontSize: 24;line-height: 1.5;--minFontSize: 24"
-			data-lineheight="36px"
-		>
+		<h2>
 			Weitere Onlineauftritte
 		</h2>
 		<p>
@@ -137,15 +106,8 @@
 				>https://www.neptunai.tech</a
 			><br />
 			<a href="https://ocrmd.com" target="_blank" rel="noopener">https://ocrmd.com</a>
-		</p> -->
-		<div style="display:none"></div>
-		<h2
-			id="zentrale_kontaktstelle_dsa"
-			class="adsimple-123001832 fusion-responsive-typography-calculated"
-			data-fontsize="24"
-			style="--fontSize: 24;line-height: 1.5;--minFontSize: 24"
-			data-lineheight="36px"
-		>
+		</p>
+		<h2>
 			Zentrale Kontaktstelle nach dem Digital Services Act (DSA)
 		</h2>
 		<p>
@@ -158,16 +120,6 @@
 			<br />Jonas Fröller<br />
 			Nußböckstraße 92, 4060 Leonding,<br />
 			Österreich
-		</p>
-		<div style="display:none"></div>
-		<div style="display:none"></div>
-		<div style="display:none"></div>
-		<p>Alle Texte sind urheberrechtlich geschützt.</p>
-		<p style="margin-top:15px">
-			Quelle: Erstellt mit dem <a
-				href="https://www.adsimple.at/impressum-generator/"
-				title="Impressum Generator Österreich von AdSimple">Impressum Generator</a
-			> von AdSimple
 		</p>
 	</article>
 </main>
