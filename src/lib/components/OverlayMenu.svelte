@@ -314,13 +314,13 @@
       bind:this={menuToggleEl}
       on:click={handleToggleClick}
       aria-label={isOpen ? 'Close menu' : 'Open menu'}
-      class="menu-toggle relative w-16 h-6 cursor-pointer overflow-hidden p-0 bg-transparent border-none text-inherit"
+      class="menu-toggle relative w-24 h-6 cursor-pointer overflow-hidden p-0 bg-transparent border-none text-inherit"
     >
       <p
         bind:this={menuOpenLabelEl}
         class="absolute top-0 left-0 w-full h-full text-right font-normal origin-top-left flex items-center justify-end [will-change:transform,opacity]"
       >
-        Work
+        References
       </p>
       <p
         bind:this={menuCloseLabelEl}
