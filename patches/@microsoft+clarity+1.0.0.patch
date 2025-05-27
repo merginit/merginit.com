@@ -1,0 +1,10 @@
+diff --git a/node_modules/@microsoft/clarity/index.js b/node_modules/@microsoft/clarity/index.js
+index 14bf46d..d1ffd49 100644
+--- a/node_modules/@microsoft/clarity/index.js
++++ b/node_modules/@microsoft/clarity/index.js
+@@ -1,4 +1,4 @@
+-import { injectScript } from "./src/utils"
++import { injectScript } from "./src/utils.js"
+ 
+ const Clarity = {
+     init(projectId) {

@@ -16,7 +16,8 @@
 		"lint": "eslint . && prettier --check .",
 		"format": "prettier --write .",
 		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build"
+		"build-storybook": "storybook build",
+		"postinstall": "patch-package"
 	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^3",
@@ -45,6 +46,7 @@
 		"eslint-plugin-svelte": "^3.0.0",
 		"globals": "^16.0.0",
 		"mdsvex": "^0.12.3",
+		"patch-package": "^8.0.0",
 		"playwright": "^1.52.0",
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
@@ -60,6 +62,8 @@
 	},
 	"dependencies": {
 		"@inlang/paraglide-js": "^2.0.0",
+		"@microsoft/clarity": "^1.0.0",
+		"cookiiies": "^2.0.0",
 		"gsap": "^3.13.0"
 	}
 }

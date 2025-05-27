@@ -1,6 +1,8 @@
 <script lang="ts">
 	import type { LinkItem } from '$lib/types';
 	import '../app.css';
+	import { CookieBanner } from 'cookiiies';
+	import ClarityAnalytics from '$lib/components/ClarityAnalytics.svelte';
 
 	const legalPageLinks: LinkItem[] = [
 		{ text: 'Imprint', href: '/legal/imprint' },
@@ -10,6 +12,9 @@
 
 	let { children } = $props();
 </script>
+
+<CookieBanner />
+<ClarityAnalytics />
 
 {@render children()}
 
