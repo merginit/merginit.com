@@ -1,19 +1,39 @@
 <script lang="ts">
 	import type { LinkItem } from '$lib/types';
 	import '../app.css';
-	import { CookieBanner } from 'cookiiies';
+	import { CookiePopup, CookieStyler, type CookieCategory } from 'cookiiies';
 	import ClarityAnalytics from '$lib/components/ClarityAnalytics.svelte';
 
 	const legalPageLinks: LinkItem[] = [
 		{ text: 'Imprint', href: '/legal/imprint' },
-		{ text: 'Privacy Policy', href: '/legal/privacy-policy' },
+		{ text: 'Privacy Policy', href: '/legal/privacy-policy' }
 		/* { text: 'Terms of Service', href: '/legal/tos' }, */
+	];
+
+	const customCookieCategories: CookieCategory[] = [
+		{
+			id: 'necessary',
+			name: 'Essential Cookies',
+			description: 'These cookies are absolutely necessary for the website to function properly.',
+			required: true,
+			checked: true
+		},
+		{
+			id: 'analytics',
+			name: 'Analytics & Performance Cookies',
+			description: 'These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.',
+			required: false,
+			checked: false
+		}
 	];
 
 	let { children } = $props();
 </script>
 
-<CookieBanner />
+<CookieStyler cookieCategories={customCookieCategories}>
+	<CookiePopup />
+</CookieStyler>
+
 <ClarityAnalytics />
 
 {@render children()}

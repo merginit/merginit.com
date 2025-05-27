@@ -8,7 +8,7 @@
 	let clarityInitialized = false;
 
 	function callWhenClarityReady(callback: () => void) {
-		if (BROWSER && window.clarity) {
+		if (BROWSER && window?.clarity) {
 			callback();
 		} else if (BROWSER) {
 			setTimeout(() => callWhenClarityReady(callback), 100);

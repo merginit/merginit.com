@@ -63,7 +63,7 @@
 	"dependencies": {
 		"@inlang/paraglide-js": "^2.0.0",
 		"@microsoft/clarity": "^1.0.0",
-		"cookiiies": "^2.0.0",
+		"cookiiies": "^2.3.0",
 		"gsap": "^3.13.0"
 	}
 }
