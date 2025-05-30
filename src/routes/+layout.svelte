@@ -6,6 +6,13 @@
 	import { fly } from 'svelte/transition';
 	import { cubicIn, cubicOut } from 'svelte/easing';
 
+	const pageLinks: LinkItem[] = [
+		{ text: 'Home', href: '/' },
+		{ text: 'Blog', href: '/blog' },
+		/* { text: 'About', href: '/about' },
+		{ text: 'Contact', href: '/contact' } */
+	];
+
 	const legalPageLinks: LinkItem[] = [
 		{ text: 'Imprint', href: '/legal/imprint' },
 		{ text: 'Privacy Policy', href: '/legal/privacy-policy' }
@@ -52,21 +59,55 @@
 {/key}
 
 <footer
-	class="w-full bg-brand-dark py-8 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 border-t border-gray-700/50 text-center"
+	class="w-full bg-brand-dark py-8 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 border-t border-gray-700/50 text-neutral-400"
 >
-	<div
-		class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4"
-	>
-		{#each legalPageLinks as link}
-			<a
-				href={link.href}
-				class="text-sm text-neutral-400 hover:text-neutral-200 transition-colors duration-300"
-			>
-				{link.text}
-			</a>
-		{/each}
+	<div class="max-w-7xl mx-auto">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+			<div class="md:col-span-1">
+				<h3 class="text-lg font-semibold text-neutral-200 mb-3">Navigate</h3>
+				<ul class="space-y-2">
+					{#each pageLinks as link}
+						<li>
+							<a
+								href={link.href}
+								class="text-sm hover:text-neutral-200 transition-colors duration-300"
+								class:text-brand={data.pathname === link.href}
+							>
+								{link.text}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</div>
+			<div class="md:col-span-1">
+				<h3 class="text-lg font-semibold text-neutral-200 mb-3">Legal</h3>
+				<ul class="space-y-2">
+					{#each legalPageLinks as link}
+						<li>
+							<a
+								href={link.href}
+								class="text-sm hover:text-neutral-200 transition-colors duration-300"
+								class:text-brand={data.pathname === link.href}
+							>
+								{link.text}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</div>
+			<div class="md:col-span-1">
+				<h3 class="text-lg font-semibold text-neutral-200 mb-3">merginIT e.U.</h3>
+				<p class="text-sm">
+					Your partner for innovative IT solutions.
+					<br />
+					<!-- Placeholder for address or other info -->
+				</p>
+			</div>
+		</div>
+		<div class="border-t border-gray-700/50 pt-6 text-center">
+			<p class="text-xs text-neutral-500">
+				&copy; {new Date().getFullYear()} merginIT e.U. All rights reserved.
+			</p>
+		</div>
 	</div>
-	<p class="text-xs text-neutral-500 mt-4">
-		&copy; {new Date().getFullYear()} merginIT e.U. All rights reserved.
-	</p>
 </footer>

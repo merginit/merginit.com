@@ -99,7 +99,7 @@
 					<div class="relative z-10 flex w-full items-center justify-between gap-x-4 text-xs">
 						<time datetime={project.datetime} class="text-gray-400">{project.date}</time>
 						<span
-							class="cursor-default relative z-30 rounded-full bg-gray-800/80 px-3 py-1.5 font-medium text-brand border border-gray-400/60 shadow-sm"
+							class="cursor-default relative z-30 rounded-full bg-gray-800/80 px-3 py-1.5 font-medium text-white border border-gray-400/60 shadow-sm"
 						>
 							{project.mainTech}
 						</span>
