@@ -1,4 +1,6 @@
 <script lang="ts">
+	import type { Component } from "svelte";
+
 	interface MetaData {
 		title: string;
 		date: string;
@@ -11,36 +13,10 @@
 
 	interface PageData {
 		meta: MetaData;
-		matchingFile: string;
+		component: Component;
 	}
 
 	let { data }: { data: PageData } = $props();
-
-	let contentComponent = $state<any>(null);
-	let isLoading = $state(true);
-	let importError = $state<string | null>(null);
-
-	$effect(() => {
-		if (data.matchingFile) {
-			isLoading = true;
-			importError = null;
-			import(/* @vite-ignore */ `/src/lib/blog/posts/${data.matchingFile}`)
-				.then((module) => {
-					contentComponent = module.default;
-					isLoading = false;
-				})
-				.catch((err) => {
-					console.error('Error importing blog post component:', err);
-					importError = `Failed to load blog content: ${err.message}`;
-					isLoading = false;
-				});
-		} else {
-			contentComponent = null;
-			isLoading = false;
-			importError = 'Blog post file not specified.';
-		}
-	});
-
 </script>
 
 <svelte:head>
@@ -54,18 +30,12 @@
 	{/if}
 </svelte:head>
 
-{#if data?.meta}
+{#if data?.meta && data.component}
 	<article class="prose prose-invert lg:prose-xl max-w-none">
-		{#if isLoading}
-			<p>Loading content...</p>
-		{:else if importError}
-			<p class="text-red-500">{importError}</p>
-		{:else if contentComponent}
-			{@render contentComponent()}
-		{:else}
-			<p>No content to display.</p>
-		{/if}
+		<data.component />
 	</article>
+{:else if data?.meta && !data.component}
+	<p class="text-red-500">Blog post content could not be loaded.</p>
 {:else}
 	<p class="text-red-300">Blog post metadata is not available. Cannot render page.</p>
 {/if}

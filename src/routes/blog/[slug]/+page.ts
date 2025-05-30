@@ -1,13 +1,11 @@
 import { error } from '@sveltejs/kit';
 import type { Post } from '$lib/types';
+import type { Component } from 'svelte';
 
-type PostModuleEntry = () => Promise<{ metadata: Post }>;
+type PostModuleEntry = () => Promise<{ metadata: Post; default: Component }>;
 type BlogPostModules = Record<string, PostModuleEntry>;
 
-const modules = import.meta.glob([
-	"/src/lib/blog/posts/*.md",
-	"/src/lib/blog/posts/*.svx"
-]) as BlogPostModules;
+const modules = import.meta.glob(['/src/lib/blog/posts/*.md', '/src/lib/blog/posts/*.svx']) as BlogPostModules;
 
 export async function load({ params }) {
 	const { slug: requestedSlug } = params;
@@ -31,16 +29,16 @@ export async function load({ params }) {
 
 	try {
 		const postModuleLoader = modules[matchedPath];
-		const postContent = await postModuleLoader();
+		const postContentModule = await postModuleLoader();
 
-		if (!postContent || !postContent.metadata) {
-			console.error(`Metadata missing in blog post file: ${matchedPath}`);
-			throw error(500, `Metadata not found for blog post "${requestedSlug}"`);
+		if (!postContentModule || !postContentModule.metadata || !postContentModule.default) {
+			console.error(`Metadata or default component missing in blog post file: ${matchedPath}`);
+			throw error(500, `Essential data not found for blog post "${requestedSlug}"`);
 		}
 
 		return {
-			meta: postContent.metadata,
-			matchingFile: matchedPath.split('/').pop()
+			meta: postContentModule.metadata,
+			component: postContentModule.default
 		};
 	} catch (e: any) {
 		console.error(`Error loading post ${requestedSlug} (path: ${matchedPath}):`, e.message);
