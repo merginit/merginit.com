@@ -78,7 +78,7 @@
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
 			{#each projects as project, i}
 				<article
-					class="group relative flex h-full flex-col items-start justify-between rounded-3xl p-6 sm:p-7 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-xl hover:shadow-brand-accent/40 transition-all duration-300 ease-in-out hover:border-brand-accent/70 transform hover:-translate-y-1"
+					class="group relative flex h-full flex-col items-start justify-between rounded-3xl p-6 sm:p-7 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-md hover:shadow-brand/20 transition-all duration-300 ease-in-out hover:border-brand/70 transform hover:-translate-y-1"
 				>
 					<BorderBeam
 						size={180}
@@ -99,7 +99,7 @@
 					<div class="relative z-10 flex w-full items-center justify-between gap-x-4 text-xs">
 						<time datetime={project.datetime} class="text-gray-400">{project.date}</time>
 						<span
-							class="cursor-default relative z-30 rounded-full bg-gray-800/80 px-3 py-1.5 font-medium text-brand-accent border border-gray-400/60 shadow-sm"
+							class="cursor-default relative z-30 rounded-full bg-gray-800/80 px-3 py-1.5 font-medium text-brand border border-gray-400/60 shadow-sm"
 						>
 							{project.mainTech}
 						</span>

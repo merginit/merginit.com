@@ -1,0 +1,137 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
+	import BorderBeam from '$lib/components/BorderBeam.svelte';
+
+	let { data } = $props();
+	let mounted = $state(false);
+
+	onMount(() => {
+		mounted = true;
+		if ('startViewTransition' in document) {
+			document.documentElement.classList.add('view-transitions-enabled');
+		}
+	});
+</script>
+
+<svelte:head>
+	<title>Blog | merginIT</title>
+	<meta
+		name="description"
+		content="Read our latest blog posts about web development, SaaS, and technology."
+	/>
+</svelte:head>
+
+<div class="min-h-screen bg-brand-dark">
+	<div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+		<!-- Blog Header -->
+		<header class="text-center">
+			<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+				Blog
+			</h1>
+			<p class="text-lg text-gray-400">Insights and updates from the merginIT team</p>
+		</header>
+
+		<div class="flex justify-center mb-10">
+			<a href="/" class="bg-accent/20 border border-accent/50 hover:bg-accent/30 transition-colors duration-300 ease-in-out rounded-full px-4 py-2 mt-4">
+				Home
+			</a>
+		</div>
+
+		<!-- Blog Posts Grid -->
+		<div class="grid gap-8">
+			{#if mounted}
+				{#each data.posts as post}
+					<article
+						class="group relative flex flex-col rounded-3xl p-6 sm:p-8 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-md hover:shadow-accent/20 transition-all duration-300 ease-in-out hover:border-accent/70 transform hover:-translate-y-1"
+						transition:fade
+					>
+						<BorderBeam
+							size={180}
+							duration={10}
+							anchor={45}
+							class="absolute top-0 left-0 w-full h-full z-0 opacity-30 group-hover:opacity-60 transition-opacity"
+						/>
+
+						<div class="relative z-10">
+							<!-- Post Metadata -->
+							<div class="flex flex-wrap items-center text-sm text-gray-400 mb-4 justify-between gap-4">
+								<div class="flex flex-wrap gap-5">
+									<time datetime={new Date(post.date).toISOString()}>
+										{new Date(post.date).toLocaleDateString('en-US', {
+											year: 'numeric',
+											month: 'long',
+											day: 'numeric'
+										})}
+									</time>
+									{#if post.author}
+										<span class="flex items-center gap-1.5">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></svg>
+											{post.author}
+										</span>
+									{/if}
+									{#if post.readingTime}
+										<span class="flex items-center gap-1.5">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+											{post.readingTime} read
+										</span>
+									{/if}
+								</div>
+
+								{#if post.tags && post.tags.length > 0}
+									<div>
+										<div class="flex flex-wrap gap-2">
+											{#each post.tags as tag}
+												<span
+													class="px-2.5 py-1 text-xs font-medium text-sky-400 bg-sky-400/10 rounded-full border border-sky-400/30 hover:bg-sky-400/20 transition-colors"
+												>
+													{tag}
+												</span>
+											{/each}
+										</div>
+									</div>
+								{/if}
+							</div>
+
+							<!-- Post Title & Description -->
+							<h2
+								class="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-accent transition-colors"
+							>
+								<a
+									data-sveltekit-preload-data="hover"
+									href={`/blog/${post.slug}`}
+									class="after:absolute after:inset-0"
+								>
+									{post.title}
+								</a>
+							</h2>
+							<p class="text-gray-300 mb-4 line-clamp-3">
+								{post.description}
+							</p>
+
+							<!-- Categories & Tags -->
+							{#if (post.categories && post.categories.length > 0) || (post.tags && post.tags.length > 0)}
+							<div class="mt-6 space-y-4">
+								{#if post.categories && post.categories.length > 0}
+									<div>
+										<h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Categories</h4>
+										<div class="flex flex-wrap gap-2">
+											{#each post.categories as category}
+												<span
+													class="px-2.5 py-1 text-xs font-medium text-accent bg-accent/10 rounded-full border border-accent/30 hover:bg-accent/20 transition-colors"
+												>
+													{category}
+												</span>
+											{/each}
+										</div>
+									</div>
+								{/if}
+							</div>
+							{/if}
+						</div>
+					</article>
+				{/each}
+			{/if}
+		</div>
+	</div>
+</div>

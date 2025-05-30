@@ -3,6 +3,8 @@
 	import '../app.css';
 	import { CookiePopup, CookieStyler, type CookieCategory } from 'cookiiies';
 	import ClarityAnalytics from '$lib/components/ClarityAnalytics.svelte';
+	import { fly } from 'svelte/transition';
+	import { cubicIn, cubicOut } from 'svelte/easing';
 
 	const legalPageLinks: LinkItem[] = [
 		{ text: 'Imprint', href: '/legal/imprint' },
@@ -27,7 +29,14 @@
 		}
 	];
 
-	let { children } = $props();
+	let { children, data } = $props();
+
+	const duration = 300;
+	const delay = duration + 100;
+	const y = 10;
+
+	const transitionIn = { easing: cubicOut, y, duration, delay };
+	const transitionOut = { easing: cubicIn, y: -y, duration };
 </script>
 
 <CookieStyler cookieCategories={customCookieCategories}>
@@ -36,7 +45,11 @@
 
 <ClarityAnalytics />
 
-{@render children()}
+{#key data.pathname}
+	<div class="transition-wrapper" in:fly={transitionIn} out:fly={transitionOut}>
+		{@render children()}
+	</div>
+{/key}
 
 <footer
 	class="w-full bg-brand-dark py-8 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 border-t border-gray-700/50 text-center"

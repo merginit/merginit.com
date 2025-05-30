@@ -17,3 +17,17 @@ export interface ProjectItem {
     url: string;
     productName: string;
 }
+
+export type Categories = 'coding' | 'software' | 'info' | 'partner' | 'other';
+
+export type Post = {
+	title: string;
+	slug: string;
+	description: string;
+	date: string;
+	categories: Categories[];
+	published: boolean;
+	author: string;
+	readingTime: string;
+	tags: string[];
+};

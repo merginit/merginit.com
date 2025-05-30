@@ -9,7 +9,7 @@
 	<Noise patternSize={250} patternScaleX={1} patternScaleY={1} patternRefreshInterval={2} patternAlpha={30} />
 
 	<div class="z-10 flex flex-col items-center text-center">
-		<div class="mb-4 text-8xl font-extrabold tracking-tighter text-brand-accent md:text-9xl">
+		<div class="mb-4 text-8xl font-extrabold tracking-tighter text-brand md:text-9xl">
 			{#key $page.status}
 				<FuzzyText 
 					text={$page.status.toString()} 
