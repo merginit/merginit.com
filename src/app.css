@@ -137,3 +137,18 @@ body {
 	width: 100vw;
 	height: 100vh;
 }
+
+.prose code:not(pre code) {
+	font-family: ui-monospace, SFMono-Regular, 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+	background-color: rgba(156, 163, 175, 0.1);
+	padding: 0.125rem 0.375rem;
+	border-radius: 0.375rem;
+	font-size: 0.875em;
+	border: 1px solid rgba(156, 163, 175, 0.3);
+	color: #e5e7eb;
+}
+
+.prose code:not(pre code)::before,
+.prose code:not(pre code)::after {
+	content: none;
+}

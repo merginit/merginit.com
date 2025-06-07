@@ -6,7 +6,7 @@ categories:
   - software
 published: true
 author: 'Jonas Fröller'
-readingTime: '10 min'
+readingTime: '8 min'
 tags: ['serverless', 'reliability', 'vercel', 'cloudflare']
 ---
 
