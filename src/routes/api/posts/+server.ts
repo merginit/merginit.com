@@ -13,9 +13,14 @@ async function getPosts() {
 		if (file && typeof file === 'object' && 'metadata' in file && slug) {
 			const metadata = file.metadata as Omit<Post, 'slug'>;
 
-			// Convert date from DD.MM.YYYY to YYYY-MM-DD
-			const dateParts = metadata.date.split('.');
-			const formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+			// Handle both date formats: DD.MM.YYYY and YYYY-MM-DD
+			let formattedDate = metadata.date;
+			if (metadata.date.includes('.')) {
+				// Convert date from DD.MM.YYYY to YYYY-MM-DD
+				const dateParts = metadata.date.split('.');
+				formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+			}
+			// If date already in YYYY-MM-DD format, use as is
 
 			const post = { ...metadata, date: formattedDate, slug } satisfies Post;
 			post.published && posts.push(post);
