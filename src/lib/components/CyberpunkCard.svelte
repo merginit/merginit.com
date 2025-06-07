@@ -75,10 +75,10 @@
 		<Container>
 			<div class="p-3 w-full flex justify-center items-center">
 				<div class={cn('text-left', className)} style="transform-style: preserve-3d;">
-					<h3 class="text-lg font-bold mb-1 text-gray-900 dark:text-gray-200">
+					<h3 class="text-lg font-bold mb-1 text-white">
 						{title}
 					</h3>
-					<p class="text-gray-700 dark:text-gray-400">{desc}</p>
+					<p class="text-gray-300">{desc}</p>
 				</div>
 			</div>
 		</Container>
@@ -94,10 +94,10 @@
 		<Container>
 			<div class="p-3 w-full flex justify-center items-center">
 				<div class={cn('text-left', className)} style="transform-style: preserve-3d;">
-					<h3 class="text-lg font-bold mb-1 text-gray-900 dark:text-gray-200">
+					<h3 class="text-lg font-bold mb-1 text-white">
 						{title}
 					</h3>
-					<p class="text-gray-700 dark:text-gray-400">{desc}</p>
+					<p class="text-gray-300">{desc}</p>
 				</div>
 			</div>
 		</Container>

@@ -4,6 +4,13 @@
 	import NumberTicker from '$lib/components/NumberTicker.svelte';
 	import BorderBeam from '$lib/components/BorderBeam.svelte';
 	import type { ProjectItem } from '$lib/types';
+	import { browser } from '$app/environment';
+
+	let isFirefox = false;
+
+	$: if (browser) {
+		isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+	}
 
 	const projects: ProjectItem[] = [
 		{
@@ -54,7 +61,12 @@
 		<h1
 			class="text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-bold tracking-tighter"
 		>
-			<FancyText>MerginIT</FancyText> e.U.
+			{#if isFirefox}
+				<span class="text-accent">MerginIT</span>
+			{:else}
+				<FancyText>MerginIT</FancyText>
+			{/if}
+			e.U.
 		</h1>
 	</section>
 	<section class="flex flex-col items-center md:flex-row md:items-baseline gap-1 md:gap-3">

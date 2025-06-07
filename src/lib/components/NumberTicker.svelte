@@ -36,6 +36,6 @@
 	const displayValue = $derived(currentTweenValue.toFixed(0));
 </script>
 
-<div class={cn('inline-block text-black dark:text-white tracking-normal', className)} {...restProps}>
+<div class={cn('inline-block tracking-normal', className)} {...restProps}>
 	{displayValue}
 </div>
