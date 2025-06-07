@@ -2,6 +2,16 @@
 	import LegalBackLink from '$lib/components/LegalBackLink.svelte';
 </script>
 
+<svelte:head>
+	<title>Imprint (Impressum) - MerginIT e.U.</title>
+	<meta 
+		name="description" 
+		content="Legal imprint for MerginIT e.U. - Jonas Fröller. Official company details, business registration, and contact information as required by Austrian law."
+	/>
+	<meta property="og:title" content="Imprint (Impressum) - MerginIT e.U." />
+	<meta property="og:description" content="Legal imprint for MerginIT e.U. - Jonas Fröller. Official company details, business registration, and contact information as required by Austrian law." />
+</svelte:head>
+
 <main class="bg-white">
 	<article class="container mx-auto prose px-4 py-8">
 		<LegalBackLink />

@@ -2,6 +2,16 @@
 	import LegalBackLink from '$lib/components/LegalBackLink.svelte';
 </script>
 
+<svelte:head>
+	<title>Privacy Policy - MerginIT e.U.</title>
+	<meta 
+		name="description" 
+		content="Read MerginIT e.U.'s comprehensive privacy policy. Learn how we collect, use, and protect your personal data."
+	/>
+	<meta property="og:title" content="Privacy Policy - MerginIT e.U." />
+	<meta property="og:description" content="Read MerginIT e.U.'s comprehensive privacy policy. Learn how we collect, use, and protect your personal data." />
+</svelte:head>
+
 <main class="bg-white">
 	<article class="container mx-auto prose px-4 py-8">
 		<LegalBackLink />

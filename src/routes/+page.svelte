@@ -52,6 +52,19 @@
 	];
 </script>
 
+<svelte:head>
+	<title>MerginIT e.U. - Professional Software Development & SaaS Solutions</title>
+	<meta 
+		name="description" 
+		content="MerginIT e.U. delivers cutting-edge software solutions including OCRMD for document processing, NeptunAI configuration platform, and custom web development services. 3 successful projects and growing."
+	/>
+	<meta property="og:title" content="MerginIT e.U. - Professional Software Development & SaaS Solutions" />
+	<meta property="og:description" content="MerginIT e.U. delivers cutting-edge software solutions including OCRMD for document processing, NeptunAI configuration platform, and custom web development services. 3 successful projects and growing." />
+	<meta property="og:url" content="https://merginit.com" />
+	<meta name="twitter:title" content="MerginIT e.U. - Professional Software Development & SaaS Solutions" />
+	<meta name="twitter:description" content="MerginIT e.U. delivers cutting-edge software solutions including OCRMD for document processing, NeptunAI configuration platform, and custom web development services. 3 successful projects and growing." />
+</svelte:head>
+
 <OverlayMenu />
 
 <div
