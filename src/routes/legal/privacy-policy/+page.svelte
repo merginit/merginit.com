@@ -35,7 +35,7 @@
 						<span>
 							This Privacy Notice for
 							<bdt>
-								merginIT e. U.(doing business as
+								MerginIT e. U.(doing business as
 								<bdt>OCRMD, neptunAI</bdt>)
 							</bdt>
 							('
@@ -88,10 +88,10 @@
 					<li>
 						<span>
 							Use
-							<bdt>About merginIT e. U.</bdt>
+							<bdt>About MerginIT e. U.</bdt>
 							.
 							<bdt>
-								merginIT e. U. ("we,""us,"or"our") is a technology company specializing in the
+								MerginIT e. U. ("we,""us,"or"our") is a technology company specializing in the
 								development and provision of Software-as-a-Service (SaaS) tools. We also offer
 								bespoke client services, including professional website design, custom programming,
 								and reliable website hosting. This Privacy Policy outlines how we handle information
@@ -3544,7 +3544,7 @@
 																																								<span>
 																																									<span>
 																																										<bdt
-																																											>merginIT e.
+																																											>MerginIT e.
 																																											U.</bdt
 																																										>
 																																									</span>

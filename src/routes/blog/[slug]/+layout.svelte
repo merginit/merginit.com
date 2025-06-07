@@ -34,8 +34,8 @@
 
 <svelte:head>
 	{#if title}
-		<title>{title} | merginIT Blog</title>
-		<meta name="description" content={description || `${title} - merginIT Blog Post`} />
+		<title>{title} | MerginIT Blog</title>
+		<meta name="description" content={description || `${title} - MerginIT Blog Post`} />
 	{/if}
 </svelte:head>
 

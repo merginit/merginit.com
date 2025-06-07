@@ -21,7 +21,7 @@
 
 <svelte:head>
 	{#if data?.meta?.title}
-		<title>{data.meta.title} | merginIT Blog</title> <meta property="og:type" content="article" />
+		<title>{data.meta.title} | MerginIT Blog</title> <meta property="og:type" content="article" />
 		<meta property="og:title" content={data.meta.title} />
 		{#if data.meta.description}
 			<meta name="description" content={data.meta.description} />

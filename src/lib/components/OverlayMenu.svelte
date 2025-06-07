@@ -305,8 +305,8 @@
   >
     <div class="logo">
       <a href="/" class="font-semibold text-[1.5rem] flex items-center">
-        <img src="/favicon.png" alt="merginIT Favicon" class="h-[calc(1.5rem*1.5)] mr-2" />
-        merginIT
+        <img src="/favicon.png" alt="MerginIT Favicon" class="h-[calc(1.5rem*1.5)] mr-2" />
+        MerginIT
       </a>
     </div>
     <button

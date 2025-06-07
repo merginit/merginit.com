@@ -96,7 +96,7 @@
 				</ul>
 			</div>
 			<div class="md:col-span-1">
-				<h3 class="text-lg font-semibold text-neutral-200 mb-3">merginIT e.U.</h3>
+				<h3 class="text-lg font-semibold text-neutral-200 mb-3">MerginIT e.U.</h3>
 				<p class="text-sm">
 					Your partner for innovative IT solutions.
 					<br />
@@ -106,7 +106,7 @@
 		</div>
 		<div class="border-t border-gray-700/50 pt-6 text-center">
 			<p class="text-xs text-neutral-500">
-				&copy; {new Date().getFullYear()} merginIT e.U. All rights reserved.
+				&copy; {new Date().getFullYear()} MerginIT e.U. All rights reserved.
 			</p>
 		</div>
 	</div>

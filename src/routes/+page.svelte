@@ -54,7 +54,7 @@
 		<h1
 			class="text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-bold tracking-tighter"
 		>
-			<FancyText>merginIT</FancyText> e.U.
+			<FancyText>MerginIT</FancyText> e.U.
 		</h1>
 	</section>
 	<section class="flex flex-col items-center md:flex-row md:items-baseline gap-1 md:gap-3">

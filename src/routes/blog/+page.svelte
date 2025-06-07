@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>Blog | merginIT</title>
+	<title>Blog | MerginIT</title>
 	<meta
 		name="description"
 		content="Read our latest blog posts about web development, SaaS, and technology."
@@ -29,7 +29,7 @@
 			<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">
 				Blog
 			</h1>
-			<p class="text-lg text-gray-400">Insights and updates from the merginIT team</p>
+			<p class="text-lg text-gray-400">Insights and updates from the MerginIT team</p>
 		</header>
 
 		<div class="flex justify-center mb-10">
