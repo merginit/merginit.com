@@ -15,8 +15,8 @@
 
 	const legalPageLinks: LinkItem[] = [
 		{ text: 'Imprint', href: '/legal/imprint' },
-		{ text: 'Privacy Policy', href: '/legal/privacy-policy' }
-		/* { text: 'Terms of Service', href: '/legal/tos' }, */
+		{ text: 'Privacy Policy', href: '/legal/privacy-policy' },
+		{ text: 'Data Request', href: '/data-request' }
 	];
 
 	const customCookieCategories: CookieCategory[] = [
