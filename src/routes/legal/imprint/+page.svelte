@@ -156,7 +156,7 @@
 				https://www.neptunai.tech
 			</a>
 			<br />
-			<a href="https://merginit.com" target="_blank" rel="noopener"> https://merginit.com </a>
+			<a href="https://ocrmd.com" target="_blank" rel="noopener"> https://ocrmd.com </a>
 		</p>
 		<h2>Zentrale Kontaktstelle nach dem Digital Services Act (DSA)</h2>
 		<p>
