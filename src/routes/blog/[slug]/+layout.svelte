@@ -3,6 +3,7 @@
 	import { page } from '$app/state';
 	import { fade } from 'svelte/transition';
 	import BorderBeam from '$lib/components/BorderBeam.svelte';
+	import '../../../code.css';
 
 	const { children } = $props();
 	let mounted = $state(false);
