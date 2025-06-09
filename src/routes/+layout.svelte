@@ -5,11 +5,12 @@
 	import ClarityAnalytics from '$lib/components/ClarityAnalytics.svelte';
 	import { fly } from 'svelte/transition';
 	import { cubicIn, cubicOut } from 'svelte/easing';
+	import Icon from '@iconify/svelte';
 
 	const pageLinks: LinkItem[] = [
 		{ text: 'Home', href: '/' },
 		{ text: 'Blog', href: '/blog' },
-		{ text: 'Free Products', href: '/free-products' },
+		{ text: 'Free', href: '/free-products' },
 		/* { text: 'About', href: '/about' },
 		{ text: 'Contact', href: '/contact' } */
 	];
@@ -66,7 +67,7 @@
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
 			<div class="md:col-span-1">
 				<h3 class="text-lg font-semibold text-neutral-200 mb-3">Navigate</h3>
-				<ul class="space-y-2">
+				<ul class="space-y-1">
 					{#each pageLinks as link}
 						<li>
 							<a
@@ -82,7 +83,7 @@
 			</div>
 			<div class="md:col-span-1">
 				<h3 class="text-lg font-semibold text-neutral-200 mb-3">Legal</h3>
-				<ul class="space-y-2">
+				<ul class="space-y-1">
 					{#each legalPageLinks as link}
 						<li>
 							<a
@@ -98,11 +99,33 @@
 			</div>
 			<div class="md:col-span-1">
 				<h3 class="text-lg font-semibold text-neutral-200 mb-3">MerginIT e.U.</h3>
-				<p class="text-sm">
-					Your partner for innovative IT solutions.
-					<br />
-					<!-- Placeholder for address or other info -->
+				<p class="text-sm mb-2">
+					<span>Your partner for innovative IT solutions.</span><br>
+					Contact us at 
+					<a href="mailto:jonas@merginit.com" class="text-neutral-400 hover:text-brand transition-colors duration-300 mt-1">
+						jonas@merginit.com
+					</a>.
 				</p>
+				<div class="flex gap-2 justify-center md:justify-start">
+					<a
+						href="https://www.linkedin.com/company/merginit"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-neutral-400 hover:text-brand transition-colors duration-300"
+						aria-label="LinkedIn"
+					>
+						<Icon icon="mdi:linkedin" class="w-6 h-6" />
+					</a>
+					<a
+						href="https://github.com/merginit"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-neutral-400 hover:text-brand transition-colors duration-300"
+						aria-label="GitHub"
+					>
+						<Icon icon="mdi:github" class="w-6 h-6" />
+					</a>
+				</div>
 			</div>
 		</div>
 		<div class="border-t border-gray-700/50 pt-6 text-center">
