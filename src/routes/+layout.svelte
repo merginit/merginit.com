@@ -9,6 +9,7 @@
 	const pageLinks: LinkItem[] = [
 		{ text: 'Home', href: '/' },
 		{ text: 'Blog', href: '/blog' },
+		{ text: 'Free Products', href: '/free-products' },
 		/* { text: 'About', href: '/about' },
 		{ text: 'Contact', href: '/contact' } */
 	];

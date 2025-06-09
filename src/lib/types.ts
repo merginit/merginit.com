@@ -18,6 +18,13 @@ export interface ProjectItem {
     productName: string;
 }
 
+export interface Product {
+    name: string;
+    url: string;
+    description: string;
+    icon: string;
+}
+
 export type Categories = 'coding' | 'software' | 'info' | 'partner' | 'other';
 
 export type Post = {
