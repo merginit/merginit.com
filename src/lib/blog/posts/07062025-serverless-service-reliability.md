@@ -90,18 +90,19 @@ To mitigate these risks and ensure robust serverless services, consider the foll
 
 Serverless computing offers immense benefits, but reliability requires careful attention. Challenges like unexpected costs, performance variability, and vendor practices can disrupt operations. By understanding these risks and adopting best practices—such as optimizing configurations, monitoring usage, and diversifying providers—you can harness serverless technology while minimizing pitfalls. In the cloud, knowledge is power—stay informed, stay vigilant, and always have a plan B.
 
-**Key Citations**:
-- [Dashbird - Serverless Challenges And Fixes](https://dashbird.io/knowledge-base/basic-concepts/serverless-challenges-and-solutions/)
-- [Dashbird - Serverless Reliability: An Intro](https://dashbird.io/knowledge-base/basic-concepts/reliability/)
-- [Kandasoft - Fault Tolerance for Serverless Computing](https://www.kandasoft.com/blog/fault-tolerance-and-serverless-computing)
-- [Jefferson Frank - AWS serverless challenges and how to overcome them](https://www.jeffersonfrank.com/insights/aws-serverless-challenges-and-tips/)
-- [Akamai - The Benefits of Serverless Computing Architecture](https://www.akamai.com/blog/cloud/the-benefits-of-serverless-computing-architecture)
-- [Sysdig - Serverless Security: Risks and Best Practices](https://sysdig.com/learn-cloud-native/serverless-security-risks-and-best-practices/)
-- [UltaHost - Serverless Architecture: Advantages and Disadvantages](https://ultahost.com/blog/serverless-architecture/)
-- [Lumigo - Serverless Monitoring Guide](https://lumigo.io/serverless-monitoring-guide/)
-- [Jetbase - Benefits of Using a Serverless Architecture](https://jetbase.io/blog/benefits-of-using-a-serverless-architecture-pros-and-cons-reviewed)
-- [Reddit - Getting charged $700/month by Vercel just because](https://old.reddit.com/r/nextjs/comments/1l384m0/getting_charged_700month_by_vercel_just_because/)
-- [Reddit - Cloudflare took down our website after trying to force us to pay 120k$](https://www.reddit.com/r/CloudFlare/comments/1d14zrf/cloudflare_took_down_our_website_after_trying_to/)
-- [X - @michaelaubry on Vercel vs Cloudflare](https://x.com/michaelaubry/status/1930915964738265288)
-- [X - @melkornms on Vercel performance](https://x.com/melkornms/status/1929861105922236580)
-- [X - @swarajbachu on serverless limitations](https://x.com/swarajbachu/status/1929077782929420516)
+## Key Citations
+ 
+[Dashbird - Serverless Challenges And Fixes](https://dashbird.io/knowledge-base/basic-concepts/serverless-challenges-and-solutions)  
+[Dashbird - Serverless Reliability: An Intro](https://dashbird.io/knowledge-base/basic-concepts/reliability)  
+[Kandasoft - Fault Tolerance for Serverless Computing](https://www.kandasoft.com/blog/fault-tolerance-and-serverless-computing)  
+[Jefferson Frank - AWS serverless challenges and how to overcome them](https://www.jeffersonfrank.com/insights/aws-serverless-challenges-and-tips)  
+[Akamai - The Benefits of Serverless Computing Architecture](https://www.akamai.com/blog/cloud/the-benefits-of-serverless-computing-architecture)  
+[Sysdig - Serverless Security: Risks and Best Practices](https://sysdig.com/learn-cloud-native/serverless-security-risks-and-best-practices)  
+[UltaHost - Serverless Architecture: Advantages and Disadvantages](https://ultahost.com/blog/serverless-architecture)  
+[Lumigo - Serverless Monitoring Guide](https://lumigo.io/serverless-monitoring-guide)  
+[Jetbase - Benefits of Using a Serverless Architecture](https://jetbase.io/blog/benefits-of-using-a-serverless-architecture-pros-and-cons-reviewed)  
+[Reddit - Getting charged $700/month by Vercel just because](https://old.reddit.com/r/nextjs/comments/1l384m0/getting_charged_700month_by_vercel_just_because)  
+[Reddit - Cloudflare took down our website after trying to force us to pay 120k$](https://www.reddit.com/r/CloudFlare/comments/1d14zrf/cloudflare_took_down_our_website_after_trying_to)  
+[X - @michaelaubry on Vercel vs Cloudflare](https://x.com/michaelaubry/status/1930915964738265288)  
+[X - @melkornms on Vercel performance](https://x.com/melkornms/status/1929861105922236580)  
+[X - @swarajbachu on serverless limitations](https://x.com/swarajbachu/status/1929077782929420516)  
