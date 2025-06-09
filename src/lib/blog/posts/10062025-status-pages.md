@@ -29,53 +29,16 @@ The status page market offers solutions ranging from completely free open-source
 
 Before diving into specific services, consider these key evaluation factors that will determine the best fit for your organization:
 
-**Functionality**
-- Real-time monitoring and incident reporting capabilities
-- Automated vs. manual incident posting
-- Historical uptime data and analytics
-- Component dependency mapping
-
-**Ease of Use**
-- Setup complexity and time to deployment
-- Intuitive incident management workflow
-- Team collaboration features
-- Learning curve for non-technical staff
-
-**Customization**
-- Custom branding and domain support
-- White-labeling capabilities
-- API access for automation
-- Integration with existing monitoring tools
-
-**Cost**
-- Free tier limitations vs. requirements
-- Pricing scalability as team grows
-- Total cost of ownership (including maintenance)
-- Self-hosted vs. hosted cost comparison
-
-**Control**
-- Data ownership and residency
-- Uptime guarantee of the status page itself
-- Vendor lock-in considerations
-- Export capabilities for historical data
-
-**Resilience**
-- Multi-region deployment options
-- Incident detection accuracy
-- False positive rates
-- Backup communication channels during outages
-
-**Communication**
-- Email, SMS, and webhook notifications
-- Social media integrations
-- Subscriber management and segmentation
-- Mobile apps for status updates
-
-**Compliance & Security**
-- SOC2/ISO certifications
-- Single Sign-On (SSO) support
-- GDPR compliance for European operations
-- Custom data retention policies
+| Category                  | Key Considerations                                                                                                                                                    |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Functionality**         | Real-time monitoring and incident reporting • Automated vs. manual incident posting • Historical uptime data and analytics • Component dependency mapping             |
+| **Ease of Use**           | Setup complexity and time to deployment • Intuitive incident management workflow • Team collaboration features • Learning curve for non-technical staff               |
+| **Customization**         | Custom branding and domain support • White-labeling capabilities • API access for automation • Integration with existing monitoring tools                             |
+| **Cost**                  | Free tier limitations vs. requirements • Pricing scalability as team grows • Total cost of ownership (including maintenance) • Self-hosted vs. hosted cost comparison |
+| **Control**               | Data ownership and residency • Uptime guarantee of the status page itself • Vendor lock-in considerations • Export capabilities for historical data                   |
+| **Resilience**            | Multi-region deployment options • Incident detection accuracy • False positive rates • Backup communication channels during outages                                   |
+| **Communication**         | Email, SMS, and webhook notifications • Social media integrations • Subscriber management and segmentation • Mobile apps for status updates                           |
+| **Compliance & Security** | SOC2/ISO certifications • Single Sign-On (SSO) support • GDPR compliance for European operations • Custom data retention policies                                     |
 
 ## Quick Comparison Overview
 
