@@ -12,23 +12,25 @@ tags: ['hosting', 'free']
 
 # Free Website and Web Service Hosting Options in 2025
 
-Hosting a website or web service for free is an attractive option for developers, hobbyists, and small businesses. This blog post explores a range of free hosting services, including GitHub Pages, Cloudflare Pages, Cloudflare Workers, Vercel, Netlify, Glitch, Oracle Cloud Free Tier, InfinityFree, GoogieHost, ProFreeHost, and ByetHost. Each service is evaluated for its features, pros and cons, runtime support, upgrading costs, scalability, commercial usability, server downtime, and support for static or dynamic content. A summary table provides a quick overview, followed by detailed sections for each service.
+Hosting a website or web service for free is an attractive option for developers, hobbyists, and small businesses. This blog post explores a range of free hosting services, including GitHub Pages, Cloudflare Pages, Cloudflare Workers, Vercel, Netlify, Glitch, Render, Koyeb, Oracle Cloud Free Tier, InfinityFree, GoogieHost, ProFreeHost, and ByetHost. Each service is evaluated for its features, pros and cons, runtime support, upgrading costs, scalability, commercial usability, server downtime, and support for static or dynamic content. A summary table provides a quick overview, followed by detailed sections for each service.
 
 ## Overview Table
 
-| Service            | Free Tier Limits                              | Upgrading Price  | Commercially Usable     | Static/Dynamic | Serverless |
-| ------------------ | --------------------------------------------- | ---------------- | ----------------------- | -------------- | ---------- |
-| GitHub Pages       | 1 GB site, 100 GB/month bandwidth             | N/A              | Yes (with restrictions) | Static         | No         |
-| Cloudflare Pages   | Unlimited static, 100k requests/day Functions | $5/month         | Yes                     | Both           | Yes        |
-| Cloudflare Workers | 100k requests/day                             | $5/month         | Yes                     | Dynamic        | Yes        |
-| Vercel             | 100 GB bandwidth, 100 GB-Hrs functions        | $20/month/user   | No (Hobby), Yes (Pro)   | Both           | Yes        |
-| Netlify            | 100 GB bandwidth, 125k functions/month        | $19/month/member | Yes                     | Both           | Yes        |
-| Glitch             | Public projects, apps sleep after 5 min       | $8/month         | Yes (public projects)   | Both           | No         |
-| Oracle Cloud       | 2 VMs, limited resources                      | Pay as you go    | Yes                     | Dynamic        | Partial    |
-| InfinityFree       | Unlimited disk space, bandwidth (fair use)    | $2.50/month      | Yes (with restrictions) | Dynamic        | No         |
-| GoogieHost         | 1 GB SSD, 100 GB bandwidth                    | $1.99/month      | Yes                     | Dynamic        | No         |
-| ProFreeHost        | Unlimited disk space, bandwidth (fair use)    | N/A              | Yes                     | Dynamic        | No         |
-| ByetHost           | 5 GB disk space, unlimited bandwidth          | $4.99/month      | Yes                     | Dynamic        | No         |
+| Service            | Free Tier Limits                                                                  | Upgrading Price  | Commercially Usable     | Static/Dynamic                                              | Serverless                   |
+| ------------------ | --------------------------------------------------------------------------------- | ---------------- | ----------------------- | ----------------------------------------------------------- | ---------------------------- |
+| GitHub Pages       | 1 GB site, 100 GB/month bandwidth                                                 | N/A              | Yes (with restrictions) | Static                                                      | No                           |
+| Cloudflare Pages   | Unlimited static, 100k requests/day Functions                                     | $5/month         | Yes                     | Both           [Yes](https://pages.cloudflare.com)          |
+| Cloudflare Workers | 100k requests/day                                                                 | $5/month         | Yes                     | Dynamic        [Yes](https://www.cloudflare.com/plans)      |
+| Vercel             | 100 GB bandwidth, 100 GB-Hrs functions                                            | $20/month/user   | No (Hobby), Yes (Pro)   | Both           [Yes](https://vercel.com/pricing)            |
+| Netlify            | 100 GB bandwidth, 125k functions/month                                            | $19/month/member | Yes                     | Both           [Yes](https://www.netlify.com/pricing)       |
+| Glitch             | Public projects, apps sleep after 5 min                                           | $8/month         | Yes (public projects)   | Both           [No](https://glitch.com/about)               |
+| Render             | Web services: 512 MB RAM, 750 hours/month; Static sites: free; Databases: limited | From $7/month    | Yes                     | Both                                                        | [No](https://render.com)     |
+| Koyeb              | Web service: 512MB RAM; Database: 50 hours/month                                  | Pay as you go    | Yes                     | Both                                                        | [Yes](https://www.koyeb.com) |
+| Oracle Cloud       | 2 VMs, limited resources                                                          | Pay as you go    | Yes                     | Dynamic        [Partial](https://www.oracle.com/cloud/free) |
+| InfinityFree       | Unlimited disk space, bandwidth (fair use)                                        | $2.50/month      | Yes (with restrictions) | Dynamic        [No](https://www.infinityfree.com)           |
+| GoogieHost         | 1 GB SSD, 100 GB bandwidth                                                        | $1.99/month      | Yes                     | Dynamic        [No](https://googiehost.com/freehosting)     |
+| ProFreeHost        | Unlimited disk space, bandwidth (fair use)                                        | N/A              | Yes                     | Dynamic        [No](https://profreehost.com)                |
+| ByetHost           | 5 GB disk space, unlimited bandwidth                                              | $4.99/month      | Yes                     | Dynamic        [No](https://byet.host/free-hosting)         |
 
 *Honorable mention: [FreeHostia Free Cloud Hosting](https://www.freehostia.com/free-cloud-hosting) & [LeadHoster Free Web Hosting](https://www.leadhoster.com/free-web-hosting.html).*
 
@@ -164,6 +166,50 @@ Hosting a website or web service for free is an attractive option for developers
 
 **Best For**: Prototyping and collaborative development for small teams.
 
+## Render
+
+**Overview**: Render is a cloud application platform that simplifies building, deploying, and scaling web applications and services. It supports a variety of runtimes, including Node.js, Python, Ruby, Go, and Docker containers, as well as static sites. Render offers a free tier for web services, static sites, PostgreSQL databases, and key-value stores, making it ideal for personal projects, prototyping, and small applications.
+
+| <span style="color: green;">✅ Pros</span>                                                                                                                                                                                                            | <span style="color: red;">❌ Cons</span>                                                                                                                                                                                   |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| • Free tier available for web services, static sites, databases, and key-value stores<br/>• Supports multiple runtimes and Docker containers<br/>• Automatic scaling and easy deployment from Git repositories<br/>• Built-in SSL and custom domains | • Free web services spin down after 15 minutes of inactivity<br/>• Limited resources on free tier (e.g., 512 MB RAM for web services)<br/>• Free databases expire after 30 days<br/>• No support for serverless functions |
+
+**Runtime Support**: Node.js, Python, Ruby, Go, PHP, Docker; static sites.
+
+**Upgrading and Scaling**: Paid plans start at $7/month for web services with more resources and no spin-down. Additional costs for increased resources and features.
+
+**Commercial Usability**: Yes, suitable for commercial projects, especially with paid plans.
+
+**Server Downtime**: Free web services spin down after 15 minutes of inactivity and may take up to 1 minute to spin up on the next request. Paid plans do not have this limitation.
+
+**Static/Dynamic**: Both static and dynamic.
+
+**Serverless/Fluid Compute**: No, Render does not support serverless functions like AWS Lambda.
+
+**Best For**: Developers seeking an easy-to-use platform to deploy web applications and services, particularly those requiring support for multiple runtimes and Docker.
+
+## Koyeb
+
+**Overview**: Koyeb is a serverless platform that enables developers to deploy web applications, APIs, and databases without managing infrastructure. It offers a free tier that includes a web service with 512MB memory and a PostgreSQL database with 50 hours per month, supporting scale-to-zero for cost efficiency.
+
+| <span style="color: green;">✅ Pros</span>                                                                                                                                              | <span style="color: red;">❌ Cons</span>                                                                                                       |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| • Free tier includes web service and database<br/>• Supports scale-to-zero for cost efficiency<br/>• Global deployment in multiple regions<br/>• No credit card required for free tier | • Limited resources on free tier<br/>• Database limited to 50 hours/month on free tier<br/>• May require understanding of serverless concepts |
+
+**Runtime Support**: Supports various runtimes via Docker containers.
+
+**Upgrading and Scaling**: Pay-per-use after free tier limits, with billing by the second.
+
+**Commercial Usability**: Yes, suitable for commercial projects.
+
+**Server Downtime**: Services can scale to zero when not in use, with automatic scaling on demand.
+
+**Static/Dynamic**: Both, via web services and APIs.
+
+**Serverless/Fluid Compute**: Yes, supports serverless deployment.
+
+**Best For**: Developers looking for a serverless platform to deploy applications with minimal management overhead.
+
 ## Oracle Cloud Free Tier
 
 **Overview**: Oracle Cloud Free Tier offers compute instances and databases, with a $300 trial credit for 30 days, suitable for complex applications.
@@ -260,11 +306,11 @@ Several other free hosting services offer traditional web hosting with cPanel, P
 ## Choosing the Right Platform
 
 - **Static Sites**: GitHub Pages or Cloudflare Pages for simplicity; Netlify for additional features.
-- **Dynamic Apps**: Cloudflare Workers, Vercel (Pro plan), or Netlify for serverless; Oracle Cloud for VM-based apps; InfinityFree for PHP-based sites.
-- **Prototyping**: Glitch for collaborative coding; InfinityFree, GoogieHost, or ProFreeHost for traditional hosting.
-- **Commercial Use**: Netlify, Cloudflare, Oracle, GoogieHost, ProFreeHost, ByetHost; Vercel requires Pro plan; GitHub Pages has restrictions.
-- **Scalability**: Cloudflare and Oracle offer cost-effective scaling; Vercel and Netlify are pricier per user; InfinityFree has affordable upgrades.
-- **Sandbox vs. Business**: Glitch is a public sandbox; Netlify, Cloudflare, and Oracle are business-ready; InfinityFree and others are less reliable for critical use.
+- **Dynamic Apps**: Cloudflare Workers, Vercel (Pro plan), Netlify, Render, or Koyeb for serverless or PaaS solutions; Oracle Cloud for VM-based apps; InfinityFree for PHP-based sites.
+- **Prototyping**: Glitch for collaborative coding; Render, Koyeb, InfinityFree, GoogieHost, or ProFreeHost for traditional or serverless hosting.
+- **Commercial Use**: Netlify, Cloudflare, Render, Koyeb, Oracle, GoogieHost, ProFreeHost, ByetHost; Vercel requires Pro plan; GitHub Pages has restrictions.
+- **Scalability**: Cloudflare, Render, Koyeb, and Oracle offer cost-effective scaling; Vercel and Netlify are pricier per user; InfinityFree has affordable upgrades.
+- **Sandbox vs. Business**: Glitch is a public sandbox; Netlify, Cloudflare, Render, Koyeb, and Oracle are business-ready; InfinityFree and others are less reliable for critical use.
 
 For serious commercial projects, consider paid plans for better reliability and support. Always verify current pricing and terms, as they may change.
 
@@ -281,3 +327,7 @@ For serious commercial projects, consider paid plans for better reliability and 
 [GoogieHost Free Hosting](https://googiehost.com/freehosting)  
 [ProFreeHost Hosting](https://profreehost.com)  
 [ByetHost Hosting](https://byet.host/free-hosting)  
+[Render Cloud Platform](https://render.com)  
+[Render Free Tier Documentation](https://docs.render.com/free)  
+[Koyeb Serverless Platform](https://www.koyeb.com)  
+[Koyeb Pricing Details](https://www.koyeb.com/pricing)  
