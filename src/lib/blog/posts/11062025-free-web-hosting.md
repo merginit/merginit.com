@@ -4,7 +4,7 @@ description: "Comprehensive guide comparing 25+ free web hosting services availa
 date: '2025-06-11'
 categories:
   - software
-published: false
+published: true
 author: 'Jonas Fröller'
 readingTime: '45 min'
 tags: ['hosting', 'free']
@@ -18,38 +18,42 @@ Hosting a website or web service for free is an attractive option for developers
 
 ## Overview Table
 
-| Service            | Free Tier Limits                                                                  | Upgrading Price    | Commercially Usable     | Static/Dynamic | Serverless |
-| ------------------ | --------------------------------------------------------------------------------- | ------------------ | ----------------------- | -------------- | ---------- |
-| Deno Deploy        | 1M requests/month, 100GB bandwidth                                                | From $10/month     | Yes                     | Dynamic        | Yes        |
-| Val Town           | Unlimited public vals, 100k runs/day                                              | $100/year          | Yes (with Pro plan)     | Dynamic        | Yes        |
-| Google Sites       | Unlimited, simple websites                                                        | N/A                | Yes                     | Static         | No         |
-| Webflow            | 2 pages, 50 CMS items, 1 GB bandwidth                                             | From $14/month     | Yes (with paid plans)   | Both           | No         |
-| Forever Free Host  | Details not specified, assumed standard free hosting                              | Varies             | Yes (with limitations)  | Dynamic        | No         |
-| Free Hosting       | 10 GB storage, unmetered bandwidth, 1 website                                     | Addons available   | Yes (with limitations)  | Dynamic        | No         |
-| AwardSpace         | Up to 4 websites, 5GB monthly traffic                                             | From $0.25/month   | Yes (with limitations)  | Dynamic        | No         |
-| FreeHostia         | 250MB disk, 6GB/month bandwidth, MySQL, PHP                                       | From $3.25/month   | Yes                     | Dynamic        | No         |
-| LeadHoster         | 250MB disk, 6GB/month bandwidth, MySQL, PHP                                       | From $4.19/month   | Yes                     | Dynamic        | No         |
-| Surge              | Unlimited projects, custom domains, basic SSL                                     | $30/month          | Yes                     | Static         | Yes        |
-| GitHub Pages       | 1 GB site, 100 GB/month bandwidth                                                 | N/A                | Yes (with restrictions) | Static         | No         |
-| Cloudflare Pages   | Unlimited static, 100k requests/day Functions                                     | $5/month           | Yes                     | Both           | Yes        |
-| Cloudflare Workers | 100k requests/day                                                                 | $5/month           | Yes                     | Dynamic        | Yes        |
-| Vercel             | 100 GB bandwidth, 100 GB-Hrs functions                                            | $20/month/user     | No (Hobby), Yes (Pro)   | Both           | Yes        |
-| Netlify            | 100 GB bandwidth, 125k functions/month                                            | $19/month/member   | Yes                     | Both           | Yes        |
-| Glitch             | ⚠️ **SHUTTING DOWN JULY 8, 2025** - No longer accepting new projects               | N/A (Discontinued) | No (Service ending)     | N/A            | No         |
-| Render             | Web services: 512 MB RAM, 750 hours/month; Static sites: free; Databases: limited | From $7/month      | Yes                     | Both           | No         |
-| Koyeb              | Web service: 512MB RAM; Database: 50 hours/month                                  | Pay as you go      | Yes                     | Both           | Yes        |
-| Sevalla            | Up to 100 static sites, 100 GB bandwidth/month, 600 build minutes/month           | Usage-based        | Yes                     | Static         | Yes        |
-| PythonAnywhere     | One web app, restricted internet, low CPU/bandwidth                               | From $5/month      | Yes (with limitations)  | Dynamic        | No         |
-| Oracle Cloud       | 2 VMs, limited resources                                                          | Pay as you go      | Yes                     | Dynamic        | Partial    |
-| InfinityFree       | Unlimited disk space, bandwidth (fair use)                                        | Varies             | Yes (with restrictions) | Dynamic        | No         |
-| GoogieHost         | 1 GB SSD, 100 GB bandwidth                                                        | $1.99/month        | Yes                     | Dynamic        | No         |
-| ProFreeHost        | Unlimited disk space, bandwidth (fair use)                                        | N/A                | Yes                     | Dynamic        | No         |
-| ByetHost           | 5 GB disk space, unlimited bandwidth                                              | $4.99/month        | Yes                     | Dynamic        | No         |
-| AWS Free Tier      | 750 hours/month EC2 for 12 months, 5 GB S3 storage                                | Pay as you go      | Yes                     | Both           | Yes        |
-| Firebase Hosting   | 10 GB storage, 360 MB/day data transfer                                           | Pay as you go      | Yes                     | Static         | No         |
-| HelioHost          | 1 GB storage, 1 GB bandwidth/day                                                  | N/A (donations)    | Yes (with limitations)  | Dynamic        | No         |
+| Service            | Category        | Free Tier Limits                                                                  | Upgrading Price    | Commercially Usable     | Static/Dynamic | Serverless |
+| ------------------ | --------------- | --------------------------------------------------------------------------------- | ------------------ | ----------------------- | -------------- | ---------- |
+| Vercel             | Custom Code     | 100 GB bandwidth, 100 GB-Hrs functions                                            | $20/month/user     | Yes (with Pro plan)     | Both           | Yes        |
+| Cloudflare Workers | Custom Code     | 100k requests/day                                                                 | $5/month           | Yes                     | Dynamic        | Yes        |
+| Deno Deploy        | Custom Code     | 1M requests/month, 100GB bandwidth                                                | From $10/month     | Yes                     | Dynamic        | Yes        |
+| Cloudflare Pages   | Custom Code     | Unlimited static, 100k requests/day Functions                                     | $5/month           | Yes                     | Both           | Yes        |
+| Render             | Custom Code     | Web services: 512 MB RAM, 750 hours/month; Static sites: free; Databases: limited | From $7/month      | Yes                     | Both           | No         |
+| Koyeb              | Custom Code     | Web service: 512MB RAM; Database: 50 hours/month                                  | Pay as you go      | Yes                     | Both           | Yes        |
+| Sevalla            | Custom Code     | Up to 100 static sites, 100 GB bandwidth/month, 600 build minutes/month           | Usage-based        | Yes                     | Static         | Yes        |
+| GitHub Pages       | Custom Code     | 1 GB site, 100 GB/month bandwidth                                                 | N/A                | Yes (with restrictions) | Static         | No         |
+| Netlify            | Custom Code     | 100 GB bandwidth, 125k functions/month                                            | $19/month/member   | Yes                     | Both           | Yes        |
+| Surge              | Custom Code     | Unlimited projects, custom domains, basic SSL                                     | $30/month          | Yes                     | Static         | Yes        |
+| Val Town           | Custom Code     | Unlimited public vals, 100k runs/day                                              | $100/year          | Yes (with Pro plan)     | Dynamic        | Yes        |
+| Firebase Hosting   | Custom Code     | 10 GB storage, 360 MB/day data transfer                                           | Pay as you go      | Yes                     | Static         | No         |
+| Webflow            | Website Builder | 2 pages, 50 CMS items, 1 GB bandwidth                                             | From $14/month     | Yes (with paid plans)   | Both           | No         |
+| Google Sites       | Website Builder | Unlimited, simple websites                                                        | N/A                | Yes                     | Static         | No         |
+| PythonAnywhere     | Other           | One web app, restricted internet, low CPU/bandwidth                               | From $5/month      | Yes (with limitations)  | Dynamic        | No         |
+| Oracle Cloud       | Other           | 2 VMs, limited resources                                                          | Pay as you go      | Yes                     | Dynamic        | Partial    |
+| AWS Free Tier      | Other           | 750 hours/month EC2 for 12 months, 5 GB S3 storage                                | Pay as you go      | Yes                     | Both           | Yes        |
+| AwardSpace         | Other           | Up to 4 websites, 5GB monthly traffic                                             | From $0.25/month   | Yes (with limitations)  | Dynamic        | No         |
+| LeadHoster         | Other           | 250MB disk, 6GB/month bandwidth, MySQL, PHP                                       | From $4.19/month   | Yes                     | Dynamic        | No         |
+| GoogieHost         | Other           | 1 GB SSD, 100 GB bandwidth                                                        | $1.99/month        | Yes                     | Dynamic        | No         |
+| ByetHost           | Other           | 5 GB disk space, unlimited bandwidth                                              | $4.99/month        | Yes                     | Dynamic        | No         |
+| HelioHost          | Other           | 1 GB storage, 1 GB bandwidth/day                                                  | N/A (donations)    | Yes (with limitations)  | Dynamic        | No         |
+| InfinityFree       | Other           | Unlimited disk space, bandwidth (fair use)                                        | Varies             | Yes (with restrictions) | Dynamic        | No         |
+| ProFreeHost        | Other           | Unlimited disk space, bandwidth (fair use)                                        | N/A                | Yes                     | Dynamic        | No         |
+| Forever Free Host  | Other           | Details not specified, assumed standard free hosting                              | Varies             | Yes (with limitations)  | Dynamic        | No         |
+| Free Hosting       | Other           | 10 GB storage, unmetered bandwidth, 1 website                                     | Addons available   | Yes (with limitations)  | Dynamic        | No         |
+| FreeHostia         | Other           | 250MB disk, 6GB/month bandwidth, MySQL, PHP                                       | From $3.25/month   | Yes                     | Dynamic        | No         |
+| Glitch             | Other           | ⚠️ **SHUTTING DOWN JULY 8, 2025** - No longer accepting new projects               | N/A (Discontinued) | No (Service ending)     | N/A            | No         |
 
-## GitHub Pages
+## Custom Code Platforms
+
+Modern platforms designed for developers who want to deploy custom applications, APIs, and static sites with full control over their code.
+
+### GitHub Pages
 
 **Overview**: GitHub Pages hosts static websites directly from a GitHub repository, ideal for personal projects, portfolios, or open-source documentation. It integrates with GitHub and supports Jekyll for static site generation.
 
@@ -71,7 +75,7 @@ Hosting a website or web service for free is an attractive option for developers
 
 **Best For**: Personal sites or open-source project documentation.
 
-## Cloudflare Pages
+### Cloudflare Pages
 
 **Overview**: Cloudflare Pages is a JAMstack platform for static websites with optional serverless functions via Pages Functions, leveraging Cloudflare's global CDN.
 
@@ -93,7 +97,7 @@ Hosting a website or web service for free is an attractive option for developers
 
 **Best For**: Developers needing fast static hosting with dynamic capabilities.
 
-## Cloudflare Workers
+### Cloudflare Workers
 
 **Overview**: Cloudflare Workers is a serverless platform for running code at the edge, ideal for APIs or microservices.
 
@@ -115,7 +119,7 @@ Hosting a website or web service for free is an attractive option for developers
 
 **Best For**: Serverless APIs or dynamic applications.
 
-## Vercel
+### Vercel
 
 **Overview**: Vercel is a platform for deploying static sites and serverless functions, known for its simplicity and support for frameworks like Next.js.
 
@@ -137,7 +141,7 @@ Hosting a website or web service for free is an attractive option for developers
 
 **Best For**: Frontend developers for non-commercial projects on Hobby plan; commercial use requires Pro plan.
 
-## Netlify
+### Netlify
 
 **Overview**: Netlify is a JAMstack platform for static sites and serverless functions, offering features like forms and edge functions.
 
@@ -159,31 +163,7 @@ Hosting a website or web service for free is an attractive option for developers
 
 **Best For**: Developers and teams building scalable web applications.
 
-## Glitch
-
-> **⚠️ IMPORTANT UPDATE**: Glitch announced in May 2025 that they will be ending web hosting for apps on **July 8, 2025**. User profiles and project hosting will be shut down, though dashboards will remain available through the end of 2025 for code downloads and setting up redirects. This makes Glitch no longer a viable option for new projects or long-term hosting.
-
-**Overview**: Glitch was a collaborative platform for building web apps in the browser, supporting static sites and full-stack Node.js applications. Due to the platform shutdown announced in May 2025, it is no longer recommended for new projects.
-
-| <span style="color: green;">✅ Pros (Historical)</span>                                                                                                            | <span style="color: red;">❌ Cons</span>                                                                                                                                            |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| • Free Starter plan with unlimited static sites<br/>• Collaborative coding with real-time editing<br/>• Easy GitHub import/export<br/>• Community-driven platform | • **SERVICE SHUTTING DOWN JULY 8, 2025**<br/>• Free plan projects are public<br/>• Full-stack apps sleep after 5 minutes of inactivity<br/>• Limited to 5 boosted apps on Pro plan |
-
-**Runtime Support**: Node.js for full-stack apps; static HTML, CSS, JS.
-
-**Migration Path**: Glitch has stopped accepting new Pro subscriptions and will provide guides to help users export projects and migrate to other platforms. They recommend exploring alternatives like Fly.io, Deno Deploy, GitHub Pages, Val Town, Netlify, and Digital Ocean.
-
-**Commercial Usability**: No longer applicable due to service shutdown.
-
-**Server Downtime**: Service will be completely unavailable after July 8, 2025.
-
-**Static/Dynamic**: No longer applicable.
-
-**Serverless/Fluid Compute**: No longer applicable.
-
-**Best For**: Migration to alternative platforms. Consider Netlify, Vercel, or Render for similar functionality.
-
-## Render
+### Render
 
 **Overview**: Render is a cloud application platform that simplifies building, deploying, and scaling web applications and services. It supports a variety of runtimes, including Node.js, Python, Ruby, Go, and Docker containers, as well as static sites. Render offers a free tier for web services, static sites, PostgreSQL databases, and key-value stores, making it ideal for personal projects, prototyping, and small applications.
 
@@ -205,7 +185,7 @@ Hosting a website or web service for free is an attractive option for developers
 
 **Best For**: Developers seeking an easy-to-use platform to deploy web applications and services, particularly those requiring support for multiple runtimes and Docker.
 
-## Koyeb
+### Koyeb
 
 **Overview**: Koyeb is a serverless platform that enables developers to deploy web applications, APIs, and databases without managing infrastructure. It offers a free tier that includes a web service with 512MB memory and a PostgreSQL database with 50 hours per month, supporting scale-to-zero for cost efficiency.
 
@@ -227,9 +207,9 @@ Hosting a website or web service for free is an attractive option for developers
 
 **Best For**: Developers looking for a serverless platform to deploy applications with minimal management overhead.
 
-## Sevalla
+### Sevalla
 
-**Overview**: Sevalla offers free static site hosting deployed to Cloudflare's edge network, with support for automatic deployments from Git repositories like GitHub, GitLab, or BitBucket. It’s ideal for personal blogs, portfolios, or small business websites, leveraging Cloudflare’s global CDN for fast and secure delivery.
+**Overview**: Sevalla offers free static site hosting deployed to Cloudflare's edge network, with support for automatic deployments from Git repositories like GitHub, GitLab, or BitBucket. It's ideal for personal blogs, portfolios, or small business websites, leveraging Cloudflare's global CDN for fast and secure delivery.
 
 | <span style="color: green;">✅ Pros</span>                                                                                                                                                                 | <span style="color: red;">❌ Cons</span>                                                                                                               |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -245,143 +225,11 @@ Hosting a website or web service for free is an attractive option for developers
 
 **Static/Dynamic**: Static only.
 
-**Serverless/Fluid Compute**: Yes, via Cloudflare’s CDN.
+**Serverless/Fluid Compute**: Yes, via Cloudflare's CDN.
 
 **Best For**: Personal blogs, portfolios, small business websites.
 
-## PythonAnywhere
-
-**Overview**: PythonAnywhere provides free hosting for Python web applications, supporting frameworks like Django, Flask, and more, with a web-based console for development. It’s designed for ease of use, making it suitable for beginners and small projects.
-
-| <span style="color: green;">✅ Pros</span>                                                                                             | <span style="color: red;">❌ Cons</span>                                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| • Free plan available<br/>• Easy to use with web-based console<br/>• Supports multiple Python versions<br/>• Includes scheduled tasks | • Limited to one web app on free plan<br/>• Restricted outbound internet access<br/>• Low CPU and bandwidth on free plan<br/>• No custom domains on free plan |
-
-**Runtime Support**: Python, with support for web frameworks like Django, Flask, Bottle, and others.
-
-**Upgrading and Scaling**: Paid plans start at $5/month for more resources and features, including custom domains and multiple web apps.
-
-**Commercial Usability**: Yes, but with limitations on the free plan due to resource constraints.
-
-**Server Downtime**: Shared hosting, performance may vary due to resource limits.
-
-**Static/Dynamic**: Dynamic (Python web apps).
-
-**Serverless/Fluid Compute**: No, it’s a PaaS for Python apps.
-
-**Best For**: Small Python web applications, learning, or non-critical projects.
-
-## Oracle Cloud Free Tier
-
-**Overview**: Oracle Cloud Free Tier offers compute instances and databases, with a $300 trial credit for 30 days, suitable for complex applications.
-
-| <span style="color: green;">✅ Pros</span>                                                              | <span style="color: red;">❌ Cons</span>                                                                      |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| • Generous free tier with 2 AMD based compute VMs<br/>• 3,000 OCPU hours and 18,000 GB hours per month | • Supports any software on VMs<br/>• Includes 2 Autonomous Databases<br/>• Suitable for complex applications | • Limited resource availability (e.g., Arm instances)<br/>• Requires infrastructure management<br/>• Trial credits expire after 360 days |
-
-**Runtime Support**: Any language or framework on VMs (e.g., Node.js, Python, Java).
-
-**Upgrading and Scaling**: Pay-as-you-go pricing after trial credits or free tier limits. Costs vary (e.g., $0.01/GB-hour for additional compute).
-
-**Commercial Usability**: Yes, suitable for commercial use.
-
-**Server Downtime**: VMs stay up if managed properly; user responsibility.
-
-**Static/Dynamic**: Dynamic; static possible with configuration.
-
-**Serverless/Fluid Compute**: Limited serverless support in free tier (trial only).
-
-**Best For**: Developers managing VMs for complex applications.
-
-## AWS Free Tier
-
-**Overview**: Amazon Web Services (AWS) offers a free tier that includes a variety of services such as compute (EC2), storage (S3), and serverless functions (Lambda), allowing users to host both static and dynamic websites. It’s suitable for developers and businesses experimenting with cloud infrastructure.
-
-| <span style="color: green;">✅ Pros</span>                                                                                                                            | <span style="color: red;">❌ Cons</span>                                                                                                                                  |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| • Access to powerful cloud infrastructure<br/>• Scalable and flexible<br/>• Wide range of services and tools<br/>• Comprehensive documentation and community support | • Complex for beginners<br/>• Free tier has usage limits and time restrictions (e.g., 12 months for EC2)<br/>• Potential for unexpected costs if usage exceeds free tier |
-
-**Runtime Support**: Supports various programming languages and frameworks through EC2 instances (e.g., Node.js, Python, Java) or Lambda functions (JavaScript, Python, etc.). S3 supports static HTML, CSS, JavaScript.
-
-**Upgrading and Scaling**: After the free tier expires or if usage exceeds limits, standard pay-as-you-go pricing applies. AWS offers extensive scaling options with various instance types and services.
-
-**Commercial Usability**: Yes, suitable for commercial use within the free tier limits.
-
-**Server Downtime**: Users are responsible for managing EC2 instances; serverless functions (Lambda) run on demand; static sites on S3 are always available via CDN.
-
-**Static/Dynamic**: Both static (via S3) and dynamic (via EC2 or Lambda).
-
-**Serverless/Fluid Compute**: Yes, via AWS Lambda with 1 million free requests per month.
-
-**Best For**: Developers and businesses looking for scalable cloud infrastructure with a wide range of services.
-
-## InfinityFree
-
-**Overview**: InfinityFree provides free web hosting with PHP and MySQL, no ads on your site, and claims to be the fastest free hosting.
-
-| <span style="color: green;">✅ Pros</span>                                                                                                                                        | <span style="color: red;">❌ Cons</span>                                                                                                                                                                                                              |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| • Unlimited disk space and bandwidth (subject to fair use)<br/>• Supports PHP and MySQL<br/>• Free SSL certificates<br/>• No ads on your site<br/>• Subdomains or custom domains | • Shared hosting with potential performance issues<br/>• Limited customer support (community forum)<br/>• Accounts may be suspended for resource abuse or inactivity (20-60 days without visitors)<br/>• Requires reactivation for inactive accounts |
-
-**Runtime Support**: PHP, MySQL; supports CMS like WordPress via Softaculous.
-
-**Upgrading and Scaling**: InfinityFree offers upgrade options to premium hosting plans for better performance and support (pricing varies).
-
-**Commercial Usability**: Yes, with restrictions (e.g., not for file hosting; must comply with terms).
-
-**Server Downtime**: Shared hosting; 99.9% uptime claimed but may vary.
-
-**Static/Dynamic**: Dynamic (PHP, MySQL).
-
-**Serverless/Fluid Compute**: No.
-
-**Best For**: Small personal projects, learning, or non-critical websites.
-
-## FreeHostia Free Cloud Hosting
-
-**Overview**: FreeHostia's "Chocolate" plan provides free cloud hosting with 250MB disk space, 6GB monthly traffic, MySQL, and PHP support, ideal for small personal or business websites. It features a 1-click installer for applications like WordPress and Joomla, and operates on a load-balanced cluster platform for enhanced performance. The plan is free indefinitely, with no forced ads, making it a compelling option for budget-conscious users.
-
-| <span style="color: green;">✅ Pros</span>                                                                                           | <span style="color: red;">❌ Cons</span>                                                                                                                                      |
-| ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| • Completely free with no time limits<br/>• Supports PHP and MySQL<br/>• No ads on websites<br/>• 24/7 customer support via tickets | • Limited resources (250MB disk, 6GB bandwidth)<br/>• Shared hosting may have performance issues<br/>• Limited to 3 email accounts<br/>• Not suitable for high-traffic sites |
-
-**Runtime Support**: PHP (versions 4/5/7/8), MySQL; static HTML, CSS, JavaScript. Supports CMS like WordPress, Joomla, and others via a 1-click installer.
-
-**Upgrading and Scaling**: Paid plans start at $3.25/month with the Watercircle plan, offering 500GB disk space, 50GB monthly traffic, and additional features like more email accounts and databases. Higher tiers like Wildhoney and Supernatural provide unlimited resources.
-
-**Commercial Usability**: Yes, suitable for small businesses or personal sites within resource limits, as advertised for small online businesses.
-
-**Server Downtime**: Shared hosting with a claimed 99.9% uptime, though performance may vary due to shared resources and limited capacity for high traffic.
-
-**Static/Dynamic**: Dynamic, with support for PHP and MySQL-based applications, as well as static content.
-
-**Serverless/Fluid Compute**: No, uses traditional shared hosting infrastructure with load-balanced clusters.
-
-**Best For**: Small personal or business websites, blogs, or testing environments with low traffic requirements, particularly for users needing PHP and MySQL support.
-
-## LeadHoster Free Web Hosting
-
-**Overview**: LeadHoster offers a free web hosting plan with 250MB disk space, 6GB monthly bandwidth, and support for multiple scripting languages including PHP, Perl, CGI, ASP.NET, and Ruby, along with MySQL databases. It includes a control panel, email accounts (POP3, IMAP, web-based), and a 1-click installer for 19 content management systems like WordPress and PrestaShop. The service is designed for personal websites or small projects and is ad-free.
-
-| <span style="color: green;">✅ Pros</span>                                                                                                                                | <span style="color: red;">❌ Cons</span>                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| • Free hosting with no ads<br/>• Supports multiple scripting languages (PHP, Perl, CGI)<br/>• Includes email accounts and control panel<br/>• Instant account activation | • Limited resources (250MB disk, 6GB bandwidth)<br/>• 500KB file size limit<br/>• Potential performance issues on shared hosting<br/>• Mixed reliability reviews |
-
-**Runtime Support**: PHP (versions 4/5/6), Perl, CGI, ASP.NET, Ruby; MySQL; static HTML, CSS, JavaScript. Supports CMS via a 1-click installer.
-
-**Upgrading and Scaling**: Paid plans start at approximately $4.19/month for the Small Business Hosting plan, offering enhanced resources and features like additional domains and storage.
-
-**Commercial Usability**: Yes, suitable for small commercial projects, though limited by resource constraints and a 500KB file size limit.
-
-**Server Downtime**: Shared hosting with variable uptime; some user reviews report occasional downtime, suggesting reliability may not be consistent.
-
-**Static/Dynamic**: Dynamic, with support for various scripting languages and databases, alongside static content.
-
-**Serverless/Fluid Compute**: No, uses traditional shared hosting infrastructure.
-
-**Best For**: Personal websites, blogs, or small projects requiring dynamic content and basic hosting features, particularly for users comfortable with shared hosting limitations.
-
-## Surge
+### Surge
 
 **Overview**: Surge is a cloud platform optimized for hosting static websites, offering a generous free tier with unlimited projects, unlimited publishing, custom domains, and basic SSL. It's designed for front-end developers, providing a simple command-line interface for deploying HTML, CSS, and JavaScript applications, leveraging a global CDN for fast and reliable delivery. Surge is ideal for single-page applications and static sites.
 
@@ -403,56 +251,7 @@ Hosting a website or web service for free is an attractive option for developers
 
 **Best For**: Static websites, single-page applications, and front-end projects requiring fast and simple deployment, particularly for developers familiar with command-line tools.
 
-## Other Free Hosting Services
-
-Several other free hosting services offer traditional web hosting with cPanel, PHP, and MySQL, including GoogieHost, ProFreeHost, and ByetHost. These are suitable for small projects or learning environments but have limitations that may affect commercial use.
-
-### GoogieHost
-- **Overview**: Offers 100% free web hosting with cPanel, PHP, MySQL, and no ads on sites.
-
-| <span style="color: green;">✅ Pros</span>                     | <span style="color: red;">❌ Cons</span>                                           |
-| ------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| • 1 GB SSD, 100 GB bandwidth<br/>• Free SSL<br/>• No site ads | • Limited resources<br/>• Potential reliability issues<br/>• Ads in control panel |
-
-- **Runtime Support**: PHP, MySQL; supports WordPress.
-- **Upgrading and Scaling**: Paid plans start at $1.99/month for more resources.
-- **Commercial Usability**: Yes.
-- **Server Downtime**: Shared hosting; uptime may vary.
-- **Static/Dynamic**: Dynamic.
-- **Serverless/Fluid Compute**: No.
-- **Best For**: Bloggers or small businesses on a budget.
-
-### ProFreeHost
-- **Overview**: Provides free hosting with unlimited disk space and bandwidth, cPanel, and PHP/MySQL support.
-
-| <span style="color: green;">✅ Pros</span>                                         | <span style="color: red;">❌ Cons</span>                     |
-| --------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| • Unlimited resources (fair use)<br/>• Free subdomains<br/>• 99.9% uptime claimed | • Mixed reliability reviews<br/>• Slow performance possible |
-
-- **Runtime Support**: PHP, MySQL; supports CMS.
-- **Upgrading and Scaling**: No direct upgrade path; primarily free service.
-- **Commercial Usability**: Yes.
-- **Server Downtime**: Shared hosting; uptime may vary.
-- **Static/Dynamic**: Dynamic.
-- **Serverless/Fluid Compute**: No.
-- **Best For**: Non-critical projects or learning.
-
-### ByetHost
-- **Overview**: Offers free hosting with 5 GB disk space, unlimited bandwidth, PHP, MySQL, and cPanel.
-
-| <span style="color: green;">✅ Pros</span>                             | <span style="color: red;">❌ Cons</span>    |
-| --------------------------------------------------------------------- | ------------------------------------------ |
-| • Generous free tier<br/>• Custom domains<br/>• Softaculous installer | • Potential downtime<br/>• Limited support |
-
-- **Runtime Support**: PHP, MySQL; supports CMS.
-- **Upgrading and Scaling**: Premium plans start at $4.99/month.
-- **Commercial Usability**: Yes.
-- **Server Downtime**: Shared hosting; uptime may vary.
-- **Static/Dynamic**: Dynamic.
-- **Serverless/Fluid Compute**: No.
-- **Best For**: Small websites or testing environments.
-
-## Deno Deploy
+### Deno Deploy
 
 **Overview**: Deno Deploy is a serverless platform for hosting JavaScript and TypeScript applications built with Deno. It offers a free tier suitable for prototyping, personal use, and low-traffic projects, with 1 million requests per month and 100GB bandwidth.
 
@@ -474,7 +273,7 @@ Several other free hosting services offer traditional web hosting with cPanel, P
 
 **Best For**: Developers building serverless applications with Deno, particularly for low-traffic or prototype projects.
 
-## Val Town
+### Val Town
 
 **Overview**: Val Town is a social website to write and deploy JavaScript, allowing creation of APIs, scheduled functions, and data persistence, all from the browser with instant deployment. The free tier includes unlimited public vals and 100,000 runs per day.
 
@@ -496,29 +295,33 @@ Several other free hosting services offer traditional web hosting with cPanel, P
 
 **Best For**: Developers looking for a quick way to deploy and share JavaScript functions and APIs, particularly for collaborative or social coding.
 
-## Google Sites
+### Firebase Hosting
 
-**Overview**: Google Sites is a free website builder provided by Google, part of Google Workspace, designed for creating simple websites without coding. It's ideal for personal projects, small businesses, or internal company sites, with unlimited free usage.
+**Overview**: Firebase Hosting is a static web hosting service provided by Google, ideal for hosting single-page applications, marketing sites, and other static content. It offers fast content delivery through a global CDN and integrates seamlessly with other Firebase services like Authentication and Firestore.
 
-| <span style="color: green;">✅ Pros</span>                                                                                                                                                    | <span style="color: red;">❌ Cons</span>                                                                                                                                                                     |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| • Completely free with no hosting charges<br/>• Easy to use with drag-and-drop interface<br/>• Integrates with other Google services like Drive, Docs, etc.<br/>• Automatic SSL certificates | • Limited customization options compared to other builders<br/>• No support for dynamic content or server-side scripting<br/>• Basic design templates<br/>• Not suitable for complex websites or e-commerce |
+| <span style="color: green;">✅ Pros</span>                                                                                                              | <span style="color: red;">❌ Cons</span>                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ |
+| • Free tier with generous limits<br/>• Easy deployment from the command line<br/>• Automatic SSL certificates<br/>• Integration with Firebase services | • Limited to static content<br/>• Free tier has usage limits |
 
-**Runtime Support**: Static HTML, CSS, JavaScript (client-side only).
+**Runtime Support**: Static HTML, CSS, JavaScript.
 
-**Upgrading and Scaling**: No paid plans; it's always free. For more advanced features, users might need to switch to other platforms like Webflow or Wix.
+**Upgrading and Scaling**: Pay-as-you-go pricing for additional usage beyond free tier limits.
 
-**Commercial Usability**: Yes, suitable for small businesses or personal use.
+**Commercial Usability**: Yes, suitable for commercial projects within free tier limits.
 
-**Server Downtime**: Hosted on Google's infrastructure, generally reliable.
+**Server Downtime**: Static sites on Google's CDN are always available.
 
 **Static/Dynamic**: Static only.
 
 **Serverless/Fluid Compute**: No.
 
-**Best For**: Simple websites, portfolios, internal company sites, or educational projects, particularly for Google ecosystem users.
+**Best For**: Static websites and single-page applications, particularly those integrating with other Google/Firebase services.
 
-## Webflow
+## Website Builder Platforms
+
+No-code and low-code platforms designed for users who want to create websites without writing code.
+
+### Webflow
 
 **Overview**: Webflow is a visual web design tool that allows users to create responsive websites without writing code. It offers a free Starter plan for getting started, with 2 pages, 50 CMS items, and 1 GB bandwidth.
 
@@ -540,88 +343,256 @@ Several other free hosting services offer traditional web hosting with cPanel, P
 
 **Best For**: Designers and small businesses looking for a no-code solution to build professional websites, particularly for portfolios or marketing sites.
 
-## Forever Free Host
+### Google Sites
 
-**Overview**: Forever Free Host offers free web hosting services with features like website migration, SEO compatibility, and business hosting. It's designed for developers, influencers, and small businesses, though specific resource limits are not detailed.
+**Overview**: Google Sites is a free website builder provided by Google, part of Google Workspace, designed for creating simple websites without coding. It's ideal for personal projects, small businesses, or internal company sites, with unlimited free usage.
 
-| <span style="color: green;">✅ Pros</span>                                                                                                         | <span style="color: red;">❌ Cons</span>                                                                                                             |
-| ------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| • Free hosting with no ads<br/>• Claims 99.9% uptime<br/>• Supports various hosting needs (business, blog, e-commerce)<br/>• Data backup included | • Specific resource limits not specified<br/>• Potential performance issues on shared hosting<br/>• Limited information on features and limitations |
+| <span style="color: green;">✅ Pros</span>                                                                                                                                                    | <span style="color: red;">❌ Cons</span>                                                                                                                                                                     |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| • Completely free with no hosting charges<br/>• Easy to use with drag-and-drop interface<br/>• Integrates with other Google services like Drive, Docs, etc.<br/>• Automatic SSL certificates | • Limited customization options compared to other builders<br/>• No support for dynamic content or server-side scripting<br/>• Basic design templates<br/>• Not suitable for complex websites or e-commerce |
 
-**Runtime Support**: Likely PHP, MySQL; static HTML, based on typical free hosting offerings.
+**Runtime Support**: Static HTML, CSS, JavaScript (client-side only).
 
-**Upgrading and Scaling**: Presumably offers paid plans or addons, but details not specified, suggesting users may need to contact for more information.
+**Upgrading and Scaling**: No paid plans; it's always free. For more advanced features, users might need to switch to other platforms like Webflow or Wix.
 
-**Commercial Usability**: Yes, marketed for businesses, but with potential limitations due to unclear resource caps.
+**Commercial Usability**: Yes, suitable for small businesses or personal use.
 
-**Server Downtime**: Claims 99.9% uptime, though shared hosting may vary.
+**Server Downtime**: Hosted on Google's infrastructure, generally reliable.
 
-**Static/Dynamic**: Likely both, given support for e-commerce and blogs.
-
-**Serverless/Fluid Compute**: No, as it's a traditional hosting service.
-
-**Best For**: Small businesses or personal projects needing basic web hosting, particularly those valuing ad-free experience and data backup.
-
-## Free Hosting
-
-**Overview**: Free Hosting provides a free web hosting plan with 10 GB storage, unmetered bandwidth (subject to fair use), and support for PHP and MySQL. It's suitable for small websites and personal projects, with 1 website allowed.
-
-| <span style="color: green;">✅ Pros</span>                                                                                           | <span style="color: red;">❌ Cons</span>                                                                                                                                                    |
-| ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| • 100% free with no time limits<br/>• 10 GB storage and unmetered bandwidth<br/>• Supports PHP and MySQL<br/>• cPanel control panel | • No subdomains on free plan<br/>• PHP mail() disabled by default<br/>• Services not available in some countries (e.g., Brazil, Cuba)<br/>• Potential performance issues on shared hosting |
-
-**Runtime Support**: PHP, MySQL; static HTML.
-
-**Upgrading and Scaling**: Offers paid addons for additional features like subdomains ($14.95) or extra MySQL databases ($24.95), and paid hosting plans for more resources.
-
-**Commercial Usability**: Yes, but with limitations due to shared hosting and country restrictions.
-
-**Server Downtime**: Shared hosting; uptime may vary, though claims to handle ~30,000 daily visitors for PHP and unlimited for static HTML.
-
-**Static/Dynamic**: Both static and dynamic, with support for CMS via apps installer.
+**Static/Dynamic**: Static only.
 
 **Serverless/Fluid Compute**: No.
 
-**Best For**: Small personal websites or learning environments, particularly for users needing cPanel and CMS support.
+**Best For**: Simple websites, portfolios, internal company sites, or educational projects, particularly for Google ecosystem users.
 
-## AwardSpace
+## Other - Traditional Hosting Services
 
-**Overview**: AwardSpace provides free web hosting with support for up to 4 websites (1 domain + 3 subdomains), 5GB monthly traffic, CMS installation, and no ads. It's suitable for small projects and personal websites, available since 2003.
+Traditional web hosting services offering cPanel, PHP, MySQL, and other conventional hosting features.
 
-| <span style="color: green;">✅ Pros</span>                                                                                                                         | <span style="color: red;">❌ Cons</span>                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| • Free forever with no ads<br/>• Supports up to 4 websites (1 domain + 3 subdomains)<br/>• CMS installer for WordPress, Joomla, Grav<br/>• 99.9% uptime guarantee | • 5GB monthly traffic limit<br/>• Limited to 1 domain and 3 subdomains<br/>• May not be suitable for large or high-traffic websites |
+### PythonAnywhere
 
-**Runtime Support**: PHP 5/7, MySQL 5.7; static HTML.
+**Overview**: PythonAnywhere provides free hosting for Python web applications, supporting frameworks like Django, Flask, and more, with a web-based console for development. It's designed for ease of use, making it suitable for beginners and small projects.
 
-**Upgrading and Scaling**: Offers premium plans starting at $0.25/month for more traffic, additional domains, and advanced CMS options (19 CMS with premium).
+| <span style="color: green;">✅ Pros</span>                                                                                             | <span style="color: red;">❌ Cons</span>                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| • Free plan available<br/>• Easy to use with web-based console<br/>• Supports multiple Python versions<br/>• Includes scheduled tasks | • Limited to one web app on free plan<br/>• Restricted outbound internet access<br/>• Low CPU and bandwidth on free plan<br/>• No custom domains on free plan |
 
-**Commercial Usability**: Yes, but with limitations on traffic and resources, suitable for small businesses within free tier.
+**Runtime Support**: Python, with support for web frameworks like Django, Flask, Bottle, and others.
 
-**Server Downtime**: Claims 99.9% uptime, supported by 50 GBits network connectivity.
+**Upgrading and Scaling**: Paid plans start at $5/month for more resources and features, including custom domains and multiple web apps.
 
-**Static/Dynamic**: Both static and dynamic, with CMS support for dynamic content.
+**Commercial Usability**: Yes, but with limitations on the free plan due to resource constraints.
+
+**Server Downtime**: Shared hosting, performance may vary due to resource limits.
+
+**Static/Dynamic**: Dynamic (Python web apps).
+
+**Serverless/Fluid Compute**: No, it's a PaaS for Python apps.
+
+**Best For**: Small Python web applications, learning, or non-critical projects.
+
+### Oracle Cloud Free Tier
+
+**Overview**: Oracle Cloud Free Tier offers compute instances and databases, with a $300 trial credit for 30 days, suitable for complex applications.
+
+| <span style="color: green;">✅ Pros</span>                                                              | <span style="color: red;">❌ Cons</span>                                                                      |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| • Generous free tier with 2 AMD based compute VMs<br/>• 3,000 OCPU hours and 18,000 GB hours per month | • Supports any software on VMs<br/>• Includes 2 Autonomous Databases<br/>• Suitable for complex applications | • Limited resource availability (e.g., Arm instances)<br/>• Requires infrastructure management<br/>• Trial credits expire after 360 days |
+
+**Runtime Support**: Any language or framework on VMs (e.g., Node.js, Python, Java).
+
+**Upgrading and Scaling**: Pay-as-you-go pricing after trial credits or free tier limits. Costs vary (e.g., $0.01/GB-hour for additional compute).
+
+**Commercial Usability**: Yes, suitable for commercial use.
+
+**Server Downtime**: VMs stay up if managed properly; user responsibility.
+
+**Static/Dynamic**: Dynamic; static possible with configuration.
+
+**Serverless/Fluid Compute**: Limited serverless support in free tier (trial only).
+
+**Best For**: Developers managing VMs for complex applications.
+
+### AWS Free Tier
+
+**Overview**: Amazon Web Services (AWS) offers a free tier that includes a variety of services such as compute (EC2), storage (S3), and serverless functions (Lambda), allowing users to host both static and dynamic websites. It's suitable for developers and businesses experimenting with cloud infrastructure.
+
+| <span style="color: green;">✅ Pros</span>                                                                                                                            | <span style="color: red;">❌ Cons</span>                                                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| • Access to powerful cloud infrastructure<br/>• Scalable and flexible<br/>• Wide range of services and tools<br/>• Comprehensive documentation and community support | • Complex for beginners<br/>• Free tier has usage limits and time restrictions (e.g., 12 months for EC2)<br/>• Potential for unexpected costs if usage exceeds free tier |
+
+**Runtime Support**: Supports various programming languages and frameworks through EC2 instances (e.g., Node.js, Python, Java) or Lambda functions (JavaScript, Python, etc.). S3 supports static HTML, CSS, JavaScript.
+
+**Upgrading and Scaling**: After the free tier expires or if usage exceeds limits, standard pay-as-you-go pricing applies. AWS offers extensive scaling options with various instance types and services.
+
+**Commercial Usability**: Yes, suitable for commercial use within the free tier limits.
+
+**Server Downtime**: Users are responsible for managing EC2 instances; serverless functions (Lambda) run on demand; static sites on S3 are always available via CDN.
+
+**Static/Dynamic**: Both static (via S3) and dynamic (via EC2 or Lambda).
+
+**Serverless/Fluid Compute**: Yes, via AWS Lambda with 1 million free requests per month.
+
+**Best For**: Developers and businesses looking for scalable cloud infrastructure with a wide range of services.
+
+### InfinityFree
+
+**Overview**: InfinityFree provides free web hosting with PHP and MySQL, no ads on your site, and claims to be the fastest free hosting.
+
+| <span style="color: green;">✅ Pros</span>                                                                                                                                        | <span style="color: red;">❌ Cons</span>                                                                                                                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| • Unlimited disk space and bandwidth (subject to fair use)<br/>• Supports PHP and MySQL<br/>• Free SSL certificates<br/>• No ads on your site<br/>• Subdomains or custom domains | • Shared hosting with potential performance issues<br/>• Limited customer support (community forum)<br/>• Accounts may be suspended for resource abuse or inactivity (20-60 days without visitors)<br/>• Requires reactivation for inactive accounts |
+
+**Runtime Support**: PHP, MySQL; supports CMS like WordPress via Softaculous.
+
+**Upgrading and Scaling**: InfinityFree offers upgrade options to premium hosting plans for better performance and support (pricing varies).
+
+**Commercial Usability**: Yes, with restrictions (e.g., not for file hosting; must comply with terms).
+
+**Server Downtime**: Shared hosting; 99.9% uptime claimed but may vary.
+
+**Static/Dynamic**: Dynamic (PHP, MySQL).
 
 **Serverless/Fluid Compute**: No.
 
-**Best For**: Small personal websites, blogs, or portfolios, particularly those needing ad-free hosting and CMS installation.
+**Best For**: Small personal projects, learning, or non-critical websites.
 
-## Firebase Hosting
+### FreeHostia Free Cloud Hosting
 
-**Overview**: Firebase Hosting is a static web hosting service provided by Google, ideal for hosting single-page applications, marketing sites, and other static content. It offers fast content delivery through a global CDN and integrates seamlessly with other Firebase services like Authentication and Firestore.
+**Overview**: FreeHostia's "Chocolate" plan provides free cloud hosting with 250MB disk space, 6GB monthly traffic, MySQL, and PHP support, ideal for small personal or business websites. It features a 1-click installer for applications like WordPress and Joomla, and operates on a load-balanced cluster platform for enhanced performance. The plan is free indefinitely, with no forced ads, making it a compelling option for budget-conscious users.
 
-| <span style="color: green;">✅ Pros</span>                                                                                                              | <span style="color: red;">❌ Cons</span>                      |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ |
-| • Free tier with generous limits<br/>• Easy deployment from the command line<br/>• Automatic SSL certificates<br/>• Integration with Firebase services | • Limited to static content<br/>• Free tier has usage limits |
+| <span style="color: green;">✅ Pros</span>                                                                                           | <span style="color: red;">❌ Cons</span>                                                                                                                                      |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| • Completely free with no time limits<br/>• Supports PHP and MySQL<br/>• No ads on websites<br/>• 24/7 customer support via tickets | • Limited resources (250MB disk, 6GB bandwidth)<br/>• Shared hosting may have performance issues<br/>• Limited to 3 email accounts<br/>• Not suitable for high-traffic sites |
+
+**Runtime Support**: PHP (versions 4/5/7/8), MySQL; static HTML, CSS, JavaScript. Supports CMS like WordPress, Joomla, and others via a 1-click installer.
+
+**Upgrading and Scaling**: Paid plans start at $3.25/month with the Watercircle plan, offering 500GB disk space, 50GB monthly traffic, and additional features like more email accounts and databases. Higher tiers like Wildhoney and Supernatural provide unlimited resources.
+
+**Commercial Usability**: Yes, suitable for small businesses or personal sites within resource limits, as advertised for small online businesses.
+
+**Server Downtime**: Shared hosting with a claimed 99.9% uptime, though performance may vary due to shared resources and limited capacity for high traffic.
+
+**Static/Dynamic**: Dynamic, with support for PHP and MySQL-based applications, as well as static content.
+
+**Serverless/Fluid Compute**: No, uses traditional shared hosting infrastructure with load-balanced clusters.
+
+**Best For**: Small personal or business websites, blogs, or testing environments with low traffic requirements, particularly for users needing PHP and MySQL support.
+
+### LeadHoster Free Web Hosting
+
+**Overview**: LeadHoster offers a free web hosting plan with 250MB disk space, 6GB monthly bandwidth, and support for multiple scripting languages including PHP, Perl, CGI, ASP.NET, and Ruby, along with MySQL databases. It includes a control panel, email accounts (POP3, IMAP, web-based), and a 1-click installer for 19 content management systems like WordPress and PrestaShop. The service is designed for personal websites or small projects and is ad-free.
+
+| <span style="color: green;">✅ Pros</span>                                                                                                                                | <span style="color: red;">❌ Cons</span>                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| • Free hosting with no ads<br/>• Supports multiple scripting languages (PHP, Perl, CGI)<br/>• Includes email accounts and control panel<br/>• Instant account activation | • Limited resources (250MB disk, 6GB bandwidth)<br/>• 500KB file size limit<br/>• Potential performance issues on shared hosting<br/>• Mixed reliability reviews |
+
+**Runtime Support**: PHP (versions 4/5/6), Perl, CGI, ASP.NET, Ruby; MySQL; static HTML, CSS, JavaScript. Supports CMS via a 1-click installer.
+
+**Upgrading and Scaling**: Paid plans start at approximately $4.19/month for the Small Business Hosting plan, offering enhanced resources and features like additional domains and storage.
+
+**Commercial Usability**: Yes, suitable for small commercial projects, though limited by resource constraints and a 500KB file size limit.
+
+**Server Downtime**: Shared hosting with variable uptime; some user reviews report occasional downtime, suggesting reliability may not be consistent.
+
+**Static/Dynamic**: Dynamic, with support for various scripting languages and databases, alongside static content.
+
+**Serverless/Fluid Compute**: No, uses traditional shared hosting infrastructure.
+
+**Best For**: Personal websites, blogs, or small projects requiring dynamic content and basic hosting features, particularly for users comfortable with shared hosting limitations.
+
+### Other Traditional Hosting Services
+
+Several other free hosting services offer traditional web hosting with cPanel, PHP, and MySQL, including GoogieHost, ProFreeHost, and ByetHost. These are suitable for small projects or learning environments but have limitations that may affect commercial use.
+
+#### GoogieHost
+- **Overview**: Offers 100% free web hosting with cPanel, PHP, MySQL, and no ads on sites.
+
+| <span style="color: green;">✅ Pros</span>                     | <span style="color: red;">❌ Cons</span>                                           |
+| ------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| • 1 GB SSD, 100 GB bandwidth<br/>• Free SSL<br/>• No site ads | • Limited resources<br/>• Potential reliability issues<br/>• Ads in control panel |
+
+- **Runtime Support**: PHP, MySQL; supports WordPress.
+- **Upgrading and Scaling**: Paid plans start at $1.99/month for more resources.
+- **Commercial Usability**: Yes.
+- **Server Downtime**: Shared hosting; uptime may vary.
+- **Static/Dynamic**: Dynamic.
+- **Serverless/Fluid Compute**: No.
+- **Best For**: Bloggers or small businesses on a budget.
+
+#### ProFreeHost
+- **Overview**: Provides free hosting with unlimited disk space and bandwidth, cPanel, and PHP/MySQL support.
+
+| <span style="color: green;">✅ Pros</span>                                         | <span style="color: red;">❌ Cons</span>                     |
+| --------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| • Unlimited resources (fair use)<br/>• Free subdomains<br/>• 99.9% uptime claimed | • Mixed reliability reviews<br/>• Slow performance possible |
+
+- **Runtime Support**: PHP, MySQL; supports CMS.
+- **Upgrading and Scaling**: No direct upgrade path; primarily free service.
+- **Commercial Usability**: Yes.
+- **Server Downtime**: Shared hosting; uptime may vary.
+- **Static/Dynamic**: Dynamic.
+- **Serverless/Fluid Compute**: No.
+- **Best For**: Non-critical projects or learning.
+
+#### ByetHost
+- **Overview**: Offers free hosting with 5 GB disk space, unlimited bandwidth, PHP, MySQL, and cPanel.
+
+| <span style="color: green;">✅ Pros</span>                             | <span style="color: red;">❌ Cons</span>    |
+| --------------------------------------------------------------------- | ------------------------------------------ |
+| • Generous free tier<br/>• Custom domains<br/>• Softaculous installer | • Potential downtime<br/>• Limited support |
+
+- **Runtime Support**: PHP, MySQL; supports CMS.
+- **Upgrading and Scaling**: Premium plans start at $4.99/month.
+- **Commercial Usability**: Yes.
+- **Server Downtime**: Shared hosting; uptime may vary.
+- **Static/Dynamic**: Dynamic.
+- **Serverless/Fluid Compute**: No.
+- **Best For**: Small websites or testing environments.
+
+#### HelioHost
+- **Overview**: HelioHost provides free web hosting with 1 GB storage and 1 GB bandwidth per day, supporting PHP, Python, Perl, and other technologies.
+
+| <span style="color: green;">✅ Pros</span>                                    | <span style="color: red;">❌ Cons</span>                                                                                    |
+| ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| • Completely free<br/>• Supports multiple programming languages<br/>• cPanel | • Limited resources (1GB storage, 1GB/day bandwidth)<br/>• Account creation by application only<br/>• Performance may vary |
+
+- **Runtime Support**: PHP, Python, Perl, Ruby; MySQL, PostgreSQL.
+- **Upgrading and Scaling**: No paid plans; funded by donations.
+- **Commercial Usability**: Yes, with limitations due to resource constraints.
+- **Server Downtime**: Shared hosting; uptime varies.
+- **Static/Dynamic**: Dynamic.
+- **Serverless/Fluid Compute**: No.
+- **Best For**: Small educational or personal projects.
+
+#### AwardSpace, Forever Free Host, Free Hosting
+
+Additional traditional hosting services with similar offerings - limited resources, PHP/MySQL support, and various restrictions typical of free shared hosting environments. These services are suitable for learning, small personal projects, or testing environments but may have reliability and performance limitations.
+
+### Glitch (Service Ending)
+
+> **⚠️ IMPORTANT UPDATE**: Glitch announced in May 2025 that they will be ending web hosting for apps on **July 8, 2025**. User profiles and project hosting will be shut down, though dashboards will remain available through the end of 2025 for code downloads and setting up redirects. This makes Glitch no longer a viable option for new projects or long-term hosting.
+
+**Migration Path**: Glitch has stopped accepting new Pro subscriptions and will provide guides to help users export projects and migrate to other platforms. They recommend exploring alternatives like Fly.io, Deno Deploy, GitHub Pages, Val Town, Netlify, and Digital Ocean.
 
 ## Choosing the Right Platform
 
-- **Static Sites**: GitHub Pages, Cloudflare Pages, Sevalla, Google Sites, and **Surge** for unlimited projects with custom domains; Webflow for limited static sites with CMS capabilities; Netlify for additional features.
-- **Dynamic Apps**: Cloudflare Workers, Vercel (Pro plan), Netlify, Render, Koyeb, Deno Deploy, Val Town, Oracle Cloud, InfinityFree, **FreeHostia**, and **LeadHoster** for PHP and MySQL-based hosting; Free Hosting and AwardSpace for similar dynamic capabilities.
-- **Prototyping**: Render, Koyeb, Deno Deploy, Val Town, InfinityFree, GoogieHost, ProFreeHost, Free Hosting, AwardSpace, **FreeHostia**, and **LeadHoster** for traditional or serverless hosting; Netlify, Vercel, or **Surge** for modern static site workflows.
-- **Commercial Use**: Netlify, Cloudflare, Render, Koyeb, Oracle, Deno Deploy, GoogieHost, ProFreeHost, ByetHost, Free Hosting, AwardSpace, **FreeHostia**, **LeadHoster**, and **Surge** (for static sites); Val Town and Webflow require paid plans for full commercial features; Vercel requires Pro plan; GitHub Pages has restrictions.
-- **Scalability**: Cloudflare, Render, Koyeb, Oracle, Deno Deploy, and **Surge** offer cost-effective scaling; Vercel and Netlify are pricier per user; InfinityFree, Free Hosting, AwardSpace, **FreeHostia**, and **LeadHoster** provide affordable upgrades for dynamic hosting.
-- **Sandbox vs. Business**: Netlify, Cloudflare, Render, Koyeb, Oracle, Deno Deploy, Val Town, and **Surge** are business-ready; InfinityFree, Free Hosting, AwardSpace, **FreeHostia**, and **LeadHoster** are better suited for non-critical or sandbox use due to resource limitations.
+### By Category
+
+- **Custom Code Platforms**: Best for developers who want full control over their applications. Choose GitHub Pages or Surge for static sites, Cloudflare Workers or Deno Deploy for serverless APIs, Netlify or Vercel for JAMstack apps, and Render or Koyeb for full-stack applications.
+
+- **Website Builder Platforms**: Ideal for non-technical users. Google Sites for simple, free websites or Webflow for more sophisticated designs with CMS capabilities.
+
+- **Traditional Hosting**: Suitable for conventional PHP/MySQL websites. Choose InfinityFree or FreeHostia for reliable free hosting, or Oracle Cloud/AWS for more advanced infrastructure needs.
+
+### By Use Case
+
+- **Static Sites**: GitHub Pages, Cloudflare Pages, Sevalla, Firebase Hosting, and **Surge** for unlimited projects with custom domains; Google Sites for simple sites; Webflow for limited static sites with CMS capabilities; Netlify for additional features.
+- **Dynamic Apps**: Cloudflare Workers, Vercel (Pro plan), Netlify, Render, Koyeb, Deno Deploy, Val Town for modern serverless; Oracle Cloud, AWS, PythonAnywhere for traditional hosting; InfinityFree, **FreeHostia**, and **LeadHoster** for PHP/MySQL-based hosting.
+- **Prototyping**: Render, Koyeb, Deno Deploy, Val Town for modern serverless; InfinityFree, GoogieHost, ProFreeHost, **FreeHostia**, and **LeadHoster** for traditional hosting; Netlify, Vercel, or **Surge** for static site workflows.
+- **Commercial Use**: Most Custom Code platforms (Netlify, Cloudflare, Render, Koyeb, Oracle, Deno Deploy, **Surge**) and Traditional hosting (GoogieHost, ProFreeHost, ByetHost, **FreeHostia**, **LeadHoster**); Val Town and Webflow require paid plans for full commercial features; Vercel requires Pro plan; GitHub Pages has restrictions.
+- **Scalability**: Custom Code platforms (Cloudflare, Render, Koyeb, Oracle, Deno Deploy, **Surge**) offer better scaling; Traditional hosting provides affordable upgrades but with resource limitations.
+- **Sandbox vs. Business**: Custom Code platforms are generally business-ready; Website Builders vary by plan; Traditional hosting is better for non-critical or sandbox use due to resource limitations.
 
 For serious commercial projects, consider paid plans for better reliability and support. Always verify current pricing and terms, as they may change.
 
@@ -642,6 +613,7 @@ For serious commercial projects, consider paid plans for better reliability and 
 [Netlify Pricing Information](https://www.netlify.com/pricing)  
 [Glitch About Page](https://glitch.com/about)  
 [Glitch Pricing Details](https://glitch.com/pricing)  
+[Glitch Update](https://blog.glitch.com/post/changes-are-coming-to-glitch)  
 [Render Cloud Platform](https://render.com)  
 [Render Free Tier Documentation](https://docs.render.com/free)  
 [Render Pricing Information](https://render.com/pricing)  
