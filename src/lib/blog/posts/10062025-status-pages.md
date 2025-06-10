@@ -6,7 +6,7 @@ categories:
   - software
 published: true
 author: 'Jonas Fröller'
-readingTime: '25 min (for a detailed read, not just a quick skim)'
+readingTime: '25 min'
 tags: ['cronjob', 'ping' ,'status', 'monitoring', 'uptime']
 ---
 
