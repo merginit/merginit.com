@@ -6,7 +6,7 @@ categories:
   - software
 published: false
 author: 'Jonas Fröller'
-readingTime: '16 min'
+readingTime: '28 min'
 tags: ['hosting', 'free']
 ---
 
@@ -14,30 +14,32 @@ tags: ['hosting', 'free']
 
 Hosting a website or web service for free is an attractive option for developers, hobbyists, and small businesses. This blog post explores a range of free hosting services, including GitHub Pages, Cloudflare Pages, Cloudflare Workers, Vercel, Netlify, Glitch, Render, Koyeb, Sevalla, PythonAnywhere, Oracle Cloud Free Tier, InfinityFree, GoogieHost, ProFreeHost, ByetHost, AWS Free Tier, Firebase Hosting, and HelioHost. Each service is evaluated for its features, pros and cons, runtime support, upgrading costs, scalability, commercial usability, server downtime, and support for static or dynamic content. A summary table provides a quick overview, followed by detailed sections for each service.
 
+> **⚠️ Update June 2025**: Glitch announced they will be shutting down their web hosting service on July 8, 2025. While historically a popular option for prototyping and collaborative development, it is no longer recommended for new projects. See the Glitch section below for migration alternatives.
+
 ## Overview Table
 
-| Service            | Free Tier Limits                                                                  | Upgrading Price  | Commercially Usable     | Static/Dynamic | Serverless |
-| ------------------ | --------------------------------------------------------------------------------- | ---------------- | ----------------------- | -------------- | ---------- |
-| GitHub Pages       | 1 GB site, 100 GB/month bandwidth                                                 | N/A              | Yes (with restrictions) | Static         | No         |
-| Cloudflare Pages   | Unlimited static, 100k requests/day Functions                                     | $5/month         | Yes                     | Both           | Yes        |
-| Cloudflare Workers | 100k requests/day                                                                 | $5/month         | Yes                     | Dynamic        | Yes        |
-| Vercel             | 100 GB bandwidth, 100 GB-Hrs functions                                            | $20/month/user   | No (Hobby), Yes (Pro)   | Both           | Yes        |
-| Netlify            | 100 GB bandwidth, 125k functions/month                                            | $19/month/member | Yes                     | Both           | Yes        |
-| Glitch             | Public projects, apps sleep after 5 min                                           | $8/month         | Yes (public projects)   | Both           | No         |
-| Render             | Web services: 512 MB RAM, 750 hours/month; Static sites: free; Databases: limited | From $7/month    | Yes                     | Both           | No         |
-| Koyeb              | Web service: 512MB RAM; Database: 50 hours/month                                  | Pay as you go    | Yes                     | Both           | Yes        |
-| Sevalla            | Up to 100 static sites, 100 GB bandwidth/month, 600 build minutes/month           | Usage-based      | Yes                     | Static         | Yes        |
-| PythonAnywhere     | One web app, restricted internet, low CPU/bandwidth                               | From $5/month    | Yes (with limitations)  | Dynamic        | No         |
-| Oracle Cloud       | 2 VMs, limited resources                                                          | Pay as you go    | Yes                     | Dynamic        | Partial    |
-| InfinityFree       | Unlimited disk space, bandwidth (fair use)                                        | $2.50/month      | Yes (with restrictions) | Dynamic        | No         |
-| GoogieHost         | 1 GB SSD, 100 GB bandwidth                                                        | $1.99/month      | Yes                     | Dynamic        | No         |
-| ProFreeHost        | Unlimited disk space, bandwidth (fair use)                                        | N/A              | Yes                     | Dynamic        | No         |
-| ByetHost           | 5 GB disk space, unlimited bandwidth                                              | $4.99/month      | Yes                     | Dynamic        | No         |
-| AWS Free Tier      | 750 hours/month EC2 for 12 months, 5 GB S3 storage                                | Pay as you go    | Yes                     | Both           | Yes        |
-| Firebase Hosting   | 10 GB storage, 360 MB/day data transfer                                           | Pay as you go    | Yes                     | Static         | No         |
-| HelioHost          | 1 GB storage, 1 GB bandwidth/day                                                  | N/A (donations)  | Yes (with limitations)  | Dynamic        | No         |
+| Service            | Free Tier Limits                                                                  | Upgrading Price    | Commercially Usable     | Static/Dynamic | Serverless |
+| ------------------ | --------------------------------------------------------------------------------- | ------------------ | ----------------------- | -------------- | ---------- |
+| GitHub Pages       | 1 GB site, 100 GB/month bandwidth                                                 | N/A                | Yes (with restrictions) | Static         | No         |
+| Cloudflare Pages   | Unlimited static, 100k requests/day Functions                                     | $5/month           | Yes                     | Both           | Yes        |
+| Cloudflare Workers | 100k requests/day                                                                 | $5/month           | Yes                     | Dynamic        | Yes        |
+| Vercel             | 100 GB bandwidth, 100 GB-Hrs functions                                            | $20/month/user     | No (Hobby), Yes (Pro)   | Both           | Yes        |
+| Netlify            | 100 GB bandwidth, 125k functions/month                                            | $19/month/member   | Yes                     | Both           | Yes        |
+| Glitch             | ⚠️ **SHUTTING DOWN JULY 8, 2025** - No longer accepting new projects               | N/A (Discontinued) | No (Service ending)     | N/A            | No         |
+| Render             | Web services: 512 MB RAM, 750 hours/month; Static sites: free; Databases: limited | From $7/month      | Yes                     | Both           | No         |
+| Koyeb              | Web service: 512MB RAM; Database: 50 hours/month                                  | Pay as you go      | Yes                     | Both           | Yes        |
+| Sevalla            | Up to 100 static sites, 100 GB bandwidth/month, 600 build minutes/month           | Usage-based        | Yes                     | Static         | Yes        |
+| PythonAnywhere     | One web app, restricted internet, low CPU/bandwidth                               | From $5/month      | Yes (with limitations)  | Dynamic        | No         |
+| Oracle Cloud       | 2 VMs, limited resources                                                          | Pay as you go      | Yes                     | Dynamic        | Partial    |
+| InfinityFree       | Unlimited disk space, bandwidth (fair use)                                        | Varies             | Yes (with restrictions) | Dynamic        | No         |
+| GoogieHost         | 1 GB SSD, 100 GB bandwidth                                                        | $1.99/month        | Yes                     | Dynamic        | No         |
+| ProFreeHost        | Unlimited disk space, bandwidth (fair use)                                        | N/A                | Yes                     | Dynamic        | No         |
+| ByetHost           | 5 GB disk space, unlimited bandwidth                                              | $4.99/month        | Yes                     | Dynamic        | No         |
+| AWS Free Tier      | 750 hours/month EC2 for 12 months, 5 GB S3 storage                                | Pay as you go      | Yes                     | Both           | Yes        |
+| Firebase Hosting   | 10 GB storage, 360 MB/day data transfer                                           | Pay as you go      | Yes                     | Static         | No         |
+| HelioHost          | 1 GB storage, 1 GB bandwidth/day                                                  | N/A (donations)    | Yes (with limitations)  | Dynamic        | No         |
 
-*Honorable mention: [FreeHostia Free Cloud Hosting](https://www.freehostia.com/free-cloud-hosting) & [LeadHoster Free Web Hosting](https://www.leadhoster.com/free-web-hosting.html).*
+*Honorable mention: [FreeHostia Free Cloud Hosting](https://www.freehostia.com/free-cloud-hosting), [LeadHoster Free Web Hosting](https://www.leadhoster.com/free-web-hosting.html) and [Surge (static)](https://surge.sh/pricing).*
 
 ## GitHub Pages
 
@@ -151,25 +153,27 @@ Hosting a website or web service for free is an attractive option for developers
 
 ## Glitch
 
-**Overview**: Glitch is a collaborative platform for building web apps in the browser, supporting static sites and full-stack Node.js applications.
+> **⚠️ IMPORTANT UPDATE**: Glitch announced in May 2025 that they will be ending web hosting for apps on **July 8, 2025**. User profiles and project hosting will be shut down, though dashboards will remain available through the end of 2025 for code downloads and setting up redirects. This makes Glitch no longer a viable option for new projects or long-term hosting.
 
-| <span style="color: green;">✅ Pros</span>                                                                                                                         | <span style="color: red;">❌ Cons</span>                                                                                               |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| • Free Starter plan with unlimited static sites<br/>• Collaborative coding with real-time editing<br/>• Easy GitHub import/export<br/>• Community-driven platform | • Free plan projects are public<br/>• Full-stack apps sleep after 5 minutes of inactivity<br/>• Limited to 5 boosted apps on Pro plan |
+**Overview**: Glitch was a collaborative platform for building web apps in the browser, supporting static sites and full-stack Node.js applications. Due to the platform shutdown announced in May 2025, it is no longer recommended for new projects.
+
+| <span style="color: green;">✅ Pros (Historical)</span>                                                                                                            | <span style="color: red;">❌ Cons</span>                                                                                                                                            |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| • Free Starter plan with unlimited static sites<br/>• Collaborative coding with real-time editing<br/>• Easy GitHub import/export<br/>• Community-driven platform | • **SERVICE SHUTTING DOWN JULY 8, 2025**<br/>• Free plan projects are public<br/>• Full-stack apps sleep after 5 minutes of inactivity<br/>• Limited to 5 boosted apps on Pro plan |
 
 **Runtime Support**: Node.js for full-stack apps; static HTML, CSS, JS.
 
-**Upgrading and Scaling**: Pro plan at $8/month (billed annually) for private projects and 5 always-on apps. Custom pricing for more resources.
+**Migration Path**: Glitch has stopped accepting new Pro subscriptions and will provide guides to help users export projects and migrate to other platforms. They recommend exploring alternatives like Fly.io, Deno Deploy, GitHub Pages, Val Town, Netlify, and Digital Ocean.
 
-**Commercial Usability**: Yes, but public projects on free plan may limit commercial use.
+**Commercial Usability**: No longer applicable due to service shutdown.
 
-**Server Downtime**: Full-stack apps sleep after 5 minutes on free plan; static sites always on.
+**Server Downtime**: Service will be completely unavailable after July 8, 2025.
 
-**Static/Dynamic**: Both static and dynamic.
+**Static/Dynamic**: No longer applicable.
 
-**Serverless/Fluid Compute**: No, PaaS for Node.js apps.
+**Serverless/Fluid Compute**: No longer applicable.
 
-**Best For**: Prototyping and collaborative development for small teams.
+**Best For**: Migration to alternative platforms. Consider Netlify, Vercel, or Render for similar functionality.
 
 ## Render
 
@@ -313,7 +317,7 @@ Hosting a website or web service for free is an attractive option for developers
 
 **Runtime Support**: PHP, MySQL; supports CMS like WordPress via Softaculous.
 
-**Upgrading and Scaling**: Upgrades to iFastNet premium hosting start at $2.50/month for better performance and support. Additional resources via iFastNet plans.
+**Upgrading and Scaling**: InfinityFree offers upgrade options to premium hosting plans for better performance and support (pricing varies).
 
 **Commercial Usability**: Yes, with restrictions (e.g., not for file hosting; must comply with terms).
 
@@ -386,10 +390,10 @@ Several other free hosting services offer traditional web hosting with cPanel, P
 
 - **Static Sites**: GitHub Pages or Cloudflare Pages for simplicity; Netlify for additional features.
 - **Dynamic Apps**: Cloudflare Workers, Vercel (Pro plan), Netlify, Render, or Koyeb for serverless or PaaS solutions; Oracle Cloud for VM-based apps; InfinityFree for PHP-based sites.
-- **Prototyping**: Glitch for collaborative coding; Render, Koyeb, InfinityFree, GoogieHost, or ProFreeHost for traditional or serverless hosting.
+- **Prototyping**: Render, Koyeb, InfinityFree, GoogieHost, or ProFreeHost for traditional or serverless hosting; Netlify or Vercel for modern development workflows.
 - **Commercial Use**: Netlify, Cloudflare, Render, Koyeb, Oracle, GoogieHost, ProFreeHost, ByetHost; Vercel requires Pro plan; GitHub Pages has restrictions.
 - **Scalability**: Cloudflare, Render, Koyeb, and Oracle offer cost-effective scaling; Vercel and Netlify are pricier per user; InfinityFree has affordable upgrades.
-- **Sandbox vs. Business**: Glitch is a public sandbox; Netlify, Cloudflare, Render, Koyeb, and Oracle are business-ready; InfinityFree and others are less reliable for critical use.
+- **Sandbox vs. Business**: Netlify, Cloudflare, Render, Koyeb, and Oracle are business-ready; InfinityFree and others are less reliable for critical use.
 
 For serious commercial projects, consider paid plans for better reliability and support. Always verify current pricing and terms, as they may change.
 
@@ -398,15 +402,31 @@ For serious commercial projects, consider paid plans for better reliability and 
 [GitHub Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service)  
 [Cloudflare Pages Overview](https://pages.cloudflare.com)  
 [Cloudflare Plans](https://www.cloudflare.com/plans)  
+[Cloudflare Workers Pricing](https://developers.cloudflare.com/workers/platform/pricing)  
 [Vercel Pricing](https://vercel.com/pricing)  
 [Netlify Pricing](https://www.netlify.com/pricing)  
 [Glitch About Page](https://glitch.com/about)  
-[Oracle Cloud Free Tier](https://www.oracle.com/cloud/free)  
-[InfinityFree Hosting](https://www.infinityfree.com)  
-[GoogieHost Free Hosting](https://googiehost.com/freehosting)  
-[ProFreeHost Hosting](https://profreehost.com)  
-[ByetHost Hosting](https://byet.host/free-hosting)  
+[Glitch Pricing](https://glitch.com/pricing)  
 [Render Cloud Platform](https://render.com)  
 [Render Free Tier Documentation](https://docs.render.com/free)  
+[Render Pricing](https://render.com/pricing)  
 [Koyeb Serverless Platform](https://www.koyeb.com)  
 [Koyeb Pricing Details](https://www.koyeb.com/pricing)  
+[Sevalla Static Hosting](https://sevalla.com)  
+[Sevalla Pricing](https://sevalla.com/pricing)  
+[PythonAnywhere Free Account](https://www.pythonanywhere.com/pricing)  
+[Oracle Cloud Free Tier](https://www.oracle.com/cloud/free)  
+[Oracle Cloud Pricing](https://www.oracle.com/cloud/costestimator)  
+[AWS Free Tier](https://aws.amazon.com/free)  
+[AWS Pricing Calculator](https://calculator.aws)  
+[Firebase Hosting](https://firebase.google.com/products/hosting)  
+[Firebase Pricing](https://firebase.google.com/pricing)  
+[HelioHost Free Hosting](https://heliohost.org)  
+[InfinityFree Hosting](https://www.infinityfree.com)  
+[GoogieHost Free Hosting](https://googiehost.com/freehosting)  
+[GoogieHost Pricing](https://googiehost.com/web-hosting)  
+[ProFreeHost Hosting](https://profreehost.com)  
+[ByetHost Hosting](https://byet.host/free-hosting)  
+[FreeHostia Free Cloud Hosting](https://www.freehostia.com)  
+[LeadHoster Free Web Hosting](https://www.leadhoster.com/free-web-hosting.html)  
+[Surge Static Hosting](https://surge.sh/pricing)  
