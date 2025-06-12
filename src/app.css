@@ -139,7 +139,9 @@ body {
 }
 
 .prose code:not(pre code) {
-	font-family: ui-monospace, SFMono-Regular, 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+	font-family:
+		ui-monospace, SFMono-Regular, 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New',
+		monospace;
 	background-color: rgba(156, 163, 175, 0.1);
 	padding: 0.125rem 0.375rem;
 	border-radius: 0.375rem;
@@ -152,4 +154,42 @@ body {
 .prose code:not(pre code)::before,
 .prose code:not(pre code)::after {
 	content: none;
+}
+
+/* --------------------------------------------------------------- */
+/* horizontal scrollable table                                     */
+/* --------------------------------------------------------------- */
+table {
+	display: block;
+	overflow-x: auto;
+	width: 100%;
+
+	/* Firefox (v64+) */
+	scrollbar-color: #e6e6e6 #0f0f0f;
+	scrollbar-width: thin;
+}
+
+/* --------------------------------------------------------------- */
+/* WebKit / Blink (Chrome, Edge, Safari, Opera)                    */
+/* --------------------------------------------------------------- */
+table::-webkit-scrollbar {
+	height: 8px;
+}
+
+table::-webkit-scrollbar-track {
+	background: #0f0f0f;
+}
+
+table::-webkit-scrollbar-thumb {
+	background: #e6e6e6;
+	border-radius: 4px;
+}
+
+table::-webkit-scrollbar-thumb:hover {
+	background: #ffffff80;
+}
+
+table th,
+table td {
+	white-space: nowrap;
 }
