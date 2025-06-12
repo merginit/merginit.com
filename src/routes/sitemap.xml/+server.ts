@@ -4,8 +4,13 @@ const SITE_NAME = "https://merginit.com";
 
 const staticPages: { path: string; lastmod?: string; changefreq?: string; priority?: string }[] = [
 	{ path: "/", changefreq: "daily", priority: "1.0" },
+	{ path: "/legal", changefreq: "monthly", priority: "0.4" },
+	{ path: "/legal/privacy-policy", changefreq: "monthly", priority: "0.3" },
+	{ path: "/legal/imprint", changefreq: "monthly", priority: "0.3" },
+	{ path: "/legal/cookie-policy", changefreq: "monthly", priority: "0.3" },
+	{ path: "/data-request", changefreq: "monthly", priority: "0.6" },
+	{ path: "/free-products", changefreq: "weekly", priority: "0.7" },
 	{ path: "/blog", changefreq: "weekly", priority: "0.8" },
-    { path: "/legal", changefreq: "monthly", priority: "0.4" },
 ];
 
 export async function GET() {

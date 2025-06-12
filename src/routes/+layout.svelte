@@ -18,6 +18,7 @@
 	const legalPageLinks: LinkItem[] = [
 		{ text: 'Imprint', href: '/legal/imprint' },
 		{ text: 'Privacy Policy', href: '/legal/privacy-policy' },
+		{ text: 'Cookie Policy', href: '/legal/cookie-policy' },
 		{ text: 'Data Request', href: '/data-request' }
 	];
 

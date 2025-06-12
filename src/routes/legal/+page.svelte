@@ -25,6 +25,16 @@
       title="Privacy Policy"
       desc="Read our commitment to your privacy."
     />
+    <CyberpunkCard 
+      href="/legal/cookie-policy" 
+      title="Cookie Policy"
+      desc="Learn about our cookie usage and management."
+    />
+    <CyberpunkCard 
+      href="/data-request" 
+      title="Data Request"
+      desc="Request your personal data or account deletion."
+    />
   </div>
   <div class="flex justify-center mt-8">
     <a href="/" class="text-sm text-neutral-400 hover:text-neutral-200 transition-colors duration-300">
