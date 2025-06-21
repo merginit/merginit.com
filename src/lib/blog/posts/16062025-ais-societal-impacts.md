@@ -54,6 +54,10 @@ Yes, our world has cyberpunk shades: megacorps with unprecedented power, algorit
 
 The question is whether society will wake up or drift into apathy. Perhaps a major scandal or crisis will spark collective action. Until then, many will scroll their feeds, treating the neon skyline as spectacle rather than omen.
 
+<div id="elevenlabs-audionative-widget" data-height="90" data-width="100%" data-frameborder="no" data-scrolling="no" data-publicuserid="3c95cf0b4272cb31afe8e85770c22e161590034b459af13904a3605915510b5b" data-playerurl="https://elevenlabs.io/player/index.html" >Loading the <a href="https://elevenlabs.io/text-to-speech" target="_blank" rel="noopener">Elevenlabs Text to Speech</a> AudioNative Player...</div><script src="https://elevenlabs.io/player/audioNativeHelper.js" type="text/javascript"></script>
+
+<div id="research-sources">
+
 ## Citations
 
 [Surveillance Capitalism and Human Autonomy - The Guardian](https://www.theguardian.com/books/2019/oct/04/shoshana-zuboff-surveillance-capitalism-assault-human-automomy-digital-privacy)  
@@ -68,3 +72,5 @@ The question is whether society will wake up or drift into apathy. Perhaps a maj
 [Bitcoin Search Spike After Trump Victory - CoinTelegraph](https://cointelegraph.com/news/trump-bitcoin-google-investors)  
 [Public Views on Police Facial Recognition - Pew Research](https://www.pewresearch.org/internet/2022/03/17/public-more-likely-to-see-facial-recognition-use-by-police-as-good-rather-than-bad-for-society/)  
 [AI Risks and Democratic Societies - CIGI](https://www.cigionline.org/articles/generative-ai-risks-further-atomizing-democratic-societies/)
+
+</div>
