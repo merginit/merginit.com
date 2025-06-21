@@ -10,6 +10,10 @@ readingTime: '7 min'
 tags: ['AI', 'cyberpunk', 'surveillance', 'dystopia']
 ---
 
+<script>
+  import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
+</script>
+
 # Are We Living in a Cyberpunk Dystopia?
 
 > Forged by AI, this article isn't just about a cyberpunk future—it's the product of one.
@@ -54,7 +58,7 @@ Yes, our world has cyberpunk shades: megacorps with unprecedented power, algorit
 
 The question is whether society will wake up or drift into apathy. Perhaps a major scandal or crisis will spark collective action. Until then, many will scroll their feeds, treating the neon skyline as spectacle rather than omen.
 
-<div id="elevenlabs-audionative-widget" data-height="90" data-width="100%" data-frameborder="no" data-scrolling="no" data-publicuserid="3c95cf0b4272cb31afe8e85770c22e161590034b459af13904a3605915510b5b" data-playerurl="https://elevenlabs.io/player/index.html" >Loading the <a href="https://elevenlabs.io/text-to-speech" target="_blank" rel="noopener">Elevenlabs Text to Speech</a> AudioNative Player...</div><script src="https://elevenlabs.io/player/audioNativeHelper.js" type="text/javascript"></script>
+<AudioNativePlayer />
 
 <div id="research-sources">
 
