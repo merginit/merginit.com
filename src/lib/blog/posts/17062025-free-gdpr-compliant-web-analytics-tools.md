@@ -159,7 +159,7 @@ To ensure GDPR compliance with any tool:
 
 Free, GDPR-compliant analytics tools like Microsoft Clarity, PostHog, Matomo, Plausible Analytics, Umami, Pirsch, and Open Web Analytics offer diverse solutions for tracking website performance while respecting user privacy. Cloud-based options like Clarity and PostHog's free tier are ideal for ease of use, while self-hosted open-source tools provide maximum data control. By choosing a tool that aligns with your technical capabilities and analytics needs, and implementing proper consent and anonymization measures, you can achieve GDPR compliance and gain valuable insights. Always consult legal professionals to ensure full compliance with GDPR and other privacy laws.
 
-## Key Citations
+## Sources
 
 [Microsoft Clarity Official Website](https://clarity.microsoft.com)  
 [PostHog Official Website](https://posthog.com)  

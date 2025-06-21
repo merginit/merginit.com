@@ -175,7 +175,7 @@ Cursor's **$9.9 billion valuation** reflects both the sector's potential and inv
 
 ---
 
-### Key Citations
+## Sources
 
 [Cursor in talks to raise at a $10B valuation as AI coding sector booms](https://techcrunch.com/2025/03/07/cursor-in-talks-to-raise-at-a-10b-valuation-as-ai-coding-sector-booms)  
 [Cursor, an AI Coding Assistant, Draws a Million Users](https://www.bloomberg.com/news/articles/2025-04-07/cursor-an-ai-coding-assistant-draws-a-million-users-without-even-trying)  

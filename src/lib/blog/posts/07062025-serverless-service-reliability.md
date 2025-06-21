@@ -90,8 +90,8 @@ To mitigate these risks and ensure robust serverless services, consider the foll
 
 Serverless computing offers immense benefits, but reliability requires careful attention. Challenges like unexpected costs, performance variability, and vendor practices can disrupt operations. By understanding these risks and adopting best practices—such as optimizing configurations, monitoring usage, and diversifying providers—you can harness serverless technology while minimizing pitfalls. In the cloud, knowledge is power—stay informed, stay vigilant, and always have a plan B.
 
-## Key Citations
- 
+## Sources
+
 [Dashbird - Serverless Challenges And Fixes](https://dashbird.io/knowledge-base/basic-concepts/serverless-challenges-and-solutions)  
 [Dashbird - Serverless Reliability: An Intro](https://dashbird.io/knowledge-base/basic-concepts/reliability)  
 [Kandasoft - Fault Tolerance for Serverless Computing](https://www.kandasoft.com/blog/fault-tolerance-and-serverless-computing)  

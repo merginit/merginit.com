@@ -62,7 +62,7 @@ The question is whether society will wake up or drift into apathy. Perhaps a maj
 
 <div id="research-sources">
 
-## Citations
+## Sources
 
 [Surveillance Capitalism and Human Autonomy - The Guardian](https://www.theguardian.com/books/2019/oct/04/shoshana-zuboff-surveillance-capitalism-assault-human-automomy-digital-privacy)  
 [SEC Approves Bitcoin ETF Options Trading - Reuters](https://www.reuters.com/markets/us/us-sec-gives-green-light-options-listing-spot-bitcoin-etfs-nyse-2024-10-18/)  

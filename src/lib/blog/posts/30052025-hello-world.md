@@ -10,4 +10,6 @@ readingTime: '1 min'
 tags: ['introduction']
 ---
 
+# Hello, World!
+
 Hello, World!

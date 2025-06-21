@@ -10,6 +10,12 @@ readingTime: '5 min'
 tags: ['idempotency', 'backend']
 ---
 
+<script>
+  import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
+</script>
+
+<AudioNativePlayer />
+
 # A Practical Guide to Idempotency
 
 ## The Silent Killer in Distributed Systems
@@ -57,7 +63,11 @@ Ultimately, idempotency is about more than just code; it's about a shift in mind
 
 By embracing this philosophy, you can build systems that are not just functional, but are also reliable, predictable, and resilient in the face of the inevitable chaos of the real world.
 
-## Citations
+<div id="research-sources">
 
-[Stripe](https://stripe.com/blog/idempotency)  
-[masteringbackend.com](https://newsletter.masteringbackend.com/p/idempotency-in-api-design)
+## Sources
+
+[Stripe on Idempotency](https://stripe.com/blog/idempotency)  
+[Idempotency in API design](https://newsletter.masteringbackend.com/p/idempotency-in-api-design)
+
+</div>

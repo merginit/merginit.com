@@ -21,6 +21,7 @@ The status page market offers solutions ranging from completely free open-source
 > *Note: Pricing and features mentioned are as of June 2025 and subject to change.*
 
 ## Quick Verdict
+
 - **Best Free:** UptimeRobot (ease of use) or cron-job.org (features)
 - **Best Paid Under $20:** Instatus or Hyperping
 - **Best Enterprise:** PagerDuty or Statuspage.io
@@ -69,9 +70,11 @@ For budget-conscious teams, here's how the free offerings compare:
 *Limited free SMS notifications
 
 ## Popular Free Services
+
 *Setup time: 5-10 minutes*
 
 ### UptimeRobot
+
 **Well-established freemium status page solution** with a large user base and proven track record.
 
 | Feature                   | Free                | Solo             | Team               | Enterprise         |
@@ -101,6 +104,7 @@ For budget-conscious teams, here's how the free offerings compare:
 **Best For:** Teams wanting proven reliability with minimal setup effort
 
 ### StatusGator
+
 **Unique aggregator service** that monitors 5,000+ third-party services automatically.
 
 **Standout Features:**
@@ -114,9 +118,11 @@ For budget-conscious teams, here's how the free offerings compare:
 **Best For:** Teams dependent on multiple third-party services
 
 ## Open Source Solutions
+
 *Setup time: 30 minutes - 2 hours (depending on self-hosting)*
 
 ### cron-job.org
+
 **Why a cron job service for status pages?** Originally built as a robust cron job platform, cron-job.org evolved to include comprehensive status page functionality. This unique approach provides proven monitoring infrastructure with generous free limits.
 
 **Standout Features:**
@@ -133,6 +139,7 @@ For budget-conscious teams, here's how the free offerings compare:
 ![cron-job.org status page example](/blog/assets/10062025-status-pages/cron-job.org-status.ocrmd.com.png)
 
 ### OpenStatus
+
 **Modern monitoring** with beautiful React interface and hosted cloud service.
 
 | Feature                   | Hobby (Free) | Starter   | Pro         |
@@ -171,6 +178,7 @@ For budget-conscious teams, here's how the free offerings compare:
 **Best For:** Teams wanting modern tech stack with hosted convenience and willing to pay for professional features
 
 ### Uptime Kuma
+
 **Modern, feature-rich monitoring** with an intuitive web interface.
 
 **Key Features:**
@@ -183,6 +191,7 @@ For budget-conscious teams, here's how the free offerings compare:
 **Best For:** Teams wanting modern UI with self-hosting flexibility
 
 ### Upptime
+
 **GitHub-powered status pages** using Issues and Actions.
 
 **Key Features:**
@@ -234,11 +243,13 @@ Self-hosted status pages offer significant advantages but require careful planni
 - Staff time for troubleshooting and improvements
 
 ## Proprietary Solutions
+
 *Setup time: 10-30 minutes*
 
 ### Budget-Friendly Options
 
 #### Instatus ($0-300/month)
+
 Modern UI with comprehensive features at startup-friendly pricing.
 
 **Features:**
@@ -252,6 +263,7 @@ Modern UI with comprehensive features at startup-friendly pricing.
 **Best For:** Startups and scale-ups needing professional features without enterprise costs
 
 #### Hund.io ($29-11285/month)
+
 Developer-friendly platform with markdown-based incident management.
 
 **Features:**
@@ -269,6 +281,7 @@ Developer-friendly platform with markdown-based incident management.
 ![Better Stack status page example](/blog/assets/10062025-status-pages/betterstack.com-status.betterstack.com.png)
 
 #### Better Stack (Free / from $29/month)
+
 Better Stack has become a powerhouse, bundling uptime monitoring, incident management, log management, and status pages into a single platform. Its pricing is modular, allowing teams to scale services as needed.
 
 **Core Pricing:**
@@ -337,6 +350,7 @@ Log overage pricing per GB also decreases with larger bundles.
 **Best For:** Teams wanting a powerful, unified platform for observability and incident management, with the flexibility to scale from free to enterprise.
 
 #### Checkly (New in 2025)
+
 API monitoring platform that introduced status pages in April 2025.
 
 **Features:**
@@ -352,6 +366,7 @@ API monitoring platform that introduced status pages in April 2025.
 **Best For:** Organizations already using Checkly for API monitoring
 
 #### Site24x7 ($0|39-225+/month)
+
 Comprehensive monitoring suite with status page functionality.
 
 **Features:**
@@ -365,6 +380,7 @@ Comprehensive monitoring suite with status page functionality.
 **Best For:** Organizations needing comprehensive infrastructure monitoring
 
 #### Oh Dear ($17-240+/month)
+
 Comprehensive monitoring with built-in status pages.
 
 **Features:**
@@ -378,6 +394,7 @@ Comprehensive monitoring with built-in status pages.
 **Best For:** Technical teams needing comprehensive website monitoring
 
 #### Hyperping ($0|12-164/month)
+
 Simple monitoring with focus on status page aesthetics.
 
 **Features:**
@@ -391,9 +408,11 @@ Simple monitoring with focus on status page aesthetics.
 **Best For:** Teams prioritizing beautiful, simple status pages
 
 ### Enterprise Solutions
+
 *Setup time: 1-4 hours (includes integrations and team onboarding)*
 
 #### PagerDuty
+
 Industry-leading incident management platform with status page capabilities. PagerDuty offers a range of plans from a free tier for small teams to a comprehensive enterprise solution.
 
 | Feature                | Free               | Professional                           | Business                               | Enterprise                      |
@@ -419,6 +438,7 @@ Industry-leading incident management platform with status page capabilities. Pag
 ![PagerDuty status page example](/blog/assets/10062025-status-pages/pagerduty.com-status.pagerduty.com.png)
 
 #### Statuspage.io ($0|29-1499/month)
+
 Industry standard for enterprise status communication.
 
 **Features:**
@@ -431,6 +451,7 @@ Industry standard for enterprise status communication.
 **Best For:** Large organizations with strict compliance requirements
 
 #### ilert ($0|19-29+/month)
+
 European-focused incident management with GDPR compliance.
 
 **Features:**
@@ -448,21 +469,25 @@ European-focused incident management with GDPR compliance.
 ### By Organization Size
 
 #### Small Teams & Startups
+
 **Free/Open Source:** cron-job.org, UptimeRobot, OpenStatus, Uptime Kuma
 - **Choose if:** Technical expertise available, cost is primary concern
 - **Recommended:** UptimeRobot for ease of use, cron-job.org for generous limits, OpenStatus for modern stack
 
 #### Growing Businesses
+
 **Budget Proprietary:** Instatus, Hyperping
 - **Choose if:** Need professional features without enterprise pricing
 - **Recommended:** Instatus for modern UI, Hyperping for beautiful design
 
 #### Monitoring-First Organizations
+
 **All-in-One:** Better Stack, Site24x7, Oh Dear
 - **Choose if:** Want unified monitoring and status page platform
 - **Recommended:** Better Stack for incident management, Site24x7 for comprehensive monitoring
 
 #### Enterprise Organizations
+
 **Enterprise:** PagerDuty, Statuspage.io, ilert
 - **Choose if:** Need compliance, advanced customization, or incident orchestration
 - **Recommended:** PagerDuty for incident maturity, ilert for GDPR compliance
@@ -470,30 +495,35 @@ European-focused incident management with GDPR compliance.
 ### By Industry
 
 #### SaaS & Technology Companies
+
 **Recommended:** OpenStatus, Instatus, PagerDuty
 - Need modern interfaces and API-first approaches
 - Real-time incident communication crucial
 - Developer-friendly integrations important
 
 #### E-commerce Platforms
+
 **Recommended:** UptimeRobot, Better Stack, Statuspage.io
 - Uptime directly impacts revenue
 - Need customer-facing communication during outages
 - Integration with monitoring tools essential
 
 #### Financial Services & Fintech
+
 **Recommended:** PagerDuty, Statuspage.io, ilert
 - Compliance requirements (SOC2, GDPR)
 - Need enterprise-grade security
 - Detailed audit trails and reporting
 
 #### Educational Institutions
+
 **Recommended:** UptimeRobot, StatusGator, Uptime Kuma
 - Budget constraints common
 - Monitor third-party educational services
 - Self-hosted options for data control
 
 #### Healthcare & Life Sciences
+
 **Recommended:** PagerDuty, ilert, self-hosted solutions
 - HIPAA compliance requirements
 - Data residency concerns
@@ -516,7 +546,7 @@ The best status page solution depends on your team's size, technical expertise, 
 
 Remember that your status page is often users' first touchpoint during incidents. Choose a solution that not only meets your technical requirements but also reflects your commitment to transparency and communication.
 
-## Citations
+## Sources
 
 [Status Page Tools - Checkly](https://www.checklyhq.com/blog/status-page-tools)  
 [Statuspage Alternatives - Better Stack](https://betterstack.com/community/comparisons/statuspage-alternatives)  

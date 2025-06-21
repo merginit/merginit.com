@@ -506,6 +506,7 @@ Traditional web hosting services offering cPanel, PHP, MySQL, and other conventi
 Several other free hosting services offer traditional web hosting with cPanel, PHP, and MySQL, including GoogieHost, ProFreeHost, and ByetHost. These are suitable for small projects or learning environments but have limitations that may affect commercial use.
 
 #### GoogieHost
+
 - **Overview**: Offers 100% free web hosting with cPanel, PHP, MySQL, and no ads on sites.
 
 | <span style="color: green;">✅ Pros</span>                     | <span style="color: red;">❌ Cons</span>                                           |
@@ -521,6 +522,7 @@ Several other free hosting services offer traditional web hosting with cPanel, P
 - **Best For**: Bloggers or small businesses on a budget.
 
 #### ProFreeHost
+
 - **Overview**: Provides free hosting with unlimited disk space and bandwidth, cPanel, and PHP/MySQL support.
 
 | <span style="color: green;">✅ Pros</span>                                         | <span style="color: red;">❌ Cons</span>                     |
@@ -536,6 +538,7 @@ Several other free hosting services offer traditional web hosting with cPanel, P
 - **Best For**: Non-critical projects or learning.
 
 #### ByetHost
+
 - **Overview**: Offers free hosting with 5 GB disk space, unlimited bandwidth, PHP, MySQL, and cPanel.
 
 | <span style="color: green;">✅ Pros</span>                             | <span style="color: red;">❌ Cons</span>    |
@@ -551,6 +554,7 @@ Several other free hosting services offer traditional web hosting with cPanel, P
 - **Best For**: Small websites or testing environments.
 
 #### HelioHost
+
 - **Overview**: HelioHost provides free web hosting with 1 GB storage and 1 GB bandwidth per day, supporting PHP, Python, Perl, and other technologies.
 
 | <span style="color: green;">✅ Pros</span>                                    | <span style="color: red;">❌ Cons</span>                                                                                    |
@@ -596,7 +600,7 @@ Additional traditional hosting services with similar offerings - limited resourc
 
 For serious commercial projects, consider paid plans for better reliability and support. Always verify current pricing and terms, as they may change.
 
-## Key Citations
+## Sources
 
 [Deno Deploy Pricing Details](https://deno.com/deploy/pricing)  
 [Val Town Pricing Information](https://www.val.town/pricing)  

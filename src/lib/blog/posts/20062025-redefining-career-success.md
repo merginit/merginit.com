@@ -10,7 +10,13 @@ readingTime: '9 min'
 tags: ['passion', 'meaningful work']
 ---
 
+<script>
+  import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
+</script>
+
 # Beyond Titles
+
+<AudioNativePlayer />
 
 > Embracing Meaning, Values, and Quiet Resolve in Your Career
 
@@ -38,6 +44,8 @@ In fact, career coaches emphasize this point directly: when someone tries to pus
 
 As mid- and senior-level professionals, we've often been trained to measure success by external benchmarks. But the landscape is changing: lasting fulfillment comes from aligning work with who we are. Take a moment to consider your own path. Are you steering toward objectives that resonate with your values, or drifting toward someone else's definition of success? You have the agency and courage to redefine success on your own terms. By valuing meaning over mere prestige, saying no when it counts, and nurturing that quiet resolve within, you can craft a career that is authentically **yours** – one driven by purpose and passion rather than just a title. The next step is yours to take.
 
+<div id="research-sources">
+
 ## Sources
 
 [How Gen Z shapes what meaningful work looks like - Fast Company](https://www.fastcompany.com/91279406/how-gen-z-is-shaping-what-meaningful-work-looks-like-for-all-workers)  
@@ -45,3 +53,5 @@ As mid- and senior-level professionals, we've often been trained to measure succ
 [How Prestige Destroys Meaningful Work](https://www.productiveflourishing.com/p/how-prestige-destroys-meaningful-work)  
 [How to Turn Down Opportunities That Don't Serve You (In a Way That Serves You)](https://www.linkedin.com/pulse/how-turn-down-opportunities-dont-serve-you-way-serves-the-forem-co-kr9be)   
 [Agency Is the Highest Level of Personal Competence | Psychology Today](https://www.psychologytoday.com/us/blog/getting-proactive/202203/agency-is-the-highest-level-personal-competence)  
+
+</div>

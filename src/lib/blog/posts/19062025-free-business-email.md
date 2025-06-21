@@ -122,7 +122,7 @@ For custom domain inboxes, Zoho Mail is the standout choice due to its generous 
 
 Free email services provide an excellent opportunity to manage transactional emails and professional inboxes without incurring costs. For transactional emails, Resend, Brevo, Mailjet, and MailerSend offer robust free plans with API and SMTP support, while ZeptoMail provides a one-time credit for testing. For custom domain inboxes, Zoho Mail leads with its comprehensive free plan, followed by GoogieHost and Hostpoco for smaller-scale needs. By carefully evaluating your email volume, integration requirements, and branding needs, you can select the service that best aligns with your goals, saving resources for other aspects of your project or business.
 
-## Key Citations
+## Sources
 
 [Resend Pricing Page](https://resend.com/pricing)  
 [Brevo Transactional Email Service](https://www.brevo.com/products/transactional-email)  

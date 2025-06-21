@@ -10,6 +10,12 @@ readingTime: '6 min'
 tags: ['serverless', 'fluid-compute', 'vercel']
 ---
 
+<script>
+  import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
+</script>
+
+<AudioNativePlayer />
+
 # Is "Fluid Compute" the Serverless 2.0?
 
 Vercel recently introduced "Fluid Compute" - their take on evolving serverless architecture. While the marketing promises significant improvements, it's worth examining what's actually changing under the hood.
@@ -102,11 +108,15 @@ For I/O-heavy Node.js/Python applications that can handle shared state, it might
 
 The future of serverless likely involves multiple execution models optimized for different workloads. Fluid Compute is one piece of that puzzle - valuable for specific scenarios, but not the universal solution Vercel's marketing might suggest.
 
-## Key Citations
+<div id="research-sources">
 
-https://vercel.com/fluid  
-https://vercel.com/docs/functions/fluid-compute  
-https://vercel.com/blog/introducing-fluid-compute
+## Sources
+
+[Fluid Compute](https://vercel.com/fluid)  
+[Fluid Compute Documentation](https://vercel.com/docs/functions/fluid-compute)  
+[Fluid Compute Blog Announcement](https://vercel.com/blog/introducing-fluid-compute)
+
+</div>
 
 ---
 
