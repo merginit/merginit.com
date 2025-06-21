@@ -16,6 +16,8 @@ tags: ['AI', 'cyberpunk', 'surveillance', 'dystopia']
 
 # Are We Living in a Cyberpunk Dystopia?
 
+<AudioNativePlayer />
+
 > Forged by AI, this article isn't just about a cyberpunk future—it's the product of one.
 
 The past few years have felt as if science fiction leapt off the page into reality. Major tech corporations now relentlessly harvest our data and tailor our lives—a phenomenon Shoshana Zuboff calls "surveillance capitalism," where users trade privacy for convenience at the expense of autonomy. Meanwhile, cutting-edge AI (like GPT-4 and the newly announced GPT-4.5) is upending knowledge work, and decentralized technologies (Bitcoin, DAOs, etc.) are shaking traditional power structures. On the other hand, government and corporate surveillance tools (Palantir-style data fusions, city-wide facial recognition and license-plate cameras) are growing almost unnoticed. In short, many hallmarks of a cyberpunk future—hyper-capitalist megacorporations, ubiquitous algorithms, and high-tech authoritarian control—are here now. Yet paradoxically, popular outrage seems muted.
@@ -57,8 +59,6 @@ This resembles a "cultural singularity": technology evolves so rapidly that coll
 Yes, our world has cyberpunk shades: megacorps with unprecedented power, algorithms infiltrating daily life, AI rewriting work, and pervasive surveillance. Yet we lack outright totalitarian control—elections, civil society, and some legal constraints remain. Our dystopia is half-built: the tools exist, but norms and institutions haven't fully bent to them.
 
 The question is whether society will wake up or drift into apathy. Perhaps a major scandal or crisis will spark collective action. Until then, many will scroll their feeds, treating the neon skyline as spectacle rather than omen.
-
-<AudioNativePlayer />
 
 <div id="research-sources">
 
