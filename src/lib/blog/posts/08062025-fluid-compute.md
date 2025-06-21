@@ -14,9 +14,9 @@ tags: ['serverless', 'fluid-compute', 'vercel']
   import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
 </script>
 
-<AudioNativePlayer />
-
 # Is "Fluid Compute" the Serverless 2.0?
+
+<AudioNativePlayer />
 
 Vercel recently introduced "Fluid Compute" - their take on evolving serverless architecture. While the marketing promises significant improvements, it's worth examining what's actually changing under the hood.
 

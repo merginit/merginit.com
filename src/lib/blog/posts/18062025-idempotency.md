@@ -14,9 +14,9 @@ tags: ['idempotency', 'backend']
   import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
 </script>
 
-<AudioNativePlayer />
-
 # A Practical Guide to Idempotency
+
+<AudioNativePlayer />
 
 ## The Silent Killer in Distributed Systems
 
