@@ -3,6 +3,7 @@
 	import { page } from '$app/state';
 	import { fade } from 'svelte/transition';
 	import BorderBeam from '$lib/components/BorderBeam.svelte';
+	import mermaid from 'mermaid';
 	import '../../../code.css';
 
 	const { children } = $props();
@@ -30,6 +31,20 @@
 
 	onMount(() => {
 		mounted = true;
+
+		const codeBlocks = document.querySelectorAll<HTMLPreElement>(
+			'pre.language-mermaid, pre > code.language-mermaid'
+		);
+		codeBlocks.forEach((node) => {
+			const pre = node.tagName === 'CODE' ? node.parentElement : node;
+			if (pre && !pre.classList.contains('mermaid')) {
+				pre.classList.add('mermaid');
+				pre.textContent = (node as HTMLElement).textContent ?? '';
+			}
+		});
+
+		mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+		mermaid.run();
 	});
 </script>
 

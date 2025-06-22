@@ -1,4 +1,6 @@
 import { mdsvex } from 'mdsvex';
+import remarkSlug from 'remark-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 /* import { join } from 'path';
@@ -15,6 +17,13 @@ const config = {
 	preprocess: [
 		mdsvex({
 			extensions: ['.md', '.svx'],
+			remarkPlugins: [remarkSlug],
+			rehypePlugins: [
+				[rehypeAutolinkHeadings, {
+				behavior: 'wrap',
+				properties: { tabindex: -1 }
+				}]
+			]
 			// layout: pathToBlogPostLayout
 		}),
 		vitePreprocess(),

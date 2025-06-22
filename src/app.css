@@ -193,3 +193,22 @@ table th,
 table td {
 	white-space: nowrap;
 }
+
+.prose h1 a,
+.prose h2 a,
+.prose h3 a,
+.prose h4 a,
+.prose h5 a,
+.prose h6 a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.prose h1 a:hover,
+.prose h2 a:hover,
+.prose h3 a:hover,
+.prose h4 a:hover,
+.prose h5 a:hover,
+.prose h6 a:hover {
+	text-decoration: none;
+}

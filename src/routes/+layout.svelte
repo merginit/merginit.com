@@ -39,7 +39,7 @@
 		}
 	];
 
-	let { children, data } = $props();
+	export let data;
 
 	const duration = 300;
 	const delay = duration + 100;
@@ -57,7 +57,7 @@
 
 {#key data.pathname}
 	<div class="transition-wrapper" in:fly={transitionIn} out:fly={transitionOut}>
-		{@render children()}
+		<slot />
 	</div>
 {/key}
 
