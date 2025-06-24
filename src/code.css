@@ -32,6 +32,7 @@ pre[class*='language-'] {
 	margin: 0.5em 0;
 	overflow: auto;
 	border-radius: 0.3em;
+	position: relative;
 }
 
 :not(pre) > code[class*='language-'],
@@ -119,4 +120,50 @@ pre[class*='language-'] {
 
 .token.entity {
 	cursor: help;
+}
+
+/* Copy button styles */
+.code-copy-btn {
+	position: absolute;
+	top: 0.75rem;
+	right: 0.75rem;
+	background: rgba(248, 248, 242, 0.1);
+	border: 1px solid rgba(248, 248, 242, 0.2);
+	border-radius: 0.375rem;
+	color: #f8f8f2;
+	padding: 0.5rem;
+	font-size: 0.75rem;
+	font-weight: 500;
+	cursor: pointer;
+	opacity: 0;
+	transition: all 0.2s ease;
+	backdrop-filter: blur(4px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.375rem;
+	z-index: 10;
+	width: 2rem;
+	height: 2rem;
+}
+
+.code-copy-btn:hover {
+	background: rgba(248, 248, 242, 0.15);
+	border-color: rgba(248, 248, 242, 0.3);
+	transform: translateY(-1px);
+}
+
+.code-copy-btn.copied {
+	background: rgba(80, 250, 123, 0.15);
+	border-color: rgba(80, 250, 123, 0.3);
+	color: #50fa7b;
+}
+
+pre[class*='language-']:hover .code-copy-btn {
+	opacity: 1;
+}
+
+.code-copy-btn svg {
+	width: 1.125rem;
+	height: 1.125rem;
 }
