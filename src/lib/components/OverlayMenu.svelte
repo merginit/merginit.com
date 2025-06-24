@@ -481,7 +481,7 @@
       <CallToAction href="mailto:jonas@merginit.com" text="Contact Us" class="mb-4" bind:element={contactButtonEl} />
       <GradualTextSpacing
         words={$isMobile 
-          ? "We merge features<br>into reality,<br>one iteration<br>at a time." 
+          ? "We merge<br>features<br>into reality,<br>one iteration<br>at a time." 
           : "We merge features into reality,<br>one iteration at a time."}
         class="font-display text-left text-4xl font-bold tracking-[-0.1em] text-white md:text-7xl md:leading-[5rem] w-full md:w-4/5"
       />
