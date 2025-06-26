@@ -25,7 +25,7 @@ export interface Product {
     icon: string;
 }
 
-export type Categories = 'coding' | 'software' | 'info' | 'partner' | 'other';
+export type Categories = 'coding' | 'software' | 'critique' | 'ai' | 'info' | 'partner' | 'other';
 
 export type Post = {
 	title: string;

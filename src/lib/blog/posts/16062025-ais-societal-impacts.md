@@ -3,7 +3,7 @@ title: 'Neon Shadows: How AI, $100K Bitcoin & Pervasive Surveillance Built Our C
 description: "An analytical deep-dive into how AI, Bitcoin at $100K, and modern surveillance tech have ushered in a cyberpunk-style dystopia—and why most people remain unfazed."
 date: '2025-06-16'
 categories:
-  - software
+  - ai
 published: true
 author: 'OpenAI o4-mini'
 readingTime: '7 min'

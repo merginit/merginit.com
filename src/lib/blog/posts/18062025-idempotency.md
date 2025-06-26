@@ -3,7 +3,7 @@ title: 'Idempotency: The Key to Building Resilient and Trustworthy APIs'
 description: "Learn how to prevent costly errors like duplicate charges with idempotency. This practical post explains the basics of how to design robust APIs that can withstand real-world chaos like network failures and duplicate requests."
 date: '2025-06-18'
 categories:
-  - software
+  - coding
 published: true
 author: 'Jonas Fröller'
 readingTime: '5 min'
