@@ -2,9 +2,12 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import BorderBeam from '$lib/components/BorderBeam.svelte';
+	import BlogLoader from '$lib/components/BlogLoader.svelte';
+	import type { Post } from '$lib/types';
 
 	let { data } = $props();
 	let mounted = $state(false);
+	let posts = $state<Post[]>(data.posts);
 
 	onMount(() => {
 		mounted = true;
@@ -40,8 +43,10 @@
 
 		<!-- Blog Posts Grid -->
 		<div class="grid gap-8">
-			{#if mounted}
-				{#each data.posts as post}
+			{#if !mounted}
+				<BlogLoader size="lg" text="Loading blog posts..." />
+			{:else if posts.length > 0}
+				{#each posts as post}
 					<article
 						class="group relative flex flex-col rounded-3xl p-6 sm:p-8 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-md hover:shadow-accent/20 transition-all duration-300 ease-in-out hover:border-accent/70 transform hover:-translate-y-1"
 						transition:fade
@@ -131,6 +136,10 @@
 						</div>
 					</article>
 				{/each}
+			{:else if mounted && posts.length === 0}
+				<div class="text-center py-16">
+					<p class="text-gray-400 text-lg">No blog posts found.</p>
+				</div>
 			{/if}
 		</div>
 	</div>

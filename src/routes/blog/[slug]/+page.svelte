@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import type { Component } from "svelte";
+	import BlogLoader from '$lib/components/BlogLoader.svelte';
 
 	interface MetaData {
 		title: string;
@@ -17,6 +19,11 @@
 	}
 
 	let { data }: { data: PageData } = $props();
+	let loading = $state(true);
+
+	onMount(() => {
+		loading = false;
+	});
 </script>
 
 <svelte:head>
@@ -30,7 +37,9 @@
 	{/if}
 </svelte:head>
 
-{#if data?.meta && data.component}
+{#if loading}
+	<BlogLoader size="md" text="Loading blog post..." />
+{:else if data?.meta && data.component}
 	<article class="prose prose-invert lg:prose-xl max-w-none">
 		<data.component />
 	</article>
