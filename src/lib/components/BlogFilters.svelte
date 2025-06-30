@@ -45,6 +45,14 @@
 		filters.maxReadTime < 60
 	);
 
+	const todayInLocalTimezone = $derived(() => {
+		const today = new Date();
+		const year = today.getFullYear();
+		const month = String(today.getMonth() + 1).padStart(2, '0');
+		const day = String(today.getDate()).padStart(2, '0');
+		return `${year}-${month}-${day}`;
+	});
+
 	const availableCategories: Categories[] = ['coding', 'software', 'critique', 'ai', 'info', 'partner', 'other'];
 	const searchScopes = [
 		{ value: 'all', label: 'All Content' },
@@ -105,6 +113,10 @@
 	}
 
 	function handleToDateChange() {
+		if (filters.dateTo && filters.dateTo > todayInLocalTimezone()) {
+			filters.dateTo = todayInLocalTimezone();
+		}
+		
 		if (filters.dateFrom && filters.dateTo && filters.dateTo < filters.dateFrom) {
 			filters.dateFrom = filters.dateTo;
 		}
@@ -271,6 +283,7 @@
 						type="date"
 						bind:value={filters.dateTo}
 						min={filters.dateFrom || undefined}
+						max={todayInLocalTimezone()}
 						onchange={handleToDateChange}
 						class="w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg text-white focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-colors"
 					/>

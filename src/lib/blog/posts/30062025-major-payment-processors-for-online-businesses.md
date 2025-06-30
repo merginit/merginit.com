@@ -6,7 +6,7 @@ categories:
   - coding
 published: true
 author: 'Jonas Fröller'
-readingTime: '13 min'
+readingTime: '18 min'
 tags: ['payment-processors', 'stripe', 'paddle', 'paypal', 'eu-compliance', 'merchant-of-record', 'saas', 'online-business', 'fintech']
 ---
 
