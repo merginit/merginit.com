@@ -106,6 +106,9 @@
 	}
 
 	function handleFromDateChange() {
+		if (filters.dateFrom && filters.dateFrom > todayInLocalTimezone()) {
+			filters.dateFrom = todayInLocalTimezone();
+		}
 		if (filters.dateFrom && filters.dateTo && filters.dateFrom > filters.dateTo) {
 			filters.dateTo = filters.dateFrom;
 		}
