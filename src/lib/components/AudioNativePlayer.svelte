@@ -1,23 +1,6 @@
-<script>
-    import { onMount } from 'svelte';
-
-    onMount(() => {
-        const script = document.createElement('script');
-        script.src = 'https://elevenlabs.io/player/audioNativeHelper.js';
-        script.type = 'text/javascript';
-        script.defer = true;
-        
-        script.onload = () => {
-            console.log('AudioNative script loaded successfully');
-        };
-        
-        script.onerror = () => {
-            console.error('Failed to load AudioNative script');
-        };
-        
-        document.head.appendChild(script);
-    });
-</script>
+<svelte:head>
+    <script defer src="https://elevenlabs.io/player/audioNativeHelper.js" type="text/javascript"></script>
+</svelte:head>
 
 <div
 	id="elevenlabs-audionative-widget"
