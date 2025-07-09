@@ -10,7 +10,13 @@ readingTime: '7 min'
 tags: ['AI', 'scam', 'fraud', 'Builder.ai', 'deepfakes', 'investment', 'startup', 'unicorn', 'AI washing']
 ---
 
+<script>
+  import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
+</script>
+
 # The Greatest AI Scam in History
+
+<AudioNativePlayer />
 
 ## How Builder.ai Fooled the World
 
@@ -42,9 +48,13 @@ These aren't your typical, poorly-worded phishing emails. AI can generate highly
 
 The story of Builder.ai, and the rise of other sophisticated AI scams, serves as a stark reminder for those of us in the tech world. While the potential of AI is immense, so is the potential for its misuse. As developers, entrepreneurs, and investors, it's crucial to approach the AI gold rush with a healthy dose of skepticism. The pressure to present a groundbreaking AI solution can be immense, but as the Builder.ai saga proves, a foundation built on lies will inevitably crumble. The code we write and the companies we build must be grounded in reality, not just hype. After all, you can't fake it 'til you make it when the very technology you're claiming to have mastered is the one that can expose your fraud.
 
+<div id="research-sources">
+
 ## Sources
 
 [Embattled founder of unicorn Builder.ai replaced as CEO](https://businesscloud.co.uk/news/embattled-founder-of-unicorn-builder-ai-replaced-as-ceo)  
 [Microsoft-backed Builder.ai founder steps down as CEO but remains chief wizard](https://tech.eu/2025/03/03/builderai-founder-steps-down-as-ceo-but-remains-chief-wizard)  
 [Sachin Duggal](https://www.mwcbarcelona.com/agenda/speakers/14741-sachin-duggal)  
 [Sachin Dev Duggal](https://www.ey.com/en_gl/weoy/class-of-2024/united-kingdom)
+
+</div>

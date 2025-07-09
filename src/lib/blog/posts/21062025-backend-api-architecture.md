@@ -10,7 +10,13 @@ readingTime: '7 min'
 tags: ['backend', 'Richardson Maturity Model', 'REST', 'GraphQL']
 ---
 
+<script>
+  import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
+</script>
+
 # Backend API Architecture
+
+<AudioNativePlayer />
 
 ## The Great API Debate: Richardson Maturity Model vs. GraphQL
 
@@ -60,9 +66,13 @@ GraphQL, on the other hand, offers a more modern and flexible approach that can 
 
 Ultimately, the choice between a RESTful architecture and GraphQL is a trade-off. By understanding the principles behind the Richardson Maturity Model and the capabilities of GraphQL, developers can make an informed decision that best suits their project's goals.
 
+<div id="research-sources">
+
 ## Sources
 
 [GraphQL vs. REST in the real world](https://www.reddit.com/r/graphql/comments/144esgy/graphql_vs_rest_in_the_real_world)  
 [You Might Not Need GraphQL](https://apisyouwonthate.com/blog/you-might-not-need-graphql)  
 [The Fusion of GraphQL, REST, JSON-Schema and HTTP2](https://wundergraph.com/blog/the_fusion_of_graphql_rest_json_schema_and_http2)  
 ["GraphQL is good, but it's not an alternative to 'real' REST services"](https://devm.io/api/graphql-good-no-alternative-rest-services-142814-001)
+
+</div>
