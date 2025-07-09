@@ -5,7 +5,17 @@
         const script = document.createElement('script');
         script.src = 'https://elevenlabs.io/player/audioNativeHelper.js';
         script.type = 'text/javascript';
-        document.body.appendChild(script);
+        script.defer = true;
+        
+        script.onload = () => {
+            console.log('AudioNative script loaded successfully');
+        };
+        
+        script.onerror = () => {
+            console.error('Failed to load AudioNative script');
+        };
+        
+        document.head.appendChild(script);
     });
 </script>
 
