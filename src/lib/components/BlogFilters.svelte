@@ -91,6 +91,13 @@
 		dispatch('filter');
 	}
 
+	function handleSearchScopeChange(newScope: 'all' | 'title' | 'description' | 'content') {
+		filters.searchScope = newScope;
+		if (filters.search.trim()) {
+			dispatch('filter');
+		}
+	}
+
 	function handleMinReadTimeChange() {
 		if (filters.minReadTime > filters.maxReadTime) {
 			filters.maxReadTime = filters.minReadTime;
@@ -176,7 +183,7 @@
 		<div class="flex flex-wrap gap-2">
 			{#each searchScopes as scope}
 				<button
-					onclick={() => { filters.searchScope = scope.value as any; handleFilterChange(); }}
+					onclick={() => handleSearchScopeChange(scope.value as any)}
 					class="px-3 py-1.5 text-sm rounded-lg border transition-colors {
 						filters.searchScope === scope.value
 							? 'bg-accent/20 text-accent border-accent/50'
