@@ -6,7 +6,7 @@ categories:
   - coding
 published: true
 author: 'Jonas Fröller'
-readingTime: '18 min'
+readingTime: '26 min'
 tags: ['payment-processors', 'stripe', 'paddle', 'paypal', 'eu-compliance', 'merchant-of-record', 'saas', 'online-business', 'fintech']
 ---
 
@@ -290,10 +290,103 @@ A Merchant of Record (MoR) is the entity legally responsible for processing card
 
 **Best For**: Businesses needing a reliable gateway with extensive integrations.
 
+### 11. Polar.sh
+
+**Overview**: Polar.sh is an open-source payment infrastructure tailored for developers to sell digital products, including SaaS and memberships. It acts as the merchant of record, managing payments, billing, and tax compliance, allowing developers to focus on their core products. Its developer-friendly API and community-driven approach make it a compelling alternative to platforms like Lemon Squeezy.
+
+**Pricing**: 4% + $0.40 per transaction (early member pricing, subject to change for non-early members).
+
+**Merchant of Record**: Yes, Polar.sh handles all payment-related compliance, including sales tax, VAT, and GST.
+
+**Features**:
+- Subscription and one-time payment management.
+- Checkout pages and potentially license key management.
+- Automatic tax calculation and remittance.
+- Open-source platform with APIs and SDKs for custom integrations.
+- Integration with platforms like GitHub for funding open-source projects.
+
+**Compliance and Taxes**: As the merchant of record, Polar.sh manages global tax compliance, including VAT, sales tax, and GST, making it an excellent choice for businesses operating in multiple jurisdictions, particularly in the EU with its stringent tax regulations.
+
+**Integration**: Provides APIs and SDKs (e.g., TypeScript, Python) for seamless integration into various platforms, with support for webhooks and public APIs.
+
+**Supported Payment Methods**: Includes credit/debit cards and likely other common methods such as PayPal (specific methods to be confirmed).
+
+**Global Reach**: Supports multiple currencies and territories worldwide, though exact coverage may vary.
+
+**Customer Support**: Offers support through Discord and email, with a strong emphasis on developer community engagement, as evidenced by active discussions and rapid response times reported by users.
+
+**Best For**: Developers and SaaS businesses seeking an all-in-one payment solution with built-in tax compliance, particularly those who value open-source transparency and community support.
+
+## Additional Tools: Billing Management with UseAutumn.com
+
+**Overview**: UseAutumn.com is an open-source billing management platform that integrates with Stripe to simplify the implementation of complex pricing models for startups and developers. It enables businesses to manage subscriptions, usage-based billing, credits, and seat-based pricing with minimal coding effort, making it ideal for those already using Stripe but needing advanced billing capabilities.
+
+**Pricing**:
+- **Builder**: Free for up to $3,000 MRR, supporting up to 10 products.
+- **Growth**: $50/month for $3,000–$10,000 MRR, unlimited products.
+- **Startup**: $375/month for $10,000–$40,000 MRR, unlimited products.
+- Plus Stripe’s standard transaction fees (typically 2.9% + $0.30 per transaction).
+
+**Merchant of Record**: No, UseAutumn.com relies on Stripe for payment processing; merchants are responsible for tax compliance.
+
+**Features**:
+- Supports diverse pricing models, including usage-based, credits, seat-based, and prepaid billing.
+- Provides functions for handling checkouts, upgrades, downgrades, and usage tracking.
+- Offers customer state management for implementing paywalls and displaying usage data.
+- Includes a dashboard for managing products and plans.
+- Simplifies billing logic with minimal code, often requiring just a few function calls.
+
+**Compliance and Taxes**: Merchants must manage tax compliance themselves, potentially using services like Stripe Tax, which incurs additional costs (e.g., 0.5% per transaction).
+
+**Integration**: Facilitates easy integration with a few lines of code, supporting full-stack frameworks like Next.js. It includes components like `<AutumnProvider>` for seamless frontend-backend connectivity.
+
+**Supported Payment Methods**: Inherits Stripe’s extensive payment methods, including credit/debit cards, ACH, SEPA, iDEAL, Apple Pay, Google Pay, and over 100 other methods.
+
+**Global Reach**: Leverages Stripe’s global reach, supporting 195+ countries and 135+ currencies.
+
+**Customer Support**: Provides support via Discord and email, with users reporting responsive assistance for integration queries.
+
+**Best For**: Startups and developers using Stripe who need to implement complex billing scenarios, such as usage-based or credit-based pricing, without extensive development resources.
+
+## Comparing Polar.sh and UseAutumn.com
+
+While both Polar.sh and UseAutumn.com aim to simplify payment and billing processes for online businesses, they serve distinct purposes and cater to different needs.
+
+**Polar.sh**:
+- **Type**: Payment processor acting as the merchant of record.
+- **Key Features**: Comprehensive handling of payments, billing, and global tax compliance, including VAT, sales tax, and GST. Offers features tailored for digital products and SaaS, such as checkout pages and potentially license key management.
+- **Pricing**: 4% + $0.40 per transaction (early member pricing).
+- **Ideal For**: Businesses needing an all-in-one solution that manages tax compliance, especially those operating in multiple jurisdictions like the EU. Its open-source nature appeals to developers who value transparency and customization.
+
+**UseAutumn.com**:
+- **Type**: Billing management platform integrated with Stripe.
+- **Key Features**: Simplifies the implementation of complex pricing models, such as usage-based billing, credits, and seat-based pricing, with minimal code. Provides tools for customer state management and usage tracking.
+- **Pricing**: Tiered plans from free (up to $3,000 MRR) to $375/month (up to $40,000 MRR), plus Stripe’s standard fees (typically 2.9% + $0.30 per transaction).
+- **Ideal For**: Businesses already using or preferring Stripe for payment processing, seeking to streamline intricate billing scenarios without significant development effort.
+
+**Why Choose Polar.sh**:
+- You require a merchant of record to handle payment processing and tax compliance, reducing the burden of managing VAT and sales tax across jurisdictions.
+- You prefer a platform specifically designed for digital products and SaaS, with features like automatic tax calculation and remittance.
+- You are comfortable with a percentage-based transaction fee and value the open-source community-driven approach.
+
+**Why Choose UseAutumn.com**:
+- You are already using Stripe or prefer its extensive payment method support and global reach.
+- You need to implement advanced billing models, such as usage-based or credit-based pricing, with minimal coding.
+- You seek a cost-effective solution, particularly if your business qualifies for the free or lower-tier plans, though you must manage tax compliance separately.
+
+**Cost Comparison Example**:
+For a business with $10,000 MRR and 100 transactions of $100 each:
+- **Polar.sh**: 4% of $10,000 = $400, plus 100 × $0.40 = $40, totaling $440.
+- **UseAutumn.com**: Growth plan at $50/month, plus Stripe fees (2.9% of $10,000 = $290, plus 100 × $0.30 = $30), totaling $370. If tax compliance is needed, adding Stripe Tax (0.5% of $10,000 = $50) brings the total to $420.
+
+Polar.sh may have a slightly higher cost but offers the advantage of handling tax compliance, which can save significant time and resources, especially for EU businesses. UseAutumn.com is more cost-effective for businesses comfortable managing compliance separately.
+
+In summary, Polar.sh is ideal for businesses seeking a comprehensive payment solution with tax compliance handled, particularly for digital products and SaaS. UseAutumn.com is best for Stripe users needing streamlined billing management for complex pricing models.
+
 ## Comparison Table
 
 | Processor     | Pricing (US)                           | Merchant of Record     | EU Tax Compliance      | Key Features                                   | Best For                               |
-| ------------- | -------------------------------------- | ---------------------- | ---------------------- | ---------------------------------------------- | -------------------------------------- |
+|---------------|----------------------------------------|------------------------|------------------------|------------------------------------------------|----------------------------------------|
 | Stripe        | 2.9% + $0.30; Managed Payments: Custom | Yes (Managed Payments) | Yes (Managed Payments) | Subscriptions, API, fraud prevention           | Startups, SaaS, EU compliance          |
 | Paddle        | 5% + $0.50                             | Yes                    | Yes                    | Subscriptions, tax compliance, checkout        | SaaS, digital products, EU compliance  |
 | Lemon Squeezy | 5% + $0.50                             | Yes                    | Yes                    | Subscriptions, checkout, license management    | SaaS, digital products, EU compliance  |
@@ -304,16 +397,20 @@ A Merchant of Record (MoR) is the entity legally responsible for processing card
 | Adyen         | Interchange-plus, custom               | No                     | No                     | Global methods, omnichannel, analytics         | Large enterprises                      |
 | Square        | 2.9% + $0.30                           | No                     | No                     | Online store, POS integration, invoicing       | Physical/online businesses             |
 | Authorize.Net | $25/month + 2.9% + $0.30 or $0.10/tx   | No                     | No                     | Gateway, fraud detection, integrations         | Traditional gateway needs              |
+| Polar.sh      | 4% + $0.40                             | Yes                    | Yes                    | Subscriptions, tax compliance, open-source     | Developers, SaaS, EU compliance        |
+| UseAutumn.com | Free–$375/month + Stripe fees          | No                     | No                     | Usage-based billing, credits, seat-based       | Stripe users, complex billing models   |
 
 ## Choosing the Right Processor
 
 Selecting a payment processor depends on your business's specific needs, transaction volume, and compliance requirements:
 
-- **Startups and Small Businesses**: Stripe (standard), PayPal, and Square are ideal due to their ease of use, no monthly fees (for Stripe's standard plan and Square's free plan), and robust integrations.
-- **EU Compliance Needs**: Paddle, Lemon Squeezy, FastSpring, Digital River, and Stripe's Managed Payments stand out as they act as MoR, handling VAT and sales tax compliance, which is critical for EU regulations.
+- **Startups and Small Businesses**: Stripe (standard), PayPal, and Square remain cost-effective with no monthly fees and robust integrations. For those using Stripe, UseAutumn.com can enhance billing management for complex pricing models.
+- **EU Compliance Needs**: Paddle, Lemon Squeezy, FastSpring, Digital River, Stripe’s Managed Payments, and Polar.sh are top choices as they act as merchants of record, handling VAT and sales tax compliance critical for EU regulations.
 - **Large Enterprises**: Adyen and Digital River offer customizable solutions tailored to high-volume businesses with global operations.
 - **Businesses with Physical Presence**: Square's integration of online and POS solutions is perfect for retailers with both channels.
 - **Traditional Gateway Needs**: Authorize.Net offers reliability and extensive integrations for businesses with existing merchant accounts.
+- **Developers and Open-Source Enthusiasts**: Polar.sh offers an open-source payment infrastructure with merchant of record services, ideal for those who value transparency and community-driven development.
+- **Complex Billing Needs**: For businesses using Stripe, UseAutumn.com provides a streamlined solution for implementing advanced pricing models without extensive coding.
 
 ## Considerations for EU Companies
 
@@ -321,7 +418,13 @@ EU businesses face stringent VAT and tax compliance requirements. Processors act
 
 ## Conclusion
 
-The best payment processor depends on your business model and needs. For EU businesses or those selling digital products, Paddle, Lemon Squeezy, FastSpring, Digital River, and Stripe's Managed Payments are top choices due to their MoR services and tax compliance capabilities. Paddle and Lemon Squeezy offer straightforward pricing at 5% + $0.50 per transaction, while FastSpring and Digital River provide custom pricing for larger operations. For startups, Stripe's standard plan and Square offer cost-effective solutions at 2.9% + $0.30, while PayPal and Braintree provide trusted options with broad customer recognition. Adyen caters to enterprises, and Authorize.Net suits those needing a traditional gateway. Evaluate your transaction volume, compliance needs, and integration requirements to make an informed decision.
+The best payment processor depends on your business model and needs. For EU businesses or those selling digital products, Paddle, Lemon Squeezy, FastSpring, Digital River, Stripe’s Managed Payments, and Polar.sh stand out thanks to their merchant-of-record services and integrated tax-compliance support. Polar.sh’s open-source, developer-friendly approach (4% + $0.40 per transaction) is particularly attractive for engineering-led teams.
+
+For startups already using Stripe that must implement sophisticated billing scenarios—usage-based, seat-based, or credit-based—UseAutumn.com offers a cost-effective solution: free up to $3 000 MRR, scaling to $375 / month, with no additional Autumn transaction fees (standard Stripe rates still apply). Because Autumn is not a merchant of record, you’ll still need to handle tax compliance separately (e.g., via Stripe Tax).
+
+Traditional low-cost options such as Stripe’s standard plan, Square, PayPal, and Braintree remain compelling for straightforward payment flows, while enterprise-scale organisations may favour Adyen or Digital River for highly customised, global solutions.
+
+Ultimately, assess your transaction volume, compliance obligations, desired billing complexity, and integration effort to choose the platform or combination of tools that best supports your roadmap and growth goals.
 
 ## Sources
 
@@ -336,4 +439,9 @@ The best payment processor depends on your business model and needs. For EU busi
 [Braintree Payment Processing Review](https://www.nerdwallet.com/article/small-business/braintree-payments-review)  
 [Adyen Pricing Information](https://www.adyen.com/pricing)  
 [Square Pricing Details](https://squareup.com/us/en/pricing)  
-[Authorize.Net Pricing Plans](https://www.authorize.net/sign-up/pricing.html)
+[Authorize.Net Pricing Plans](https://www.authorize.net/sign-up/pricing.html)  
+[Polar.sh](https://polar.sh)  
+[Polar.sh Documentation](https://docs.polar.sh)  
+[UseAutumn.com](https://useautumn.com)  
+[UseAutumn.com Documentation](https://docs.useautumn.com)  
+[Stripe Pricing](https://stripe.com/pricing)
