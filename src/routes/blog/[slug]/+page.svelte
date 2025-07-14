@@ -6,6 +6,7 @@
 	interface MetaData {
 		title: string;
 		date: string;
+		updateDate?: string;
 		author?: string;
 		description?: string;
 		readingTime?: string;

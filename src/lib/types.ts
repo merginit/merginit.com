@@ -32,6 +32,7 @@ export type Post = {
 	slug: string;
 	description: string;
 	date: string;
+	updateDate?: string;
 	categories: Categories[];
 	published: boolean;
 	author: string;

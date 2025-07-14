@@ -17,10 +17,15 @@ async function getPosts() {
 
 			// Handle both date formats: DD.MM.YYYY and YYYY-MM-DD
 			let formattedDate = metadata.date;
+			let formattedUpdateDate = metadata.updateDate ?? '';
 			if (metadata.date.includes('.')) {
 				// Convert date from DD.MM.YYYY to YYYY-MM-DD
 				const dateParts = metadata.date.split('.');
 				formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+			}
+			if (formattedUpdateDate && formattedUpdateDate.includes('.')) {
+				const dateParts = formattedUpdateDate.split('.');
+				formattedUpdateDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
 			}
 			// If date already in YYYY-MM-DD format, use as is
 
@@ -42,7 +47,8 @@ async function getPosts() {
 
 			const post = { 
 				...metadata, 
-				date: formattedDate, 
+				date: formattedDate,
+				updateDate: formattedUpdateDate || undefined,
 				slug,
 				content 
 			} as Post & { content: string };

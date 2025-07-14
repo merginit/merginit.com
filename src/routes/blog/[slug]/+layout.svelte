@@ -11,6 +11,7 @@
 
 	let title = $state('');
 	let date = $state('');
+	let updateDate = $state('');
 	let author = $state('');
 	let description = $state('');
 	let readingTime = $state('');
@@ -21,6 +22,7 @@
 		if (page.data?.meta) {
 			title = page.data.meta.title;
 			date = page.data.meta.date;
+			updateDate = page.data.meta.updateDate;
 			author = page.data.meta.author;
 			description = page.data.meta.description;
 			readingTime = page.data.meta.readingTime;
@@ -158,13 +160,23 @@
 					<!-- Post Metadata -->
 					<div class="flex flex-wrap items-center text-sm text-gray-400 mb-4 justify-between gap-4">
 						<div class="flex flex-wrap gap-5">
-							<time datetime={new Date(date).toISOString()}>
-								{new Date(date).toLocaleDateString('en-US', {
-									year: 'numeric',
-									month: 'long',
-									day: 'numeric'
-								})}
-							</time>
+							{#if updateDate}
+								<time datetime={new Date(updateDate).toISOString()}>
+									Updated {new Date(updateDate).toLocaleDateString('en-US', {
+										year: 'numeric',
+										month: 'long',
+										day: 'numeric'
+									})}
+								</time>
+							{:else}
+								<time datetime={new Date(date).toISOString()}>
+									{new Date(date).toLocaleDateString('en-US', {
+										year: 'numeric',
+										month: 'long',
+										day: 'numeric'
+									})}
+								</time>
+							{/if}
 							{#if author}
 								<span class="flex items-center gap-1.5">
 									<svg

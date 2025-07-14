@@ -140,13 +140,23 @@
 								class="flex flex-wrap items-center text-sm text-gray-400 mb-4 justify-between gap-4"
 							>
 								<div class="flex flex-wrap gap-5">
-									<time datetime={new Date(post.date).toISOString()}>
-										{new Date(post.date).toLocaleDateString('en-US', {
-											year: 'numeric',
-											month: 'long',
-											day: 'numeric'
-										})}
-									</time>
+									{#if post.updateDate}
+										<time datetime={new Date(post.updateDate).toISOString()}>
+											Updated {new Date(post.updateDate).toLocaleDateString('en-US', {
+												year: 'numeric',
+												month: 'long',
+												day: 'numeric'
+											})}
+										</time>
+									{:else}
+										<time datetime={new Date(post.date).toISOString()}>
+											{new Date(post.date).toLocaleDateString('en-US', {
+												year: 'numeric',
+												month: 'long',
+												day: 'numeric'
+											})}
+										</time>
+									{/if}
 									{#if post.author}
 										<span class="flex items-center gap-1.5">
 											<svg

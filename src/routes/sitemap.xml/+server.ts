@@ -25,7 +25,8 @@ export async function GET() {
 		await modules[path]().then((mod) => {
 			if (mod.metadata && mod.metadata.published) {
                 const filename = path.split('/').pop()?.replace('.md', '') || '';
-				blogEntries.push({ slug: filename, date: mod.metadata.date });
+				const lastMod = mod.metadata.updateDate || mod.metadata.date;
+				blogEntries.push({ slug: filename, date: lastMod });
 			}
 		});
 	}
