@@ -14,6 +14,7 @@
 		search: '',
 		searchScope: 'all' as const,
 		categories: [],
+		categoryOperator: 'AND' as const,
 		tags: [],
 		tagOperator: 'OR' as const,
 		dateFrom: '',
@@ -31,8 +32,10 @@
 
 			if (filters.search) searchParams.set('search', filters.search);
 			if (filters.searchScope !== 'all') searchParams.set('scope', filters.searchScope);
-			if (filters.categories.length > 0)
+			if (filters.categories.length > 0) {
 				searchParams.set('categories', filters.categories.join(','));
+				searchParams.set('categoryOperator', filters.categoryOperator);
+			}
 			if (filters.tags.length > 0) {
 				searchParams.set('tags', filters.tags.join(','));
 				searchParams.set('tagOperator', filters.tagOperator);
@@ -286,6 +289,7 @@
 							onclick={() => {
 								filters.search = '';
 								filters.categories = [];
+								filters.categoryOperator = 'AND';
 								filters.tags = [];
 								filters.tagOperator = 'OR';
 								filters.dateFrom = '';

@@ -9,6 +9,7 @@
 		search: string;
 		searchScope: 'all' | 'title' | 'description' | 'content';
 		categories: Categories[];
+		categoryOperator: 'OR' | 'AND';
 		tags: string[];
 		tagOperator: 'OR' | 'AND';
 		dateFrom: string;
@@ -22,6 +23,7 @@
 			search: '',
 			searchScope: 'all' as const,
 			categories: [],
+			categoryOperator: 'AND' as const,
 			tags: [],
 			tagOperator: 'OR' as const,
 			dateFrom: '',
@@ -74,6 +76,7 @@
 		filters.search = '';
 		filters.searchScope = 'all';
 		filters.categories = [];
+		filters.categoryOperator = 'AND';
 		filters.tags = [];
 		filters.tagOperator = 'OR';
 		filters.dateFrom = '';
@@ -199,11 +202,35 @@
 	{#if isExpanded}
 		<div class="mt-6 space-y-6" transition:slide={{ duration: 200 }}>
 			<!-- Categories -->
-			<div>
-				<h3 class="text-sm font-medium text-gray-300 mb-3 flex items-center gap-2">
-					<Icon icon="tabler:category" class="text-accent w-5 h-5" />
-					Categories
-				</h3>
+			<div class="pt-6 border-t border-gray-700/50">
+				<div class="flex items-center justify-between mb-3">
+					<h3 class="text-sm font-medium text-gray-300 flex items-center gap-2">
+						<Icon icon="tabler:category" class="text-accent w-5 h-5" />
+						Categories
+					</h3>
+					<div class="flex bg-gray-800/50 rounded-lg p-1">
+						<button
+							onclick={() => { filters.categoryOperator = 'OR'; handleFilterChange(); }}
+							class="px-2 py-1 text-xs rounded transition-colors {
+								filters.categoryOperator === 'OR'
+									? 'bg-brand text-brand-dark font-medium'
+									: 'text-gray-400 hover:text-white'
+							}"
+						>
+							ANY
+						</button>
+						<button
+							onclick={() => { filters.categoryOperator = 'AND'; handleFilterChange(); }}
+							class="px-2 py-1 text-xs rounded transition-colors {
+								filters.categoryOperator === 'AND'
+									? 'bg-brand text-brand-dark font-medium'
+									: 'text-gray-400 hover:text-white'
+							}"
+						>
+							ALL
+						</button>
+					</div>
+				</div>
 				<div class="flex flex-wrap gap-2">
 					{#each availableCategories as category}
 						<button
@@ -218,42 +245,44 @@
 						</button>
 					{/each}
 				</div>
+				
+				<!-- Debug info -->
+				{#if filters.categories.length > 0}
+					<div class="mt-2 text-xs text-gray-500">
+						{filters.categories.length} categor{filters.categories.length === 1 ? 'y' : 'ies'} selected, operator: {filters.categoryOperator}
+					</div>
+				{/if}
 			</div>
 
 			<!-- Tags -->
-			<div>
+			<div class="pt-6 pb-6 border-t border-b border-gray-700/50">
 				<div class="flex items-center justify-between mb-3">
 					<h3 class="text-sm font-medium text-gray-300 flex items-center gap-2">
 						<Icon icon="tabler:tags" class="text-accent w-5 h-5" />
 						Tags
 					</h3>
-					{#if filters.tags.length > 0}
-						<div class="flex items-center gap-2">
-							<span class="text-xs text-gray-400">Match:</span>
-							<div class="flex bg-gray-800/50 rounded-lg p-1">
-								<button
-									onclick={() => { filters.tagOperator = 'OR'; handleFilterChange(); }}
-									class="px-2 py-1 text-xs rounded transition-colors {
-										filters.tagOperator === 'OR'
-											? 'bg-brand text-brand-dark font-medium'
-											: 'text-gray-400 hover:text-white'
-									}"
-								>
-									ANY
-								</button>
-								<button
-									onclick={() => { filters.tagOperator = 'AND'; handleFilterChange(); }}
-									class="px-2 py-1 text-xs rounded transition-colors {
-										filters.tagOperator === 'AND'
-											? 'bg-brand text-brand-dark font-medium'
-											: 'text-gray-400 hover:text-white'
-									}"
-								>
-									ALL
-								</button>
-							</div>
-						</div>
-					{/if}
+					<div class="flex bg-gray-800/50 rounded-lg p-1">
+						<button
+							onclick={() => { filters.tagOperator = 'OR'; handleFilterChange(); }}
+							class="px-2 py-1 text-xs rounded transition-colors {
+								filters.tagOperator === 'OR'
+									? 'bg-brand text-brand-dark font-medium'
+									: 'text-gray-400 hover:text-white'
+							}"
+						>
+							ANY
+						</button>
+						<button
+							onclick={() => { filters.tagOperator = 'AND'; handleFilterChange(); }}
+							class="px-2 py-1 text-xs rounded transition-colors {
+								filters.tagOperator === 'AND'
+									? 'bg-brand text-brand-dark font-medium'
+									: 'text-gray-400 hover:text-white'
+							}"
+						>
+							ALL
+						</button>
+					</div>
 				</div>
 				<TagInput 
 					bind:selectedTags={filters.tags} 

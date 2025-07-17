@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import type { Post } from '$lib/types';
+import type { Post, Categories } from '$lib/types';
 
 async function getPosts() {
 	let posts: (Post & { content: string })[] = [];
@@ -69,6 +69,7 @@ function filterPosts(
 	searchQuery: string,
 	searchScope: string,
 	categories: string[],
+	categoryOperator: string,
 	tags: string[],
 	tagOperator: string,
 	dateFrom: string,
@@ -105,18 +106,21 @@ function filterPosts(
 
 		// Category filter
 		if (categories.length > 0) {
-			const hasMatchingCategory = post.categories.some(cat => categories.includes(cat));
-			if (!hasMatchingCategory) return false;
+			if (categoryOperator === 'AND') {
+				const hasAllCategories = categories.every(cat => post.categories.includes(cat as Categories));
+				if (!hasAllCategories) return false;
+			} else {
+				const hasMatchingCategory = post.categories.some(cat => categories.includes(cat));
+				if (!hasMatchingCategory) return false;
+			}
 		}
 
 		// Tag filter
 		if (tags.length > 0) {
 			if (tagOperator === 'AND') {
-				// ALL tags must be present
 				const hasAllTags = tags.every(tag => post.tags.includes(tag));
 				if (!hasAllTags) return false;
 			} else {
-				// ANY tag must be present (OR logic)
 				const hasMatchingTag = post.tags.some(tag => tags.includes(tag));
 				if (!hasMatchingTag) return false;
 			}
@@ -152,6 +156,7 @@ export async function GET({ url }) {
 	const searchScope = url.searchParams.get('scope') || 'all';
 	const categoriesParam = url.searchParams.get('categories') || '';
 	const categories = categoriesParam ? categoriesParam.split(',') : [];
+	const categoryOperator = url.searchParams.get('categoryOperator') || 'AND';
 	const dateFrom = url.searchParams.get('dateFrom') || '';
 	const dateTo = url.searchParams.get('dateTo') || '';
 	const minReadTime = parseInt(url.searchParams.get('minReadTime') || '0');
@@ -167,6 +172,7 @@ export async function GET({ url }) {
 		searchQuery,
 		searchScope,
 		categories,
+		categoryOperator,
 		tags,
 		tagOperator,
 		dateFrom,
