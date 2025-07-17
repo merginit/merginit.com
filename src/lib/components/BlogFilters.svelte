@@ -210,7 +210,10 @@
 					</h3>
 					<div class="flex bg-gray-800/50 rounded-lg p-1">
 						<button
-							onclick={() => { filters.categoryOperator = 'OR'; handleFilterChange(); }}
+							onclick={() => { 
+								filters.categoryOperator = 'OR'; 
+								if (filters.categories.length > 0) handleFilterChange(); 
+							}}
 							class="px-2 py-1 text-xs rounded transition-colors {
 								filters.categoryOperator === 'OR'
 									? 'bg-brand text-brand-dark font-medium'
@@ -220,7 +223,10 @@
 							ANY
 						</button>
 						<button
-							onclick={() => { filters.categoryOperator = 'AND'; handleFilterChange(); }}
+							onclick={() => { 
+								filters.categoryOperator = 'AND'; 
+								if (filters.categories.length > 0) handleFilterChange(); 
+							}}
 							class="px-2 py-1 text-xs rounded transition-colors {
 								filters.categoryOperator === 'AND'
 									? 'bg-brand text-brand-dark font-medium'
@@ -263,7 +269,10 @@
 					</h3>
 					<div class="flex bg-gray-800/50 rounded-lg p-1">
 						<button
-							onclick={() => { filters.tagOperator = 'OR'; handleFilterChange(); }}
+							onclick={() => { 
+								filters.tagOperator = 'OR'; 
+								if (filters.tags.length > 0) handleFilterChange(); 
+							}}
 							class="px-2 py-1 text-xs rounded transition-colors {
 								filters.tagOperator === 'OR'
 									? 'bg-brand text-brand-dark font-medium'
@@ -273,7 +282,10 @@
 							ANY
 						</button>
 						<button
-							onclick={() => { filters.tagOperator = 'AND'; handleFilterChange(); }}
+							onclick={() => { 
+								filters.tagOperator = 'AND'; 
+								if (filters.tags.length > 0) handleFilterChange(); 
+							}}
 							class="px-2 py-1 text-xs rounded transition-colors {
 								filters.tagOperator === 'AND'
 									? 'bg-brand text-brand-dark font-medium'
@@ -337,8 +349,9 @@
 				</label>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 					<div>
-						<label class="block text-xs text-gray-400 mb-1">Minimum</label>
+						<label for="min-read-time" class="block text-xs text-gray-400 mb-1">Minimum</label>
 						<input
+							id="min-read-time"
 							type="range"
 							min="0"
 							max={filters.maxReadTime}
@@ -350,8 +363,9 @@
 						<div class="text-xs text-gray-400 mt-1">{filters.minReadTime} min</div>
 					</div>
 					<div>
-						<label class="block text-xs text-gray-400 mb-1">Maximum</label>
+						<label for="max-read-time" class="block text-xs text-gray-400 mb-1">Maximum</label>
 						<input
+							id="max-read-time"
 							type="range"
 							min={Math.max(5, Math.ceil(filters.minReadTime / 5) * 5)}
 							max="60"
