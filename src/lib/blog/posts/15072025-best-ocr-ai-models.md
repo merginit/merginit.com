@@ -210,7 +210,7 @@ Evaluating OCR models involves looking at various metrics, including accuracy, s
 
 The following chart illustrates the average accuracy of various OCR models across different domains, as benchmarked by Roboflow. This benchmark focuses on non-document OCR applications, such as localized text examples.
 
-![Roboflow Average Accuracy](/blog/assets/15072025-best-ocr-ai-models/roboflow_average_accuracy.png)
+![Roboflow Average Accuracy](/blog/15072025-best-ocr-ai-models/roboflow_average_accuracy.png)
 
 * **Key Takeaways**: While proprietary models like Claude and GPT-4 often lead in overall accuracy, open-source options like EasyOCR and some LLM-based models demonstrate strong performance, especially in specific domains. This highlights the importance of choosing a model tailored to your specific use case.
 
@@ -218,7 +218,7 @@ The following chart illustrates the average accuracy of various OCR models acros
 
 This benchmark from OmniAI focuses on the JSON extraction accuracy of open-source Vision Language Models (VLMs) for OCR. This is particularly relevant for tasks involving structured data extraction from documents.
 
-![OmniAI JSON Accuracy](/blog/assets/15072025-best-ocr-ai-models/omniai_json_accuracy.png)
+![OmniAI JSON Accuracy](/blog/15072025-best-ocr-ai-models/omniai_json_accuracy.png)
 
 * **Key Takeaways**: Qwen 2.5 VL models (72B and 32B) show impressive JSON extraction accuracy, comparable to state-of-the-art proprietary models like GPT-4o. Mistral-ocr also performs very well in this specialized task, indicating the growing maturity of open-source VLMs for complex document understanding.
 

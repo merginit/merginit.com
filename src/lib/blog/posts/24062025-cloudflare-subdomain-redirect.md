@@ -36,11 +36,11 @@ Before we can create a rule to redirect traffic, we first need to tell Cloudflar
 1.  <a href="https://dash.cloudflare.com/login" target="_blank">Log in</a> to your Cloudflare dashboard and select the domain you want to use
 <br>(<strong>Account Home</strong> > <em>click on your domain</em>).
 
-    ![Step 1](/blog/assets/24062025-cloudflare-subdomain-redirect/1.png)
+    ![Step 1](/blog/24062025-cloudflare-subdomain-redirect/1.png)
 
 2.  In the left-hand menu, navigate to **DNS** > **Records**.
 
-    ![Step 2](/blog/assets/24062025-cloudflare-subdomain-redirect/2.png)
+    ![Step 2](/blog/24062025-cloudflare-subdomain-redirect/2.png)
 
 3.  Click the **Add record** button.
 4.  Fill out the fields as follows:
@@ -59,33 +59,33 @@ This is where we set up the actual redirect logic. We'll create a rule that look
 
 1.  In the left-hand menu, navigate to **Rules** > **Redirect Rules**.
 
-    ![Step 3](/blog/assets/24062025-cloudflare-subdomain-redirect/3.png)
+    ![Step 3](/blog/24062025-cloudflare-subdomain-redirect/3.png)
 
 2.  Click the **Create rule** button.
 
-    ![Step 4](/blog/assets/24062025-cloudflare-subdomain-redirect/4.png)
+    ![Step 4](/blog/24062025-cloudflare-subdomain-redirect/4.png)
 
 3.  Give your rule a descriptive name, like "Webinar Redirect" or "Helpdesk Link." and choose one of the 3 templates at the top or make your own custom rule:
 
-    ![Step 5](/blog/assets/24062025-cloudflare-subdomain-redirect/5.png)
+    ![Step 5](/blog/24062025-cloudflare-subdomain-redirect/5.png)
 
 4.  Under the **If incoming requests match...** section, configure the condition:
     *   **Field:** Select `Hostname`.
     *   **Operator:** Select `equals`.
     *   **Value:** Enter the full subdomain you just created (e.g., `webinar.yourdomain.com`).
 
-    ![Step 6](/blog/assets/24062025-cloudflare-subdomain-redirect/6.png)
+    ![Step 6](/blog/24062025-cloudflare-subdomain-redirect/6.png)
 
 5.  Under the **Then...** section, define the redirect action:
     *   **Type:** Select `Static`.
     *   **URL:** Paste the full destination URL that you want users to be sent to (e.g., `https://event.webinarjam.com/live/1/abc123xyz`). Make sure to include the `https://`.
     *   **Status code:** Select `301` (Permanent Redirect). This is generally the best choice for SEO and tells browsers that the location has moved for good.
 
-    ![Step 7](/blog/assets/24062025-cloudflare-subdomain-redirect/7.png)
+    ![Step 7](/blog/24062025-cloudflare-subdomain-redirect/7.png)
 
 6.  Click the **Deploy** button to save and activate your rule.
 
-    ![Step 8](/blog/assets/24062025-cloudflare-subdomain-redirect/8.png)
+    ![Step 8](/blog/24062025-cloudflare-subdomain-redirect/8.png)
 
 ### Step 3: Test Your Redirect
 

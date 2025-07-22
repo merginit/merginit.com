@@ -21,7 +21,7 @@ Here's the thing: pausing deployments used to be nearly impossible. Back in the 
 
 Back in Vercel's early days, this was the only option available. Despite extensive searching, no alternatives existed. You'd simply go to **Project > Settings > Delete Project** and... well, delete everything. Not great, but it worked. Thankfully, we have better options now.
 
-![delete-vercel-project](/blog/assets/09062025-pause-vercel-deployment/delete-vercel-project.png)
+![delete-vercel-project](/blog/09062025-pause-vercel-deployment/delete-vercel-project.png)
 
 ## Method 2: Branch Switching for Maintenance Mode
 
@@ -91,7 +91,7 @@ It also doesn't prevent you from spending more money, if you happen to be under 
 
 ## Method 5: Firewall Rules (My Personal <span class="text-accent">Favorite</span>)
 
-![delete-vercel-project](/blog/assets/09062025-pause-vercel-deployment/vercel-custom-firewall-rules.png)
+![delete-vercel-project](/blog/09062025-pause-vercel-deployment/vercel-custom-firewall-rules.png)
 
 This is hands-down the most convenient method since it can be done directly from the dashboard. It's really puzzling to me that Vercel hasn't implemented their own pause API endpoint in the dashboard after all this time.
 
@@ -102,11 +102,11 @@ Here's how to set it up:
 3. Set the condition: **If "Request Path" "Contains" "/" Then "Deny"**
 4. Save and deploy the firewall rule
 
-![delete-vercel-project](/blog/assets/09062025-pause-vercel-deployment/vercel-custom-firewall-pause-rule.png)
+![delete-vercel-project](/blog/09062025-pause-vercel-deployment/vercel-custom-firewall-pause-rule.png)
 
 This rule will block all requests, including the root path, and return a "403 Forbidden" status with a clean error page.
 
-![delete-vercel-project](/blog/assets/09062025-pause-vercel-deployment/vercel-403-forbidden.png)
+![delete-vercel-project](/blog/09062025-pause-vercel-deployment/vercel-403-forbidden.png)
 
 ## Bonus: Password Protection (<span class="text-brand">Pro</span> Plan Only)
 

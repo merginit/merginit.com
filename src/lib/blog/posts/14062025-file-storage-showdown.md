@@ -103,7 +103,7 @@ We compare Mega with all major consumer cloud storage providers, based on recent
 | iDrive       | 10GB         | $5.83 (5TB)             | $1.17              | Annual ($70/year)                |
 | Box          | 10GB         | $10 (100GB)             | $100               | No 2TB personal plan             |
 
-![consumer-cloud-storage](/blog/assets/14062025-file-storage-showdown/consumer-cloud-storage.png)
+![consumer-cloud-storage](/blog/14062025-file-storage-showdown/consumer-cloud-storage.png)
 
 Sync.com and pCloud offer the best value for 2TB, while Internxt is the cheapest. Mega's pricing is competitive, bolstered by its security and free tier.
 
@@ -210,7 +210,7 @@ We compare Storj with all major object storage providers:
 | Wasabi               | $6                           | Free (up to stored amount) | No API fees             |
 | Backblaze B2         | $6                           | $10                        | S3-compatible           |
 
-![application-object-storage](/blog/assets/14062025-file-storage-showdown/application-object-storage.png)
+![application-object-storage](/blog/14062025-file-storage-showdown/application-object-storage.png)
 
 Storj is among the cheapest, alongside Wasabi and Backblaze B2. Filecoin's pricing varies, making Storj more predictable.
 

@@ -99,7 +99,7 @@ For budget-conscious teams, here's how the free offerings compare:
 - Advanced integrations on paid plans (Slack, Teams, Webhook, PagerDuty)
 - Two-factor authentication across all plans
 
-![UptimeRobot status page example](/blog/assets/10062025-status-pages/uptimerobot.com-status.heineken.involves.com.png)
+![UptimeRobot status page example](/blog/10062025-status-pages/uptimerobot.com-status.heineken.involves.com.png)
 
 **Best For:** Teams wanting proven reliability with minimal setup effort
 
@@ -136,7 +136,7 @@ For budget-conscious teams, here's how the free offerings compare:
 
 **Limitations:** Basic customization (logo and naming only), no mobile app
 
-![cron-job.org status page example](/blog/assets/10062025-status-pages/cron-job.org-status.ocrmd.com.png)
+![cron-job.org status page example](/blog/10062025-status-pages/cron-job.org-status.ocrmd.com.png)
 
 ### OpenStatus
 
@@ -173,7 +173,7 @@ For budget-conscious teams, here's how the free offerings compare:
 
 **Limitations:** Smaller community than established alternatives, very limited free tier
 
-![OpenStatus dashboard example](/blog/assets/10062025-status-pages/openstatus.dev-status.openstatus.dev.png)
+![OpenStatus dashboard example](/blog/10062025-status-pages/openstatus.dev-status.openstatus.dev.png)
 
 **Best For:** Teams wanting modern tech stack with hosted convenience and willing to pay for professional features
 
@@ -278,7 +278,7 @@ Developer-friendly platform with markdown-based incident management.
 
 ### All-in-One Monitoring Platforms
 
-![Better Stack status page example](/blog/assets/10062025-status-pages/betterstack.com-status.betterstack.com.png)
+![Better Stack status page example](/blog/10062025-status-pages/betterstack.com-status.betterstack.com.png)
 
 #### Better Stack (Free / from $29/month)
 
@@ -435,7 +435,7 @@ Industry-leading incident management platform with status page capabilities. Pag
 
 **Best For:** Organizations prioritizing mature incident response processes and operational maturity, with plans that scale from small teams to large enterprises.
 
-![PagerDuty status page example](/blog/assets/10062025-status-pages/pagerduty.com-status.pagerduty.com.png)
+![PagerDuty status page example](/blog/10062025-status-pages/pagerduty.com-status.pagerduty.com.png)
 
 #### Statuspage.io ($0|29-1499/month)
 
