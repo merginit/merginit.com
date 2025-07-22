@@ -26,7 +26,7 @@ Arguably the biggest news is the release of [Kimi K2](http://Kimi.ai) by Moonsho
 ![Kimi K2 usage on OpenRouter](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-openrouter-usage.jpeg)
 ![Kimi K2 benchmark results](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-benchmarks.png)
 ![Kimi K2 API cost comparison](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-cost.jpg)
-![Kimi K2 output tokens used for Artificial Analysis Intelligence Index](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-output-tokens-used-to-run-artificial-analysis-intelligence-index.jpeg)
+![Kimi K2 output tokens used for Artificial Analysis Intelligence Index](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-output-tokens.jpeg)
 ![Kimi K2 score table](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-score-table.png)
 
 **What is Kimi K2?**
