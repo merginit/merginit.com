@@ -10,7 +10,7 @@
 	const pageLinks: LinkItem[] = [
 		{ text: 'Home', href: '/' },
 		{ text: 'Blog', href: '/blog' },
-		{ text: 'Free', href: '/free-products' },
+		{ text: 'Free', href: '/free-products' }
 		/* { text: 'About', href: '/about' },
 		{ text: 'Contact', href: '/contact' } */
 	];
@@ -33,7 +33,8 @@
 		{
 			id: 'analytics',
 			name: 'Analytics & Performance Cookies',
-			description: 'These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.',
+			description:
+				'These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.',
 			required: false,
 			checked: false
 		}
@@ -101,9 +102,12 @@
 			<div class="md:col-span-1">
 				<h3 class="text-lg font-semibold text-neutral-200 mb-3">MerginIT e.U.</h3>
 				<p class="text-sm mb-2">
-					<span>Your partner for innovative IT solutions.</span><br>
-					Contact us at 
-					<a href="mailto:jonas@merginit.com" class="text-neutral-400 hover:text-brand transition-colors duration-300 mt-1">
+					<span>Your partner for innovative IT solutions.</span><br />
+					Contact us at
+					<a
+						href="mailto:jonas@merginit.com"
+						class="text-neutral-400 hover:text-brand transition-colors duration-300 mt-1"
+					>
 						jonas@merginit.com
 					</a>.
 				</p>
@@ -130,7 +134,22 @@
 			</div>
 		</div>
 		<div class="border-t border-gray-700/50 pt-6 text-center">
-			<p class="text-xs text-neutral-500">
+			<div class="mt-4 flex justify-center">
+				<a
+					href="https://frogdr.com/merginit.com?utm_source=merginit.com"
+					target="_blank"
+					rel="noopener"
+				>
+					<img
+						src="https://frogdr.com/merginit.com/badge-white.svg"
+						alt="Monitor your Domain Rating with FrogDR"
+						width="250"
+						height="54"
+					/>
+				</a>
+			</div>
+
+			<p class="text-xs mt-4 text-neutral-500">
 				&copy; {new Date().getFullYear()} MerginIT e.U. All rights reserved.
 			</p>
 		</div>
