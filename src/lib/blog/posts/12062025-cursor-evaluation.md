@@ -2,6 +2,7 @@
 title: "Is Cursor's $9.9B Valuation Justified?"
 description: "An analysis of Cursor's $9.9 billion valuation against the competitive landscape, examining whether the AI coding startup's meteoric rise is justified amid fierce competition from GitHub Copilot, Windsurf, and dozens of other tools."
 date: '2025-06-12'
+updateDate: '2025-07-23'
 categories:
   - software
 published: true
@@ -10,7 +11,15 @@ readingTime: '8 min'
 tags: ['AI', 'Cursor', 'startup', 'valuation']
 ---
 
+<script>
+  import InfoBox from '$lib/components/InfoBox.svelte';
+</script>
+
 # Is Cursor's $9.9B Valuation Justified in a Crowded AI Coding Market?
+
+<InfoBox title="Update: Windsurf, OpenAI & Google">
+  <b>Deal Update (July 2025):</b> OpenAI's planned acquisition of Windsurf is <b>off</b>. Instead, Windsurf's CEO Varun Mohan, cofounder Douglas Chen, and key R&D staff are joining <b>Google DeepMind</b> to work on agentic coding and Gemini. Google will take a non-exclusive license to some Windsurf tech, but does <b>not</b> acquire the company. Jeff Wang is now interim CEO at Windsurf. <a href="https://www.theverge.com/openai/705999/google-windsurf-ceo-openai" target="_blank" rel="noopener">[The Verge]</a>
+</InfoBox>
 
 ## Executive Summary
 
