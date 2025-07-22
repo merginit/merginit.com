@@ -3,6 +3,8 @@
 	import { page } from '$app/stores';
 	import FuzzyText from '$lib/components/FuzzyText.svelte';
 	import Icon from '@iconify/svelte';
+
+	$: isBlog = $page.url?.pathname?.startsWith('/blog');
 </script>
 
 <div class="flex min-h-screen flex-col items-center justify-center text-white">
@@ -28,13 +30,24 @@
 			best of us!
 		</p>
 
-		<a 
-		  href="/" 
-		  class="mt-8 inline-flex gap-2 hover:text-text-hover transition-colors duration-200"
-		  aria-label="Go back to Homepage"
-		>
-		  <Icon icon="bxs:home" class="w-5 h-5" /> 
-		  <span>Back to Home</span>
-		</a>
+		{#if isBlog}
+			<a 
+			  href="/blog" 
+			  class="mt-8 inline-flex items-center gap-2 hover:text-text-hover transition-colors duration-200"
+			  aria-label="Go back to Blog"
+			>
+			  <Icon icon="carbon:blog" class="w-5 h-5" /> 
+			  <span>Back to Blog</span>
+			</a>
+		{:else}
+			<a 
+			  href="/" 
+			  class="mt-8 inline-flex items-center gap-2 hover:text-text-hover transition-colors duration-200"
+			  aria-label="Go back to Homepage"
+			>
+			  <Icon icon="bxs:home" class="w-5 h-5" /> 
+			  <span>Back to Home</span>
+			</a>
+		{/if}
 	</div>
 </div>
