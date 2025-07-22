@@ -2,6 +2,7 @@
 title: "AI's Blistering Pace: Kimi K2, Grok-4, and the New Frontier of Open Models"
 description: "A deep dive into the latest groundbreaking AI developments. We explore the powerhouse open-weight model Kimi K2, the controversial launch of Grok-4, Mistral's new speech and coding models, Anthropic's strategic moves, and Amazon's entry into AI code editors."
 date: "2025-07-22"
+updateDate: "2025-07-23"
 categories:
   - software
 published: true
@@ -16,16 +17,17 @@ The world of artificial intelligence is accelerating at a breathtaking pace. Rec
 
 ## Kimi K2: A New Titan of Open-Weight Models?
 
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-website.png)
+![Screenshot of the Kimi K2 website](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-website.png)
+![Kimi K2 Large Scale Agentic Data Synthesis](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-large-scale-agentic-data-synthesis.png)
 
 Arguably the biggest news is the release of [Kimi K2](http://Kimi.ai) by Moonshot AI. This model has taken the community by storm, immediately establishing itself as a formidable competitor to established closed-source models from Anthropic and OpenAI.
 
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/hugging-face-trending.jpeg)
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-openrouter-usage.jpeg)
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-benchmarks.png)
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-cost.jpg)
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-output-tokens-used-to-run-artificial-analysis-intelligence-index.jpeg)
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-score-table.png)
+![Kimi K2 trending on Hugging Face](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/hugging-face-trending.jpeg)
+![Kimi K2 usage on OpenRouter](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-openrouter-usage.jpeg)
+![Kimi K2 benchmark results](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-benchmarks.png)
+![Kimi K2 API cost comparison](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-cost.jpg)
+![Kimi K2 output tokens used for Artificial Analysis Intelligence Index](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-k2-output-tokens-used-to-run-artificial-analysis-intelligence-index.jpeg)
+![Kimi K2 score table](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kimi-score-table.png)
 
 **What is Kimi K2?**
 Kimi K2 is a massive Mixture-of-Experts (MoE) model with **1 trillion total parameters**, of which **32 billion are active** during any given inference task. It's purpose-built for agentic workflows—tasks requiring autonomous planning, reasoning, and tool use. Most importantly, its weights are openly available, a move that has sent ripples through the industry.
@@ -56,12 +58,12 @@ You can get started with Kimi K2 here:
 
 Almost in direct competition with the Kimi K2 buzz, xAI dropped [Grok-4](https://x.ai/blog/grok-4). The announcement came with jaw-dropping benchmark scores, but the community has met them with a healthy dose of skepticism.
 
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-openrouter-usage.jpeg)
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-frontier-intelligence.png)
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-humanitys-last-exam.png)
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-artificial-analysis-intelligence-index.jpeg)
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-iq.jpg)
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-gpqa-diamond-ranking.jpg)
+![Grok-4 usage on OpenRouter](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-openrouter-usage.jpeg)
+![Grok-4 performance on Frontier Intelligence benchmarks](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-frontier-intelligence.png)
+![Grok-4 score on Humanity's Last Exam](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-humanitys-last-exam.png)
+![Grok-4 performance on Artificial Analysis Intelligence Index](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-artificial-analysis-intelligence-index.jpeg)
+![Grok-4 IQ benchmark result](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-iq.jpg)
+![Grok-4 GPQA diamond ranking](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-gpqa-diamond-ranking.jpg)
 
 **The Headline-Grabbing Claims:**
 Grok-4 and its larger sibling, Grok-4 Heavy, are presented as pure reasoning models that have shattered existing records:
@@ -76,7 +78,7 @@ Despite the figures, there are valid concerns:
 * **The "Snitch" Factor:** The model has a noticeable tendency to mention its creator. This behavior became so prominent that the community created the aptly named **[SnitchBench](https://snitchbench.t3.gg)** to track it. An initial analysis found that a startling 4% of Grok-4's responses mention Elon Musk, a figure that dwarfs the sub-0.5% rate of most other models and points to a significant bias.
 * **Subjective Quality:** Many users report that for practical tasks, its reasoning and writing quality lag behind models like GPT-4o and Gemini 2.5.
 
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-snitch-bench.jpg)
+!['SnitchBench' chart showing Grok-4's tendency to snitch to the government or to the media](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/grok-4-snitch-bench.jpg)
 
 However, it's not all negative. Some researchers in frontier fields, such as post-labor economics, have found Grok-4 to be "smart enough to actually help," placing it in the S-tier of models capable of assisting with novel research.
 
@@ -87,7 +89,7 @@ Not to be outdone, Mistral has expanded its powerful open-source arsenal with tw
 **1. Voxtral: The Speech-to-Everything Model**
 [Voxtral](https://mistral.ai/news/voxtral) is a transformative speech model that goes far beyond simple transcription. By building on the Mistral Small 3.1 language model, it integrates deep language understanding directly into its speech processing core.
 
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/voxtral-transcription-performance.jpeg)
+![Voxtral transcription performance chart](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/voxtral-transcription-performance.jpeg)
 
 | Feature                         | Description                                                                                           |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -102,7 +104,7 @@ Mistral claims Voxtral outperforms the current open-source leader, Whisper large
 **2. Devstral: A New Tool for Developers**
 Shortly after, Mistral released [Devstral](https://huggingface.co/mistralai/Devstral-Small-2507), a model specifically fine-tuned for developers and coding tasks. While detailed performance metrics are still emerging, its launch signals Mistral's strong commitment to serving the developer community.
 
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/devstral-agentic-performance.jpg)
+![Devstral agentic performance chart](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/devstral-agentic-performance.jpg)
 
 ## Strategic Moves in the AI Arena: Anthropic & Amazon
 
@@ -114,7 +116,7 @@ Anthropic, often seen as a standard-bearer for AI safety, is navigating a comple
 **Amazon Kiro: A New Challenger to Cursor**
 Amazon has quietly entered the AI code editor space with [Kiro](https://kiro.dev), a direct competitor to the popular tool Cursor. During its preview period, Kiro is free to use with "reasonable limits." Amazon has stated they are actively reviewing their future pricing plans based on community feedback, indicating a strategy to build a tool that closely aligns with developer workflows and expectations.
 
-![](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kiro-promise.png)
+![Kiro's promise](/blog/assets/22072025-kimi-k2-grok-4-and-the-new-ai-frontier/kiro-promise.png)
 
 ## Conclusion
 

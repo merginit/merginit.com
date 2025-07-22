@@ -41,6 +41,12 @@
 {#if loading}
 	<BlogLoader size="md" text="Loading blog post..." />
 {:else if data?.meta && data.component}
+	<div class="mb-6 text-sm text-neutral-400 flex flex-col gap-1">
+		<span>Originally published on {new Date(data.meta.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+		{#if data.meta.updateDate && data.meta.updateDate !== data.meta.date}
+			<span>Last updated on {new Date(data.meta.updateDate).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+		{/if}
+	</div>
 	<article class="prose prose-invert lg:prose-xl max-w-none">
 		<data.component />
 	</article>
