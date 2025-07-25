@@ -2,6 +2,7 @@
 title: 'How to Set Up Cloudflare Subdomain Redirect (Free Plan 2025)'
 description: "Learn the simple two-step process to set up a subdomain redirect on Cloudflare's free plan. This guide explains how to create a proxied DNS record and a redirect rule to create clean, professional vanity URLs for your services."
 date: '2025-06-24'
+updateDate: "2025-07-26"
 categories:
   - software
 published: true
@@ -13,6 +14,7 @@ tags: ['solve SSL handshake failed', 'solve Error 525 Cloudflare', 'cloudflare s
 <script>
 	import Gallery from '$lib/components/Gallery.svelte';
     import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
+    import InfoBox from '$lib/components/InfoBox.svelte';
 </script>
 
 <Gallery>
@@ -89,9 +91,13 @@ This is where we set up the actual redirect logic. We'll create a rule that look
 
 ### Step 3: Test Your Redirect
 
-That's it! Your redirect should now be active. To test it, open a new browser tab (using an Incognito or Private window is a good idea to avoid any caching issues) and type in your new, clean URL: `http://webinar.yourdomain.com`.
+That's it! Your redirect should now be active. To test it, open a new browser tab and type in your new, clean URL: `http://webinar.yourdomain.com`.
 
 You should be instantly redirected to the long, final destination URL you specified in the rule.
+
+<InfoBox title="Testing Tip">
+Always test your redirect in an <b>incognito/private window</b> to avoid browser caching issues. Your browser might remember old DNS results or cached redirects, which <b>can make it appear like your setup isn't working even when it is</b>.
+</InfoBox>
 
 By following these two steps—creating a proxied DNS record and then a specific Redirect Rule—you can easily manage clean, professional links for all your external services, all within the power of your free Cloudflare account.
 
