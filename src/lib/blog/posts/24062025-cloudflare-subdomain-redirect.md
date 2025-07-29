@@ -7,7 +7,7 @@ categories:
   - software
 published: true
 author: 'Jonas Fröller'
-readingTime: '5-10 min'
+readingTime: '10 min'
 tags: ['solve SSL handshake failed', 'solve Error 525 Cloudflare', 'cloudflare subdomain setup', 'Cloudflare redirect not working', 'subdomain forwarding Cloudflare', 'vanity URL Cloudflare free']
 ---
 
