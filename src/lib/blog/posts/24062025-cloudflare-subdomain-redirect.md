@@ -46,10 +46,10 @@ Before we can create a rule to redirect traffic, we first need to tell Cloudflar
 
 3.  Click the **Add record** button.
 4.  Fill out the fields as follows:
-    *   **Type:** `CNAME`
-    *   **Name:** Enter your desired subdomain. For example, if you want the URL to be `webinar.yourdomain.com`, you would just enter `webinar`.
-    *   **Target:** Enter your root domain. You can simply use the `@` symbol (root) for this.
-    *   **Proxy status:** This is the most important part. Make sure the status is set to **Proxied**. The cloud icon should be orange. This ensures that the traffic passes through Cloudflare's network, which is what allows our redirect rule to work.
+    * **Type:** `CNAME`
+    * **Name:** Enter your desired subdomain. For example, if you want the URL to be `webinar.yourdomain.com`, you would just enter `webinar`.
+    * **Target:** Enter your root domain. You can simply use the `@` symbol (root) for this.
+    * **Proxy status:** This is the most important part. Make sure the status is set to **Proxied**. The cloud icon should be orange. This ensures that the traffic passes through Cloudflare's network, which is what allows our redirect rule to work.
 
 5.  Click **Save**.
 
@@ -72,16 +72,16 @@ This is where we set up the actual redirect logic. We'll create a rule that look
     ![Step 5](/blog/24062025-cloudflare-subdomain-redirect/5.png)
 
 4.  Under the **If incoming requests match...** section, configure the condition:
-    *   **Field:** Select `Hostname`.
-    *   **Operator:** Select `equals`.
-    *   **Value:** Enter the full subdomain you just created (e.g., `webinar.yourdomain.com`).
+    * **Field:** Select `Hostname`.
+    * **Operator:** Select `equals`.
+    * **Value:** Enter the full subdomain you just created (e.g., `webinar.yourdomain.com`).
 
     ![Step 6](/blog/24062025-cloudflare-subdomain-redirect/6.png)
 
 5.  Under the **Then...** section, define the redirect action:
-    *   **Type:** Select `Static`.
-    *   **URL:** Paste the full destination URL that you want users to be sent to (e.g., `https://event.webinarjam.com/live/1/abc123xyz`). Make sure to include the `https://`.
-    *   **Status code:** Select `301` (Permanent Redirect). This is generally the best choice for SEO and tells browsers that the location has moved for good.
+    * **Type:** Select `Static`.
+    * **URL:** Paste the full destination URL that you want users to be sent to (e.g., `https://event.webinarjam.com/live/1/abc123xyz`). Make sure to include the `https://`.
+    * **Status code:** Select `301` (Permanent Redirect). This is generally the best choice for SEO and tells browsers that the location has moved for good.
 
     ![Step 7](/blog/24062025-cloudflare-subdomain-redirect/7.png)
 
@@ -116,13 +116,13 @@ This separation is what makes Cloudflare so powerful. A redirect is just one of 
 
 #### How This Differs from Other Services
 
-*   **Hosting Providers (like Vercel):** These services *are* the final destination. A redirect is a simple internal configuration within the hosting environment, so it feels automatic.
-*   **Domain Registrars (like Namecheap):** Their basic redirect service is a simple DNS-level forward. It's a pointer, not a powerful proxy, so the setup is minimal and lacks the advanced features Cloudflare offers.
+* **Hosting Providers (like Vercel):** These services *are* the final destination. A redirect is a simple internal configuration within the hosting environment, so it feels automatic.
+* **Domain Registrars (like Namecheap):** Their basic redirect service is a simple DNS-level forward. It's a pointer, not a powerful proxy, so the setup is minimal and lacks the advanced features Cloudflare offers.
 
 Think of it like a package delivery service:
-*   **Namecheap** is the Post Office. It can forward your mail, but it doesn't open it.
-*   **Vercel** is your house. The mail arrives, and you decide what to do with it.
-*   **Cloudflare** is a corporate mailroom. It needs a list of recipients (the DNS record) and then specific instructions for each package (the Rules), like "Scan this package" or "Forward this one."
+* **Namecheap** is the Post Office. It can forward your mail, but it doesn't open it.
+* **Vercel** is your house. The mail arrives, and you decide what to do with it.
+* **Cloudflare** is a corporate mailroom. It needs a list of recipients (the DNS record) and then specific instructions for each package (the Rules), like "Scan this package" or "Forward this one."
 
 So, while it's a bit more work upfront, Cloudflare's method gives you unparalleled control over how your traffic is managed.
 
