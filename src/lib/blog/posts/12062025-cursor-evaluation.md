@@ -41,7 +41,7 @@ Before diving into valuation analysis, it's crucial to understand the actual mar
 
 - **GitHub Copilot:** **15+ million users** ([CNBC](https://www.cnbc.com/2025/05/19/microsoft-ai-github.html))
 - **Cursor:** **~1 million users** ([Bloomberg](https://www.bloomberg.com/news/articles/2025-04-07/cursor-an-ai-coding-assistant-draws-a-million-users-without-even-trying))
-- **Windsurf:** **~1 million users** ([Lenny's Newsletter](https://www.lennysnewsletter.com/p/the-untold-story-of-windsurf-varun-mohan))
+- **Windsurf:** **~1 million users** ([Lenny's Newsletter](https://www.lennysnewsletter.com/p/the-untold-story-of-windsurf-varun-mohan)) - [Try Windsurf](https://windsurf.com/refer?referral_code=c9b8b2da41) *(affiliate link)*
 
 This 15:1 ratio between Copilot and Cursor fundamentally frames the valuation discussion and competitive landscape.
 
@@ -68,7 +68,7 @@ The AI coding market features intense competition across multiple categories. He
 
 - **GitHub Copilot (Not publicly valued):** **15+ million users**, IDE plugin, context-aware suggestions
 - **Cursor:** **1 million users**, standalone AI IDE, natural language coding
-- **Windsurf:** **1 million users**, AI-native IDE with Cascade technology
+- **Windsurf:** **1 million users**, AI-native IDE with Cascade technology - [Try Windsurf](https://windsurf.com/refer?referral_code=c9b8b2da41) *(affiliate link)*
 
 ### Growing Alternatives
 

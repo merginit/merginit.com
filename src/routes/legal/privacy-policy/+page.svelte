@@ -2051,6 +2051,21 @@
 																									<div>
 																										<span>
 																											<span>
+																												<span>
+																													<strong>
+																														<u>Affiliate Links:</u>
+																													</strong>
+																													Some links on our website may be affiliate links, which means we may earn a commission if you click on the link and make a purchase. We only recommend products and services that we believe will be valuable to our users. Affiliate links are clearly marked with "(affiliate link)" or similar notation. When you click on an affiliate link, you may be redirected to a third-party website, and their privacy policy will apply to any information you provide on that site. These third-party sites may use cookies or similar tracking technologies to track your activity for affiliate commission purposes.
+																												</span>
+																											</span>
+																										</span>
+																									</div>
+																									<div>
+																										<br />
+																									</div>
+																									<div>
+																										<span>
+																											<span>
 																												If you have questions or comments about your
 																												privacy rights, you may email us at
 																												<bdt>jonas@merginit.com</bdt>
