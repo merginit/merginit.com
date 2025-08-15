@@ -3,7 +3,8 @@ title: 'Automated Multi-Platform Releases with semantic-release'
 description: "Learn how to automate your release process with semantic-release. Complete guide covering setup, npm publishing, GitHub releases, Docker image publishing, and CI/CD integration using conventional commits for seamless multi-platform deployments."
 date: '2025-06-29'
 categories:
-  - coding
+  - devops
+  - tutorial
 published: true
 author: 'Jonas Fröller'
 readingTime: '11 min'

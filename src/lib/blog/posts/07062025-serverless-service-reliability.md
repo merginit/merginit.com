@@ -3,7 +3,8 @@ title: 'Serverless Service Reliability'
 description: 'Serverless computing promises scalability and reduced overhead, but reliability challenges like cost unpredictability and vendor issues require careful attention and best practices.'
 date: '2025-06-07'
 categories:
-  - software
+  - cloud-computing
+  - devops
 published: true
 author: 'Jonas Fröller'
 readingTime: '8 min'

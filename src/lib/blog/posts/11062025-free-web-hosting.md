@@ -3,7 +3,8 @@ title: 'FREE Web-Hosting services in 2025'
 description: "Comprehensive guide comparing 25+ free web hosting services available in 2025. Features detailed analysis of static and dynamic hosting options, serverless platforms, and traditional web hosts. Includes comparison table, pros/cons, pricing tiers, and commercial usage policies for services like GitHub Pages, Cloudflare, Vercel, Netlify, AWS, and more."
 date: '2025-06-11'
 categories:
-  - software
+  - cloud-computing
+  - comparison
 published: true
 author: 'Jonas Fröller'
 readingTime: '45 min'

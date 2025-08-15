@@ -3,7 +3,8 @@ title: 'Effects in TypeScript: A New Way to Build Robust Backends'
 description: "Discover how the Effect library brings robust error handling, dependency injection, observability, and structured concurrency to TypeScript. A deep dive into building safer backends with composable workflows."
 date: '2025-06-27'
 categories:
-  - coding
+  - web-development
+  - tutorial
 published: true
 author: 'Jonas Fröller'
 readingTime: '20 min'

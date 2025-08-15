@@ -3,7 +3,8 @@ title: "Privacy-First AI: The Rise of Confidential Chatbots"
 description: "Explore the new wave of privacy-focused AI chatbots like Proton's Lumo, DuckDuckGo AI, and Kagi that prioritize user confidentiality over data collection."
 date: "2025-07-27"
 categories:
-  - software
+  - ai-ml
+  - cybersecurity
 published: true
 author: Jonas Fröller
 readingTime: "5 min"

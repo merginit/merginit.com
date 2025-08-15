@@ -3,7 +3,8 @@ title: 'Fluid Compute'
 description: "A technical deep-dive into Vercel's Fluid Compute - examining the architecture changes, performance claims, and real-world trade-offs of this serverless evolution. Is it truly \"Serverless 2.0\" or just clever marketing?"
 date: '2025-06-08'
 categories:
-  - software
+  - cloud-computing
+  - devops
 published: true
 author: 'Jonas Fröller'
 readingTime: '6 min'

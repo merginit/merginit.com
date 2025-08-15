@@ -4,7 +4,9 @@ description: "A deep dive into the latest groundbreaking AI developments. We exp
 date: "2025-07-22"
 updateDate: "2025-07-23"
 categories:
-  - software
+  - ai-ml
+  - open-source
+  - announcement
 published: true
 author: Jonas Fröller
 readingTime: 10 min

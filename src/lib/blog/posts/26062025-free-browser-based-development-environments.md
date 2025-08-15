@@ -3,7 +3,8 @@ title: 'FREE Browser-Based Development Environments 2025'
 description: "Discover the best free browser-based development environments. This guide compares CodePen, StackBlitz, VSCode for the Web, Gitpod, and more to help you code anywhere."
 date: '2025-06-26'
 categories:
-  - software
+  - developer-tools
+  - comparison
 published: true
 author: 'Jonas Fröller'
 readingTime: '15 min'

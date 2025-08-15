@@ -3,7 +3,8 @@ title: "The Unseen Threat: How Social Media Fuels a Scammer's Paradise"
 description: "A deep dive into the rising tide of online fraud originating from social media platforms and what can be done to combat it."
 date: "2025-07-28"
 categories:
-  - "software"
+  - cybersecurity
+  - opinion
 published: true
 author: "Jonas Fröller"
 readingTime: "4 min"

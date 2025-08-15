@@ -3,7 +3,8 @@ title: 'Backend API Architecture'
 description: "The Great API Debate: Richardson Maturity Model (REST) vs. GraphQL mess."
 date: '2025-06-21'
 categories:
-  - coding
+  - api-design
+  - comparison
 published: true
 author: 'Jonas Fröller'
 readingTime: '7 min'

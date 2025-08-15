@@ -3,7 +3,8 @@ title: 'Redefining Career Success: Choosing Meaning Over Prestige'
 description: "How professionals are reshaping success by prioritizing purpose, values, and agency over titles and prestige. Why quiet courage and meaningful work matter more than ever."
 date: '2025-06-20'
 categories:
- - software
+ - career
+ - opinion
 published: true
 author: 'Jonas Fröller'
 readingTime: '9 min'

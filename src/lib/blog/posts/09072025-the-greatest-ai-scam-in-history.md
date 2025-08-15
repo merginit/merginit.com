@@ -3,7 +3,8 @@ title: 'The Greatest AI Scam in History: How Builder.ai Fooled the World'
 description: "An exposé of Builder.ai's spectacular $1.5 billion fraud, deepfake scams, and AI-driven investment schemes that reveal the dark side of the AI hype bubble."
 date: '2025-07-09'
 categories:
-  - software
+  - ai-ml
+  - opinion
 published: true
 author: 'Jonas Fröller'
 readingTime: '7 min'

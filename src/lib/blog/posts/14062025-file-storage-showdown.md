@@ -3,7 +3,9 @@ title: 'File Storage Showdown: Mega vs Storj and their Best Alternatives in 2025
 description: "Complete comparison of file storage solutions for consumers and developers. We analyze Mega's privacy-focused cloud storage against all major competitors, evaluate Storj's decentralized object storage pricing, and explore open-source alternatives like Nextcloud and MinIO."
 date: '2025-06-14'
 categories:
-  - software
+  - cloud-computing
+  - comparison
+  - open-source
 published: true
 author: 'Jonas Fröller'
 readingTime: '11 min'

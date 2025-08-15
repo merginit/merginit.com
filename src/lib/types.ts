@@ -25,19 +25,37 @@ export interface Product {
     icon: string;
 }
 
-export type Categories = 'coding' | 'software' | 'critique' | 'ai' | 'info' | 'partner' | 'other';
+export const CATEGORIES = [
+    'web-development',   // Frontend, backend, full-stack development
+    'devops',            // CI/CD, deployment, infrastructure
+    'database',          // Database technologies, SQL, NoSQL
+    'cloud-computing',   // Cloud services, serverless, hosting
+    'ai-ml',             // Artificial Intelligence, Machine Learning
+    'cybersecurity',     // Privacy, security, anonymity
+    'open-source',       // Open source projects, licenses
+    'developer-tools',   // IDEs, dev environments, productivity tools
+    'api-design',        // API architecture, REST, GraphQL
+    'data-analytics',    // Analytics, monitoring, insights
+    'career',            // Career development, industry trends
+    'opinion',           // Thought leadership, critiques
+    'tutorial',          // How-to guides, tutorials
+    'comparison',        // Technology comparisons
+    'announcement'       // Updates, announcements
+] as const;
+
+export type Categories = typeof CATEGORIES[number];
 
 export type Post = {
-	title: string;
-	slug: string;
-	description: string;
-	date: string;
-	updateDate?: string;
-	categories: Categories[];
-	published: boolean;
-	author: string;
-	readingTime: string;
-	tags: string[];
+    title: string;
+    slug: string;
+    description: string;
+    date: string;
+    updateDate?: string;
+    categories: Categories[];
+    published: boolean;
+    author: string;
+    readingTime: string;
+    tags: string[];
 };
 
 export interface LinkPreview {

@@ -3,7 +3,9 @@ title: 'The Best Open-Source and Open-Weight AI Models for OCR'
 description: "A comprehensive guide to the leading open-source and open-weight OCR models, their capabilities, hardware requirements, and performance benchmarks for text recognition and document understanding."
 date: '2025-07-15'
 categories:
-  - software
+  - ai-ml
+  - open-source
+  - comparison
 published: true
 author: 'Jonas Fröller'
 readingTime: '18 min'

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Categories } from '$lib/types';
+	import { CATEGORIES } from '$lib/types';
 	import { createEventDispatcher } from 'svelte';
 	import { slide } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
@@ -55,7 +56,7 @@
 		return `${year}-${month}-${day}`;
 	});
 
-	const availableCategories: Categories[] = ['coding', 'software', 'critique', 'ai', 'info', 'partner', 'other'];
+	const availableCategories: Categories[] = [...CATEGORIES];
 	const searchScopes = [
 		{ value: 'all', label: 'All Content' },
 		{ value: 'title', label: 'Title Only' },

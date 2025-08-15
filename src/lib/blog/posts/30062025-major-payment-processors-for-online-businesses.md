@@ -3,7 +3,7 @@ title: 'Comprehensive Comparison of Major Payment Processors for Online Business
 description: "Complete guide comparing Stripe, Paddle, PayPal, Braintree, Adyen, Square, and Authorize.Net - covering pricing, features, EU compliance, and merchant of record capabilities for SaaS and digital businesses."
 date: '2025-06-30'
 categories:
-  - coding
+  - comparison
 published: true
 author: 'Jonas Fröller'
 readingTime: '26 min'

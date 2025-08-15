@@ -3,7 +3,8 @@ title: "Beyond Prompts: Mastering Context Engineering and Avoiding 'Context Rot'
 description: "A deep dive into Context Engineering, the essential skill for building advanced AI agents. Learn the four key strategies and how to combat 'Context Rot'—the performance degradation in LLMs with large context windows."
 date: '2025-07-30'
 categories:
-  - coding
+  - ai-ml
+  - tutorial
 published: true
 author: 'Jonas Fröller'
 readingTime: '7 min'

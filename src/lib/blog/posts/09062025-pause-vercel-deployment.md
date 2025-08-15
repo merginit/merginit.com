@@ -3,8 +3,8 @@ title: 'Pause Vercel Deployment'
 description: "5 different methods to pause your Vercel deployment. From firewall rules to REST API endpoints."
 date: '2025-06-09'
 categories:
-  - software
-  - coding
+  - web-development
+  - devops
 published: true
 author: 'Jonas Fröller'
 readingTime: '5 min'

@@ -3,7 +3,8 @@ title: 'FREE Subdomains (no expiration AFAIK)'
 description: "Probably the best ways to claim permanent FREE domains outside of other very limited monolithic services right now."
 date: '2025-06-15'
 categories:
-  - software
+  - cloud-computing
+  - tutorial
 published: true
 author: 'Jonas Fröller'
 readingTime: '3 min'

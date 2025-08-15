@@ -3,7 +3,7 @@ title: Hello, World!
 description: Hello, World!
 date: '2025-05-30'
 categories:
-  - info
+  - announcement
 published: true
 author: 'Jonas Fröller'
 readingTime: '1 min'

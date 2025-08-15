@@ -3,7 +3,8 @@ title: 'How to Choose Your Database: A Comprehensive Guide'
 description: "A deep dive into database selection with CAP theorem, ACID vs BASE models, and comprehensive analysis of relational, NoSQL, NewSQL, and time-series databases to help you make informed decisions."
 date: '2025-07-01'
 categories:
-  - coding
+  - database
+  - comparison
 published: true
 author: 'Jonas Fröller'
 readingTime: '17 min'

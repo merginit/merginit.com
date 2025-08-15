@@ -4,7 +4,9 @@ description: "An analysis of Cursor's $9.9 billion valuation against the competi
 date: '2025-06-12'
 updateDate: '2025-07-23'
 categories:
-  - software
+  - ai-ml
+  - opinion
+  - comparison
 published: true
 author: 'Jonas Fröller'
 readingTime: '8 min'

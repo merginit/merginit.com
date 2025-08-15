@@ -4,7 +4,8 @@ description: "Learn the simple two-step process to set up a subdomain redirect o
 date: '2025-06-24'
 updateDate: "2025-07-26"
 categories:
-  - software
+  - cloud-computing
+  - tutorial
 published: true
 author: 'Jonas Fröller'
 readingTime: '10 min'

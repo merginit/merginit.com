@@ -3,7 +3,9 @@ title: 'FREE GDPR-Compliant Analytics Tools'
 description: "The best free, GDPR-compliant analytics tools for your website. Comparison of Microsoft Clarity, PostHog, and open-source options like Matomo and Plausible to help you respect user privacy while gaining valuable insights."
 date: '2025-06-17'
 categories:
-  - software
+  - developer-tools
+  - comparison
+  - open-source
 published: true
 author: 'Jonas Fröller'
 readingTime: '11 min'

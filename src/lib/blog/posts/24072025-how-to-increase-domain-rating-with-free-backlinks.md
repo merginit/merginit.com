@@ -4,7 +4,8 @@ description: "Learn proven strategies to boost your Domain Rating through high-a
 date: "2025-07-24"
 updateDate: "2025-07-26"
 categories:
-  - software
+  - tutorial
+  - web-development
 published: true
 author: Jonas Fröller
 readingTime: "10 min"

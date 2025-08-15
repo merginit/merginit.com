@@ -3,7 +3,9 @@ title: 'Tor Criticisms, Security Risks, and the Best Alternatives for Secure Bro
 description: "A comprehensive analysis of Tor's privacy risks, government and hacker threats, and the best alternatives for secure and anonymous browsing, including I2P, Freenet, Tails, VPNs, and privacy-focused browsers."
 date: '2025-07-18'
 categories:
-  - software
+  - cybersecurity
+  - comparison
+  - open-source
 published: true
 author: 'Jonas Fröller'
 readingTime: '10 min'

@@ -3,7 +3,8 @@ title: 'FREE Email Inboxes and Cheap Transactional Emails'
 description: "Discover the best free transactional email services and custom domain email hosting options. Compare Resend, Brevo, Mailjet, Zoho Mail and more for developers and businesses."
 date: '2025-06-19'
 categories:
-  - software
+  - developer-tools
+  - comparison
 published: true
 author: 'Jonas Fröller'
 readingTime: '8 min'

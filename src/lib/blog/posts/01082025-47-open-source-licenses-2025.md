@@ -3,7 +3,8 @@ title: "Complete Guide to All 47 Open Source Licenses | Choose the Right One in 
 description: "Comprehensive guide to all 47 open source licenses from ChooseALicense.com. Compare MIT, GPL, Apache, BSD licenses with clear usage recommendations and examples."
 date: '2025-08-01'
 categories:
- - coding
+  - open-source
+  - comparison
 published: true
 author: 'Jonas Fröller'
 readingTime: '25 min'
