@@ -198,7 +198,7 @@ Below is a detailed comparison of the five tools, addressing the key criteria: l
 
 ## Free Tool by MerginIT: Security Header Analyzer
 
-Introducing our free, production-grade Security Header Analyzer at [https://sha.merginit.com](https://sha.merginit.com) — built on top of the open-source tool **humble**. Source code: [github.com/jonasfroeller/header-checker](https://github.com/jonasfroeller/header-checker).
+Introducing our free, production-grade Security Header Analyzer at [https://sha.merginit.com](https://sha.merginit.com) — built on top of the open-source tool **humble** (WIP, currently simple custom implementation for MVP). Source code: [github.com/jonasfroeller/header-checker](https://github.com/jonasfroeller/header-checker).
 
 Use it in the browser or integrate it via a free API.
 
