@@ -7,29 +7,38 @@
   import CallToAction from '$lib/components/CallToAction.svelte';
 	import type { LinkItem } from '$lib/types';
   import { isMobile } from '$lib/stores/viewport';
+  
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
 
   // --- STATE ---
-  let isOpen: boolean = false;
-  let isAnimating: boolean = false;
+  let isOpen = $state(false);
+  let isAnimating = $state(false);
 
   // --- ELEMENT REFERENCES ---
-  let containerEl: HTMLDivElement | undefined;
-  let menuToggleEl: HTMLButtonElement | undefined;
-  let menuOverlayEl: HTMLDivElement | undefined;
-  let menuContentEl: HTMLDivElement | undefined;
-  let menuPreviewImgContainerEl: HTMLDivElement | undefined;
-  let menuOpenLabelEl: HTMLParagraphElement | undefined;
-  let menuCloseLabelEl: HTMLParagraphElement | undefined;
-  let contactButtonEl: HTMLElement | undefined;
+  let containerEl = $state<HTMLDivElement>();
+  let menuToggleEl = $state<HTMLButtonElement>();
+  let menuOverlayEl = $state<HTMLDivElement>();
+  let menuContentEl = $state<HTMLDivElement>();
+  let menuPreviewImgContainerEl = $state<HTMLDivElement>();
+  let menuOpenLabelEl = $state<HTMLParagraphElement>();
+  let menuCloseLabelEl = $state<HTMLParagraphElement>();
+  let contactButtonEl = $state<HTMLElement>();
 
-  let visionLinksElements: (HTMLAnchorElement | null)[] = [];
-  let socialLinksElements: (HTMLAnchorElement | null)[] = [];
-  let footerLinksElements: (HTMLAnchorElement | null)[] = [];
+  let visionLinksElements = $state<(HTMLAnchorElement | null)[]>([]);
+  let socialLinksElements = $state<(HTMLAnchorElement | null)[]>([]);
+  let footerLinksElements = $state<(HTMLAnchorElement | null)[]>([]);
 
   // --- DATA ---
   const visionLinks: LinkItem[] = [
     { text: 'Täglich Frisches Obst', img: 'taeglichfrischesobst.com.png', href: 'https://taeglichfrischesobst.com' },
-    { text: 'NeptunAI', img: '/neptunai.tech-dashboard-chat.png', href: 'https://neptunai.tech' },
+    { 
+      text: 'NeptunAI', 
+      img: '/neptunai.tech-dashboard-chat.png', 
+      images: ['/neptunai.tech-dashboard-chat.png', '/neptunai.tech.png'],
+      href: 'https://neptunai.tech' 
+    },
     { text: 'OCRMD', img: 'ocrmd.com.png', href: 'https://ocrmd.com' }
   ];
 
@@ -47,19 +56,6 @@
   const defaultPreviewImageSrc = '/taeglichfrischesobst.com.png';
 
   // --- UTILITY FUNCTIONS ---
-  function cleanupPreviewImages(): void {
-    if (!menuPreviewImgContainerEl) return;
-    const previewImages: NodeListOf<HTMLImageElement> =
-      menuPreviewImgContainerEl.querySelectorAll('img');
-    if (previewImages.length > 3) {
-      for (let i = 0; i < previewImages.length - 3; i++) {
-        if (previewImages[i]) {
-             menuPreviewImgContainerEl.removeChild(previewImages[i]);
-        }
-      }
-    }
-  }
-
   function resetPreviewImage(): void {
     if (menuPreviewImgContainerEl) {
       menuPreviewImgContainerEl.innerHTML = '';
@@ -155,7 +151,6 @@
     const socialAndFooterCombinedLinks = [...filteredSocialLinks, ...filteredFooterLinks];
 
     if (socialAndFooterCombinedLinks.length > 0) {
-      // Set initial state for these links for their animation sequence
       gsap.set(socialAndFooterCombinedLinks, { opacity: 0, y: '120%' }); 
       
       gsap.to(socialAndFooterCombinedLinks, {
@@ -234,33 +229,192 @@
     }
   }
 
-  function handleLinkHoverFocus(imgSrc?: string): void {
-    if (!isOpen || isAnimating || !imgSrc || !menuPreviewImgContainerEl) return;
+  function handleLinkHoverFocus(linkItem: LinkItem): void {
+    if (!isOpen || isAnimating || !menuPreviewImgContainerEl) return;
 
-    const currentImages: NodeListOf<HTMLImageElement> =
-      menuPreviewImgContainerEl.querySelectorAll('img');
-    if (currentImages.length > 0) {
-      const lastImage = currentImages[currentImages.length - 1];
-      if (lastImage && lastImage.src && lastImage.src.endsWith(imgSrc)) {
-        return;
+    menuPreviewImgContainerEl.innerHTML = '';
+
+    if (linkItem.images && linkItem.images.length > 1) {
+      const swiperContainer = document.createElement('div');
+      swiperContainer.className = 'swiper w-full h-full opacity-0 [will-change:transform,opacity]';
+      
+      gsap.set(swiperContainer, {
+        opacity: 0,
+        scale: 1.25,
+        rotation: 10
+      });
+      
+      const swiperWrapper = document.createElement('div');
+      swiperWrapper.className = 'swiper-wrapper';
+      
+      linkItem.images.forEach((imageSrc, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = `Gallery image ${index + 1}`;
+        img.className = 'w-full h-full object-cover [will-change:transform,opacity]';
+        
+        slide.appendChild(img);
+        swiperWrapper.appendChild(slide);
+      });
+      
+      const prevButton = document.createElement('div');
+      prevButton.className = 'custom-swiper-button-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/40 backdrop-blur-sm text-white rounded-full flex items-center justify-center cursor-pointer z-10 hover:bg-black/60 transition-all duration-300 border border-white/20 hover:border-white/40';
+      prevButton.style.width = '40px';
+      prevButton.style.height = '40px';
+      prevButton.style.minWidth = '40px';
+      prevButton.style.minHeight = '40px';
+      
+      const nextButton = document.createElement('div');
+      nextButton.className = 'custom-swiper-button-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/40 backdrop-blur-sm text-white rounded-full flex items-center justify-center cursor-pointer z-10 hover:bg-black/60 transition-all duration-300 border border-white/20 hover:border-white/40';
+      nextButton.style.width = '40px';
+      nextButton.style.height = '40px';
+      nextButton.style.minWidth = '40px';
+      nextButton.style.minHeight = '40px';
+      
+      const prevIcon = document.createElement('div');
+      prevIcon.innerHTML = `
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      `;
+      prevIcon.style.display = 'flex';
+      prevIcon.style.alignItems = 'center';
+      prevIcon.style.justifyContent = 'center';
+      prevIcon.style.width = '100%';
+      prevIcon.style.height = '100%';
+      
+      const nextIcon = document.createElement('div');
+      nextIcon.innerHTML = `
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      `;
+      nextIcon.style.display = 'flex';
+      nextIcon.style.alignItems = 'center';
+      nextIcon.style.justifyContent = 'center';
+      nextIcon.style.width = '100%';
+      nextIcon.style.height = '100%';
+      
+      prevButton.appendChild(prevIcon);
+      nextButton.appendChild(nextIcon);
+      
+      const pagination = document.createElement('div');
+      pagination.className = 'swiper-pagination absolute bottom-4 z-10';
+      pagination.style.left = '50%';
+      pagination.style.transform = 'translateX(-50%)';
+      pagination.style.width = 'auto';
+      pagination.style.textAlign = 'center';
+      pagination.style.display = 'flex';
+      pagination.style.justifyContent = 'center';
+      pagination.style.alignItems = 'center';
+      
+      swiperContainer.appendChild(swiperWrapper);
+      swiperContainer.appendChild(prevButton);
+      swiperContainer.appendChild(nextButton);
+      swiperContainer.appendChild(pagination);
+      menuPreviewImgContainerEl.appendChild(swiperContainer);
+      
+      import('swiper').then(({ Swiper }) => {
+        import('swiper/modules').then(({ Navigation, Pagination, EffectFade }) => {
+          const swiper = new Swiper(swiperContainer, {
+            modules: [Navigation, Pagination, EffectFade],
+            effect: 'slide',
+            speed: 400,
+            navigation: {
+              nextEl: '.custom-swiper-button-next',
+              prevEl: '.custom-swiper-button-prev',
+              disabledClass: 'swiper-button-disabled-custom',
+            },
+            pagination: {
+              el: pagination,
+              clickable: true,
+              bulletClass: 'swiper-pagination-bullet',
+              bulletActiveClass: 'swiper-pagination-bullet-active',
+              type: 'bullets',
+              dynamicBullets: false,
+              hideOnClick: false,
+              renderBullet: function (index: number, className: string) {
+                return `<span class="${className}" style="display: inline-block; width: 8px; height: 8px; background: rgba(245, 215, 0, 0.4); border-radius: 50%; margin: 0 6px; cursor: pointer; transition: all 0.3s ease;"></span>`;
+              }
+            },
+            loop: false,
+            allowTouchMove: true,
+            keyboard: true,
+            on: {
+              init: function() {
+                updateButtonStates(this);
+              },
+              slideChange: function() {
+                updateButtonStates(this);
+              }
+            }
+          });
+          
+          function updateButtonStates(swiperInstance: any) {
+            const isBeginning = swiperInstance.isBeginning;
+            const isEnd = swiperInstance.isEnd;
+            
+            if (isBeginning) {
+              prevButton.style.opacity = '0.3';
+              prevButton.style.cursor = 'not-allowed';
+              prevButton.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+              prevButton.style.pointerEvents = 'none';
+            } else {
+              prevButton.style.opacity = '1';
+              prevButton.style.cursor = 'pointer';
+              prevButton.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
+              prevButton.style.pointerEvents = 'auto';
+            }
+            
+            if (isEnd) {
+              nextButton.style.opacity = '0.3';
+              nextButton.style.cursor = 'not-allowed';
+              nextButton.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+              nextButton.style.pointerEvents = 'none';
+            } else {
+              nextButton.style.opacity = '1';
+              nextButton.style.cursor = 'pointer';
+              nextButton.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
+              nextButton.style.pointerEvents = 'auto';
+            }
+          }
+          
+          gsap.to(swiperContainer, {
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            duration: 0.75,
+            ease: 'power2.out',
+          });
+        });
+      });
+      
+    } else {
+      let imgSrc = linkItem.img;
+      if (!imgSrc) return;
+      
+      if (!imgSrc.startsWith('/')) {
+        imgSrc = '/' + imgSrc;
       }
+
+      const newPreviewImg = document.createElement('img');
+      newPreviewImg.src = imgSrc;
+      newPreviewImg.alt = 'Preview Image';
+      newPreviewImg.className =
+        'absolute top-0 left-0 w-full h-full object-cover opacity-0 scale-[1.25] rotate-[10deg] [will-change:transform,opacity]';
+      menuPreviewImgContainerEl.appendChild(newPreviewImg);
+
+      gsap.to(newPreviewImg, {
+        opacity: 1,
+        scale: 1,
+        rotation: 0,
+        duration: 0.75,
+        ease: 'power2.out',
+      });
     }
-
-    const newPreviewImg = document.createElement('img');
-    newPreviewImg.src = imgSrc;
-    newPreviewImg.alt = 'Preview Image';
-    newPreviewImg.className =
-      'absolute top-0 left-0 w-full h-full object-cover opacity-0 scale-[1.25] rotate-[10deg] [will-change:transform,opacity]';
-    menuPreviewImgContainerEl.appendChild(newPreviewImg);
-    cleanupPreviewImages();
-
-    gsap.to(newPreviewImg, {
-      opacity: 1,
-      scale: 1,
-      rotation: 0,
-      duration: 0.75,
-      ease: 'power2.out',
-    });
   }
 
   onMount(() => {
@@ -312,7 +466,7 @@
     <button
       type="button"
       bind:this={menuToggleEl}
-      on:click={handleToggleClick}
+      onclick={handleToggleClick}
       aria-label={isOpen ? 'Close menu' : 'Open menu'}
       class="menu-toggle relative w-24 h-6 cursor-pointer overflow-hidden p-0 bg-transparent border-none text-inherit"
     >
@@ -357,8 +511,8 @@
                   bind:this={visionLinksElements[i]}
                   href={item.href}
                   target="_blank" rel="noopener noreferrer"
-                  on:mouseover={() => handleLinkHoverFocus(item.img)}
-                  on:focus={() => handleLinkHoverFocus(item.img)}
+                  onmouseover={() => handleLinkHoverFocus(item)}
+                  onfocus={() => handleLinkHoverFocus(item)}
                   class="text-[2.5rem] md:text-[3.5rem] font-medium tracking-[-0.02em] relative inline-block transition-colors duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-neutral-400 group menu-link-item [will-change:transform]"
                 >
                   {item.text}
@@ -502,5 +656,45 @@
     background: transparent;
     border: none;
     color: inherit;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+  
+  .custom-swiper-button-prev,
+  .custom-swiper-button-next {
+    display: flex !important;
+  }
+  
+  .swiper-pagination {
+    position: absolute !important;
+    bottom: 16px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  .swiper-pagination-bullet {
+    background: rgba(245, 215, 0, 0.4) !important;
+    opacity: 1 !important;
+    width: 8px !important;
+    height: 8px !important;
+    margin: 0 6px !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #f5d700 !important;
+    transform: scale(1.25) !important;
+  }
+  
+  .swiper-pagination-bullet:hover {
+    background: rgba(245, 215, 0, 0.7) !important;
   }
 </style>

@@ -3,6 +3,7 @@ export interface LinkItem {
     text?: string;
     icon?: string;
     img?: string;
+    images?: string[];
     area?: 'lg' | 'sm';
 }
 
