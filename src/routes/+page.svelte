@@ -3,13 +3,141 @@
 	import OverlayMenu from '$lib/components/OverlayMenu.svelte';
 	import NumberTicker from '$lib/components/NumberTicker.svelte';
 	import BorderBeam from '$lib/components/BorderBeam.svelte';
+	import VideoPreview from '$lib/components/VideoPreview.svelte';
+	import Icon from '@iconify/svelte';
 	import type { ProjectItem } from '$lib/types';
 	import { browser } from '$app/environment';
 
-	let isFirefox = false;
+	let isFirefox = $state(false);
+	let currentFaviconElement = $state<HTMLElement | null>(null);
+	let currentWebsiteUrl = $state<string | null>(null);
+	let hoverTimeout: ReturnType<typeof setTimeout> | undefined = undefined;
+	let videoPreviewRef: any = $state();
+	let showVideo = $state(false);
+	let hoveredCardIndex = $state<number | null>(null);
+	let playButtonOutIndex = $state<number | null>(null);
+	let outAnimationTimeout: ReturnType<typeof setTimeout> | null = null;
 
-	$: if (browser) {
-		isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+	$effect(() => {
+		if (browser) {
+			isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+		}
+	});
+
+	$effect(() => {
+		return () => {
+			if (hoverTimeout) {
+				clearTimeout(hoverTimeout);
+			}
+			if (outAnimationTimeout) {
+				clearTimeout(outAnimationTimeout);
+			}
+			if (browser && document.body.classList.contains('video-preview-open')) {
+				document.body.classList.remove('video-preview-open');
+			}
+		};
+	});
+
+	function handleCardMouseEnter(index: number) {
+		if (outAnimationTimeout) {
+			clearTimeout(outAnimationTimeout);
+			outAnimationTimeout = null;
+		}
+		
+		// If we're moving from one card to another, trigger out animation for the previous card
+		if (hoveredCardIndex !== null && hoveredCardIndex !== index) {
+			const previousIndex = hoveredCardIndex;
+			
+			// Start out animation immediately
+			playButtonOutIndex = previousIndex;
+			hoveredCardIndex = null;
+			
+			// Set new hovered card after a tiny delay to allow out animation to start
+			setTimeout(() => {
+				hoveredCardIndex = index;
+				// Clear out animation for the new card if it was previously animating out
+				if (playButtonOutIndex === index) {
+					playButtonOutIndex = null;
+				}
+			}, 10);
+			
+			// Remove the out animation class after animation completes
+			setTimeout(() => {
+				if (playButtonOutIndex === previousIndex) {
+					playButtonOutIndex = null;
+				}
+			}, 150);
+		} else {
+			// Set the new hovered card immediately if no transition
+			hoveredCardIndex = index;
+			// Clear out animation for the new card if it was previously animating out
+			if (playButtonOutIndex === index) {
+				playButtonOutIndex = null;
+			}
+		}
+	}
+
+	function handleCardMouseLeave() {
+		if (hoveredCardIndex !== null) {
+			const currentIndex = hoveredCardIndex;
+			hoveredCardIndex = null;
+			
+			// Start out animation
+			playButtonOutIndex = currentIndex;
+			
+			// Remove the out animation class after animation completes
+			outAnimationTimeout = setTimeout(() => {
+				if (playButtonOutIndex === currentIndex) {
+					playButtonOutIndex = null;
+				}
+			}, 150);
+		}
+	}
+
+	function handlePlayButtonClick(event: MouseEvent, faviconImg: HTMLElement) {
+		event.preventDefault();
+		event.stopPropagation();
+		
+		if (!showVideo) {
+			currentFaviconElement = faviconImg;
+			// Get the project data to extract the website URL
+			const cardIndex = parseInt(faviconImg.id.split('-')[1]);
+			currentWebsiteUrl = projects[cardIndex]?.url || null;
+			
+			showVideo = true;
+			hoveredCardIndex = null; // Hide play button
+			// Add body class to prevent scrolling
+			if (browser) {
+				document.body.classList.add('video-preview-open');
+			}
+		}
+	}
+
+	function handleVideoClose() {
+		// Remove body class to restore scrolling
+		if (browser) {
+			document.body.classList.remove('video-preview-open');
+		}
+		// Clear any pending timeouts
+		if (hoverTimeout) {
+			clearTimeout(hoverTimeout);
+		}
+		
+		// Call the hide method on the component first (this triggers the out animation)
+		if (videoPreviewRef) {
+			videoPreviewRef.hide();
+		} else {
+			// Fallback if no ref available
+			showVideo = false;
+			currentFaviconElement = null;
+		}
+	}
+
+	function handleAnimationComplete() {
+		// Called from the VideoPreview component after the out animation completes
+		showVideo = false;
+		currentFaviconElement = null;
+		currentWebsiteUrl = null;
 	}
 
 	const projects: ProjectItem[] = [
@@ -86,7 +214,7 @@
 		<div
 			class="whitespace-pre-wrap text-6xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-medium tracking-tighter text-white"
 		>
-			<NumberTicker value={3} initial={0} duration={1500} />
+			<NumberTicker value={3 + 18} initial={0} duration={1500} />+
 		</div>
 		<h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-center text-white mt-2 md:mt-4">
 			Websites Built
@@ -98,12 +226,16 @@
 		<h2
 			class="text-4xl sm:text-5xl md:text-6xl font-bold text-[#ffaa40] mb-12 sm:mb-16 text-center tracking-tight"
 		>
-			Our Projects
+			Our Main Projects
 		</h2>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
 			{#each projects as project, i}
+				{@const faviconId = `favicon-${i}`}
 				<article
 					class="group relative flex h-full flex-col items-start justify-between rounded-3xl p-6 sm:p-7 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-md hover:shadow-brand/20 transition-all duration-300 ease-in-out hover:border-brand/70 transform hover:-translate-y-1"
+					onmouseenter={() => handleCardMouseEnter(i)}
+					onmouseleave={handleCardMouseLeave}
+					role="article"
 				>
 					<BorderBeam
 						size={180}
@@ -117,7 +249,7 @@
 						href={project.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="absolute inset-0 z-20"
+						class="absolute inset-0 z-10"
 						aria-label={'View ' + project.projectType}
 					></a>
 
@@ -143,14 +275,51 @@
 						</p>
 					</div>
 
+					<div class="relative z-10 mt-4 mb-2 w-full flex justify-end">
+						<a
+							href={project.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-brand transition-colors relative z-40 group-link min-h-[20px]"
+							onclick={(e) => e.stopPropagation()}
+						>
+							<span class="whitespace-nowrap">{new URL(project.url).hostname.replace('www.', '')}</span>
+							<Icon 
+								icon="lucide:external-link" 
+								class="w-4 h-4 flex-shrink-0" 
+							/>
+						</a>
+					</div>
+
 					<div
 						class="relative z-10 mt-6 flex items-center gap-x-4 w-full pt-4 border-t border-gray-700/50"
 					>
-						<img
-							src={project.iconSrc}
-							alt={`${project.projectType} favicon`}
-							class="h-10 w-10 rounded-full bg-gray-700 p-1 object-contain border border-gray-600 shadow"
-						/>
+						<div class="relative favicon-container">
+							<img
+								id={faviconId}
+								src={project.iconSrc}
+								alt={`${project.projectType} favicon`}
+								class="h-10 w-10 rounded-full bg-gray-700 p-1 object-contain border border-gray-600 shadow favicon-trigger"
+							/>
+							
+							{#if hoveredCardIndex === i || playButtonOutIndex === i}
+								<button
+									class="absolute inset-0 flex items-center justify-center bg-black/70 rounded-full backdrop-blur-sm transition-all duration-300 ease-out play-button z-50 {playButtonOutIndex === i ? 'out' : ''}"
+									onclick={(e) => {
+										e.preventDefault();
+										e.stopPropagation();
+										const faviconImg = document.getElementById(faviconId);
+										if (faviconImg) handlePlayButtonClick(e, faviconImg);
+									}}
+									aria-label="Play project demo video"
+								>
+									<Icon 
+										icon="lucide:play" 
+										class="w-4 h-4 text-white ml-0.5" 
+									/>
+								</button>
+							{/if}
+						</div>
 						<div class="text-sm leading-5">
 							<p class="font-semibold text-gray-200 group-hover:text-white transition-colors">
 								{project.category}
@@ -165,3 +334,101 @@
 		</div>
 	</section>
 </div>
+
+{#if showVideo}
+	<VideoPreview 
+		bind:this={videoPreviewRef}
+		bind:faviconElement={currentFaviconElement}
+		websiteUrl={currentWebsiteUrl ?? undefined}
+		onClose={handleAnimationComplete}
+		onCloseRequest={handleVideoClose}
+	/>
+{/if}
+
+<style>
+	:global(.favicon-trigger) {
+		transition: transform 0.3s ease;
+		will-change: transform;
+	}
+	
+	:global(.group:hover .favicon-trigger) {
+		transform: scale(1.1);
+	}
+	
+	/* Ensure smooth hover transition for cards */
+	:global(.group) {
+		transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+		will-change: transform;
+	}
+	
+	/* Prevent layout shifts during video animation */
+	:global(body.video-preview-open) {
+		overflow: hidden;
+	}
+	
+	/* Improve performance */
+	:global(.group:hover) {
+		transform: translateY(-4px);
+	}
+	
+	/* Play button animation */
+	.play-button {
+		animation: playButtonIn 0.3s ease-out forwards;
+		transform-origin: center;
+		z-index: 50 !important;
+		pointer-events: all;
+	}
+	
+	/* Play button out animation - faster */
+	.play-button.out {
+		animation: playButtonOut 0.15s ease-in forwards;
+	}
+	
+	@keyframes playButtonIn {
+		from {
+			transform: scale(0);
+			opacity: 0;
+		}
+		to {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+	
+	@keyframes playButtonOut {
+		from {
+			transform: scale(1);
+			opacity: 1;
+		}
+		to {
+			transform: scale(0);
+			opacity: 0;
+		}
+	}
+	
+	.play-button:hover {
+		background-color: rgba(0, 0, 0, 0.85);
+		transform: scale(1.1);
+	}
+	
+	.play-button:active {
+		transform: scale(0.95);
+	}
+	
+	/* Ensure the favicon container allows for proper layering */
+	.favicon-container {
+		position: relative;
+		z-index: 1;
+	}
+	
+	/* Website link in card styling */
+	.group-link {
+		text-decoration: none;
+	}
+	
+	.group-link:hover {
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 2px;
+	}
+</style>
