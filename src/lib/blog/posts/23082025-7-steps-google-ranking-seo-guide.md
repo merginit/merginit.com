@@ -31,9 +31,12 @@ tags:
 
 <script>
   import ImageWithCaption from '$lib/components/ImageWithCaption.svelte';
+  import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
 </script>
 
 # 7 Steps to Google #1 Ranking
+
+<AudioNativePlayer />
 
 ## Step 1: Website Foundation
 
