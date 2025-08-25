@@ -1,6 +1,6 @@
 ---
 title: 'Oracle DML Explained: Advanced SQL from INSERT to MERGE'
-description: "Master Oracle SQL DML commands including INSERT, UPDATE, DELETE, and MERGE with practical examples and advanced techniques for efficient data manipulation."
+description: 'Master Oracle SQL DML commands including INSERT, UPDATE, DELETE, and MERGE with practical examples and advanced techniques for efficient data manipulation.'
 date: '2025-06-25'
 categories:
   - database
@@ -39,7 +39,7 @@ INSERT INTO Authors (Name) VALUES ('J.K. Rowling');
 
 -- Adding a new book with a subquery
 INSERT INTO Books (AuthorId, Title, Price, PublicationYear)
-VALUES ((SELECT AuthorId FROM Authors WHERE Name = 'J.K. Rowling'), 
+VALUES ((SELECT AuthorId FROM Authors WHERE Name = 'J.K. Rowling'),
         'Harry Potter and the Philosopher''s Stone', 20.99, 1997);
 ```
 
@@ -111,6 +111,7 @@ WHERE family_name LIKE 'F%';
 ### INSERT Limitations and Best Practices
 
 When using `INSERT ALL`, be aware of these limitations:
+
 - Maximum 15 rows for tables with 4096 columns
 - Maximum 65 rows for tables with 1000 columns
 - Only works with physical tables (no views or materialized views)
@@ -132,8 +133,8 @@ WHERE Title = 'Harry Potter and the Philosopher''s Stone';
 
 -- Update multiple columns
 UPDATE employees
-SET job_id = 'SA_MAN', 
-    salary = salary + 1000, 
+SET job_id = 'SA_MAN',
+    salary = salary + 1000,
     department_id = 140
 WHERE last_name = 'Jones';
 ```
@@ -177,12 +178,14 @@ WHERE AuthorId NOT IN (SELECT AuthorId FROM Authors);
 Key differences between DELETE and TRUNCATE:
 
 **DELETE:** (DML)
+
 - Selective deletion with WHERE clause
 - Triggers can be fired
 - Operations logged in transaction log
 - Can be rolled back
 
 **TRUNCATE:** (DDL)
+
 - Removes all rows at once
 - Faster performance
 - Cannot fire triggers
@@ -234,7 +237,7 @@ VALUES (8002, 'Juan', 'Fernandez', 'juanf@example.com', NULL,
 
 ## Understanding DQL: The Query Component
 
-While SELECT is technically part of DQL (Data Query Language), it's often considered alongside DML when it involves data manipulation through subqueries or when used with INSERT statements. 
+While SELECT is technically part of DQL (Data Query Language), it's often considered alongside DML when it involves data manipulation through subqueries or when used with INSERT statements.
 
 > According to Wikipedia: "Although often considered part of DML, the SQL SELECT statement is strictly speaking part of the DQL SQL subcategory."
 
@@ -243,6 +246,7 @@ While SELECT is technically part of DQL (Data Query Language), it's often consid
 Oracle supports various JOIN types for combining data from multiple tables:
 
 **Basic JOIN Types:**
+
 ```sql
 -- INNER JOIN with ON clause
 SELECT * FROM employees e
@@ -271,6 +275,7 @@ SELECT * FROM table1, table2;
 Oracle supports various subquery types:
 
 **Scalar Subqueries:**
+
 ```sql
 SELECT BookId, Title, Price, PublicationYear
 FROM Books
@@ -278,6 +283,7 @@ WHERE AuthorId = (SELECT AuthorId FROM Authors WHERE Name = 'Alice Smith');
 ```
 
 **EXISTS Subqueries:**
+
 ```sql
 -- Find departments with at least one employee
 SELECT department_name
@@ -291,6 +297,7 @@ WHERE NOT EXISTS (SELECT 1 FROM order_items oi WHERE oi.product_id = p.product_i
 ```
 
 **IN/ANY/ALL Subqueries:**
+
 ```sql
 -- Find employees in departments located at location 1700
 SELECT employee_id, first_name, last_name
@@ -309,6 +316,7 @@ WHERE price > ALL (SELECT price FROM products WHERE category_id = 2);
 ```
 
 **Subquery in FROM Clause:**
+
 ```sql
 -- Top 10 orders with highest value
 SELECT *
@@ -322,6 +330,7 @@ WHERE ROWNUM <= 10;
 ### GROUP BY and Aggregation Functions
 
 **Basic GROUP BY:**
+
 ```sql
 -- Average selling price per book
 SELECT b.Title, AVG(b.Price) AS AvgPrice
@@ -331,6 +340,7 @@ ORDER BY AvgPrice DESC;
 ```
 
 **GROUP BY with HAVING:**
+
 ```sql
 -- Books with average sale price over 30
 SELECT b.Title, AVG(s.Price) AS AvgSalePrice
@@ -357,8 +367,8 @@ Oracle provides an extensive set of aggregation functions organized into categor
 7. **Logical Aggregations:** EVERY, BOOLEAN_AND_AGG, BOOLEAN_OR_AGG
 8. **Bitwise Aggregations:** BIT_AND_AGG, BIT_OR_AGG, BIT_XOR_AGG
 9. **JSON Aggregations:** JSON_ARRAYAGG, JSON_OBJECTAGG
-10. **Statistical Test Functions:** STATS_BINOMIAL_TEST, STATS_CROSSTAB, STATS_F_TEST, STATS_KS_TEST, STATS_MW_TEST, STATS_ONE_WAY_ANOVA, STATS_T_TEST*, STATS_WSR_TEST
-11. **Regression Functions:** REGR_* (Linear regression functions)
+10. **Statistical Test Functions:** STATS_BINOMIAL_TEST, STATS_CROSSTAB, STATS_F_TEST, STATS_KS_TEST, STATS_MW_TEST, STATS_ONE_WAY_ANOVA, STATS_T_TEST\*, STATS_WSR_TEST
+11. **Regression Functions:** REGR\_\* (Linear regression functions)
 12. **Collection Functions:** COLLECT, LISTAGG
 13. **XML Aggregations:** SYS_XMLAGG, XMLAGG
 14. **Special Functions:** ANY_VALUE, CHECKSUM, SYS_OP_ZONE_ID, TO_APPROX_COUNT_DISTINCT, TO_APPROX_PERCENTILE
@@ -403,6 +413,7 @@ FROM employee;
 | MINUS ALL     | All rows from first query but not second, including duplicates                   |
 
 **Key Requirements for Set Operators:**
+
 - Number of columns must match between queries
 - Data types of corresponding columns must be compatible
 - ORDER BY must be placed at the end of the final query
@@ -410,12 +421,14 @@ FROM employee;
 ### JOINs vs Set Operators: Understanding the Difference
 
 **JOINs:**
+
 - Work with relationships between tables
 - Flexible combination based on conditions
 - Connect rows from different tables
 - Focus on columns
 
 **Set Operators:**
+
 - No relationships required
 - Require compatible table structures
 - Combine entire result sets
@@ -455,6 +468,7 @@ ORDER BY id;
 ### Transaction Management
 
 Always consider transaction boundaries when performing DML operations:
+
 - Use explicit transactions for related operations
 - Implement proper error handling
 - Consider the impact of triggers on performance

@@ -8,7 +8,14 @@ categories:
 published: true
 author: 'Jonas Fröller'
 readingTime: '8 min'
-tags: ['Gödel incompleteness', 'Lucas-Penrose argument', 'AI limitations', 'philosophy of AI', 'consciousness']
+tags:
+  [
+    'Gödel incompleteness',
+    'Lucas-Penrose argument',
+    'AI limitations',
+    'philosophy of AI',
+    'consciousness'
+  ]
 ---
 
 <script>
@@ -21,7 +28,7 @@ tags: ['Gödel incompleteness', 'Lucas-Penrose argument', 'AI limitations', 'phi
 
 ## Gödel, Penrose, and the Myth of AI's Ultimate Limit: A Critique
 
-You’ve probably seen one of them. A slickly produced video, often with clean whiteboard animations, that makes a bold claim: there is a simple, provable task that all Artificial Intelligence will *forever* fail at, proving the human mind is fundamentally superior. A popular German example, ["Die simple Aufgabe, an der jede KI scheitert"](https://www.youtube.com/watch?v=x_ZhqjbgdAQ) by *100SekundenPhysik*, does an excellent job of explaining this very flawed argument.
+You've probably seen one of them. A slickly produced video, often with clean whiteboard animations, that makes a bold claim: there is a simple, provable task that all Artificial Intelligence will _forever_ fail at, proving the human mind is fundamentally superior. A popular German example, ["Die simple Aufgabe, an der jede KI scheitert"](https://www.youtube.com/watch?v=x_ZhqjbgdAQ) by _100SekundenPhysik_, does an excellent job of explaining this very flawed argument.
 
 The video posits that because of Kurt Gödel's famous incompleteness theorems, any AI, being an algorithmic system, can be stumped by a specific logical statement that a human can easily recognize as true. This, the argument goes, is the silver bullet that establishes a permanent hierarchy with human consciousness on top.
 
@@ -40,7 +47,7 @@ The most famous of these unprovable truths is the "Gödel sentence" (let's call 
 
 `G = "This statement is not provable within this formal system."`
 
-A human can reason that if G were false, it would mean it *is* provable, which would make the system inconsistent (as it would have proven a false statement). Therefore, G must be true. And because it's true, it is, as it claims, unprovable by the system.
+A human can reason that if G were false, it would mean it _is_ provable, which would make the system inconsistent (as it would have proven a false statement). Therefore, G must be true. And because it's true, it is, as it claims, unprovable by the system.
 
 ### The Leap to AI: The Lucas-Penrose Argument
 
@@ -60,7 +67,7 @@ This is the logic presented in the video. And on the surface, it seems irrefutab
 
 The argument takes for granted that the human mind is a consistent logical system. But is it?
 
-We humans are notoriously fallible. We operate on heuristics and cognitive biases, we make logical errors, and we can comfortably hold contradictory beliefs (cognitive dissonance). If the human mind is *not* a consistent system, then the comparison to a formal mathematical system is flawed from the start. You cannot apply Gödel's theorem—which requires consistency—to one side of the equation (the AI) but not the other (the human).
+We humans are notoriously fallible. We operate on heuristics and cognitive biases, we make logical errors, and we can comfortably hold contradictory beliefs (cognitive dissonance). If the human mind is _not_ a consistent system, then the comparison to a formal mathematical system is flawed from the start. You cannot apply Gödel's theorem—which requires consistency—to one side of the equation (the AI) but not the other (the human).
 
 ### Flaw #2: The Moving Goalpost Problem
 
@@ -68,7 +75,7 @@ Let's assume we have an AI, let's call it `AI-v1`, for which we construct its G�
 
 But what happens next? A human programmer can see that `G1` is true and simply add it as a new axiom to the AI's system. The result is a new, more powerful system: `AI-v2`.
 
-This new system, `AI-v2`, is now perfectly capable of "knowing" `G1`. Of course, `AI-v2` now has a *new* Gödel sentence, `G2`, which it cannot prove. But the process can repeat. This doesn't demonstrate a fundamental inability of AI; it demonstrates that learning can involve incorporating new truths that were previously outside the system. The argument doesn't prove that AI is inherently limited, only that its knowledge can be extended—a process that sounds a lot like human learning.
+This new system, `AI-v2`, is now perfectly capable of "knowing" `G1`. Of course, `AI-v2` now has a _new_ Gödel sentence, `G2`, which it cannot prove. But the process can repeat. This doesn't demonstrate a fundamental inability of AI; it demonstrates that learning can involve incorporating new truths that were previously outside the system. The argument doesn't prove that AI is inherently limited, only that its knowledge can be extended—a process that sounds a lot like human learning.
 
 ### Flaw #3: The Unrealistic Problem of Complexity
 

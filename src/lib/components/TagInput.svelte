@@ -11,15 +11,16 @@
 	} = $props();
 
 	const dispatch = createEventDispatcher();
-	
+
 	let availableTags: string[] = $state([]);
 	let inputValue = $state('');
 	let showSuggestions = $state(false);
 	let filteredSuggestions = $derived(
-		availableTags.filter(tag => 
-			tag.toLowerCase().includes(inputValue.toLowerCase()) &&
-			!selectedTags.includes(tag)
-		).slice(0, 10)
+		availableTags
+			.filter(
+				(tag) => tag.toLowerCase().includes(inputValue.toLowerCase()) && !selectedTags.includes(tag)
+			)
+			.slice(0, 10)
 	);
 	let highlightedIndex = $state(-1);
 	let inputElement: HTMLInputElement;
@@ -58,7 +59,7 @@
 	}
 
 	function removeTag(tag: string) {
-		selectedTags = selectedTags.filter(t => t !== tag);
+		selectedTags = selectedTags.filter((t) => t !== tag);
 		dispatch('change');
 	}
 
@@ -106,11 +107,15 @@
 
 <div class="relative">
 	<!-- Tag input container -->
-	<div class="min-h-[2.75rem] w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg text-white transition-colors">
+	<div
+		class="min-h-[2.75rem] w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg text-white transition-colors"
+	>
 		<div class="flex flex-wrap gap-2 items-center">
 			<!-- Selected tags -->
 			{#each selectedTags as tag}
-				<span class="inline-flex items-center gap-1 px-2 py-1 text-sm bg-accent/20 text-accent border border-accent/30 rounded-md">
+				<span
+					class="inline-flex items-center gap-1 px-2 py-1 text-sm bg-accent/20 text-accent border border-accent/30 rounded-md"
+				>
 					{tag}
 					<button
 						onclick={() => removeTag(tag)}
@@ -139,16 +144,17 @@
 
 	<!-- Suggestions dropdown -->
 	{#if showSuggestions && filteredSuggestions.length > 0}
-		<div 
+		<div
 			bind:this={suggestionContainer}
 			class="absolute z-50 w-full mt-1 bg-gray-800 border border-gray-600 rounded-lg shadow-lg max-h-48 overflow-y-auto"
 		>
 			{#each filteredSuggestions as suggestion, index}
 				<button
 					onclick={() => addTag(suggestion)}
-					class="w-full px-3 py-2 text-left text-white hover:bg-gray-700 transition-colors {
-						index === highlightedIndex ? 'bg-gray-700' : ''
-					}"
+					class="w-full px-3 py-2 text-left text-white hover:bg-gray-700 transition-colors {index ===
+					highlightedIndex
+						? 'bg-gray-700'
+						: ''}"
 				>
 					<span class="font-medium">{suggestion}</span>
 				</button>
@@ -158,9 +164,7 @@
 
 	{#if showSuggestions && inputValue && filteredSuggestions.length === 0}
 		<div class="absolute z-50 w-full mt-1 bg-gray-800 border border-gray-600 rounded-lg shadow-lg">
-			<div class="px-3 py-2 text-gray-400 text-sm">
-				No matching tags found
-			</div>
+			<div class="px-3 py-2 text-gray-400 text-sm">No matching tags found</div>
 		</div>
 	{/if}
 </div>

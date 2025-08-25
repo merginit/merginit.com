@@ -8,7 +8,18 @@ categories:
 published: true
 author: 'Jonas Fröller'
 readingTime: '7 min'
-tags: ['AI', 'scam', 'fraud', 'Builder.ai', 'deepfakes', 'investment', 'startup', 'unicorn', 'AI washing']
+tags:
+  [
+    'AI',
+    'scam',
+    'fraud',
+    'Builder.ai',
+    'deepfakes',
+    'investment',
+    'startup',
+    'unicorn',
+    'AI washing'
+  ]
 ---
 
 <script>

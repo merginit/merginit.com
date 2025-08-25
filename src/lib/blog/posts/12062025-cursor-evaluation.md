@@ -43,7 +43,7 @@ Before diving into valuation analysis, it's crucial to understand the actual mar
 
 - **GitHub Copilot:** **15+ million users** ([CNBC](https://www.cnbc.com/2025/05/19/microsoft-ai-github.html))
 - **Cursor:** **~1 million users** ([Bloomberg](https://www.bloomberg.com/news/articles/2025-04-07/cursor-an-ai-coding-assistant-draws-a-million-users-without-even-trying))
-- **Windsurf:** **~1 million users** ([Lenny's Newsletter](https://www.lennysnewsletter.com/p/the-untold-story-of-windsurf-varun-mohan)) - [Try Windsurf](https://windsurf.com/refer?referral_code=c9b8b2da41) *(affiliate link)*
+- **Windsurf:** **~1 million users** ([Lenny's Newsletter](https://www.lennysnewsletter.com/p/the-untold-story-of-windsurf-varun-mohan)) - [Try Windsurf](https://windsurf.com/refer?referral_code=c9b8b2da41) _(affiliate link)_
 
 This 15:1 ratio between Copilot and Cursor fundamentally frames the valuation discussion and competitive landscape.
 
@@ -70,7 +70,7 @@ The AI coding market features intense competition across multiple categories. He
 
 - **GitHub Copilot (Not publicly valued):** **15+ million users**, IDE plugin, context-aware suggestions
 - **Cursor:** **1 million users**, standalone AI IDE, natural language coding
-- **Windsurf:** **1 million users**, AI-native IDE with Cascade technology - [Try Windsurf](https://windsurf.com/refer?referral_code=c9b8b2da41) *(affiliate link)*
+- **Windsurf:** **1 million users**, AI-native IDE with Cascade technology - [Try Windsurf](https://windsurf.com/refer?referral_code=c9b8b2da41) _(affiliate link)_
 
 ### Growing Alternatives
 
@@ -102,6 +102,7 @@ While established players dominate headlines, several lesser-known tools are qui
 ### MGX Dev (MetaGPT) - Multi-Agent Collaboration
 
 **[MGX Dev](https://mgx.dev/)** takes a unique approach by employing **5 intelligent AI agents** that collaborate like a real development team ([YouTube Review](https://www.youtube.com/watch?v=DWE_rNP3N84)):
+
 - **Team Leader** - Coordinates overall project direction
 - **Product Manager** - Manages requirements and features
 - **Data Engineer** - Handles data architecture
@@ -113,6 +114,7 @@ This multi-agent approach aligns with recent research showing that **[multi-agen
 ### Emergent - "Vibe Coding" Platform
 
 **[Emergent](https://emergent.sh/)** represents the most ambitious newcomer, billing itself as the "World's First Vibe Coding Platform" ([Y Combinator](https://www.ycombinator.com/companies/emergent)). Founded in 2024 by ex-Dunzo co-founder Mukund Jha, Emergent promises to:
+
 - Transform natural language descriptions into **production-ready full-stack apps**
 - Handle the entire development lifecycle autonomously (planning → coding → testing → deployment)
 - Built **10,000+ apps in 2 weeks** post-alpha launch, including AI notetakers, Slack bots, and SaaS tools
@@ -193,4 +195,4 @@ Cursor's **$9.9 billion valuation** reflects both the sector's potential and inv
 [OpenAI in talks to pay about $3 billion to acquire Windsurf](https://www.cnbc.com/2025/04/16/openai-in-talks-to-pay-about-3-billion-to-acquire-startup-windsurf.html)  
 [Microsoft introduces GitHub AI agent that can code for you](https://www.cnbc.com/2025/05/19/microsoft-ai-github.html)  
 [Global AI Code Tools Market size is expected to reach $17.2 billion by 2030](https://www.kbvresearch.com/ai-code-tools-market)  
-[Over 100 million lines of enterprise code written daily with Cursor](https://x.com/rwang07/status/1932488086270980590)  
+[Over 100 million lines of enterprise code written daily with Cursor](https://x.com/rwang07/status/1932488086270980590)

@@ -1,6 +1,6 @@
 ---
 title: 'FREE Database Hosting in 2025'
-description: "The best free database hosting options in 2025. Complete guide covering PostgreSQL, MySQL, NoSQL, time-series, and vector databases with detailed comparisons of Neon, Supabase, MongoDB Atlas, and more."
+description: 'The best free database hosting options in 2025. Complete guide covering PostgreSQL, MySQL, NoSQL, time-series, and vector databases with detailed comparisons of Neon, Supabase, MongoDB Atlas, and more.'
 date: '2025-06-13'
 categories:
   - database
@@ -115,9 +115,9 @@ Column-family stores are engineered for handling vast datasets with high read/wr
 
 Graph databases are tailored for managing intricate data relationships.
 
-| Provider         | Storage | Features              | Limitations                    |
-| ---------------- | ------- | --------------------- | ------------------------------ |
-| **Neo4j AuraDB** | 1 GB    | Monitoring, backups   | Single instance, limited nodes |
+| Provider         | Storage | Features            | Limitations                    |
+| ---------------- | ------- | ------------------- | ------------------------------ |
+| **Neo4j AuraDB** | 1 GB    | Monitoring, backups | Single instance, limited nodes |
 
 - **Neo4j AuraDB** ([Neo4j AuraDB](https://neo4j.com/cloud/aura/)) offers 1 GB of storage for small graph-based projects.
 
@@ -125,9 +125,9 @@ Graph databases are tailored for managing intricate data relationships.
 
 Time-series databases are optimized for timestamped data, such as metrics or IoT streams.
 
-| Provider        | Storage | Features                            | Limitations        |
-| --------------- | ------- | ----------------------------------- | ------------------ |
-| **InfluxDB**    | -       | 30-day retention, unlimited queries | Limited write rate |
+| Provider     | Storage | Features                            | Limitations        |
+| ------------ | ------- | ----------------------------------- | ------------------ |
+| **InfluxDB** | -       | 30-day retention, unlimited queries | Limited write rate |
 
 - **InfluxDB Cloud** ([InfluxDB](https://www.influxdata.com/products/influxdb-cloud/)) provides 30-day data retention, perfect for metrics tracking.
 
@@ -171,7 +171,7 @@ Leading cloud platforms offer free credits or tiers for database services.
 
 ## Conclusion
 
-This guide encompasses all major database categories, from relational systems to specialized solutions. For PostgreSQL, Neon and Supabase lead the pack, while Aiven shines for MySQL and MariaDB. Turso’s SQLite offering demands vigilance due to past issues, and Upstash proves versatile for Redis and vector databases. Emerging categories like document stores (MongoDB Atlas), column-family stores (DataStax Astra DB), graph databases (Neo4j AuraDB), and time-series databases (InfluxDB) provide diverse free options. VPS and cloud providers round out the landscape for self-hosted flexibility. Developers must weigh reliability, constraints, and project needs when selecting a solution.
+This guide encompasses all major database categories, from relational systems to specialized solutions. For PostgreSQL, Neon and Supabase lead the pack, while Aiven shines for MySQL and MariaDB. Turso's SQLite offering demands vigilance due to past issues, and Upstash proves versatile for Redis and vector databases. Emerging categories like document stores (MongoDB Atlas), column-family stores (DataStax Astra DB), graph databases (Neo4j AuraDB), and time-series databases (InfluxDB) provide diverse free options. VPS and cloud providers round out the landscape for self-hosted flexibility. Developers must weigh reliability, constraints, and project needs when selecting a solution.
 
 ## Sources
 

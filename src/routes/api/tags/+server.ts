@@ -7,12 +7,12 @@ async function getAllTags() {
 
 	for (const path in paths) {
 		const file = paths[path] as any;
-		
+
 		if (file && typeof file === 'object' && 'metadata' in file) {
 			const metadata = file.metadata as Omit<Post, 'slug'>;
-			
+
 			if (metadata.published && metadata.tags) {
-				metadata.tags.forEach(tag => tags.add(tag));
+				metadata.tags.forEach((tag) => tags.add(tag));
 			}
 		}
 	}

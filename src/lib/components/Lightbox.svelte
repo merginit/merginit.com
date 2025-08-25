@@ -8,7 +8,8 @@
 	import 'swiper/css/navigation';
 	import 'swiper/css/zoom';
 
-	let { images = [], onclose }: { images?: string[]; onclose?: (() => void) | undefined } = $props();
+	let { images = [], onclose }: { images?: string[]; onclose?: (() => void) | undefined } =
+		$props();
 	let lightboxOpen = $state(false);
 	let swiperInstance = $state<Swiper | null>(null);
 	let initialIndex = $state(0);
@@ -17,37 +18,37 @@
 	function open(index: number) {
 		initialIndex = index;
 		lightboxOpen = true;
-		
+
 		// Animate backdrop
 		gsap.fromTo(
 			'.lightbox-backdrop',
 			{ opacity: 0 },
 			{ opacity: 1, duration: 0.4, ease: 'power2.out' }
 		);
-		
+
 		// Animate container with sexy bounce
 		gsap.fromTo(
 			'.lightbox-container',
 			{ scale: 0.3, opacity: 0, rotationX: -15 },
-			{ 
-				scale: 1, 
-				opacity: 1, 
+			{
+				scale: 1,
+				opacity: 1,
 				rotationX: 0,
-				duration: 0.8, 
+				duration: 0.8,
 				ease: 'back.out(2.5)',
 				delay: 0.1
 			}
 		);
-		
+
 		// Animate images with stagger
 		gsap.fromTo(
 			'.swiper-slide img',
 			{ scale: 0.8, opacity: 0, y: 50 },
-			{ 
-				scale: 1, 
-				opacity: 1, 
+			{
+				scale: 1,
+				opacity: 1,
 				y: 0,
-				duration: 0.6, 
+				duration: 0.6,
 				ease: 'power3.out',
 				delay: 0.3,
 				stagger: 0.1
@@ -64,7 +65,7 @@
 			duration: 0.2,
 			ease: 'power2.in'
 		});
-		
+
 		// Animate container
 		gsap.to('.lightbox-container', {
 			scale: 0.3,
@@ -74,7 +75,7 @@
 			ease: 'power2.in',
 			delay: 0.1
 		});
-		
+
 		// Animate backdrop
 		gsap.to('.lightbox-backdrop', {
 			opacity: 0,
@@ -107,10 +108,10 @@
 				slidesPerView: 1,
 				navigation: {
 					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
+					prevEl: '.swiper-button-prev'
 				},
 				zoom: true,
-				initialSlide: initialIndex,
+				initialSlide: initialIndex
 			});
 		}
 	});
@@ -141,7 +142,11 @@
 					{#each images as image, i}
 						<div class="swiper-slide flex items-center justify-center">
 							<div class="swiper-zoom-container">
-								<img src={image} alt={`Image ${i + 1}`} class="max-h-full max-w-full object-contain" />
+								<img
+									src={image}
+									alt={`Image ${i + 1}`}
+									class="max-h-full max-w-full object-contain"
+								/>
 							</div>
 						</div>
 					{/each}
@@ -214,13 +219,13 @@
 		backdrop-filter: blur(10px);
 		transition: all 0.3s ease;
 	}
-	
+
 	:global(.swiper-button-next:hover, .swiper-button-prev:hover) {
 		color: rgb(209 213 219);
 		background: rgba(0, 0, 0, 0.5);
 		transform: scale(1.1);
 	}
-	
+
 	:global(.swiper-button-next:after, .swiper-button-prev:after) {
 		font-size: 18px;
 		font-weight: bold;

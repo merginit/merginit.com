@@ -13,7 +13,7 @@
 
 <figure class={cn('image-container', _class)} style="width: {width}; height: {height};">
 	{#if href}
-		<a href={href} target="_blank" rel="noopener noreferrer" class="block w-full h-full">
+		<a {href} target="_blank" rel="noopener noreferrer" class="block w-full h-full">
 			<img {src} {alt} class="image" loading="lazy" />
 		</a>
 	{:else}

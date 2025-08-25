@@ -1,6 +1,6 @@
 ---
 title: 'Backend API Architecture'
-description: "The Great API Debate: Richardson Maturity Model (REST) vs. GraphQL mess."
+description: 'The Great API Debate: Richardson Maturity Model (REST) vs. GraphQL mess.'
 date: '2025-06-21'
 categories:
   - api-design
@@ -27,13 +27,13 @@ In the ever-evolving landscape of web development, the way we design and build A
 
 The Richardson Maturity Model, conceived by Leonard Richardson, is a framework for grading APIs based on their adherence to the principles of REST (Representational State Transfer). It's not a technology itself, but rather a way to measure how "RESTful" an API is. The model consists of four levels, from 0 to 3, with each level building upon the previous one.
 
-* **Level 0: The Swamp of POX (Plain Old XML)**: At this level, an API uses a single URI and a single HTTP method (typically POST) for all operations. This is essentially remote procedure calling (RPC) over HTTP.
+- **Level 0: The Swamp of POX (Plain Old XML)**: At this level, an API uses a single URI and a single HTTP method (typically POST) for all operations. This is essentially remote procedure calling (RPC) over HTTP.
 
-* **Level 1: Resources**: This level introduces the concept of individual resources, each with its own URI. Instead of a single endpoint, you have multiple URIs to identify different resources (e.g., `/users`, `/products`).
+- **Level 1: Resources**: This level introduces the concept of individual resources, each with its own URI. Instead of a single endpoint, you have multiple URIs to identify different resources (e.g., `/users`, `/products`).
 
-* **Level 2: HTTP Verbs**: Here, the API starts to use different HTTP methods for different actions on resources, such as GET for retrieving data, POST for creating, and DELETE for removing. This aligns more closely with the intended use of the HTTP protocol.
+- **Level 2: HTTP Verbs**: Here, the API starts to use different HTTP methods for different actions on resources, such as GET for retrieving data, POST for creating, and DELETE for removing. This aligns more closely with the intended use of the HTTP protocol.
 
-* **Level 3: Hypermedia Controls (HATEOAS)**: The highest level of REST maturity, HATEOAS (Hypermedia as the Engine of Application State) means that the API responses include links and forms that guide the client on what actions they can take next. This allows clients to navigate the API dynamically without prior knowledge of all endpoints.
+- **Level 3: Hypermedia Controls (HATEOAS)**: The highest level of REST maturity, HATEOAS (Hypermedia as the Engine of Application State) means that the API responses include links and forms that guide the client on what actions they can take next. This allows clients to navigate the API dynamically without prior knowledge of all endpoints.
 
 ### Introducing GraphQL: A Query Language for APIs
 
@@ -47,13 +47,13 @@ When we compare the Richardson Maturity Model and GraphQL, it's not a direct, ap
 
 Here's a breakdown of the key differences:
 
-* **Endpoints**: The most significant difference is the number of endpoints. A RESTful API, as it moves up the Richardson Maturity Model, will have many endpoints, each representing a resource. A GraphQL API, on the other hand, has a single endpoint.
+- **Endpoints**: The most significant difference is the number of endpoints. A RESTful API, as it moves up the Richardson Maturity Model, will have many endpoints, each representing a resource. A GraphQL API, on the other hand, has a single endpoint.
 
-* **Data Fetching**: With a REST API, the server determines the structure of the response. In contrast, GraphQL empowers the client to request the specific data it needs, which can lead to more efficient data transfer.
+- **Data Fetching**: With a REST API, the server determines the structure of the response. In contrast, GraphQL empowers the client to request the specific data it needs, which can lead to more efficient data transfer.
 
-* **HATEOAS**: A key component of a fully mature REST API (Level 3) is HATEOAS, which is absent in GraphQL. GraphQL's schema provides a similar "discoverability" feature, but it's a build-time contract rather than a runtime guide.
+- **HATEOAS**: A key component of a fully mature REST API (Level 3) is HATEOAS, which is absent in GraphQL. GraphQL's schema provides a similar "discoverability" feature, but it's a build-time contract rather than a runtime guide.
 
-* **Protocol Agnostic**: The GraphQL specification itself is protocol-agnostic, meaning it doesn't dictate the use of HTTP. However, in practice, it is almost always implemented over HTTP.
+- **Protocol Agnostic**: The GraphQL specification itself is protocol-agnostic, meaning it doesn't dictate the use of HTTP. However, in practice, it is almost always implemented over HTTP.
 
 ### Can They Coexist?
 

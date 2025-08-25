@@ -5,31 +5,37 @@
 
 	const products: Product[] = [
 		{
-			name: "Page To Markdown Extension",
-			url: "https://github.com/jonasfroeller/page-to-markdown-extension",
-			description: "Convert web pages to Markdown format",
-			icon: "mdi:language-markdown"
+			name: 'Page To Markdown Extension',
+			url: 'https://github.com/jonasfroeller/page-to-markdown-extension',
+			description: 'Convert web pages to Markdown format',
+			icon: 'mdi:language-markdown'
 		},
 		{
-			name: "Youtube Subscriptions Exporter",
-			url: "https://github.com/jonasfroeller/youtube-subscriptions-exporter-extension",
-			description: "Export YouTube subscriptions easily",
-			icon: "mdi:youtube"
+			name: 'Youtube Subscriptions Exporter',
+			url: 'https://github.com/jonasfroeller/youtube-subscriptions-exporter-extension',
+			description: 'Export YouTube subscriptions easily',
+			icon: 'mdi:youtube'
 		}
 	];
 </script>
 
 <svelte:head>
 	<title>Free Products - MerginIT e.U.</title>
-	<meta 
-		name="description" 
+	<meta
+		name="description"
 		content="Discover our collection of free tools and browser extensions including Page To Markdown Extension and YouTube Subscriptions Exporter."
 	/>
 	<meta property="og:title" content="Free Products - MerginIT e.U." />
-	<meta property="og:description" content="Discover our collection of free tools and browser extensions including Page To Markdown Extension and YouTube Subscriptions Exporter." />
+	<meta
+		property="og:description"
+		content="Discover our collection of free tools and browser extensions including Page To Markdown Extension and YouTube Subscriptions Exporter."
+	/>
 	<meta property="og:url" content="https://merginit.com/free-products" />
 	<meta name="twitter:title" content="Free Products - MerginIT e.U." />
-	<meta name="twitter:description" content="Discover our collection of free tools and browser extensions including Page To Markdown Extension and YouTube Subscriptions Exporter." />
+	<meta
+		name="twitter:description"
+		content="Discover our collection of free tools and browser extensions including Page To Markdown Extension and YouTube Subscriptions Exporter."
+	/>
 </svelte:head>
 
 <div class="min-h-screen bg-brand-dark px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 py-20">
@@ -43,12 +49,15 @@
 			</p>
 		</div>
 
-        <div class="flex justify-center mb-16">
-			<a href="/" class="bg-brand/20 border border-brand/50 hover:bg-brand/30 transition-colors duration-300 ease-in-out rounded-full px-4 py-2 mt-4">
+		<div class="flex justify-center mb-16">
+			<a
+				href="/"
+				class="bg-brand/20 border border-brand/50 hover:bg-brand/30 transition-colors duration-300 ease-in-out rounded-full px-4 py-2 mt-4"
+			>
 				Home
 			</a>
 		</div>
-		
+
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
 			{#each products as product, i}
 				<article
@@ -71,12 +80,16 @@
 					></a>
 
 					<div class="relative z-10 flex w-full items-center justify-center mb-6">
-						<div class="flex justify-center items-center w-16 h-16 flex-shrink-0 text-brand bg-brand/10 rounded-full border border-brand/30 group-hover:bg-brand/20 group-hover:border-brand/50 transition-all duration-300">
+						<div
+							class="flex justify-center items-center w-16 h-16 flex-shrink-0 text-brand bg-brand/10 rounded-full border border-brand/30 group-hover:bg-brand/20 group-hover:border-brand/50 transition-all duration-300"
+						>
 							<Icon icon={product.icon} width="32" height="32" />
 						</div>
 					</div>
 
-					<div class="relative z-10 text-center flex-grow flex flex-col justify-center items-center w-full">
+					<div
+						class="relative z-10 text-center flex-grow flex flex-col justify-center items-center w-full"
+					>
 						<h3
 							class="text-xl sm:text-2xl font-semibold leading-7 text-gray-100 group-hover:text-white transition-colors mb-4"
 						>
@@ -90,7 +103,9 @@
 					</div>
 
 					<div class="relative z-10 mt-6 w-full pt-4 border-t border-gray-700/50 text-center">
-						<span class="text-xs text-gray-400 group-hover:text-gray-300 transition-colors flex items-center justify-center gap-2">
+						<span
+							class="text-xs text-gray-400 group-hover:text-gray-300 transition-colors flex items-center justify-center gap-2"
+						>
 							<Icon icon="mdi:github" width="20" height="20" /> Click to view on GitHub
 						</span>
 					</div>

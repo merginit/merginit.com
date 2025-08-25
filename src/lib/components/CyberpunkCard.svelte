@@ -22,8 +22,8 @@
 		const centerX = rect.width / 2;
 		const centerY = rect.height / 2;
 
-		const rotateX = (y - centerY) / centerY * -7;
-		const rotateY = (x - centerX) / centerX * 7;
+		const rotateX = ((y - centerY) / centerY) * -7;
+		const rotateY = ((x - centerX) / centerX) * 7;
 
 		gsap.to(cardRef, {
 			duration: 0.4,
@@ -64,9 +64,9 @@
 </script>
 
 {#if href}
-	<a 
-		bind:this={cardRef} 
-		{href} 
+	<a
+		bind:this={cardRef}
+		{href}
 		class="block hover:no-underline perspective"
 		on:mousemove={handleMouseMove}
 		on:mouseenter={handleMouseEnter}
@@ -84,8 +84,8 @@
 		</Container>
 	</a>
 {:else}
-	<div 
-		bind:this={cardRef} 
+	<div
+		bind:this={cardRef}
 		class="block perspective"
 		on:mousemove={handleMouseMove}
 		on:mouseenter={handleMouseEnter}

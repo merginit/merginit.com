@@ -37,10 +37,10 @@
 		const button = document.createElement('button');
 		button.className = 'code-copy-btn';
 		button.type = 'button';
-		
+
 		const copyIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>`;
 		const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>`;
-		
+
 		button.innerHTML = copyIcon;
 
 		button.addEventListener('click', async () => {
@@ -49,7 +49,7 @@
 
 			try {
 				await navigator.clipboard.writeText(code.textContent || '');
-				
+
 				button.innerHTML = checkIcon;
 				button.classList.add('copied');
 
@@ -100,15 +100,15 @@
 				mutation.addedNodes.forEach((node) => {
 					if (node.nodeType === Node.ELEMENT_NODE) {
 						const element = node as Element;
-						
+
 						// check if the added node is a code block
 						if (element.tagName === 'PRE' && element.className.includes('language-')) {
 							setTimeout(() => addCopyButtonToCodeBlock(element as HTMLPreElement), 50);
 						}
-						
+
 						// check for code blocks within the added node
 						const codeBlocks = element.querySelectorAll<HTMLPreElement>('pre[class*="language-"]');
-						codeBlocks.forEach(pre => setTimeout(() => addCopyButtonToCodeBlock(pre), 50));
+						codeBlocks.forEach((pre) => setTimeout(() => addCopyButtonToCodeBlock(pre), 50));
 					}
 				});
 			});

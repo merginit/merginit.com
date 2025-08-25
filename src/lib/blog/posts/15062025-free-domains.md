@@ -1,6 +1,6 @@
 ---
 title: 'FREE Subdomains (no expiration AFAIK)'
-description: "Probably the best ways to claim permanent FREE domains outside of other very limited monolithic services right now."
+description: 'Probably the best ways to claim permanent FREE domains outside of other very limited monolithic services right now.'
 date: '2025-06-15'
 categories:
   - cloud-computing
@@ -8,7 +8,20 @@ categories:
 published: true
 author: 'Jonas Fröller'
 readingTime: '3 min'
-tags: ['free', 'subdomains', 'dynamic-dns', 'ddns', 'freeddns', 'myddns', 'dns-stuff', 'changeip', 'webredirect', 'ddnsgeek', 'ddnsfree']
+tags:
+  [
+    'free',
+    'subdomains',
+    'dynamic-dns',
+    'ddns',
+    'freeddns',
+    'myddns',
+    'dns-stuff',
+    'changeip',
+    'webredirect',
+    'ddnsgeek',
+    'ddnsfree'
+  ]
 ---
 
 <script>
@@ -34,17 +47,17 @@ tags: ['free', 'subdomains', 'dynamic-dns', 'ddns', 'freeddns', 'myddns', 'dns-s
 
 ## Good Alternatives
 
-1. [DuckDNS - Step by Step (.duckdns.org, high downtime from my experience)](https://gist.github.com/taichikuji/6f4183c0af1f4a29e345b60910666468) (see @https://www.duckdns.org)  
+1. [DuckDNS - Step by Step (.duckdns.org, high downtime from my experience)](https://gist.github.com/taichikuji/6f4183c0af1f4a29e345b60910666468) (see @https://www.duckdns.org)
 
 2. **[Dynu](https://www.dynu.com/en-US/DynamicDNS)**: Offers free subdomains under domains like `freeddns.org` and `ddnsfree.com`, supports TXT records, and claims 100% uptime excluding maintenance. Accounts never expire, and you can have up to four subdomains per free account.
 
-  **FREE Options:** accesscam.org, camdvr.org, casacam.net, ddnsfree.com, ddnsgeek.com, freeddns.org, giize.com, gleeze.com, kozow.com, loseyourip.com, mywire.org, ooguy.com, theworkpc.com, webredirect.org
+   **FREE Options:** accesscam.org, camdvr.org, casacam.net, ddnsfree.com, ddnsgeek.com, freeddns.org, giize.com, gleeze.com, kozow.com, loseyourip.com, mywire.org, ooguy.com, theworkpc.com, webredirect.org
 
 3. **[ClouDNS](https://www.cloudns.net)**: Provides free subdomains under domains like `cloudns.org` and `cloudns.biz`, supports TXT records, and has no expiration for free accounts. It's ranked #1 for raw DNS performance by DNSPerf, but limits you to one subdomain per account, with the option to create multiple accounts.
-     - 4 Unicast DNS servers
-     - 1 DNS zone
-     - 50 DNS Records
-     - 500K DNS queries per month
-     - 1 Mail forward
-     - 1 Dynamic DNS hostname
-     - 24/7 Live chat support
+   - 4 Unicast DNS servers
+   - 1 DNS zone
+   - 50 DNS Records
+   - 500K DNS queries per month
+   - 1 Mail forward
+   - 1 Dynamic DNS hostname
+   - 24/7 Live chat support

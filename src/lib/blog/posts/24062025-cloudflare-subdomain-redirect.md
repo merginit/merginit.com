@@ -2,14 +2,22 @@
 title: 'How to Set Up Cloudflare Subdomain Redirect (Free Plan 2025)'
 description: "Learn the simple two-step process to set up a subdomain redirect on Cloudflare's free plan. This guide explains how to create a proxied DNS record and a redirect rule to create clean, professional vanity URLs for your services."
 date: '2025-06-24'
-updateDate: "2025-07-26"
+updateDate: '2025-07-26'
 categories:
   - cloud-computing
   - tutorial
 published: true
 author: 'Jonas Fröller'
 readingTime: '10 min'
-tags: ['solve SSL handshake failed', 'solve Error 525 Cloudflare', 'cloudflare subdomain setup', 'Cloudflare redirect not working', 'subdomain forwarding Cloudflare', 'vanity URL Cloudflare free']
+tags:
+  [
+    'solve SSL handshake failed',
+    'solve Error 525 Cloudflare',
+    'cloudflare subdomain setup',
+    'Cloudflare redirect not working',
+    'subdomain forwarding Cloudflare',
+    'vanity URL Cloudflare free'
+  ]
 ---
 
 <script>
@@ -37,9 +45,9 @@ This guide will walk you through creating a subdomain redirect in Cloudflare, so
 Before we can create a rule to redirect traffic, we first need to tell Cloudflare that the subdomain (e.g., `webinar.yourdomain.com`) actually exists and that Cloudflare should handle its traffic. This is where the first, slightly counter-intuitive step comes in.
 
 1.  <a href="https://dash.cloudflare.com/login" target="_blank">Log in</a> to your Cloudflare dashboard and select the domain you want to use
-<br>(<strong>Account Home</strong> > <em>click on your domain</em>).
+    <br>(<strong>Account Home</strong> > <em>click on your domain</em>).
 
-    ![Step 1](/blog/24062025-cloudflare-subdomain-redirect/1.png)
+        ![Step 1](/blog/24062025-cloudflare-subdomain-redirect/1.png)
 
 2.  In the left-hand menu, navigate to **DNS** > **Records**.
 
@@ -47,14 +55,14 @@ Before we can create a rule to redirect traffic, we first need to tell Cloudflar
 
 3.  Click the **Add record** button.
 4.  Fill out the fields as follows:
-    * **Type:** `CNAME`
-    * **Name:** Enter your desired subdomain. For example, if you want the URL to be `webinar.yourdomain.com`, you would just enter `webinar`.
-    * **Target:** Enter your root domain. You can simply use the `@` symbol (root) for this.
-    * **Proxy status:** This is the most important part. Make sure the status is set to **Proxied**. The cloud icon should be orange. This ensures that the traffic passes through Cloudflare's network, which is what allows our redirect rule to work.
+    - **Type:** `CNAME`
+    - **Name:** Enter your desired subdomain. For example, if you want the URL to be `webinar.yourdomain.com`, you would just enter `webinar`.
+    - **Target:** Enter your root domain. You can simply use the `@` symbol (root) for this.
+    - **Proxy status:** This is the most important part. Make sure the status is set to **Proxied**. The cloud icon should be orange. This ensures that the traffic passes through Cloudflare's network, which is what allows our redirect rule to work.
 
 5.  Click **Save**.
 
-Your DNS record tells Cloudflare, "When a request comes in for `webinar.yourdomain.com`, I want you to handle it." Now, we'll tell it *what* to do with that request.
+Your DNS record tells Cloudflare, "When a request comes in for `webinar.yourdomain.com`, I want you to handle it." Now, we'll tell it _what_ to do with that request.
 
 ### Step 2: Configure the Redirect Rule
 
@@ -73,16 +81,16 @@ This is where we set up the actual redirect logic. We'll create a rule that look
     ![Step 5](/blog/24062025-cloudflare-subdomain-redirect/5.png)
 
 4.  Under the **If incoming requests match...** section, configure the condition:
-    * **Field:** Select `Hostname`.
-    * **Operator:** Select `equals`.
-    * **Value:** Enter the full subdomain you just created (e.g., `webinar.yourdomain.com`).
+    - **Field:** Select `Hostname`.
+    - **Operator:** Select `equals`.
+    - **Value:** Enter the full subdomain you just created (e.g., `webinar.yourdomain.com`).
 
     ![Step 6](/blog/24062025-cloudflare-subdomain-redirect/6.png)
 
 5.  Under the **Then...** section, define the redirect action:
-    * **Type:** Select `Static`.
-    * **URL:** Paste the full destination URL that you want users to be sent to (e.g., `https://event.webinarjam.com/live/1/abc123xyz`). Make sure to include the `https://`.
-    * **Status code:** Select `301` (Permanent Redirect). This is generally the best choice for SEO and tells browsers that the location has moved for good.
+    - **Type:** Select `Static`.
+    - **URL:** Paste the full destination URL that you want users to be sent to (e.g., `https://event.webinarjam.com/live/1/abc123xyz`). Make sure to include the `https://`.
+    - **Status code:** Select `301` (Permanent Redirect). This is generally the best choice for SEO and tells browsers that the location has moved for good.
 
     ![Step 7](/blog/24062025-cloudflare-subdomain-redirect/7.png)
 
@@ -106,24 +114,25 @@ By following these two steps—creating a proxied DNS record and then a specific
 
 ### Why is this a two-step process?
 
-If you've used other services like Vercel or a domain registrar like Namecheap, you might be wondering why Cloudflare requires both a DNS record and a separate Redirect Rule. It can feel unnecessarily complex. The reason lies in Cloudflare's fundamental role as a powerful "smart proxy" that sits *in front of* your actual website or server.
+If you've used other services like Vercel or a domain registrar like Namecheap, you might be wondering why Cloudflare requires both a DNS record and a separate Redirect Rule. It can feel unnecessarily complex. The reason lies in Cloudflare's fundamental role as a powerful "smart proxy" that sits _in front of_ your actual website or server.
 
 Because of this proxy architecture, the setup requires two distinct commands:
 
 1.  **The DNS Record (The Address):** This step tells the global internet, "For `webinar.yourdomain.com`, send all traffic to Cloudflare's network." Setting the record to **Proxied** (the orange cloud) is like putting Cloudflare's address on the envelope.
-2.  **The Redirect Rule (The Instruction):** This step tells Cloudflare's network, "Okay, now that you've received a request for `webinar.yourdomain.com`, here's what I want you to *do* with it."
+2.  **The Redirect Rule (The Instruction):** This step tells Cloudflare's network, "Okay, now that you've received a request for `webinar.yourdomain.com`, here's what I want you to _do_ with it."
 
 This separation is what makes Cloudflare so powerful. A redirect is just one of many possible instructions you could give. You could also create rules to block traffic, add security headers, or serve cached content—all from the same system. The "manual" feeling is a side effect of this immense flexibility.
 
 #### How This Differs from Other Services
 
-* **Hosting Providers (like Vercel):** These services *are* the final destination. A redirect is a simple internal configuration within the hosting environment, so it feels automatic.
-* **Domain Registrars (like Namecheap):** Their basic redirect service is a simple DNS-level forward. It's a pointer, not a powerful proxy, so the setup is minimal and lacks the advanced features Cloudflare offers.
+- **Hosting Providers (like Vercel):** These services _are_ the final destination. A redirect is a simple internal configuration within the hosting environment, so it feels automatic.
+- **Domain Registrars (like Namecheap):** Their basic redirect service is a simple DNS-level forward. It's a pointer, not a powerful proxy, so the setup is minimal and lacks the advanced features Cloudflare offers.
 
 Think of it like a package delivery service:
-* **Namecheap** is the Post Office. It can forward your mail, but it doesn't open it.
-* **Vercel** is your house. The mail arrives, and you decide what to do with it.
-* **Cloudflare** is a corporate mailroom. It needs a list of recipients (the DNS record) and then specific instructions for each package (the Rules), like "Scan this package" or "Forward this one."
+
+- **Namecheap** is the Post Office. It can forward your mail, but it doesn't open it.
+- **Vercel** is your house. The mail arrives, and you decide what to do with it.
+- **Cloudflare** is a corporate mailroom. It needs a list of recipients (the DNS record) and then specific instructions for each package (the Rules), like "Scan this package" or "Forward this one."
 
 So, while it's a bit more work upfront, Cloudflare's method gives you unparalleled control over how your traffic is managed.
 
@@ -148,6 +157,7 @@ If your redirect isn't working as expected, here are the most common problems an
 #### Error 525: SSL Handshake Failed
 
 This error occurs when there's an SSL/TLS mismatch between Cloudflare and your destination server.
+
 - **Use HTTPS in destination URL:** Make sure your target URL starts with `https://`, not `http://`.
 - **Check destination SSL:** Verify that the website you're redirecting to has a valid SSL certificate and is accessible via HTTPS.
 - **Try HTTP if HTTPS fails:** If the destination doesn't support HTTPS, you can use `http://` in your redirect URL, but this doesn't encrypt traffic at all.
@@ -155,6 +165,7 @@ This error occurs when there's an SSL/TLS mismatch between Cloudflare and your d
 #### Rule Limit Reached (Free Plan)
 
 Cloudflare's free plan allows up to 70 rules + 10,000 "Bulk Redirect" rules (see [pricing](https://www.cloudflare.com/plans/#overview)). If you've hit this limit:
+
 - **Combine similar redirects:** Use wildcards or path-based rules to handle multiple redirects with a single rule.
 - **Clean up old rules:** Delete any redirect rules you're no longer using.
 - **Upgrade your plan:** Just buy Pro for $20/month (225 rules + 25,000 Bulk Redirects).

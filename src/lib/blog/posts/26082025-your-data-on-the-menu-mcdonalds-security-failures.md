@@ -8,7 +8,16 @@ categories:
 published: true
 author: 'Jonas Fröller'
 readingTime: '3 min'
-tags: ["mcdonalds", "paradox-ai", "data-breach", "cybersecurity", "password-security", "supply-chain-attack", "vulnerability"]
+tags:
+  [
+    'mcdonalds',
+    'paradox-ai',
+    'data-breach',
+    'cybersecurity',
+    'password-security',
+    'supply-chain-attack',
+    'vulnerability'
+  ]
 ---
 
 <script>
@@ -40,8 +49,12 @@ A concerning aspect of this story is the difficulty researchers faced when tryin
 
 These incidents underscore a critical issue in modern business: the security of a company is only as strong as its weakest link, which often lies within its supply chain and its own internal practices. For individuals, it's a sobering reminder of how our data is handled. For corporations, it's a loud and clear call to prioritize robust security measures, foster a culture of security, and create clear, accessible channels for security researchers to report vulnerabilities without fear of retribution.
 
+<div id="research-sources">
+
 ## Sources
 
 [Would you like an IDOR with that?](https://ian.sh/mcdonalds)  
 [Poor Passwords Tattle on AI Hiring Bot Maker Paradox.ai - Krebs on Security](https://krebsonsecurity.com/2025/07/poor-passwords-tattle-on-ai-hiring-bot-maker-paradox-ai)  
 [How I Hacked McDonald's (Their Security Contact Was Harder to Find Than Their Secret Sauce Recipe)](https://bobdahacker.com/blog/mcdonalds-security-vulnerabilities)
+
+</div>

@@ -19,19 +19,22 @@ const config = {
 			extensions: ['.md', '.svx'],
 			remarkPlugins: [remarkSlug],
 			rehypePlugins: [
-				[rehypeAutolinkHeadings, {
-				behavior: 'wrap',
-				properties: { tabindex: -1 }
-				}]
+				[
+					rehypeAutolinkHeadings,
+					{
+						behavior: 'wrap',
+						properties: { tabindex: -1 }
+					}
+				]
 			]
 			// layout: pathToBlogPostLayout
 		}),
-		vitePreprocess(),
+		vitePreprocess()
 	],
 	kit: {
 		adapter: adapter(),
 		alias: {
-			'$blog': 'src/lib/blog'
+			$blog: 'src/lib/blog'
 		}
 	}
 };

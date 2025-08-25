@@ -40,12 +40,12 @@
 	let isExpanded = $state(false);
 	let hasActiveFilters = $derived(
 		filters.search ||
-		filters.categories.length > 0 ||
-		filters.tags.length > 0 ||
-		filters.dateFrom ||
-		filters.dateTo ||
-		filters.minReadTime > 0 ||
-		filters.maxReadTime < 60
+			filters.categories.length > 0 ||
+			filters.tags.length > 0 ||
+			filters.dateFrom ||
+			filters.dateTo ||
+			filters.minReadTime > 0 ||
+			filters.maxReadTime < 60
 	);
 
 	const todayInLocalTimezone = $derived(() => {
@@ -66,7 +66,7 @@
 
 	function toggleCategory(category: Categories) {
 		if (filters.categories.includes(category)) {
-			filters.categories = filters.categories.filter(c => c !== category);
+			filters.categories = filters.categories.filter((c) => c !== category);
 		} else {
 			filters.categories = [...filters.categories, category];
 		}
@@ -130,7 +130,7 @@
 		if (filters.dateTo && filters.dateTo > todayInLocalTimezone()) {
 			filters.dateTo = todayInLocalTimezone();
 		}
-		
+
 		if (filters.dateFrom && filters.dateTo && filters.dateTo < filters.dateFrom) {
 			filters.dateFrom = filters.dateTo;
 		}
@@ -145,23 +145,26 @@
 			<div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
 			<h2 class="text-xl font-semibold text-white">Filter & Search</h2>
 			{#if hasActiveFilters}
-				<span class="px-2 py-1 text-xs bg-accent/20 text-accent border border-accent/30 rounded-full">
+				<span
+					class="px-2 py-1 text-xs bg-accent/20 text-accent border border-accent/30 rounded-full"
+				>
 					Active
 				</span>
 			{/if}
 		</div>
 		<button
-			onclick={() => isExpanded = !isExpanded}
+			onclick={() => (isExpanded = !isExpanded)}
 			class="p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-gray-800/50"
 			aria-label={isExpanded ? 'Collapse filters' : 'Expand filters'}
 		>
-			<svg 
-				class="w-5 h-5 transition-transform duration-200 {isExpanded ? 'rotate-180' : ''}" 
-				fill="none" 
-				stroke="currentColor" 
+			<svg
+				class="w-5 h-5 transition-transform duration-200 {isExpanded ? 'rotate-180' : ''}"
+				fill="none"
+				stroke="currentColor"
 				viewBox="0 0 24 24"
 			>
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"
+				></path>
 			</svg>
 		</button>
 	</div>
@@ -171,7 +174,12 @@
 		<div class="relative">
 			<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
 				<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+					></path>
 				</svg>
 			</div>
 			<input
@@ -188,11 +196,10 @@
 			{#each searchScopes as scope}
 				<button
 					onclick={() => handleSearchScopeChange(scope.value as any)}
-					class="px-3 py-1.5 text-sm rounded-lg border transition-colors {
-						filters.searchScope === scope.value
-							? 'bg-accent/20 text-accent border-accent/50'
-							: 'bg-gray-800/50 text-gray-300 border-gray-600/50 hover:border-gray-500 hover:text-white'
-					}"
+					class="px-3 py-1.5 text-sm rounded-lg border transition-colors {filters.searchScope ===
+					scope.value
+						? 'bg-accent/20 text-accent border-accent/50'
+						: 'bg-gray-800/50 text-gray-300 border-gray-600/50 hover:border-gray-500 hover:text-white'}"
 				>
 					{scope.label}
 				</button>
@@ -211,28 +218,24 @@
 					</h3>
 					<div class="flex bg-gray-800/50 rounded-lg p-1">
 						<button
-							onclick={() => { 
-								filters.categoryOperator = 'OR'; 
-								if (filters.categories.length > 0) handleFilterChange(); 
+							onclick={() => {
+								filters.categoryOperator = 'OR';
+								if (filters.categories.length > 0) handleFilterChange();
 							}}
-							class="px-2 py-1 text-xs rounded transition-colors {
-								filters.categoryOperator === 'OR'
-									? 'bg-brand text-brand-dark font-medium'
-									: 'text-gray-400 hover:text-white'
-							}"
+							class="px-2 py-1 text-xs rounded transition-colors {filters.categoryOperator === 'OR'
+								? 'bg-brand text-brand-dark font-medium'
+								: 'text-gray-400 hover:text-white'}"
 						>
 							ANY
 						</button>
 						<button
-							onclick={() => { 
-								filters.categoryOperator = 'AND'; 
-								if (filters.categories.length > 0) handleFilterChange(); 
+							onclick={() => {
+								filters.categoryOperator = 'AND';
+								if (filters.categories.length > 0) handleFilterChange();
 							}}
-							class="px-2 py-1 text-xs rounded transition-colors {
-								filters.categoryOperator === 'AND'
-									? 'bg-brand text-brand-dark font-medium'
-									: 'text-gray-400 hover:text-white'
-							}"
+							class="px-2 py-1 text-xs rounded transition-colors {filters.categoryOperator === 'AND'
+								? 'bg-brand text-brand-dark font-medium'
+								: 'text-gray-400 hover:text-white'}"
 						>
 							ALL
 						</button>
@@ -242,21 +245,22 @@
 					{#each availableCategories as category}
 						<button
 							onclick={() => toggleCategory(category)}
-							class="px-3 py-1.5 text-sm rounded-lg border transition-colors {
-								filters.categories.includes(category)
-									? 'bg-accent/20 text-accent border-accent/50'
-									: 'bg-gray-800/50 text-gray-300 border-gray-600/50 hover:border-gray-500 hover:text-white'
-							}"
+							class="px-3 py-1.5 text-sm rounded-lg border transition-colors {filters.categories.includes(
+								category
+							)
+								? 'bg-accent/20 text-accent border-accent/50'
+								: 'bg-gray-800/50 text-gray-300 border-gray-600/50 hover:border-gray-500 hover:text-white'}"
 						>
 							{category}
 						</button>
 					{/each}
 				</div>
-				
+
 				<!-- Debug info -->
 				{#if filters.categories.length > 0}
 					<div class="mt-2 text-xs text-gray-500">
-						{filters.categories.length} categor{filters.categories.length === 1 ? 'y' : 'ies'} selected, operator: {filters.categoryOperator}
+						{filters.categories.length} categor{filters.categories.length === 1 ? 'y' : 'ies'} selected,
+						operator: {filters.categoryOperator}
 					</div>
 				{/if}
 			</div>
@@ -270,39 +274,35 @@
 					</h3>
 					<div class="flex bg-gray-800/50 rounded-lg p-1">
 						<button
-							onclick={() => { 
-								filters.tagOperator = 'OR'; 
-								if (filters.tags.length > 0) handleFilterChange(); 
+							onclick={() => {
+								filters.tagOperator = 'OR';
+								if (filters.tags.length > 0) handleFilterChange();
 							}}
-							class="px-2 py-1 text-xs rounded transition-colors {
-								filters.tagOperator === 'OR'
-									? 'bg-brand text-brand-dark font-medium'
-									: 'text-gray-400 hover:text-white'
-							}"
+							class="px-2 py-1 text-xs rounded transition-colors {filters.tagOperator === 'OR'
+								? 'bg-brand text-brand-dark font-medium'
+								: 'text-gray-400 hover:text-white'}"
 						>
 							ANY
 						</button>
 						<button
-							onclick={() => { 
-								filters.tagOperator = 'AND'; 
-								if (filters.tags.length > 0) handleFilterChange(); 
+							onclick={() => {
+								filters.tagOperator = 'AND';
+								if (filters.tags.length > 0) handleFilterChange();
 							}}
-							class="px-2 py-1 text-xs rounded transition-colors {
-								filters.tagOperator === 'AND'
-									? 'bg-brand text-brand-dark font-medium'
-									: 'text-gray-400 hover:text-white'
-							}"
+							class="px-2 py-1 text-xs rounded transition-colors {filters.tagOperator === 'AND'
+								? 'bg-brand text-brand-dark font-medium'
+								: 'text-gray-400 hover:text-white'}"
 						>
 							ALL
 						</button>
 					</div>
 				</div>
-				<TagInput 
-					bind:selectedTags={filters.tags} 
+				<TagInput
+					bind:selectedTags={filters.tags}
 					placeholder="Type to add tags..."
 					on:change={handleFilterChange}
 				/>
-				
+
 				<!-- Debug info -->
 				{#if filters.tags.length > 0}
 					<div class="mt-2 text-xs text-gray-500">
@@ -346,7 +346,9 @@
 			<div>
 				<label class="text-sm font-medium text-gray-300 mb-3 flex items-center gap-2">
 					<Icon icon="tabler:clock" class="text-accent w-5 h-5" />
-					Reading Time: {filters.minReadTime}min - {filters.maxReadTime === 60 ? '60+' : filters.maxReadTime}min
+					Reading Time: {filters.minReadTime}min - {filters.maxReadTime === 60
+						? '60+'
+						: filters.maxReadTime}min
 				</label>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 					<div>
@@ -375,7 +377,9 @@
 							onchange={handleMaxReadTimeChange}
 							class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-accent"
 						/>
-						<div class="text-xs text-gray-400 mt-1">{filters.maxReadTime === 60 ? '60+' : filters.maxReadTime} min</div>
+						<div class="text-xs text-gray-400 mt-1">
+							{filters.maxReadTime === 60 ? '60+' : filters.maxReadTime} min
+						</div>
 					</div>
 				</div>
 			</div>
@@ -397,13 +401,13 @@
 </div>
 
 <style>
-	input[type="date"]::-webkit-calendar-picker-indicator {
+	input[type='date']::-webkit-calendar-picker-indicator {
 		filter: invert(89%) sepia(58%) saturate(348%) hue-rotate(12deg) brightness(103%) contrast(101%);
 		cursor: pointer;
 	}
 
-	input[type="date"]::-moz-calendar-picker-indicator {
+	input[type='date']::-moz-calendar-picker-indicator {
 		filter: invert(89%) sepia(58%) saturate(348%) hue-rotate(12deg) brightness(103%) contrast(101%);
 		cursor: pointer;
 	}
-</style> 
+</style>

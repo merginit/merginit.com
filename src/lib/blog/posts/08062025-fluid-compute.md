@@ -1,6 +1,6 @@
 ---
 title: 'Fluid Compute'
-description: "A technical deep-dive into Vercel's Fluid Compute - examining the architecture changes, performance claims, and real-world trade-offs of this serverless evolution. Is it truly \"Serverless 2.0\" or just clever marketing?"
+description: 'A technical deep-dive into Vercel''s Fluid Compute - examining the architecture changes, performance claims, and real-world trade-offs of this serverless evolution. Is it truly "Serverless 2.0" or just clever marketing?'
 date: '2025-06-08'
 categories:
   - cloud-computing
@@ -26,6 +26,7 @@ Vercel recently introduced "Fluid Compute" - their take on evolving serverless a
 Traditional serverless isolates each function invocation in its own microVM. One request, one container. Fluid Compute changes this by allowing multiple invocations to share a single function instance.
 
 According to Vercel's documentation, this works through:
+
 - **In-function concurrency**: Node.js and Python processes handle multiple requests simultaneously
 - **Bytecode caching**: JavaScript compilation results are stored after first execution
 - **Resource prioritization**: Existing warm instances are reused before spinning up new ones
@@ -68,6 +69,7 @@ While Vercel coined "Fluid Compute," the broader industry is exploring similar o
 - **Google Cloud Run**: Allows concurrent request handling within container instances
 
 Recent academic research also points toward more sophisticated serverless models:
+
 - Transparent distribution of Python multiprocessing across functions [[1]](https://arxiv.org/pdf/2205.08818v1)
 - Data-flow architectures that separate function and data logic [[2]](https://export.arxiv.org/pdf/2304.14629v1.pdf)
 - GPU sharing mechanisms for ML workloads [[3]](https://export.arxiv.org/pdf/2309.00558v1.pdf)
@@ -75,11 +77,13 @@ Recent academic research also points toward more sophisticated serverless models
 ## Technical Considerations
 
 **What Works Well:**
+
 - I/O-heavy workloads (database queries, API calls)
 - High-concurrency scenarios with predictable patterns
 - Applications already designed for shared-state environments
 
 **What Doesn't:**
+
 - CPU-bound processing
 - Applications requiring strict isolation
 - Legacy code with global state assumptions
@@ -94,6 +98,7 @@ The real innovation isn't the technology - it's the packaging. Vercel has made c
 ## Practical Impact
 
 For developers on Vercel:
+
 - I/O-heavy workloads may see significant cost reductions
 - Cold starts should decrease in frequency
 - Existing code works without modification (but may need optimization)
@@ -121,4 +126,4 @@ The future of serverless likely involves multiple execution models optimized for
 
 ---
 
-*Note: Performance metrics and cost calculations cited are from Vercel's own documentation and marketing materials. Real-world results will vary based on application architecture and usage patterns.*
+_Note: Performance metrics and cost calculations cited are from Vercel's own documentation and marketing materials. Real-world results will vary based on application architecture and usage patterns._

@@ -43,15 +43,15 @@
 			clearTimeout(outAnimationTimeout);
 			outAnimationTimeout = null;
 		}
-		
+
 		// If we're moving from one card to another, trigger out animation for the previous card
 		if (hoveredCardIndex !== null && hoveredCardIndex !== index) {
 			const previousIndex = hoveredCardIndex;
-			
+
 			// Start out animation immediately
 			playButtonOutIndex = previousIndex;
 			hoveredCardIndex = null;
-			
+
 			// Set new hovered card after a tiny delay to allow out animation to start
 			setTimeout(() => {
 				hoveredCardIndex = index;
@@ -60,7 +60,7 @@
 					playButtonOutIndex = null;
 				}
 			}, 10);
-			
+
 			// Remove the out animation class after animation completes
 			setTimeout(() => {
 				if (playButtonOutIndex === previousIndex) {
@@ -81,10 +81,10 @@
 		if (hoveredCardIndex !== null) {
 			const currentIndex = hoveredCardIndex;
 			hoveredCardIndex = null;
-			
+
 			// Start out animation
 			playButtonOutIndex = currentIndex;
-			
+
 			// Remove the out animation class after animation completes
 			outAnimationTimeout = setTimeout(() => {
 				if (playButtonOutIndex === currentIndex) {
@@ -97,13 +97,13 @@
 	function handlePlayButtonClick(event: MouseEvent, faviconImg: HTMLElement) {
 		event.preventDefault();
 		event.stopPropagation();
-		
+
 		if (!showVideo) {
 			currentFaviconElement = faviconImg;
 			// Get the project data to extract the website URL
 			const cardIndex = parseInt(faviconImg.id.split('-')[1]);
 			currentWebsiteUrl = projects[cardIndex]?.url || null;
-			
+
 			showVideo = true;
 			hoveredCardIndex = null; // Hide play button
 			// Add body class to prevent scrolling
@@ -122,7 +122,7 @@
 		if (hoverTimeout) {
 			clearTimeout(hoverTimeout);
 		}
-		
+
 		// Call the hide method on the component first (this triggers the out animation)
 		if (videoPreviewRef) {
 			videoPreviewRef.hide();
@@ -182,15 +182,27 @@
 
 <svelte:head>
 	<title>MerginIT e.U. - Professional Software Development & SaaS Solutions</title>
-	<meta 
-		name="description" 
+	<meta
+		name="description"
 		content="MerginIT e.U. delivers cutting-edge software solutions including OCRMD for document processing, NeptunAI configuration platform, and custom web development services. 3 successful projects and growing."
 	/>
-	<meta property="og:title" content="MerginIT e.U. - Professional Software Development & SaaS Solutions" />
-	<meta property="og:description" content="MerginIT e.U. delivers cutting-edge software solutions including OCRMD for document processing, NeptunAI configuration platform, and custom web development services. 3 successful projects and growing." />
+	<meta
+		property="og:title"
+		content="MerginIT e.U. - Professional Software Development & SaaS Solutions"
+	/>
+	<meta
+		property="og:description"
+		content="MerginIT e.U. delivers cutting-edge software solutions including OCRMD for document processing, NeptunAI configuration platform, and custom web development services. 3 successful projects and growing."
+	/>
 	<meta property="og:url" content="https://merginit.com" />
-	<meta name="twitter:title" content="MerginIT e.U. - Professional Software Development & SaaS Solutions" />
-	<meta name="twitter:description" content="MerginIT e.U. delivers cutting-edge software solutions including OCRMD for document processing, NeptunAI configuration platform, and custom web development services. 3 successful projects and growing." />
+	<meta
+		name="twitter:title"
+		content="MerginIT e.U. - Professional Software Development & SaaS Solutions"
+	/>
+	<meta
+		name="twitter:description"
+		content="MerginIT e.U. delivers cutting-edge software solutions including OCRMD for document processing, NeptunAI configuration platform, and custom web development services. 3 successful projects and growing."
+	/>
 </svelte:head>
 
 <OverlayMenu />
@@ -283,11 +295,10 @@
 							class="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-brand transition-colors relative z-40 group-link min-h-[20px]"
 							onclick={(e) => e.stopPropagation()}
 						>
-							<span class="whitespace-nowrap">{new URL(project.url).hostname.replace('www.', '')}</span>
-							<Icon 
-								icon="lucide:external-link" 
-								class="w-4 h-4 flex-shrink-0" 
-							/>
+							<span class="whitespace-nowrap"
+								>{new URL(project.url).hostname.replace('www.', '')}</span
+							>
+							<Icon icon="lucide:external-link" class="w-4 h-4 flex-shrink-0" />
 						</a>
 					</div>
 
@@ -301,10 +312,13 @@
 								alt={`${project.projectType} favicon`}
 								class="h-10 w-10 rounded-full bg-gray-700 p-1 object-contain border border-gray-600 shadow favicon-trigger"
 							/>
-							
+
 							{#if hoveredCardIndex === i || playButtonOutIndex === i}
 								<button
-									class="absolute inset-0 flex items-center justify-center bg-black/70 rounded-full backdrop-blur-sm transition-all duration-300 ease-out play-button z-50 {playButtonOutIndex === i ? 'out' : ''}"
+									class="absolute inset-0 flex items-center justify-center bg-black/70 rounded-full backdrop-blur-sm transition-all duration-300 ease-out play-button z-50 {playButtonOutIndex ===
+									i
+										? 'out'
+										: ''}"
 									onclick={(e) => {
 										e.preventDefault();
 										e.stopPropagation();
@@ -313,10 +327,7 @@
 									}}
 									aria-label="Play project demo video"
 								>
-									<Icon 
-										icon="lucide:play" 
-										class="w-4 h-4 text-white ml-0.5" 
-									/>
+									<Icon icon="lucide:play" class="w-4 h-4 text-white ml-0.5" />
 								</button>
 							{/if}
 						</div>
@@ -336,7 +347,7 @@
 </div>
 
 {#if showVideo}
-	<VideoPreview 
+	<VideoPreview
 		bind:this={videoPreviewRef}
 		bind:faviconElement={currentFaviconElement}
 		websiteUrl={currentWebsiteUrl ?? undefined}
@@ -350,27 +361,30 @@
 		transition: transform 0.3s ease;
 		will-change: transform;
 	}
-	
+
 	:global(.group:hover .favicon-trigger) {
 		transform: scale(1.1);
 	}
-	
+
 	/* Ensure smooth hover transition for cards */
 	:global(.group) {
-		transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease,
+			border-color 0.3s ease;
 		will-change: transform;
 	}
-	
+
 	/* Prevent layout shifts during video animation */
 	:global(body.video-preview-open) {
 		overflow: hidden;
 	}
-	
+
 	/* Improve performance */
 	:global(.group:hover) {
 		transform: translateY(-4px);
 	}
-	
+
 	/* Play button animation */
 	.play-button {
 		animation: playButtonIn 0.3s ease-out forwards;
@@ -378,12 +392,12 @@
 		z-index: 50 !important;
 		pointer-events: all;
 	}
-	
+
 	/* Play button out animation - faster */
 	.play-button.out {
 		animation: playButtonOut 0.15s ease-in forwards;
 	}
-	
+
 	@keyframes playButtonIn {
 		from {
 			transform: scale(0);
@@ -394,7 +408,7 @@
 			opacity: 1;
 		}
 	}
-	
+
 	@keyframes playButtonOut {
 		from {
 			transform: scale(1);
@@ -405,27 +419,27 @@
 			opacity: 0;
 		}
 	}
-	
+
 	.play-button:hover {
 		background-color: rgba(0, 0, 0, 0.85);
 		transform: scale(1.1);
 	}
-	
+
 	.play-button:active {
 		transform: scale(0.95);
 	}
-	
+
 	/* Ensure the favicon container allows for proper layering */
 	.favicon-container {
 		position: relative;
 		z-index: 1;
 	}
-	
+
 	/* Website link in card styling */
 	.group-link {
 		text-decoration: none;
 	}
-	
+
 	.group-link:hover {
 		text-decoration: underline;
 		text-decoration-thickness: 1px;

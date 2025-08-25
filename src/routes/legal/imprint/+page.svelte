@@ -4,12 +4,15 @@
 
 <svelte:head>
 	<title>Imprint (Impressum) - MerginIT e.U.</title>
-	<meta 
-		name="description" 
+	<meta
+		name="description"
 		content="Legal imprint for MerginIT e.U. - Jonas Fröller. Official company details, business registration, and contact information as required by Austrian law."
 	/>
 	<meta property="og:title" content="Imprint (Impressum) - MerginIT e.U." />
-	<meta property="og:description" content="Legal imprint for MerginIT e.U. - Jonas Fröller. Official company details, business registration, and contact information as required by Austrian law." />
+	<meta
+		property="og:description"
+		content="Legal imprint for MerginIT e.U. - Jonas Fröller. Official company details, business registration, and contact information as required by Austrian law."
+	/>
 </svelte:head>
 
 <main class="bg-white">

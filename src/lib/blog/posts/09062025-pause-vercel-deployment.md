@@ -1,6 +1,6 @@
 ---
 title: 'Pause Vercel Deployment'
-description: "5 different methods to pause your Vercel deployment. From firewall rules to REST API endpoints."
+description: '5 different methods to pause your Vercel deployment. From firewall rules to REST API endpoints.'
 date: '2025-06-09'
 categories:
   - web-development
@@ -38,26 +38,27 @@ While functional, this method is slow and becomes annoying if you have multiple 
 Vercel actually provides official API endpoints for pausing projects. Here's how to use them:
 
 ```ts
-import { Vercel } from "@vercel/sdk";
+import { Vercel } from '@vercel/sdk';
 
 // https://vercel.com/account/settings/tokens
 // https://vercel.com/docs/rest-api/reference#introduction/api-basics/authentication
 const vercel = new Vercel({
-  bearerToken: "<YOUR_BEARER_TOKEN_HERE>",
+	bearerToken: '<YOUR_BEARER_TOKEN_HERE>'
 });
 
 async function run() {
-  await vercel.projects.pauseProject({
-    projectId: "<id>",
-    teamId: "<team_1a2b3c4d5e6f7g8h9i0j1k2l>",
-    slug: "<my-team-url-slug>",
-  });
+	await vercel.projects.pauseProject({
+		projectId: '<id>',
+		teamId: '<team_1a2b3c4d5e6f7g8h9i0j1k2l>',
+		slug: '<my-team-url-slug>'
+	});
 }
 
 run();
 ```
 
 The endpoints are:
+
 - Pause: `https://api.vercel.com/v1/projects/{projectId}/pause`
 - Unpause: `https://api.vercel.com/v1/projects/{projectId}/unpause`
 
@@ -68,19 +69,19 @@ You can create a webhook endpoint to pause your project programmatically:
 ```ts
 // https://vercel.com/guides/pause-your-project
 export async function POST(request: Request) {
-  let projectId = '<your_project_id>';
-  let teamID = '<your_team_id>';
-  let route = `${projectId}/pause?teamID=${teamID}`;
- 
-  await fetch(`https://api.vercel.com/v1/projects/${route}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.VERCEL_TOKEN}`,
-    },
-  });
- 
-  return new Response('Project paused', { status: 200 });
+	let projectId = '<your_project_id>';
+	let teamID = '<your_team_id>';
+	let route = `${projectId}/pause?teamID=${teamID}`;
+
+	await fetch(`https://api.vercel.com/v1/projects/${route}`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			Authorization: `Bearer ${process.env.VERCEL_TOKEN}`
+		}
+	});
+
+	return new Response('Project paused', { status: 200 });
 }
 ```
 
@@ -120,4 +121,4 @@ While Vercel has come a long way from the "delete the project" days, it's still 
 
 Choose the method that best fits your workflow and technical comfort level.
 
-*Read more about paused deployments here: `DEPLOYMENT_PAUSED` [error code](https://vercel.com/docs/errors/DEPLOYMENT_PAUSED)*
+_Read more about paused deployments here: `DEPLOYMENT_PAUSED` [error code](https://vercel.com/docs/errors/DEPLOYMENT_PAUSED)_

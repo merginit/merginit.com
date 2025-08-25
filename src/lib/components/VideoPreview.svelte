@@ -39,14 +39,18 @@
 	onMount(() => {
 		if (!browser) return;
 
-		timeline = gsap.timeline({ 
+		timeline = gsap.timeline({
 			paused: true,
-			onStart: () => { isAnimating = true; },
-			onComplete: () => { isAnimating = false; }
+			onStart: () => {
+				isAnimating = true;
+			},
+			onComplete: () => {
+				isAnimating = false;
+			}
 		});
 
-		gsap.set(overlay, { 
-			opacity: 0, 
+		gsap.set(overlay, {
+			opacity: 0,
 			pointerEvents: 'none',
 			zIndex: 9999
 		});
@@ -72,7 +76,7 @@
 
 	export function show() {
 		if (!isInitialized || !timeline || !faviconElement || isAnimating || isVisible) return;
-		
+
 		isVisible = true;
 		requestAnimationFrame(() => {
 			showVideo();
@@ -81,7 +85,7 @@
 
 	export function hide() {
 		if (!isInitialized || !timeline || isAnimating) return;
-		
+
 		hideVideo();
 	}
 
@@ -97,10 +101,10 @@
 		const maxWidth = Math.min(windowWidth * 0.85, 800);
 		const maxHeight = Math.min(windowHeight * 0.85, 450);
 		const aspectRatio = 16 / 9;
-		
+
 		let videoWidth = maxWidth;
 		let videoHeight = videoWidth / aspectRatio;
-		
+
 		if (videoHeight > maxHeight) {
 			videoHeight = maxHeight;
 			videoWidth = videoHeight * aspectRatio;
@@ -130,21 +134,29 @@
 				duration: 0.4,
 				ease: 'power2.out'
 			})
-			.to(videoContainer, {
-				scale: 1,
-				opacity: 1,
-				duration: 0.3,
-				ease: 'power2.out'
-			}, 0.1)
-			.to(videoContainer, {
-				width: videoWidth,
-				height: videoHeight,
-				left: '50%',
-				top: '50%',
-				borderRadius: '12px',
-				duration: 0.7,
-				ease: 'power3.out'
-			}, 0.2)
+			.to(
+				videoContainer,
+				{
+					scale: 1,
+					opacity: 1,
+					duration: 0.3,
+					ease: 'power2.out'
+				},
+				0.1
+			)
+			.to(
+				videoContainer,
+				{
+					width: videoWidth,
+					height: videoHeight,
+					left: '50%',
+					top: '50%',
+					borderRadius: '12px',
+					duration: 0.7,
+					ease: 'power3.out'
+				},
+				0.2
+			)
 			.play();
 	}
 
@@ -164,21 +176,29 @@
 				duration: 0.4,
 				ease: 'power2.inOut'
 			})
-			.to(videoContainer, {
-				scale: 0.1,
-				opacity: 0,
-				duration: 0.25,
-				ease: 'power2.in'
-			}, 0.2)
-			.to(overlay, {
-				opacity: 0,
-				duration: 0.3,
-				ease: 'power2.out',
-				onComplete: () => {
-					gsap.set(overlay, { pointerEvents: 'none' });
-					onClose();
-				}
-			}, 0.1)
+			.to(
+				videoContainer,
+				{
+					scale: 0.1,
+					opacity: 0,
+					duration: 0.25,
+					ease: 'power2.in'
+				},
+				0.2
+			)
+			.to(
+				overlay,
+				{
+					opacity: 0,
+					duration: 0.3,
+					ease: 'power2.out',
+					onComplete: () => {
+						gsap.set(overlay, { pointerEvents: 'none' });
+						onClose();
+					}
+				},
+				0.1
+			)
 			.play();
 	}
 
@@ -206,7 +226,7 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <!-- Video overlay -->
-<div 
+<div
 	bind:this={overlay}
 	class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center"
 	onclick={handleOverlayClick}
@@ -214,7 +234,7 @@
 	tabindex="0"
 >
 	<!-- Video container -->
-	<div 
+	<div
 		bind:this={videoContainer}
 		class="absolute bg-black overflow-hidden shadow-2xl"
 		onclick={(e) => e.stopPropagation()}
@@ -231,7 +251,7 @@
 			title="Project demo video"
 		></iframe>
 	</div>
-	
+
 	{#if websiteUrl}
 		<div class="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20">
 			<a
@@ -241,26 +261,20 @@
 				class="relative flex items-center gap-2 px-3 py-2 bg-black/70 text-white rounded-lg backdrop-blur-sm text-sm font-medium border-2 border-transparent hover:border-accent transition-all duration-300 ease-out"
 				onclick={(e) => e.stopPropagation()}
 			>
-				<Icon 
-					icon="lucide:external-link" 
-					class="w-4 h-4 text-gray-300" 
-				/>
+				<Icon icon="lucide:external-link" class="w-4 h-4 text-gray-300" />
 				<span class="text-gray-300">
 					{getDomainFromUrl(websiteUrl)}
 				</span>
 			</a>
 		</div>
 	{/if}
-	
+
 	<button
 		class="absolute top-20 right-20 w-10 h-10 bg-black/70 hover:bg-black/85 text-white rounded-full flex items-center justify-center transition-colors z-20"
 		onclick={handleOverlayClick}
 		aria-label="Close video"
 	>
-		<Icon 
-			icon="lucide:x" 
-			class="w-5 h-5" 
-		/>
+		<Icon icon="lucide:x" class="w-5 h-5" />
 	</button>
 </div>
 

@@ -1,6 +1,6 @@
 ---
-title: "Complete Guide to All 47 Open Source Licenses | Choose the Right One in 2025"
-description: "Comprehensive guide to all 47 open source licenses from ChooseALicense.com. Compare MIT, GPL, Apache, BSD licenses with clear usage recommendations and examples."
+title: 'Complete Guide to All 47 Open Source Licenses | Choose the Right One in 2025'
+description: 'Comprehensive guide to all 47 open source licenses from ChooseALicense.com. Compare MIT, GPL, Apache, BSD licenses with clear usage recommendations and examples.'
 date: '2025-08-01'
 categories:
   - open-source
@@ -8,16 +8,29 @@ categories:
 published: true
 author: 'Jonas Fröller'
 readingTime: '25 min'
-tags: ['open-source-licenses', 'MIT-license', 'GPL-license', 'Apache-license', 'BSD-license', 'copyleft', 'permissive-licenses', 'software-licensing', 'GitHub', 'developer-guide']
+tags:
+  [
+    'open-source-licenses',
+    'MIT-license',
+    'GPL-license',
+    'Apache-license',
+    'BSD-license',
+    'copyleft',
+    'permissive-licenses',
+    'software-licensing',
+    'GitHub',
+    'developer-guide'
+  ]
 ---
 
 # 47 open source licenses
 
 ## A Developer's Guide to Open Source Licenses: Understanding Your Options and When to Use Them
 
-Open source software powers much of the modern tech world, from small tools to massive platforms. But to make your code truly "open source," you need a license. Without one, your code is just publicly viewable—not legally usable. 
+Open source software powers much of the modern tech world, from small tools to massive platforms. But to make your code truly "open source," you need a license. Without one, your code is just publicly viewable—not legally usable.
 
 **This guide is structured in two main parts:**
+
 1. **Introduction and Overview**: We'll first cover what open source licenses are, the major types, and provide a comprehensive table of all 47 licenses from ChooseALicense.com
 2. **Detailed License Information**: Then we'll dive deep into each license with specific descriptions, use cases, and links to full license texts
 
@@ -30,6 +43,7 @@ An open source license is a legal agreement that lets others use, modify, and di
 Without a license, your code isn't open source—it's just visible. For example, if you push code to GitHub without a license, others can look at it or fork it (per GitHub's Terms of Service), but they can't use it in their projects without risking legal trouble. A good license also protects you by limiting liability if something goes wrong with your code.
 
 The [Open Source Initiative (OSI)](https://opensource.org/osd) defines open source as software that:
+
 - Allows free redistribution
 - Provides source code access
 - Permits modifications and derivative works
@@ -42,75 +56,80 @@ This goes beyond "code you can see"—it's about enabling collaboration and reus
 There's a wide range of open source licenses, each with unique rules. Here's a breakdown of the main categories and examples, including their full text placeholders from [ChooseALicense.com](https://github.com/github/choosealicense.com/tree/gh-pages/_licenses).
 
 #### **Copyleft Licenses**
+
 These "viral" licenses require derivative works to use the same or a compatible license, ensuring the code stays open source.
 
-- **GNU General Public License (GPL)**  
-  - Ensures derivatives remain open source and freely available.  
-  - *When to use*: Ideal if you want to guarantee your code and its modifications stay in the open source community.  
+- **GNU General Public License (GPL)**
+  - Ensures derivatives remain open source and freely available.
+  - _When to use_: Ideal if you want to guarantee your code and its modifications stay in the open source community.
   - License text: [GPLv3](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/gpl-3.0.txt)
 
-- **Affero GNU Public License (AGPL)**  
-  - Like GPL, but extends to software accessed over a network (e.g., web apps).  
-  - *When to use*: Perfect for server-side software where you want users to access the source code.  
+- **Affero GNU Public License (AGPL)**
+  - Like GPL, but extends to software accessed over a network (e.g., web apps).
+  - _When to use_: Perfect for server-side software where you want users to access the source code.
   - License text: [AGPLv3](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/agpl-3.0.txt)
 
-- **Lesser GNU Public License (LGPL)**  
-  - A milder copyleft that allows linking to the software without forcing the whole project to be open source.  
-  - *When to use*: Great for libraries you want others to use freely without strict requirements.  
+- **Lesser GNU Public License (LGPL)**
+  - A milder copyleft that allows linking to the software without forcing the whole project to be open source.
+  - _When to use_: Great for libraries you want others to use freely without strict requirements.
   - License text: [LGPLv3](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/lgpl-3.0.txt)
 
 #### **Permissive Licenses**
+
 These give users freedom to use your code however they want, including in proprietary projects, with minimal obligations.
 
-- **MIT License**  
-  - Simple and flexible, only requiring attribution.  
-  - *When to use*: Use this if you want your code to spread widely with no restrictions. It's the most popular on GitHub (44.69% of licensed projects).  
+- **MIT License**
+  - Simple and flexible, only requiring attribution.
+  - _When to use_: Use this if you want your code to spread widely with no restrictions. It's the most popular on GitHub (44.69% of licensed projects).
   - License text: [MIT](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/mit.txt)
 
-- **Apache License**  
-  - Includes patent protection and requires documenting changes.  
-  - *When to use*: Good for projects where you want to encourage adoption and protect against patent disputes.  
+- **Apache License**
+  - Includes patent protection and requires documenting changes.
+  - _When to use_: Good for projects where you want to encourage adoption and protect against patent disputes.
   - License text: [Apache-2.0](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/apache-2.0.txt)
 
-- **BSD Licenses (2-Clause and 3-Clause)**  
-  - Similar to MIT, with slight variations (e.g., 3-Clause adds a non-endorsement clause).  
-  - *When to use*: Choose this for simplicity and flexibility, especially if MIT feels too basic.  
+- **BSD Licenses (2-Clause and 3-Clause)**
+  - Similar to MIT, with slight variations (e.g., 3-Clause adds a non-endorsement clause).
+  - _When to use_: Choose this for simplicity and flexibility, especially if MIT feels too basic.
   - License text: [BSD-2-Clause](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/bsd-2-clause.txt), [BSD-3-Clause](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/bsd-3-clause.txt)
 
 #### **Creative Commons Licenses**
+
 Primarily for non-software works (e.g., docs, media), these mix-and-match terms like attribution (BY), share-alike (SA), no commercial use (NC), or no derivatives (ND).
 
-- **CC0 (Public Domain Dedication)**  
-  - Waives all copyright claims.  
-  - *When to use*: Use if you want no restrictions, but note it lacks a warranty waiver.  
+- **CC0 (Public Domain Dedication)**
+  - Waives all copyright claims.
+  - _When to use_: Use if you want no restrictions, but note it lacks a warranty waiver.
   - License text: [CC0-1.0](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cc0-1.0.txt)
 
-- **CC BY and CC BY-SA**  
-  - BY requires attribution; SA adds a copyleft-like requirement.  
-  - *When to use*: Great for documentation or datasets, not software (per Creative Commons' advice).  
+- **CC BY and CC BY-SA**
+  - BY requires attribution; SA adds a copyleft-like requirement.
+  - _When to use_: Great for documentation or datasets, not software (per Creative Commons' advice).
   - License text: [CC-BY-4.0](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cc-by-4.0.txt), [CC-BY-SA-4.0](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cc-by-sa-4.0.txt)
 
-*Note*: NC and ND variants aren't open source because they limit use or modifications.
+_Note_: NC and ND variants aren't open source because they limit use or modifications.
 
 #### **Public Domain and Similar**
+
 These aim to release code with no restrictions.
 
-- **Unlicense**  
-  - Waives copyright but includes a warranty disclaimer.  
-  - *When to use*: Use this over raw public domain for liability protection.  
+- **Unlicense**
+  - Waives copyright but includes a warranty disclaimer.
+  - _When to use_: Use this over raw public domain for liability protection.
   - License text: [Unlicense](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/unlicense.txt)
 
 #### **Specialized Licenses**
+
 For specific use cases like fonts or hardware:
 
-- **SIL Open Font License (OFL)**  
-  - Keeps fonts open and usable.  
-  - *When to use*: Perfect for font projects.  
+- **SIL Open Font License (OFL)**
+  - Keeps fonts open and usable.
+  - _When to use_: Perfect for font projects.
   - License text: [OFL-1.1](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/ofl-1.1.txt)
 
-- **CERN Open Hardware Licenses**  
-  - Covers hardware designs (permissive, weakly reciprocal, or strongly reciprocal).  
-  - *When to use*: Use for open hardware projects like furniture or electronics.  
+- **CERN Open Hardware Licenses**
+  - Covers hardware designs (permissive, weakly reciprocal, or strongly reciprocal).
+  - _When to use_: Use for open hardware projects like furniture or electronics.
   - License text: [CERN-OHL-P-2.0](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cern-ohl-p-2.0.txt), [CERN-OHL-W-2.0](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cern-ohl-w-2.0.txt), [CERN-OHL-S-2.0](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cern-ohl-s-2.0.txt)
 
 ### When to Use Which License
@@ -118,6 +137,7 @@ For specific use cases like fonts or hardware:
 Choosing a license depends on your project's goals and dependencies.
 
 #### **Standalone Projects**
+
 - **Copyleft (e.g., GPL, AGPL)**: Pick this if you want to enforce openness in all derivatives—ideal for ideological projects or tools you want to stay free.
 - **Permissive (e.g., MIT, Apache)**: Go this route if you want maximum adoption, including in commercial products, with minimal rules.
 - **Specialized (e.g., OFL, CERN)**: Use these for non-software works like fonts or hardware.
@@ -125,15 +145,19 @@ Choosing a license depends on your project's goals and dependencies.
 Check what similar projects use for inspiration. [ChooseALicense.com](https://choosealicense.com) can help narrow it down.
 
 #### **Projects with Dependencies**
+
 Your license must be compatible with the licenses of code you build on:
+
 - **GPL-licensed dependencies**: You'll likely need to use GPL too due to its viral nature.
 - **Mixed projects**: Use multiple licenses (e.g., MIT for code, CC BY-SA for docs), but clarify what applies where.
 
 #### **Key Considerations**
+
 - **Understand it**: Read the license. Changing it later is tough, especially with contributors, as you'd need everyone's permission.
 - **Liability**: Most licenses (except raw public domain) limit your liability—don't skip this protection.
 
 ### How to Add a License
+
 1. Pick a license from [ChooseALicense.com](https://choosealicense.com) or the list above.
 2. Add a `LICENSE.txt` file with the full text to your project root.
 3. Mention it in your README.
@@ -204,256 +228,260 @@ Before diving into the detailed descriptions, here's a comprehensive table of al
 | Vim                         | Specialized     | Charityware encouraging donations               | Charity support (rare outside Vim)                      |
 
 ### **1. Permissive Licenses**
+
 These licenses let others use your code freely, even in proprietary projects, usually just requiring attribution.
 
-- **0BSD (BSD Zero Clause License)**  
-  - *Description*: A super-simple BSD variant with no attribution requirement—basically public domain with a liability disclaimer.  
-  - *When to Use*: Perfect if you want no strings attached, not even credit, for maximum reuse.  
+- **0BSD (BSD Zero Clause License)**
+  - _Description_: A super-simple BSD variant with no attribution requirement—basically public domain with a liability disclaimer.
+  - _When to Use_: Perfect if you want no strings attached, not even credit, for maximum reuse.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/0bsd.txt)
 
-- **AFL-3.0 (Academic Free License v3.0)**  
-  - *Description*: Offers broad permissions with patent protection and a notice preservation clause.  
-  - *When to Use*: Great for academic or research projects needing patent clarity.  
+- **AFL-3.0 (Academic Free License v3.0)**
+  - _Description_: Offers broad permissions with patent protection and a notice preservation clause.
+  - _When to Use_: Great for academic or research projects needing patent clarity.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/afl-3.0.txt)
 
-- **Apache-2.0 (Apache License 2.0)**  
-  - *Description*: A popular choice with patent grants and attribution requirements.  
-  - *When to Use*: Ideal for encouraging wide adoption, especially in commercial settings, with patent protection.  
+- **Apache-2.0 (Apache License 2.0)**
+  - _Description_: A popular choice with patent grants and attribution requirements.
+  - _When to Use_: Ideal for encouraging wide adoption, especially in commercial settings, with patent protection.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/apache-2.0.txt)
 
-- **Artistic-2.0 (Artistic License 2.0)**  
-  - *Description*: Balances permissiveness with some rules on modifications; tied to the Perl community.  
-  - *When to Use*: Use for Perl-related projects or if you want a permissive license with a slight protective twist.  
+- **Artistic-2.0 (Artistic License 2.0)**
+  - _Description_: Balances permissiveness with some rules on modifications; tied to the Perl community.
+  - _When to Use_: Use for Perl-related projects or if you want a permissive license with a slight protective twist.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/artistic-2.0.txt)
 
-- **BlueOak-1.0.0 (Blue Oak Model License 1.0.0)**  
-  - *Description*: A modern, plain-language permissive license with patent and trademark clauses.  
-  - *When to Use*: Pick this for readability and simplicity in permissive licensing.  
+- **BlueOak-1.0.0 (Blue Oak Model License 1.0.0)**
+  - _Description_: A modern, plain-language permissive license with patent and trademark clauses.
+  - _When to Use_: Pick this for readability and simplicity in permissive licensing.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/blueoak-1.0.0.txt)
 
-- **BSD-2-Clause (BSD 2-Clause "Simplified" License)**  
-  - *Description*: A minimal permissive license requiring attribution and a non-endorsement clause.  
-  - *When to Use*: Go for this if you want a lightweight, widely compatible option like MIT.  
+- **BSD-2-Clause (BSD 2-Clause "Simplified" License)**
+  - _Description_: A minimal permissive license requiring attribution and a non-endorsement clause.
+  - _When to Use_: Go for this if you want a lightweight, widely compatible option like MIT.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/bsd-2-clause.txt)
 
-- **BSD-2-Clause-Patent (BSD 2-Clause Plus Patent License)**  
-  - *Description*: BSD-2-Clause with an explicit patent grant.  
-  - *When to Use*: Use when you want BSD simplicity plus patent protection.  
+- **BSD-2-Clause-Patent (BSD 2-Clause Plus Patent License)**
+  - _Description_: BSD-2-Clause with an explicit patent grant.
+  - _When to Use_: Use when you want BSD simplicity plus patent protection.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/bsd-2-clause-patent.txt)
 
-- **BSD-3-Clause (BSD 3-Clause "New" License)**  
-  - *Description*: Adds a non-endorsement clause to BSD-2-Clause.  
-  - *When to Use*: A solid choice for permissive licensing with a bit more formality than MIT.  
+- **BSD-3-Clause (BSD 3-Clause "New" License)**
+  - _Description_: Adds a non-endorsement clause to BSD-2-Clause.
+  - _When to Use_: A solid choice for permissive licensing with a bit more formality than MIT.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/bsd-3-clause.txt)
 
-- **BSD-3-Clause-Clear (BSD 3-Clause Clear License)**  
-  - *Description*: A variant of BSD-3-Clause with clearer wording.  
-  - *When to Use*: Opt for this if you prefer a polished version of BSD-3-Clause.  
+- **BSD-3-Clause-Clear (BSD 3-Clause Clear License)**
+  - _Description_: A variant of BSD-3-Clause with clearer wording.
+  - _When to Use_: Opt for this if you prefer a polished version of BSD-3-Clause.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/bsd-3-clause-clear.txt)
 
-- **BSD-4-Clause (BSD 4-Clause "Original" License)**  
-  - *Description*: An older BSD license with an advertising clause.  
-  - *When to Use*: Rarely used now due to complexity; stick to newer BSD options unless required.  
+- **BSD-4-Clause (BSD 4-Clause "Original" License)**
+  - _Description_: An older BSD license with an advertising clause.
+  - _When to Use_: Rarely used now due to complexity; stick to newer BSD options unless required.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/bsd-4-clause.txt)
 
-- **BSL-1.0 (Boost Software License 1.0)**  
-  - *Description*: A concise permissive license, popular for C++ libraries like Boost.  
-  - *When to Use*: Excellent for libraries or tools needing minimal restrictions.  
+- **BSL-1.0 (Boost Software License 1.0)**
+  - _Description_: A concise permissive license, popular for C++ libraries like Boost.
+  - _When to Use_: Excellent for libraries or tools needing minimal restrictions.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/bsl-1.0.txt)
 
-- **ISC (Internet Systems Consortium License)**  
-  - *Description*: A simplified BSD license, common in networking software.  
-  - *When to Use*: Use for infrastructure projects wanting a short, permissive license.  
+- **ISC (Internet Systems Consortium License)**
+  - _Description_: A simplified BSD license, common in networking software.
+  - _When to Use_: Use for infrastructure projects wanting a short, permissive license.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/isc.txt)
 
-- **MIT (MIT License)**  
-  - *Description*: The go-to permissive license, requiring only attribution.  
-  - *When to Use*: Choose this for ultimate flexibility—perfect for web or JavaScript projects.  
+- **MIT (MIT License)**
+  - _Description_: The go-to permissive license, requiring only attribution.
+  - _When to Use_: Choose this for ultimate flexibility—perfect for web or JavaScript projects.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/mit.txt)
 
-- **MIT-0 (MIT No Attribution License)**  
-  - *Description*: MIT without the attribution requirement.  
-  - *When to Use*: Use when you want MIT's simplicity but no credit needed.  
+- **MIT-0 (MIT No Attribution License)**
+  - _Description_: MIT without the attribution requirement.
+  - _When to Use_: Use when you want MIT's simplicity but no credit needed.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/mit-0.txt)
 
-- **MS-PL (Microsoft Public License)**  
-  - *Description*: Permissive with a patent clause, used in Microsoft projects.  
-  - *When to Use*: Good for Microsoft ecosystem projects needing patent coverage.  
+- **MS-PL (Microsoft Public License)**
+  - _Description_: Permissive with a patent clause, used in Microsoft projects.
+  - _When to Use_: Good for Microsoft ecosystem projects needing patent coverage.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/ms-pl.txt)
 
-- **NCSA (NCSA Open Source License)**  
-  - *Description*: Combines BSD and MIT with a patent grant.  
-  - *When to Use*: Ideal for academic software needing both copyright and patent protection.  
+- **NCSA (NCSA Open Source License)**
+  - _Description_: Combines BSD and MIT with a patent grant.
+  - _When to Use_: Ideal for academic software needing both copyright and patent protection.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/ncsa.txt)
 
-- **PostgreSQL (PostgreSQL License)**  
-  - *Description*: A MIT-like license used by PostgreSQL.  
-  - *When to Use*: Use for database projects or to align with PostgreSQL's community.  
+- **PostgreSQL (PostgreSQL License)**
+  - _Description_: A MIT-like license used by PostgreSQL.
+  - _When to Use_: Use for database projects or to align with PostgreSQL's community.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/postgresql.txt)
 
-- **UPL-1.0 (Universal Permissive License 1.0)**  
-  - *Description*: Permissive with an explicit patent grant, often for Java projects.  
-  - *When to Use*: Pick this for Java libraries or patent-sensitive projects.  
+- **UPL-1.0 (Universal Permissive License 1.0)**
+  - _Description_: Permissive with an explicit patent grant, often for Java projects.
+  - _When to Use_: Pick this for Java libraries or patent-sensitive projects.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/upl-1.0.txt)
 
-- **Zlib (Zlib License)**  
-  - *Description*: A short permissive license with a non-endorsement clause.  
-  - *When to Use*: Great for small tools or libraries needing minimal obligations.  
+- **Zlib (Zlib License)**
+  - _Description_: A short permissive license with a non-endorsement clause.
+  - _When to Use_: Great for small tools or libraries needing minimal obligations.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/zlib.txt)
 
 ---
 
 ### **2. Copyleft Licenses**
+
 Copyleft licenses ensure derivatives stay open source, perfect for protecting project openness.
 
-- **AGPL-3.0 (GNU Affero General Public License v3.0)**  
-  - *Description*: GPL with a network clause—source must be shared if accessed online.  
-  - *When to Use*: Use for web apps where you want all changes shared, even remotely.  
+- **AGPL-3.0 (GNU Affero General Public License v3.0)**
+  - _Description_: GPL with a network clause—source must be shared if accessed online.
+  - _When to Use_: Use for web apps where you want all changes shared, even remotely.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/agpl-3.0.txt)
 
-- **CECILL-2.1 (CeCILL License v2.1)**  
-  - *Description*: A French copyleft license, GPL-compatible.  
-  - *When to Use*: Choose for projects in France or needing French legal alignment.  
+- **CECILL-2.1 (CeCILL License v2.1)**
+  - _Description_: A French copyleft license, GPL-compatible.
+  - _When to Use_: Choose for projects in France or needing French legal alignment.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cecill-2.1.txt)
 
-- **ECL-2.0 (Educational Community License v2.0)**  
-  - *Description*: Apache-based copyleft for educational use.  
-  - *When to Use*: Good for academic projects wanting to enforce openness.  
+- **ECL-2.0 (Educational Community License v2.0)**
+  - _Description_: Apache-based copyleft for educational use.
+  - _When to Use_: Good for academic projects wanting to enforce openness.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/ecl-2.0.txt)
 
-- **EPL-1.0 (Eclipse Public License 1.0)**  
-  - *Description*: Copyleft with patent clauses, used by Eclipse projects.  
-  - *When to Use*: Use for Eclipse-related work or patent-sensitive projects.  
+- **EPL-1.0 (Eclipse Public License 1.0)**
+  - _Description_: Copyleft with patent clauses, used by Eclipse projects.
+  - _When to Use_: Use for Eclipse-related work or patent-sensitive projects.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/epl-1.0.txt)
 
-- **EPL-2.0 (Eclipse Public License 2.0)**  
-  - *Description*: Updated EPL with better GPL compatibility.  
-  - *When to Use*: Pick this for newer Eclipse projects or GPL-friendly needs.  
+- **EPL-2.0 (Eclipse Public License 2.0)**
+  - _Description_: Updated EPL with better GPL compatibility.
+  - _When to Use_: Pick this for newer Eclipse projects or GPL-friendly needs.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/epl-2.0.txt)
 
-- **EUPL-1.1 (European Union Public License 1.1)**  
-  - *Description*: Multilingual copyleft for EU projects.  
-  - *When to Use*: Use for EU-based or multilingual projects needing copyleft.  
+- **EUPL-1.1 (European Union Public License 1.1)**
+  - _Description_: Multilingual copyleft for EU projects.
+  - _When to Use_: Use for EU-based or multilingual projects needing copyleft.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/eupl-1.1.txt)
 
-- **EUPL-1.2 (European Union Public License 1.2)**  
-  - *Description*: Updated EUPL with improved compatibility.  
-  - *When to Use*: Go for this in modern EU projects needing copyleft clarity.  
+- **EUPL-1.2 (European Union Public License 1.2)**
+  - _Description_: Updated EUPL with improved compatibility.
+  - _When to Use_: Go for this in modern EU projects needing copyleft clarity.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/eupl-1.2.txt)
 
-- **GFDL-1.3 (GNU Free Documentation License v1.3)**  
-  - *Description*: Copyleft for documentation, often paired with GPL.  
-  - *When to Use*: Use for manuals or docs tied to GPL software.  
+- **GFDL-1.3 (GNU Free Documentation License v1.3)**
+  - _Description_: Copyleft for documentation, often paired with GPL.
+  - _When to Use_: Use for manuals or docs tied to GPL software.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/gfdl-1.3.txt)
 
-- **GPL-2.0 (GNU General Public License v2.0)**  
-  - *Description*: Strong copyleft requiring derivatives to stay open.  
-  - *When to Use*: Pick for older projects wanting robust openness guarantees.  
+- **GPL-2.0 (GNU General Public License v2.0)**
+  - _Description_: Strong copyleft requiring derivatives to stay open.
+  - _When to Use_: Pick for older projects wanting robust openness guarantees.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/gpl-2.0.txt)
 
-- **GPL-3.0 (GNU General Public License v3.0)**  
-  - *Description*: Updated GPL with patent and hardware protections.  
-  - *When to Use*: Use for new projects needing strong, modern copyleft.  
+- **GPL-3.0 (GNU General Public License v3.0)**
+  - _Description_: Updated GPL with patent and hardware protections.
+  - _When to Use_: Use for new projects needing strong, modern copyleft.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/gpl-3.0.txt)
 
-- **LGPL-2.1 (GNU Lesser General Public License v2.1)**  
-  - *Description*: Weaker copyleft allowing linking to proprietary code.  
-  - *When to Use*: Ideal for libraries used in proprietary software.  
+- **LGPL-2.1 (GNU Lesser General Public License v2.1)**
+  - _Description_: Weaker copyleft allowing linking to proprietary code.
+  - _When to Use_: Ideal for libraries used in proprietary software.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/lgpl-2.1.txt)
 
-- **LGPL-3.0 (GNU Lesser General Public License v3.0)**  
-  - *Description*: Updated LGPL with GPL-3.0 compatibility.  
-  - *When to Use*: Use for modern libraries balancing openness and flexibility.  
+- **LGPL-3.0 (GNU Lesser General Public License v3.0)**
+  - _Description_: Updated LGPL with GPL-3.0 compatibility.
+  - _When to Use_: Use for modern libraries balancing openness and flexibility.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/lgpl-3.0.txt)
 
-- **MPL-2.0 (Mozilla Public License 2.0)**  
-  - *Description*: File-based copyleft allowing proprietary mixing.  
-  - *When to Use*: Good for projects wanting partial copyleft with flexibility.  
+- **MPL-2.0 (Mozilla Public License 2.0)**
+  - _Description_: File-based copyleft allowing proprietary mixing.
+  - _When to Use_: Good for projects wanting partial copyleft with flexibility.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/mpl-2.0.txt)
 
-- **MS-RL (Microsoft Reciprocal License)**  
-  - *Description*: Copyleft requiring same-license derivatives if original code is used.  
-  - *When to Use*: Use in Microsoft ecosystems needing balanced copyleft.  
+- **MS-RL (Microsoft Reciprocal License)**
+  - _Description_: Copyleft requiring same-license derivatives if original code is used.
+  - _When to Use_: Use in Microsoft ecosystems needing balanced copyleft.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/ms-rl.txt)
 
-- **MulanPSL-2.0 (Mulan Permissive Software License v2)**  
-  - *Description*: Permissive with weak copyleft, aimed at China's market.  
-  - *When to Use*: Choose for projects targeting China with some protection.  
+- **MulanPSL-2.0 (Mulan Permissive Software License v2)**
+  - _Description_: Permissive with weak copyleft, aimed at China's market.
+  - _When to Use_: Choose for projects targeting China with some protection.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/mulanpsl-2.0.txt)
 
-- **OSL-3.0 (Open Software License 3.0)**  
-  - *Description*: Copyleft with a network use clause like AGPL.  
-  - *When to Use*: Use for network software needing source disclosure.  
+- **OSL-3.0 (Open Software License 3.0)**
+  - _Description_: Copyleft with a network use clause like AGPL.
+  - _When to Use_: Use for network software needing source disclosure.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/osl-3.0.txt)
 
 ---
 
 ### **3. Public Domain and Similar**
+
 These waive most restrictions, aiming for maximum freedom.
 
-- **CC0-1.0 (Creative Commons Zero v1.0 Universal)**  
-  - *Description*: A public domain dedication waiving all rights.  
-  - *When to Use*: Use to give up all control, but note no liability disclaimer in some regions.  
+- **CC0-1.0 (Creative Commons Zero v1.0 Universal)**
+  - _Description_: A public domain dedication waiving all rights.
+  - _When to Use_: Use to give up all control, but note no liability disclaimer in some regions.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cc0-1.0.txt)
 
-- **Unlicense**  
-  - *Description*: Public domain dedication with a warranty disclaimer.  
-  - *When to Use*: Pick this for a simple, legally safer public domain option.  
+- **Unlicense**
+  - _Description_: Public domain dedication with a warranty disclaimer.
+  - _When to Use_: Pick this for a simple, legally safer public domain option.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/unlicense.txt)
 
-- **WTFPL (Do What The F*ck You Want To Public License)**  
-  - *Description*: Ultra-permissive with no conditions or protections.  
-  - *When to Use*: Use for a bold freedom statement, but it lacks legal weight.  
+- **WTFPL (Do What The F\*ck You Want To Public License)**
+  - _Description_: Ultra-permissive with no conditions or protections.
+  - _When to Use_: Use for a bold freedom statement, but it lacks legal weight.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/wtfpl.txt)
 
 ---
 
 ### **4. Specialized Licenses**
+
 Tailored for specific content like fonts, hardware, or documentation.
 
-- **CC-BY-4.0 (Creative Commons Attribution 4.0)**  
-  - *Description*: Requires attribution for non-software works.  
-  - *When to Use*: Use for docs, datasets, or media needing credit.  
+- **CC-BY-4.0 (Creative Commons Attribution 4.0)**
+  - _Description_: Requires attribution for non-software works.
+  - _When to Use_: Use for docs, datasets, or media needing credit.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cc-by-4.0.txt)
 
-- **CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)**  
-  - *Description*: CC-BY-4.0 with a copyleft clause.  
-  - *When to Use*: Pick for non-software where derivatives must stay open.  
+- **CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)**
+  - _Description_: CC-BY-4.0 with a copyleft clause.
+  - _When to Use_: Pick for non-software where derivatives must stay open.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cc-by-sa-4.0.txt)
 
-- **CERN-OHL-P-2.0 (CERN Open Hardware License v2.0 Permissive)**  
-  - *Description*: Permissive for hardware designs.  
-  - *When to Use*: Use for hardware projects wanting broad use.  
+- **CERN-OHL-P-2.0 (CERN Open Hardware License v2.0 Permissive)**
+  - _Description_: Permissive for hardware designs.
+  - _When to Use_: Use for hardware projects wanting broad use.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cern-ohl-p-2.0.txt)
 
-- **CERN-OHL-S-2.0 (CERN Open Hardware License v2.0 Strongly Reciprocal)**  
-  - *Description*: Strong copyleft for hardware.  
-  - *When to Use*: Choose for hardware needing full openness.  
+- **CERN-OHL-S-2.0 (CERN Open Hardware License v2.0 Strongly Reciprocal)**
+  - _Description_: Strong copyleft for hardware.
+  - _When to Use_: Choose for hardware needing full openness.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cern-ohl-s-2.0.txt)
 
-- **CERN-OHL-W-2.0 (CERN Open Hardware License v2.0 Weakly Reciprocal)**  
-  - *Description*: Weak copyleft for hardware, allowing some proprietary use.  
-  - *When to Use*: Use for hardware balancing openness and flexibility.  
+- **CERN-OHL-W-2.0 (CERN Open Hardware License v2.0 Weakly Reciprocal)**
+  - _Description_: Weak copyleft for hardware, allowing some proprietary use.
+  - _When to Use_: Use for hardware balancing openness and flexibility.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cern-ohl-w-2.0.txt)
 
-- **LPPL-1.3c (LaTeX Project Public License v1.3c)**  
-  - *Description*: For LaTeX projects with distribution rules.  
-  - *When to Use*: Pick for LaTeX packages or docs in that ecosystem.  
+- **LPPL-1.3c (LaTeX Project Public License v1.3c)**
+  - _Description_: For LaTeX projects with distribution rules.
+  - _When to Use_: Pick for LaTeX packages or docs in that ecosystem.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/lppl-1.3c.txt)
 
-- **ODbL-1.0 (Open Database License v1.0)**  
-  - *Description*: Copyleft for databases, requiring share-alike.  
-  - *When to Use*: Use for open data projects needing derivative openness.  
+- **ODbL-1.0 (Open Database License v1.0)**
+  - _Description_: Copyleft for databases, requiring share-alike.
+  - _When to Use_: Use for open data projects needing derivative openness.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/odbl-1.0.txt)
 
-- **OFL-1.1 (SIL Open Font License v1.1)**  
-  - *Description*: For fonts, allows embedding but not standalone sales.  
-  - *When to Use*: Choose for font projects keeping them open.  
+- **OFL-1.1 (SIL Open Font License v1.1)**
+  - _Description_: For fonts, allows embedding but not standalone sales.
+  - _When to Use_: Choose for font projects keeping them open.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/ofl-1.1.txt)
 
-- **Vim (Vim License)**  
-  - *Description*: Charityware encouraging donations, used by Vim.  
-  - *When to Use*: Use to support charity, though rare outside Vim.  
+- **Vim (Vim License)**
+  - _Description_: Charityware encouraging donations, used by Vim.
+  - _When to Use_: Use to support charity, though rare outside Vim.
   - [Full Text](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/vim.txt)
 
 ---
@@ -461,6 +489,7 @@ Tailored for specific content like fonts, hardware, or documentation.
 ### **Choosing Your License**
 
 With 47 options, here's how to narrow it down:
+
 - **Permissive**: MIT, Apache-2.0, BSD-2-Clause for max adoption.
 - **Copyleft**: GPL-3.0, AGPL-3.0, MPL-2.0 for openness enforcement.
 - **Public Domain**: Unlicense or CC0-1.0 for no restrictions.

@@ -1,6 +1,6 @@
 ---
 title: 'Free CDN Services: A Comprehensive Comparison'
-description: "Explore the best free CDN services of 2025, comparing their features, bandwidth limits, and reliability to help you choose the right one for your website."
+description: 'Explore the best free CDN services of 2025, comparing their features, bandwidth limits, and reliability to help you choose the right one for your website.'
 date: '2025-06-28'
 categories:
   - cloud-computing

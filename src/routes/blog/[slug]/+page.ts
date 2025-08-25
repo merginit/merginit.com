@@ -5,13 +5,15 @@ import type { Component } from 'svelte';
 type PostModuleEntry = () => Promise<{ metadata: Post; default: Component }>;
 type BlogPostModules = Record<string, PostModuleEntry>;
 
-const modules = import.meta.glob(['/src/lib/blog/posts/*.md', '/src/lib/blog/posts/*.svx']) as BlogPostModules;
+const modules = import.meta.glob([
+	'/src/lib/blog/posts/*.md',
+	'/src/lib/blog/posts/*.svx'
+]) as BlogPostModules;
 
 const redirectMap: Record<string, string> = {
 	'29062025-automated-multi-platform-releases-with-semantic-release':
 		'29062025-automated-multi-platform-releases',
-	'15072025-the-best-open-source-and-open-weight-ai-models-for-ocr':
-		'15072025-best-ocr-ai-models'
+	'15072025-the-best-open-source-and-open-weight-ai-models-for-ocr': '15072025-best-ocr-ai-models'
 };
 
 export async function load({ params }) {
@@ -20,7 +22,7 @@ export async function load({ params }) {
 	if (requestedSlug in redirectMap) {
 		throw redirect(301, `/blog/${redirectMap[requestedSlug]}`);
 	}
-	
+
 	let matchedPath: string | undefined;
 
 	for (const path in modules) {
@@ -57,6 +59,9 @@ export async function load({ params }) {
 		if (e && typeof e === 'object' && 'status' in e && typeof e.status === 'number') {
 			throw e;
 		}
-		throw error(500, `Could not load blog post "${requestedSlug}". Reason: ${e.message || 'Unknown error'}`);
+		throw error(
+			500,
+			`Could not load blog post "${requestedSlug}". Reason: ${e.message || 'Unknown error'}`
+		);
 	}
 }

@@ -1,20 +1,20 @@
-import type { Post } from "$lib/types";
+import type { Post } from '$lib/types';
 
-const SITE_NAME = "https://merginit.com";
+const SITE_NAME = 'https://merginit.com';
 
 const staticPages: { path: string; lastmod?: string; changefreq?: string; priority?: string }[] = [
-	{ path: "/", changefreq: "daily", priority: "1.0" },
-	{ path: "/legal", changefreq: "monthly", priority: "0.4" },
-	{ path: "/legal/privacy-policy", changefreq: "monthly", priority: "0.3" },
-	{ path: "/legal/imprint", changefreq: "monthly", priority: "0.3" },
-	{ path: "/legal/cookie-policy", changefreq: "monthly", priority: "0.3" },
-	{ path: "/data-request", changefreq: "monthly", priority: "0.6" },
-	{ path: "/free-products", changefreq: "weekly", priority: "0.7" },
-	{ path: "/blog", changefreq: "weekly", priority: "0.8" },
+	{ path: '/', changefreq: 'daily', priority: '1.0' },
+	{ path: '/legal', changefreq: 'monthly', priority: '0.4' },
+	{ path: '/legal/privacy-policy', changefreq: 'monthly', priority: '0.3' },
+	{ path: '/legal/imprint', changefreq: 'monthly', priority: '0.3' },
+	{ path: '/legal/cookie-policy', changefreq: 'monthly', priority: '0.3' },
+	{ path: '/data-request', changefreq: 'monthly', priority: '0.6' },
+	{ path: '/free-products', changefreq: 'weekly', priority: '0.7' },
+	{ path: '/blog', changefreq: 'weekly', priority: '0.8' }
 ];
 
 export async function GET() {
-	const modules = import.meta.glob("/src/lib/blog/posts/*.md") as Record<
+	const modules = import.meta.glob('/src/lib/blog/posts/*.md') as Record<
 		string,
 		() => Promise<{ metadata: Post }>
 	>;
@@ -24,20 +24,24 @@ export async function GET() {
 	for (const path of Object.keys(modules)) {
 		await modules[path]().then((mod) => {
 			if (mod.metadata && mod.metadata.published) {
-                const filename = path.split('/').pop()?.replace('.md', '') || '';
+				const filename = path.split('/').pop()?.replace('.md', '') || '';
 				const lastMod = mod.metadata.updateDate || mod.metadata.date;
 				blogEntries.push({ slug: filename, date: lastMod });
 			}
 		});
 	}
 
-	const sitemapEntries = staticPages.map(page => `
+	const sitemapEntries = staticPages
+		.map(
+			(page) => `
 		<url>
 			<loc>${SITE_NAME}${page.path}</loc>
 			${page.lastmod ? `<lastmod>${page.lastmod}</lastmod>` : ''}
 			${page.changefreq ? `<changefreq>${page.changefreq}</changefreq>` : ''}
 			${page.priority ? `<priority>${page.priority}</priority>` : ''}
-		</url>`).join("");
+		</url>`
+		)
+		.join('');
 
 	const dynamicEntries = blogEntries
 		.map(
@@ -47,9 +51,9 @@ export async function GET() {
 			${entry.date ? `<lastmod>${new Date(entry.date).toISOString().split('T')[0]}</lastmod>` : ''}
 			<changefreq>weekly</changefreq>
 			<priority>0.7</priority>
-		</url>`,
+		</url>`
 		)
-		.join("");
+		.join('');
 
 	return new Response(
 		`
@@ -67,9 +71,9 @@ export async function GET() {
 		</urlset>`.trim(),
 		{
 			headers: {
-				"Content-Type": "application/xml",
-				"Cache-Control": "max-age=0, s-maxage=3600", // Cache for 1 hour
-			},
-		},
+				'Content-Type': 'application/xml',
+				'Cache-Control': 'max-age=0, s-maxage=3600' // Cache for 1 hour
+			}
+		}
 	);
 }

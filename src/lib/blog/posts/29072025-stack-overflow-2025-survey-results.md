@@ -1,6 +1,6 @@
 ---
-title: "Stack Overflow 2025 Survey: AI Adoption Soars as Developer Trust Plummets"
-description: "In-depth analysis of the 2025 Stack Overflow Developer Survey. Explore the key findings on AI tools, including the paradox of rising adoption vs. declining trust, and what it means for the future of software development."
+title: 'Stack Overflow 2025 Survey: AI Adoption Soars as Developer Trust Plummets'
+description: 'In-depth analysis of the 2025 Stack Overflow Developer Survey. Explore the key findings on AI tools, including the paradox of rising adoption vs. declining trust, and what it means for the future of software development.'
 date: '2025-07-29'
 categories:
   - data-analytics
@@ -8,7 +8,17 @@ categories:
 published: true
 author: 'Jonas Fröller'
 readingTime: '6 min'
-tags: ['stack-overflow', 'developer-survey', 'ai-in-coding', 'software-development', 'developer-trends', 'programming', 'ai-tools', 'community']
+tags:
+  [
+    'stack-overflow',
+    'developer-survey',
+    'ai-in-coding',
+    'software-development',
+    'developer-trends',
+    'programming',
+    'ai-tools',
+    'community'
+  ]
 ---
 
 <script>
@@ -42,13 +52,13 @@ Digging deeper, the survey uncovers a major gripe: AI's knack for delivering "al
 
 ### A Community Under the Microscope
 
-The survey didn't just reveal trends—it sparked them. Its laser focus on AI ruffled feathers, with developers flocking to Stack Overflow's Meta forum to critique its design. Many pointed out an "overbearing" AI slant, noting that even basic questions about tools like IDEs were framed around "AI-enabled code editing." 
+The survey didn't just reveal trends—it sparked them. Its laser focus on AI ruffled feathers, with developers flocking to Stack Overflow's Meta forum to critique its design. Many pointed out an "overbearing" AI slant, noting that even basic questions about tools like IDEs were framed around "AI-enabled code editing."
 
 This pushback is telling. It shows a community that's not just adopting tech but dissecting it, questioning whether the survey's AI obsession reflects reality or nudges it. The debates—about leading questions and the survey's "vibe"—underline a developer base that's engaged and opinionated, not just along for the ride.
 
 ### The Enduring Value of Human Connection
 
-Amid the AI buzz, one truth shines through: humans still rule the roost. When AI's answers falter, 75% of developers turn to a fellow human for help. It's a powerful nod to the community's collaborative spirit—Stack Overflow itself thrives on this, after all. 
+Amid the AI buzz, one truth shines through: humans still rule the roost. When AI's answers falter, 75% of developers turn to a fellow human for help. It's a powerful nod to the community's collaborative spirit—Stack Overflow itself thrives on this, after all.
 
 That said, AI's not out of the game. It's finding a niche as a learning sidekick, with 44% of developers using AI tools to pick up new skills or languages over the past year. It's a supplementary role, not a starring one, proving that while AI can assist, it's no substitute for human expertise.
 
@@ -70,6 +80,6 @@ The survey's not all about AI—it's a treasure trove of broader developer insig
 
 ### The Road Ahead: A Call for Critical Collaboration
 
-The 2025 Stack Overflow Developer Survey captures a community at a crossroads. AI's a game-changer, no doubt, but it's not the whole game. Developers are embracing it with open eyes, balancing its power with a healthy dose of skepticism. The future? It's not AI vs. humans—it's AI *and* humans, a partnership where critical thinking and collaboration keep us ahead.
+The 2025 Stack Overflow Developer Survey captures a community at a crossroads. AI's a game-changer, no doubt, but it's not the whole game. Developers are embracing it with open eyes, balancing its power with a healthy dose of skepticism. The future? It's not AI vs. humans—it's AI _and_ humans, a partnership where critical thinking and collaboration keep us ahead.
 
 Want more? Check out the full survey at [Stack Overflow 2025 Developer Survey](https://survey.stackoverflow.co/2025).

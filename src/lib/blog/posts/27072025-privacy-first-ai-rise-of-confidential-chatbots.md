@@ -1,14 +1,14 @@
 ---
-title: "Privacy-First AI: The Rise of Confidential Chatbots"
+title: 'Privacy-First AI: The Rise of Confidential Chatbots'
 description: "Explore the new wave of privacy-focused AI chatbots like Proton's Lumo, DuckDuckGo AI, and Kagi that prioritize user confidentiality over data collection."
-date: "2025-07-27"
+date: '2025-07-27'
 categories:
   - ai-ml
   - cybersecurity
 published: true
 author: Jonas Fröller
-readingTime: "5 min"
-tags: ["AI", "privacy", "chatbots", "encryption", "Lumo", "DuckDuckGo", "Kagi"]
+readingTime: '5 min'
+tags: ['AI', 'privacy', 'chatbots', 'encryption', 'Lumo', 'DuckDuckGo', 'Kagi']
 ---
 
 <script>
@@ -35,9 +35,9 @@ Lumo is accessible via its website and mobile apps for both Android and iOS. A f
 
 Lumo is not alone in the burgeoning field of private AI. Here's a look at some of the other players:
 
-* **DuckDuckGo AI:** Known for its privacy-centric search engine, DuckDuckGo has extended its philosophy to an AI chat feature. Duck.ai allows users to interact with various AI models from providers like OpenAI and Anthropic, all while keeping the conversations anonymous and untracked. It's a free service that doesn't require an account, making it a highly accessible option.
+- **DuckDuckGo AI:** Known for its privacy-centric search engine, DuckDuckGo has extended its philosophy to an AI chat feature. Duck.ai allows users to interact with various AI models from providers like OpenAI and Anthropic, all while keeping the conversations anonymous and untracked. It's a free service that doesn't require an account, making it a highly accessible option.
 
-* **Kagi:** This paid search engine offers an ad-free and private experience. Its "Assistant" feature provides access to a range of large language models for both chatting and web searching. Kagi's business model is user-funded, which allows it to focus on user experience and privacy rather than advertising and data collection.
+- **Kagi:** This paid search engine offers an ad-free and private experience. Its "Assistant" feature provides access to a range of large language models for both chatting and web searching. Kagi's business model is user-funded, which allows it to focus on user experience and privacy rather than advertising and data collection.
 
 ### The Spectrum of AI Privacy
 

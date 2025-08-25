@@ -9,7 +9,19 @@ categories:
 published: true
 author: 'Jonas Fröller'
 readingTime: '34 min'
-tags: ['sync-engines', 'postgresql', 'real-time', 'offline-first', 'local-first', 'ElectricSQL', 'Convex', 'Zero', 'database-sync', 'web-development']
+tags:
+  [
+    'sync-engines',
+    'postgresql',
+    'real-time',
+    'offline-first',
+    'local-first',
+    'ElectricSQL',
+    'Convex',
+    'Zero',
+    'database-sync',
+    'web-development'
+  ]
 ---
 
 # The Power of Sync Engines: Choosing the Right One for Your Next Project

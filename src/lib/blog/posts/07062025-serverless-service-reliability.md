@@ -49,6 +49,7 @@ A developer using Vercel for a Next.js application was shocked to receive a $700
 | **Impact**          | High build times leading to unexpected costs                          |
 
 **Lessons Learned**:
+
 - **Understand Pricing Models**: Familiarize yourself with how you're charged—whether by execution time, requests, or other metrics ([Jefferson Frank - AWS Challenges](https://www.jeffersonfrank.com/insights/aws-serverless-challenges-and-tips/)).
 - **Optimize Configurations**: Use static generation where possible to reduce build times and costs.
 - **Monitor Usage**: Regularly review usage and bills to catch anomalies early.
@@ -64,6 +65,7 @@ A long-time Cloudflare Enterprise customer reported that Cloudflare demanded $12
 | **Impact**  | Perceived as extortion, eroding trust in vendor reliability |
 
 **Lessons Learned**:
+
 - **Diversify Providers**: Avoid over-reliance on a single provider; consider backups or multi-provider strategies ([UltaHost - Serverless Architecture](https://ultahost.com/blog/serverless-architecture/)).
 - **Review Contracts**: Understand termination clauses and dispute resolution processes.
 - **Communicate with Support**: Maintain open lines with support teams to address issues proactively.
@@ -106,4 +108,4 @@ Serverless computing offers immense benefits, but reliability requires careful a
 [Reddit - Cloudflare took down our website after trying to force us to pay 120k$](https://www.reddit.com/r/CloudFlare/comments/1d14zrf/cloudflare_took_down_our_website_after_trying_to)  
 [X - @michaelaubry on Vercel vs Cloudflare](https://x.com/michaelaubry/status/1930915964738265288)  
 [X - @melkornms on Vercel performance](https://x.com/melkornms/status/1929861105922236580)  
-[X - @swarajbachu on serverless limitations](https://x.com/swarajbachu/status/1929077782929420516)  
+[X - @swarajbachu on serverless limitations](https://x.com/swarajbachu/status/1929077782929420516)

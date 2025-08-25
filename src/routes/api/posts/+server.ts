@@ -40,19 +40,22 @@ async function getPosts() {
 					.replace(/\s+/g, ' ') // Normalize whitespace
 					.trim();
 			} else {
-				content = "";
+				content = '';
 			}
-			
-			console.log(`Content for ${slug} (${content.length} chars):`, content.substring(0, 100) + '...');
 
-			const post = { 
-				...metadata, 
+			console.log(
+				`Content for ${slug} (${content.length} chars):`,
+				content.substring(0, 100) + '...'
+			);
+
+			const post = {
+				...metadata,
 				date: formattedDate,
 				updateDate: formattedUpdateDate || undefined,
 				slug,
-				content 
+				content
 			} as Post & { content: string };
-			
+
 			post.published && posts.push(post);
 		}
 	}
@@ -77,7 +80,7 @@ function filterPosts(
 	minReadTime: number,
 	maxReadTime: number
 ) {
-	return posts.filter(post => {
+	return posts.filter((post) => {
 		// Search filter
 		if (searchQuery) {
 			const query = searchQuery.toLowerCase();
@@ -94,11 +97,11 @@ function filterPosts(
 					searchMatch = post.content.toLowerCase().includes(query);
 					break;
 				default: // 'all'
-					searchMatch = 
+					searchMatch =
 						post.title.toLowerCase().includes(query) ||
 						post.description.toLowerCase().includes(query) ||
 						post.content.toLowerCase().includes(query) ||
-						post.tags.some(tag => tag.toLowerCase().includes(query));
+						post.tags.some((tag) => tag.toLowerCase().includes(query));
 			}
 
 			if (!searchMatch) return false;
@@ -107,10 +110,12 @@ function filterPosts(
 		// Category filter
 		if (categories.length > 0) {
 			if (categoryOperator === 'AND') {
-				const hasAllCategories = categories.every(cat => post.categories.includes(cat as Categories));
+				const hasAllCategories = categories.every((cat) =>
+					post.categories.includes(cat as Categories)
+				);
 				if (!hasAllCategories) return false;
 			} else {
-				const hasMatchingCategory = post.categories.some(cat => categories.includes(cat));
+				const hasMatchingCategory = post.categories.some((cat) => categories.includes(cat));
 				if (!hasMatchingCategory) return false;
 			}
 		}
@@ -118,10 +123,10 @@ function filterPosts(
 		// Tag filter
 		if (tags.length > 0) {
 			if (tagOperator === 'AND') {
-				const hasAllTags = tags.every(tag => post.tags.includes(tag));
+				const hasAllTags = tags.every((tag) => post.tags.includes(tag));
 				if (!hasAllTags) return false;
 			} else {
-				const hasMatchingTag = post.tags.some(tag => tags.includes(tag));
+				const hasMatchingTag = post.tags.some((tag) => tags.includes(tag));
 				if (!hasMatchingTag) return false;
 			}
 		}
@@ -150,7 +155,7 @@ function filterPosts(
 
 export async function GET({ url }) {
 	const posts = await getPosts();
-	
+
 	// Extract filter parameters
 	const searchQuery = url.searchParams.get('search') || '';
 	const searchScope = url.searchParams.get('scope') || 'all';

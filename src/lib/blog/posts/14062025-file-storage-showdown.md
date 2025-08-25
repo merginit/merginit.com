@@ -24,7 +24,7 @@ Mega, a New Zealand-based provider, is renowned for its privacy-first approach. 
 
 **Advanced File Filtering**
 
-Mega's unique file filtering feature allows users to use wildcards for sync exclusions, such as excluding files with specific extensions (e.g., *.bak) or patterns. This granular control optimizes bandwidth and storage, a capability not as robustly offered by competitors like Google Drive, which relies on basic folder selection.
+Mega's unique file filtering feature allows users to use wildcards for sync exclusions, such as excluding files with specific extensions (e.g., \*.bak) or patterns. This granular control optimizes bandwidth and storage, a capability not as robustly offered by competitors like Google Drive, which relies on basic folder selection.
 
 ### Competitors
 

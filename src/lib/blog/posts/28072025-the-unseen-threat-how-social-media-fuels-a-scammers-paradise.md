@@ -1,14 +1,14 @@
 ---
 title: "The Unseen Threat: How Social Media Fuels a Scammer's Paradise"
-description: "A deep dive into the rising tide of online fraud originating from social media platforms and what can be done to combat it."
-date: "2025-07-28"
+description: 'A deep dive into the rising tide of online fraud originating from social media platforms and what can be done to combat it.'
+date: '2025-07-28'
 categories:
   - cybersecurity
   - opinion
 published: true
-author: "Jonas Fröller"
-readingTime: "4 min"
-tags: ["online fraud", "social media", "Meta", "cybersecurity", "financial crime"]
+author: 'Jonas Fröller'
+readingTime: '4 min'
+tags: ['online fraud', 'social media', 'Meta', 'cybersecurity', 'financial crime']
 ---
 
 <script>
@@ -37,10 +37,10 @@ For consumers, the message is one of heightened vigilance. Purchase scams remain
 
 While the ultimate solution requires a concerted effort from tech companies, financial institutions, and regulators, there are steps you can take to protect yourself:
 
-* **Be skeptical of unsolicited messages and offers.** If a deal seems too good to be true, it probably is.
-* **Verify the identity of anyone you are sending money to.** Be especially wary of requests for payment through peer-to-peer apps from people you don't know.
-* **Secure your accounts.** Use strong, unique passwords for all of your online accounts and enable two-factor authentication whenever possible.
-* **Stay informed.** Keep up to date on the latest scams and tactics being used by fraudsters.
+- **Be skeptical of unsolicited messages and offers.** If a deal seems too good to be true, it probably is.
+- **Verify the identity of anyone you are sending money to.** Be especially wary of requests for payment through peer-to-peer apps from people you don't know.
+- **Secure your accounts.** Use strong, unique passwords for all of your online accounts and enable two-factor authentication whenever possible.
+- **Stay informed.** Keep up to date on the latest scams and tactics being used by fraudsters.
 
 The fight against online fraud is a complex and ongoing challenge. By understanding the scale of the problem and taking steps to protect ourselves, we can all play a part in making the digital world a safer place.
 
