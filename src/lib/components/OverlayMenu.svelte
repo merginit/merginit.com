@@ -630,7 +630,7 @@
   >
     <section class="hero relative w-screen h-dvh p-10 flex flex-col justify-end items-start overflow-hidden">
       <div class="hero-img absolute top-0 left-0 w-full h-full -z-10">
-        <img src="cyberpunk-city.png" alt="Hero Background" class="w-full h-full object-cover brightness-75" />
+        <img src="cyberpunk-city.webp" alt="Hero Background" class="w-full h-full object-cover brightness-75" />
       </div>
       <CallToAction href="mailto:jonas@merginit.com" text="Contact Us" class="mb-4" bind:element={contactButtonEl} />
       <GradualTextSpacing
