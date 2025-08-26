@@ -646,8 +646,8 @@
 									technologies.You can find out more about this in our Cookie Notice:
 									<span>
 										<bdt>
-											<a href="https://merginit.com/cookie-policy" target="_blank"
-												>https://merginit.com/cookie-policy</a
+											<a href="https://merginit.com/legal/cookie-policy" target="_blank"
+												>https://merginit.com/legal/cookie-policy</a
 											>
 										</bdt>
 									</span>
@@ -1492,9 +1492,9 @@
 																														<span>
 																															<bdt>
 																																<a
-																																	href="https://merginit.com/cookie-policy"
+																																	href="https://merginit.com/legal/cookie-policy"
 																																	target="_blank"
-																																	>https://merginit.com/cookie-policy</a
+																																	>https://merginit.com/legal/cookie-policy</a
 																																>.
 																															</bdt>
 																														</span>
@@ -2035,9 +2035,9 @@
 																																	<span>
 																																		<bdt>
 																																			<a
-																																				href="https://merginit.com/cookie-policy"
+																																				href="https://merginit.com/legal/cookie-policy"
 																																				target="_blank"
-																																				>https://merginit.com/cookie-policy</a
+																																				>https://merginit.com/legal/cookie-policy</a
 																																			>
 																																		</bdt>
 																																	</span>
