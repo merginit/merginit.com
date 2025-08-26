@@ -108,7 +108,7 @@
 		<a
 			href={preview.url}
 			target="_blank"
-			rel="noopener noreferrer"
+			rel="noopener"
 			class="block font-extrabold text-xl md:text-2xl text-accent no-underline group-hover:underline break-words leading-tight mt-2"
 			style="word-break: break-word; padding:0;"
 		>

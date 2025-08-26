@@ -9,41 +9,53 @@
 	let { data } = $props();
 	let posts = $state<Post[]>(data.posts);
 	let loading = $state(false);
-	let filters = $state({
-		search: '',
-		searchScope: 'all' as const,
-		categories: [],
-		categoryOperator: 'AND' as const,
-		tags: [],
-		tagOperator: 'OR' as const,
-		dateFrom: '',
-		dateTo: '',
-		minReadTime: 0,
-		maxReadTime: 60
-	});
+	let filters = $state(
+		data.filters || {
+			search: '',
+			searchScope: 'all' as const,
+			categories: [],
+			categoryOperator: 'AND' as const,
+			tags: [],
+			tagOperator: 'OR' as const,
+			dateFrom: '',
+			dateTo: '',
+			minReadTime: 0,
+			maxReadTime: 60
+		}
+	);
 
 	let debounceTimer: ReturnType<typeof setTimeout>;
+
+	function updateUrlFromFilters() {
+		const params = new URLSearchParams();
+
+		if (filters.search) params.set('search', filters.search);
+		if (filters.searchScope !== 'all') params.set('scope', filters.searchScope);
+		if (filters.categories.length > 0) {
+			params.set('categories', filters.categories.join(','));
+			params.set('categoryOperator', filters.categoryOperator);
+		}
+		if (filters.tags.length > 0) {
+			params.set('tags', filters.tags.join(','));
+			params.set('tagOperator', filters.tagOperator);
+		}
+		if (filters.dateFrom) params.set('dateFrom', filters.dateFrom);
+		if (filters.dateTo) params.set('dateTo', filters.dateTo);
+		if (filters.minReadTime > 0) params.set('minReadTime', filters.minReadTime.toString());
+		if (filters.maxReadTime < 60) params.set('maxReadTime', filters.maxReadTime.toString());
+
+		const url = new URL(window.location.href);
+		const query = params.toString();
+		url.search = query;
+		history.replaceState(null, '', url);
+	}
 
 	async function fetchFilteredPosts() {
 		loading = true;
 		try {
-			const searchParams = new URLSearchParams();
+			updateUrlFromFilters();
 
-			if (filters.search) searchParams.set('search', filters.search);
-			if (filters.searchScope !== 'all') searchParams.set('scope', filters.searchScope);
-			if (filters.categories.length > 0) {
-				searchParams.set('categories', filters.categories.join(','));
-				searchParams.set('categoryOperator', filters.categoryOperator);
-			}
-			if (filters.tags.length > 0) {
-				searchParams.set('tags', filters.tags.join(','));
-				searchParams.set('tagOperator', filters.tagOperator);
-			}
-			if (filters.dateFrom) searchParams.set('dateFrom', filters.dateFrom);
-			if (filters.dateTo) searchParams.set('dateTo', filters.dateTo);
-			if (filters.minReadTime > 0) searchParams.set('minReadTime', filters.minReadTime.toString());
-			if (filters.maxReadTime < 60) searchParams.set('maxReadTime', filters.maxReadTime.toString());
-
+			const searchParams = new URLSearchParams(window.location.search);
 			const response = await fetch(`/api/posts?${searchParams.toString()}`);
 			const filteredPosts: Post[] = await response.json();
 			posts = filteredPosts;
