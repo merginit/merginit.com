@@ -38,6 +38,7 @@ export const CATEGORIES = [
 	'api-design', // API architecture, REST, GraphQL
 	'data-analytics', // Analytics, monitoring, insights
 	'career', // Career development, industry trends
+	'productivity', // Productivity, time management, work-life balance
 	'opinion', // Thought leadership, critiques
 	'tutorial', // How-to guides, tutorials
 	'comparison', // Technology comparisons
