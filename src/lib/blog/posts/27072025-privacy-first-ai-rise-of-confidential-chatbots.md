@@ -6,7 +6,7 @@ categories:
   - ai-ml
   - cybersecurity
 published: true
-author: Jonas Fröller
+author: 'Jonas Fröller'
 readingTime: '5 min'
 tags: ['AI', 'privacy', 'chatbots', 'encryption', 'Lumo', 'DuckDuckGo', 'Kagi']
 ---

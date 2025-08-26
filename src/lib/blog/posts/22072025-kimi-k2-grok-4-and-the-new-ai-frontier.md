@@ -8,8 +8,8 @@ categories:
   - open-source
   - announcement
 published: true
-author: Jonas Fröller
-readingTime: 10 min
+author: 'Jonas Fröller'
+readingTime: '10 min'
 tags:
   [
     'AI',
