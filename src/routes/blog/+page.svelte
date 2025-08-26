@@ -7,7 +7,6 @@
 	import type { Post } from '$lib/types';
 
 	let { data } = $props();
-	let mounted = $state(false);
 	let posts = $state<Post[]>(data.posts);
 	let loading = $state(false);
 	let filters = $state({
@@ -61,7 +60,6 @@
 	}
 
 	onMount(() => {
-		mounted = true;
 		if ('startViewTransition' in document) {
 			document.documentElement.classList.add('view-transitions-enabled');
 		}
@@ -99,30 +97,26 @@
 		<BlogFilters bind:filters on:filter={handleFilter} />
 
 		<!-- Results Summary -->
-		{#if mounted}
-			<div class="mb-6 text-sm text-gray-400 flex items-center justify-between">
-				<span>
-					Showing {posts.length} post{posts.length !== 1 ? 's' : ''}
-					{#if filters.search || filters.categories.length > 0 || filters.tags.length > 0 || filters.dateFrom || filters.dateTo}
-						(filtered)
-					{/if}
-				</span>
-				{#if loading}
-					<div class="flex items-center gap-2">
-						<div
-							class="w-4 h-4 border-2 border-accent border-t-transparent rounded-full animate-spin"
-						></div>
-						<span>Filtering...</span>
-					</div>
+		<div class="mb-6 text-sm text-gray-400 flex items-center justify-between">
+			<span>
+				Showing {posts.length} post{posts.length !== 1 ? 's' : ''}
+				{#if filters.search || filters.categories.length > 0 || filters.tags.length > 0 || filters.dateFrom || filters.dateTo}
+					(filtered)
 				{/if}
-			</div>
-		{/if}
+			</span>
+			{#if loading}
+				<div class="flex items-center gap-2">
+					<div
+						class="w-4 h-4 border-2 border-accent border-t-transparent rounded-full animate-spin"
+					></div>
+					<span>Filtering...</span>
+				</div>
+			{/if}
+		</div>
 
 		<!-- Blog Posts Grid -->
 		<div class="grid gap-8">
-			{#if !mounted}
-				<BlogLoader size="lg" text="Loading blog posts..." />
-			{:else if loading}
+			{#if loading}
 				<BlogLoader size="lg" text="Filtering posts..." />
 			{:else if posts.length > 0}
 				{#each posts as post (post.slug)}
@@ -257,7 +251,7 @@
 						</div>
 					</article>
 				{/each}
-			{:else if mounted && posts.length === 0}
+			{:else}
 				<div class="text-center py-16">
 					<div class="mb-4">
 						<svg

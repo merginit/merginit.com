@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import type { Component } from 'svelte';
-	import BlogLoader from '$lib/components/BlogLoader.svelte';
 
 	interface MetaData {
 		title: string;
@@ -20,11 +18,6 @@
 	}
 
 	let { data }: { data: PageData } = $props();
-	let loading = $state(true);
-
-	onMount(() => {
-		loading = false;
-	});
 </script>
 
 <svelte:head>
@@ -38,9 +31,7 @@
 	{/if}
 </svelte:head>
 
-{#if loading}
-	<BlogLoader size="md" text="Loading blog post..." />
-{:else if data?.meta && data.component}
+{#if data?.meta && data.component}
 	{#if data.meta.updateDate && data.meta.updateDate !== data.meta.date}
 		<div class="mb-6 text-sm text-neutral-400 flex flex-col gap-1">
 			<span

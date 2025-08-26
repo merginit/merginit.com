@@ -212,7 +212,7 @@ This comparison should help you select the most suitable browser-based environme
 [Gitpod Official Website](https://www.gitpod.io)  
 [JDoodle Official Website](https://www.jdoodle.com)  
 [GoormIDE Official Website](https://ide.goorm.io)  
-[CodePen Licensing Documentation](http://opensource.org/licenses/MIT)  
+[CodePen Licensing Documentation](https://opensource.org/licenses/MIT)  
 [CodePen Pricing Plan & Cost Guide | GetApp 2025](https://www.getapp.com/all-software/a/codepen/pricing/)  
 [JSFiddle Terms & Conditions](https://jsfiddle.net/terms)  
 [StackBlitz Pricing | Instant Dev Environments](https://stackblitz.com/pricing)  

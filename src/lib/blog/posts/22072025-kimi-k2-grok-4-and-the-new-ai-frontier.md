@@ -33,7 +33,7 @@ The world of artificial intelligence is accelerating at a breathtaking pace. Rec
 ![Screenshot of the Kimi K2 website](/blog/22072025-kimi-k2-and-grok-4/kimi-k2-website.png)
 ![Kimi K2 Large Scale Agentic Data Synthesis](/blog/22072025-kimi-k2-and-grok-4/kimi-k2-large-scale-agentic-data-synthesis.png)
 
-Arguably the biggest news is the release of [Kimi K2](http://Kimi.ai) by Moonshot AI. This model has taken the community by storm, immediately establishing itself as a formidable competitor to established closed-source models from Anthropic and OpenAI.
+Arguably the biggest news is the release of [Kimi K2](https://Kimi.ai) by Moonshot AI. This model has taken the community by storm, immediately establishing itself as a formidable competitor to established closed-source models from Anthropic and OpenAI.
 
 ![Kimi K2 trending on Hugging Face](/blog/22072025-kimi-k2-and-grok-4/hugging-face-trending.jpeg)
 ![Kimi K2 usage on OpenRouter](/blog/22072025-kimi-k2-and-grok-4/kimi-k2-openrouter-usage.jpeg)

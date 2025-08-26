@@ -120,11 +120,11 @@ Open-source, self-hosted analytics tools offer full data control, making them id
 
 ### 5. Open Web Analytics
 
-- **License**: GNU General Public License (GPL) v2.0 ([OWA License](http://www.openwebanalytics.com/?page_id=7))
+- **License**: GNU General Public License (GPL) v2.0 ([OWA License](https://www.openwebanalytics.com/?page_id=7))
 - **Description**: A free, open-source framework for tracking website and application usage, with WordPress and MediaWiki integrations.
 - **Features**: Heatmaps, click tracking, visitor loyalty analysis, extensive API.
 - **GDPR Compliance**: Configurable to avoid personal data collection, self-hosted for data control.
-- **Setup**: Install on a PHP server ([OWA Installation](http://www.openwebanalytics.com/?page_id=13)).
+- **Setup**: Install on a PHP server ([OWA Installation](https://www.openwebanalytics.com/?page_id=13)).
 - **Pros**: Flexible, good for WordPress users, free.
 - **Cons**: Less active development, steeper learning curve.
 
@@ -172,7 +172,7 @@ Free, GDPR-compliant analytics tools like Microsoft Clarity, PostHog, Matomo, Pl
 [Plausible Analytics Official Website](https://plausible.io)  
 [Umami Official Website](https://umami.is)  
 [Pirsch Analytics Official Website](https://docs.pirsch.io)  
-[Open Web Analytics Official Website](http://www.openwebanalytics.com)  
+[Open Web Analytics Official Website](https://www.openwebanalytics.com)  
 [Is Microsoft Clarity GDPR Compliant?](https://www.intastellarsolutions.com/blog/is-microsoft-clarity-gdpr-compliant)  
 [Microsoft Clarity GDPR: Compliance Strategies for 2025](https://www.cookieyes.com/blog/microsoft-clarity-gdpr/)  
 [Consent for Microsoft Clarity according to GDPR? | Cookiebox](https://www.cookiebox.pro/en/cookiepedia/microsoft-clarity-gdpr/)  
