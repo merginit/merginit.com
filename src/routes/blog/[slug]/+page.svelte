@@ -22,12 +22,13 @@
 
 <svelte:head>
 	{#if data?.meta?.title}
-		<title>{data.meta.title} | MerginIT Blog</title> <meta property="og:type" content="article" />
+		<title>{data.meta.title} | MerginIT Blog</title>
+		<meta name="description" content={data.meta.description ?? `${data.meta.title} - MerginIT Blog Post`} />
+		<meta property="og:type" content="article" />
 		<meta property="og:title" content={data.meta.title} />
-		{#if data.meta.description}
-			<meta name="description" content={data.meta.description} />
-			<meta property="og:description" content={data.meta.description} />
-		{/if}
+		<meta property="og:description" content={data.meta.description ?? `${data.meta.title} - MerginIT Blog Post`} />
+		<meta name="twitter:title" content={data.meta.title} />
+		<meta name="twitter:description" content={data.meta.description ?? `${data.meta.title} - MerginIT Blog Post`} />
 	{/if}
 </svelte:head>
 

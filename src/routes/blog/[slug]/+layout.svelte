@@ -125,13 +125,6 @@
 	});
 </script>
 
-<svelte:head>
-	{#if title}
-		<title>{title} | MerginIT Blog</title>
-		<meta name="description" content={description || `${title} - MerginIT Blog Post`} />
-	{/if}
-</svelte:head>
-
 <div class="min-h-screen bg-brand-dark">
 	<div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
 		<!-- Link back to blog -->

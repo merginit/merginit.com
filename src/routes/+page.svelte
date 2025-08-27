@@ -118,7 +118,6 @@
 		if (browser) {
 			document.body.classList.remove('video-preview-open');
 		}
-		// Clear any pending timeouts
 		if (hoverTimeout) {
 			clearTimeout(hoverTimeout);
 		}
@@ -127,7 +126,6 @@
 		if (videoPreviewRef) {
 			videoPreviewRef.hide();
 		} else {
-			// Fallback if no ref available
 			showVideo = false;
 			currentFaviconElement = null;
 		}
@@ -181,7 +179,7 @@
 </script>
 
 <svelte:head>
-	<title>MerginIT e.U. - Professional Software Development & SaaS Solutions</title>
+	<title>MerginIT e.U. - Professional software development and SaaS solutions</title>
 	<meta
 		name="description"
 		content="MerginIT e.U. delivers cutting-edge software solutions including OCRMD for document processing, NeptunAI configuration platform, and custom web development services. 3 successful projects and growing."
@@ -247,7 +245,6 @@
 					class="group relative flex h-full flex-col items-start justify-between rounded-3xl p-6 sm:p-7 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-md hover:shadow-brand/20 transition-all duration-300 ease-in-out hover:border-brand/70 transform hover:-translate-y-1"
 					onmouseenter={() => handleCardMouseEnter(i)}
 					onmouseleave={handleCardMouseLeave}
-					role="article"
 				>
 					<BorderBeam
 						size={180}
