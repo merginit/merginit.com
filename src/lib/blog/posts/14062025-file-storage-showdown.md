@@ -31,52 +31,62 @@ Mega's unique file filtering feature allows users to use wildcards for sync excl
 We compare Mega with all major consumer cloud storage providers, based on recent analyses from sources like [Cloudwards](https://www.cloudwards.net/comparison/) and [ZDNET](https://www.zdnet.com/article/best-cloud-storage/):
 
 1. **Google Drive** ([Google One](https://one.google.com)):
+
    - Free: 15GB
    - 2TB: $9.99/month or $99.99/year (~$8.33/month)
    - Integrates seamlessly with Google Workspace.
 
 2. **Dropbox** ([Dropbox Plans](https://www.dropbox.com)):
+
    - Free: 2GB
    - 2TB: $11.99/month or $119.88/year (~$9.99/month)
    - User-friendly with reliable syncing.
 
 3. **Microsoft OneDrive** ([OneDrive Plans](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage)):
+
    - Free: 5GB
    - 1TB: $6.99/month (Microsoft 365 Personal)
    - 6TB: $99.99/year (Family, ~$1.39/TB/month per user)
    - Strong Windows integration.
 
 4. **pCloud** ([pCloud Pricing](https://shareasale.com/r.cfm?b=887365&u=514792&m=66775&afftrack=subid_value&urllink=www.pcloud.com%2F)):
+
    - Free: 10GB
    - 2TB: $99.99/year (~$8.33/month)
    - Lifetime plans available.
 
 5. **Sync.com** ([Sync.com Pricing](https://www.sync.com/pricing-individual)):
+
    - Free: 5GB
    - 2TB: $8/month (annual)
    - Zero-knowledge encryption included.
 
 6. **Icedrive** ([Icedrive Pricing](https://icedrive.net/plans)):
+
    - Free: 10GB
    - 3TB: $8.99/month
    - Fast and stylish interface.
 
 7. **Internxt** ([Internxt Pricing](https://internxt.com/pricing)):
+
    - Free: 1GB
    - 2TB: $5.39/month (annual)
    - Open-source with post-quantum cryptography.
 
 8. **Tresorit** ([Tresorit Pricing](https://tresorit.com/pricing)):
+
    - Free: 3GB
    - 1TB: $11.99/month
    - HIPAA-compliant for professionals.
 
 9. **Apple iCloud** ([iCloud Pricing](https://www.icloud.com)):
+
    - Free: 5GB
    - 2TB: $9.99/month
    - Optimized for Apple devices.
 
 10. **iDrive** ([iDrive Pricing](https://www.kqzyfj.com/click-9041660-12181173-1626711967000?sid=subid_value)):
+
     - Free: 10GB
     - 5TB: $70/year (~$5.83/month)
     - Focuses on backup and storage.
@@ -132,6 +142,7 @@ Mega's file filtering is unmatched for sync control. Google Drive and OneDrive i
 Open-source solutions provide control and privacy through self-hosting:
 
 1. **Nextcloud** ([Nextcloud](https://nextcloud.com)):
+
    - **Description**: A self-hosted platform for file storage, sharing, and collaboration.
    - **Pricing**: Free; server or cloud hosting costs apply.
    - **Security**: Supports encryption, 2FA, and custom configurations.
@@ -139,6 +150,7 @@ Open-source solutions provide control and privacy through self-hosting:
    - **Use Case**: Ideal for tech-savvy users or organizations needing privacy.
 
 2. **Seafile** ([Seafile](https://www.seafile.com)):
+
    - **Description**: Open-source file sync and share with community and professional editions.
    - **Pricing**: Community edition free; professional edition has fees.
    - **Security**: Client-side encryption available.
@@ -169,26 +181,31 @@ Storj is a decentralized, S3-compatible object storage platform that shards data
 We compare Storj with all major object storage providers:
 
 1. **Amazon S3** ([AWS S3 Pricing](https://aws.amazon.com/s3/pricing)):
+
    - Storage: ~$23/TB/month (Standard)
    - Egress: ~$90/TB
    - Industry-standard with extensive integrations.
 
 2. **Google Cloud Storage** ([GCS Pricing](https://cloud.google.com/storage/pricing)):
+
    - Storage: ~$20/TB/month (Standard)
    - Egress: Up to $120/TB
    - Strong for analytics.
 
 3. **Microsoft Azure Blob Storage** ([Azure Pricing](https://azure.microsoft.com/en-us/pricing/details/storage/blobs)):
+
    - Storage: ~$18.40/TB/month (Hot tier)
    - Egress: Varies
    - Windows-friendly.
 
 4. **Filecoin** ([Filecoin Pricing](https://filecoin.io)):
+
    - Storage: ~$0.19-$4/TB/month
    - Egress: Varies
    - Decentralized, market-driven.
 
 5. **Wasabi** ([Wasabi Pricing](https://wasabi.com/cloud-storage-pricing)):
+
    - Storage: $6/TB/month
    - Egress: Free up to stored amount
    - Cost-effective alternative.
@@ -234,6 +251,7 @@ Traditional providers offer consistent low-latency performance. Storj's decentra
 Open-source object storage solutions are ideal for organizations managing their own infrastructure:
 
 1. **MinIO** ([MinIO](https://min.io)):
+
    - **Description**: High-performance, S3-compatible object storage.
    - **Pricing**: Free; hardware or cloud costs apply.
    - **Security**: Encryption at rest and in transit, access controls.
@@ -241,6 +259,7 @@ Open-source object storage solutions are ideal for organizations managing their 
    - **Use Case**: Enterprises needing S3-compatible storage.
 
 2. **Ceph** ([Ceph](https://ceph.io)):
+
    - **Description**: Distributed storage for object, block, and file storage.
    - **Pricing**: Free; requires hardware.
    - **Security**: Encryption and access controls.

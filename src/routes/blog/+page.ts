@@ -21,7 +21,8 @@ function parseFiltersFromUrl(url: URL): FilterQuery {
 		search: url.searchParams.get('search') || '',
 		searchScope: (url.searchParams.get('scope') || 'all') as FilterQuery['searchScope'],
 		categories: categoriesParam ? (categoriesParam.split(',') as Categories[]) : [],
-		categoryOperator: (url.searchParams.get('categoryOperator') || 'AND') as FilterQuery['categoryOperator'],
+		categoryOperator: (url.searchParams.get('categoryOperator') ||
+			'AND') as FilterQuery['categoryOperator'],
 		tags: tagsParam ? tagsParam.split(',') : [],
 		tagOperator: (url.searchParams.get('tagOperator') || 'OR') as FilterQuery['tagOperator'],
 		dateFrom: url.searchParams.get('dateFrom') || '',

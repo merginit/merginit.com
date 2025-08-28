@@ -308,22 +308,27 @@ Convex, while offering a document-relational database, has chosen to build its p
 Convex's comparison with MongoDB highlights several areas where its approach, leveraging PostgreSQL's capabilities, offers distinct advantages:
 
 1.  **Transactional Guarantees:**
+
     - **Convex:** Provides full ACID (Atomicity, Consistency, Isolation, Durability) compliance and transactional guarantees for all operations, even across multiple documents. This is a fundamental aspect of its design, ensuring data integrity and consistency without performance compromises.
     - **MongoDB:** While MongoDB has evolved to include transactional support, it is atomic only at the document level by default. Multi-document transactions require manual configuration of two-phase commits, which can impact performance and add complexity. Convex argues that using MongoDB's transaction API removes many of the benefits of using a NoSQL database.
 
 2.  **Real-time Capabilities and Consistency:**
+
     - **Convex:** Offers real-time capabilities by default with automatic subscriptions for functions. Its WebSocket client provides strong consistency guarantees, ensuring that reads and writes are synchronized and consistent.
     - **MongoDB:** Is rolling out support for real-time subscriptions (e.g., with their Realm Web SDK), but this is a newer addition and may not offer the same level of integrated consistency guarantees as Convex's native approach.
 
 3.  **Backend-as-a-Service (BaaS) vs. Document Store:**
+
     - **Convex:** Is a comprehensive BaaS that includes a database, serverless functions, file storage, cron jobs, and other features, allowing developers to write their entire backend directly in TypeScript.
     - **MongoDB:** Is primarily a document store/database. While powerful for data persistence, it requires integration with other products and services to build a complete backend, adding to development and operational overhead.
 
 4.  **Type Safety and Developer Experience:**
+
     - **Convex:** Provides end-to-end type safety from code to client, direct type inference, and autocompletion out of the box. It allows defining schemas at both the database and application levels in pure TypeScript.
     - **MongoDB:** Is largely an untyped document store. While ORMs can be used to define schemas at the application level, they often don't provide the same level of end-to-end type safety as Convex's integrated TypeScript approach.
 
 5.  **Query Language and Abstraction:**
+
     - **Convex:** Does not use a separate query language like SQL or MQL. Instead, developers use a native DB interface within TypeScript query functions, allowing for filtering and operations directly in code.
     - **MongoDB:** Uses its own query language (MQL) for data manipulation.
 

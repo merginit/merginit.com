@@ -55,6 +55,7 @@ Before we can create a rule to redirect traffic, we first need to tell Cloudflar
 
 3.  Click the **Add record** button.
 4.  Fill out the fields as follows:
+
     - **Type:** `CNAME`
     - **Name:** Enter your desired subdomain. For example, if you want the URL to be `webinar.yourdomain.com`, you would just enter `webinar`.
     - **Target:** Enter your root domain. You can simply use the `@` symbol (root) for this.
@@ -81,6 +82,7 @@ This is where we set up the actual redirect logic. We'll create a rule that look
     ![Step 5](/blog/24062025-cloudflare-subdomain-redirect/5.png)
 
 4.  Under the **If incoming requests match...** section, configure the condition:
+
     - **Field:** Select `Hostname`.
     - **Operator:** Select `equals`.
     - **Value:** Enter the full subdomain you just created (e.g., `webinar.yourdomain.com`).
@@ -88,6 +90,7 @@ This is where we set up the actual redirect logic. We'll create a rule that look
     ![Step 6](/blog/24062025-cloudflare-subdomain-redirect/6.png)
 
 5.  Under the **Then...** section, define the redirect action:
+
     - **Type:** Select `Static`.
     - **URL:** Paste the full destination URL that you want users to be sent to (e.g., `https://event.webinarjam.com/live/1/abc123xyz`). Make sure to include the `https://`.
     - **Status code:** Select `301` (Permanent Redirect). This is generally the best choice for SEO and tells browsers that the location has moved for good.

@@ -301,6 +301,7 @@ Better Stack has become a powerhouse, bundling uptime monitoring, incident manag
 The platform is built around "responders" for incident management. Other team members are free.
 
 - **Free Tier:**
+
   - **Price:** $0/month
   - **Uptime:** 10 monitors (including heartbeats) with 30-second checks.
   - **Status Page:** 1 public status page.

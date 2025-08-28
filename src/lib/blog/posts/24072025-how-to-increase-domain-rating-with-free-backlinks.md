@@ -261,10 +261,12 @@ Submitting to product directories creates multiple backlink opportunities and of
    - Provides listing options for software products
    - Profile backlinking opportunities available
 3. **[Capterra](https://www.capterra.com)** - A comprehensive platform for business software reviews and comparisons
+
    - Offers product listings and review opportunities
    - Profile creation with website link options
 
    **[Gartner for Vendors](https://www.gartner.com/)** - Claim your free vendor profile and build your brand
+
    - Vendor solution of Capterra (same parent company)
    - Make it easier for buyers to find you and start collecting customer reviews for free
    - High-authority platform with exceptional domain rating

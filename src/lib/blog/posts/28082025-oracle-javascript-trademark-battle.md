@@ -9,7 +9,17 @@ categories:
 published: true
 author: 'Jonas Fröller'
 readingTime: '6 min'
-tags: ['javascript', 'oracle', 'trademark', 'open-source', 'deno', 'ryan-dahl', 'legal-battle', 'ecmascript']
+tags:
+  [
+    'javascript',
+    'oracle',
+    'trademark',
+    'open-source',
+    'deno',
+    'ryan-dahl',
+    'legal-battle',
+    'ecmascript'
+  ]
 ---
 
 <script>
@@ -50,14 +60,14 @@ When this too was ignored, Dahl's company, Deno Land Inc., took the next step. I
 
 ### The Legal Battle and What's Next
 
-Oracle was forced to respond. While ignoring the first two claims, their lawyers filed a partial motion to dismiss the fraud charge. They argued that while they did submit a screenshot of the Node.js site, they *also* submitted evidence of another project, the "Oracle JavaScript Extension Toolkit (JET)." In June 2025, the Trademark Trial and Appeal Board (TTAB) sided with Oracle on this specific point, dismissing the fraud claim by stating the Node.js screenshot wasn't sufficient proof of intent to deceive.
+Oracle was forced to respond. While ignoring the first two claims, their lawyers filed a partial motion to dismiss the fraud charge. They argued that while they did submit a screenshot of the Node.js site, they _also_ submitted evidence of another project, the "Oracle JavaScript Extension Toolkit (JET)." In June 2025, the Trademark Trial and Appeal Board (TTAB) sided with Oracle on this specific point, dismissing the fraud claim by stating the Node.js screenshot wasn't sufficient proof of intent to deceive.
 
 However, the core of the case—the claims of **genericness** and **abandonment**—is moving forward. Oracle filed its answer to the petition on August 6, 2025, denying the remaining claims. As of August 28, 2025, the case is pending, with discovery set to begin on September 6, 2025. Here is the expected timeline for the case, based on typical TTAB proceedings (which often last 1-2 years or more):
 
-* **September 2025 - Mid-2026:** Both sides are in the "discovery" phase, where they gather evidence and set the ground rules for the trial. This typically lasts about 180 days.
-* **Summer 2026:** Deno and Oracle will present their main arguments and evidence to the board during the trial period.
-* **End of 2026:** Closing arguments and briefs will be submitted.
-* **Early 2027:** A final decision from the USPTO's Trademark Trial and Appeal Board is expected, though delays are common in such cases.
+- **September 2025 - Mid-2026:** Both sides are in the "discovery" phase, where they gather evidence and set the ground rules for the trial. This typically lasts about 180 days.
+- **Summer 2026:** Deno and Oracle will present their main arguments and evidence to the board during the trial period.
+- **End of 2026:** Closing arguments and briefs will be submitted.
+- **Early 2027:** A final decision from the USPTO's Trademark Trial and Appeal Board is expected, though delays are common in such cases.
 
 ### The Stakes for the Web
 
@@ -69,14 +79,14 @@ Regardless of the outcome, this case highlights a fundamental clash in the tech 
 
 ## Sources
 
-javascript.tm. (2025, August 28). *Oracle, it's time to free JavaScript*. Retrieved from [https://javascript.tm/](https://javascript.tm)  
-The Register. (2024, September 17). *Oracle urged again to surrender JavaScript trademark*. Retrieved from [https://www.theregister.com/2024/09/17/oracle_urged_to_surrender_javascript_trademark/](https://www.theregister.com/2024/09/17/oracle_urged_to_surrender_javascript_trademark)  
-Wikipedia. (2025, August 28). *JavaScript*. Retrieved from [https://en.wikipedia.org/wiki/JavaScript#Trademark](https://en.wikipedia.org/wiki/JavaScript#Trademark)  
-Deno Blog. (2024, November 25). *Deno v. Oracle: Canceling the JavaScript Trademark*. Retrieved from [https://deno.com/blog/deno-v-oracle](https://deno.com/blog/deno-v-oracle)  
-Deno Blog. (2025, February 4). *Oracle justified its JavaScript trademark with Node.js—now it wants that ignored*. Retrieved from [https://deno.com/blog/deno-v-oracle2](https://deno.com/blog/deno-v-oracle2)  
-Deno Blog. (2025, March 30). *Deno v Oracle Update 3: Fighting the JavaScript Trademark*. Retrieved from [https://deno.com/blog/deno-v-oracle3](https://deno.com/blog/deno-v-oracle3)  
-Deno Blog. (2025, June 27). *JavaScript™ Trademark Update*. Retrieved from [https://deno.com/blog/deno-v-oracle4](https://deno.com/blog/deno-v-oracle4)  
-USPTO TTABVUE. (2025, August 28). *Proceeding Number 92086835*. Retrieved from [https://ttabvue.uspto.gov/ttabvue/v?pno=92086835&pty=CAN](https://ttabvue.uspto.gov/ttabvue/v?pno=92086835&pty=CAN)  
-Ryan Dahl's Blog. (2022, September 3). *Dear Oracle, Please Release the JavaScript Trademark*. Retrieved from [https://tinyclouds.org/trademark](https://tinyclouds.org/trademark)
+javascript.tm. (2025, August 28). _Oracle, it's time to free JavaScript_. Retrieved from [https://javascript.tm/](https://javascript.tm)  
+The Register. (2024, September 17). _Oracle urged again to surrender JavaScript trademark_. Retrieved from [https://www.theregister.com/2024/09/17/oracle_urged_to_surrender_javascript_trademark/](https://www.theregister.com/2024/09/17/oracle_urged_to_surrender_javascript_trademark)  
+Wikipedia. (2025, August 28). _JavaScript_. Retrieved from [https://en.wikipedia.org/wiki/JavaScript#Trademark](https://en.wikipedia.org/wiki/JavaScript#Trademark)  
+Deno Blog. (2024, November 25). _Deno v. Oracle: Canceling the JavaScript Trademark_. Retrieved from [https://deno.com/blog/deno-v-oracle](https://deno.com/blog/deno-v-oracle)  
+Deno Blog. (2025, February 4). _Oracle justified its JavaScript trademark with Node.js—now it wants that ignored_. Retrieved from [https://deno.com/blog/deno-v-oracle2](https://deno.com/blog/deno-v-oracle2)  
+Deno Blog. (2025, March 30). _Deno v Oracle Update 3: Fighting the JavaScript Trademark_. Retrieved from [https://deno.com/blog/deno-v-oracle3](https://deno.com/blog/deno-v-oracle3)  
+Deno Blog. (2025, June 27). _JavaScript™ Trademark Update_. Retrieved from [https://deno.com/blog/deno-v-oracle4](https://deno.com/blog/deno-v-oracle4)  
+USPTO TTABVUE. (2025, August 28). _Proceeding Number 92086835_. Retrieved from [https://ttabvue.uspto.gov/ttabvue/v?pno=92086835&pty=CAN](https://ttabvue.uspto.gov/ttabvue/v?pno=92086835&pty=CAN)  
+Ryan Dahl's Blog. (2022, September 3). _Dear Oracle, Please Release the JavaScript Trademark_. Retrieved from [https://tinyclouds.org/trademark](https://tinyclouds.org/trademark)
 
 </div>
