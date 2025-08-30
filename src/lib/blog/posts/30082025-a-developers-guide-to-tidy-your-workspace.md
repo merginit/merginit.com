@@ -12,6 +12,165 @@ readingTime: '8 min'
 tags: ['scripting', 'automation', 'git', 'dev-environment', 'security']
 ---
 
+<script>
+	import CodeTabsSelector from '$lib/components/CodeTabsSelector.svelte';
+	import InfoBox from '$lib/components/InfoBox.svelte';
+
+	const projectCleanupTabs = [
+		{
+			id: 'windows',
+			label: 'Windows',
+			icon: 'mdi:microsoft-windows',
+			language: 'batch',
+			code: String.raw`@echo off
+setlocal
+title Project Cleanup
+
+REM --- Change directory to the script's location ---
+pushd "%~dp0"
+
+echo Starting cleanup process...
+echo.
+
+REM --- Delete sensitive files if they exist ---
+echo Searching for and deleting sensitive files (.pem, .env*)...
+del /s /f /q ".\*.pem" >nul 2>&1
+del /s /f /q ".\.env*" >nul 2>&1
+echo.
+
+echo Searching for and deleting generated folders...
+echo.
+
+REM --- Process node_modules ---
+for /f "delims=" %%d in ('dir /b /ad "node_modules*" 2^>nul') do (
+    echo Deleting "%%d"
+    rmdir /s /q "%%d"
+)
+
+REM --- Process .svelte-kit ---
+for /f "delims=" %%d in ('dir /b /ad ".svelte-kit*" 2^>nul') do (
+    echo Deleting "%%d"
+    rmdir /s /q "%%d"
+)
+
+REM --- Process .vercel ---
+for /f "delims=" %%d in ('dir /b /ad ".vercel*" 2^>nul') do (
+    echo Deleting "%%d"
+    rmdir /s /q "%%d"
+)
+
+REM --- Process vendor ---
+for /f "delims=" %%d in ('dir /b /ad "vendor*" 2^>nul') do (
+    echo Deleting "%%d"
+    rmdir /s /q "%%d"
+)
+
+echo.
+echo Cleanup complete.
+echo.
+
+popd
+endlocal
+pause`
+		},
+		{
+			id: 'linux',
+			label: 'Linux/macOS',
+			icon: 'mdi:linux',
+			language: 'bash',
+			code: String.raw`#!/bin/bash
+# A script to clean the current directory of generated folders and sensitive files.
+
+echo "Starting cleanup process..."
+echo
+
+# --- Delete sensitive files if they exist ---
+echo "Searching for and deleting sensitive files (.pem, .env*)..."
+find . -maxdepth 1 -name "*.pem" -type f -delete
+find . -maxdepth 1 -name ".env*" -type f -delete
+echo
+
+folders_to_delete=(
+    "node_modules*"
+    ".svelte-kit*"
+    ".vercel*"
+    "vendor"
+)
+
+# --- Loop through the list and delete matching directories ---
+echo "Searching for and deleting generated folders..."
+for pattern in "\${folders_to_delete[@]}"; do
+    find . -maxdepth 1 -type d -name "$pattern" -exec echo "Deleting {}" \; -exec rm -rf {} +
+done
+
+echo
+echo "Cleanup complete."
+read -p "Press Enter to exit..."`
+		}
+	];
+
+	const nodeModulesTabs = [
+		{
+			id: 'windows',
+			label: 'Windows',
+			icon: 'mdi:microsoft-windows',
+			language: 'batch',
+			code: String.raw`@echo off
+setlocal EnableDelayedExpansion
+
+echo Searching for and deleting all node_modules folders...
+for /d /r . %%d in (node_modules) do (
+    if exist "%%d" (
+        echo Deleting "%%d"
+        rmdir /s /q "%%d"
+    )
+)
+echo Deletion process finished.
+pause`
+		},
+		{
+			id: 'linux',
+			label: 'Linux/macOS',
+			icon: 'mdi:linux',
+			language: 'bash',
+			code: String.raw`#!/bin/bash
+echo "Searching for and deleting all node_modules folders..."
+find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
+echo "Deletion process finished."
+read -p "Press Enter to exit..."`
+		}
+	];
+
+	const systemTempTabs = [
+		{
+			id: 'windows',
+			label: 'Windows',
+			icon: 'mdi:microsoft-windows',
+			language: 'batch',
+			code: String.raw`@echo off
+echo Cleaning system temporary files...
+del /q /f /s "%TEMP%\\*"
+for /d %%x in ("%TEMP%\\*") do rmdir /s /q "%%x"
+echo Temporary files cleaned.
+pause`
+		},
+		{
+			id: 'linux',
+			label: 'Linux/macOS',
+			icon: 'mdi:linux',
+			language: 'bash',
+			code: String.raw`#!/bin/bash
+echo "Cleaning system temporary files..."
+# The /tmp directory is usually cleared on reboot automatically on most systems.
+# If you need to clear it manually, use the following command with caution:
+rm -rf /tmp/*
+rm -rf /var/tmp/*
+echo "Temporary files cleaned."
+read -p "Press Enter to exit..."`
+		}
+	];
+</script>
+
 # A Developer's Guide to a Tidy Workspace
 
 In the lifecycle of any software project, from a quick prototype to a large-scale application, clutter is inevitable. Generated files, temporary data, and sensitive information can accumulate, taking up valuable disk space and posing security risks. This post will guide you through the why and how of cleaning your workspace, ensuring your projects are lean, secure, and easy to share.
@@ -105,93 +264,7 @@ For files that have already been created, a bit of scripting can go a long way.
 
 Before sharing your project as a ZIP file, you can run a script to remove unwanted files and folders.
 
-**For Windows (Batch Script):**
-
-```batch
-@echo off
-setlocal
-title Project Cleanup
-
-REM --- Change directory to the script's location ---
-pushd "%~dp0"
-
-echo Starting cleanup process...
-echo.
-
-REM --- Delete sensitive files if they exist ---
-echo Searching for and deleting sensitive files (.pem, .env*)...
-del /s /f /q ".\*.pem" >nul 2>&1
-del /s /f /q ".\.env*" >nul 2>&1
-echo.
-
-echo Searching for and deleting generated folders...
-echo.
-
-REM --- Process node_modules ---
-for /f "delims=" %%d in ('dir /b /ad "node_modules*" 2^>nul') do (
-    echo Deleting "%%d"
-    rmdir /s /q "%%d"
-)
-
-REM --- Process .svelte-kit ---
-for /f "delims=" %%d in ('dir /b /ad ".svelte-kit*" 2^>nul') do (
-    echo Deleting "%%d"
-    rmdir /s /q "%%d"
-)
-
-REM --- Process .vercel ---
-for /f "delims=" %%d in ('dir /b /ad ".vercel*" 2^>nul') do (
-    echo Deleting "%%d"
-    rmdir /s /q "%%d"
-)
-
-REM --- Process vendor ---
-for /f "delims=" %%d in ('dir /b /ad "vendor*" 2^>nul') do (
-    echo Deleting "%%d"
-    rmdir /s /q "%%d"
-)
-
-echo.
-echo Cleanup complete.
-echo.
-
-popd
-endlocal
-pause
-```
-
-**For Linux/macOS (Bash Script):**
-
-```shell
-#!/bin/bash
-# A script to clean the current directory of generated folders and sensitive files.
-
-echo "Starting cleanup process..."
-echo
-
-# --- Delete sensitive files if they exist ---
-echo "Searching for and deleting sensitive files (.pem, .env*)..."
-find . -maxdepth 1 -name "*.pem" -type f -delete
-find . -maxdepth 1 -name ".env*" -type f -delete
-echo
-
-folders_to_delete=(
-    "node_modules*"
-    ".svelte-kit*"
-    ".vercel*"
-    "vendor"
-)
-
-# --- Loop through the list and delete matching directories ---
-echo "Searching for and deleting generated folders..."
-for pattern in "${folders_to_delete[@]}"; do
-    find . -maxdepth 1 -type d -name "$pattern" -exec echo "Deleting {}" \; -exec rm -rf {} +
-done
-
-echo
-echo "Cleanup complete."
-read -p "Press Enter to exit..."
-```
+<CodeTabsSelector tabs={projectCleanupTabs} className="my-6" />
 
 ### System-Wide Cleanup: Taming `node_modules`
 
@@ -209,62 +282,17 @@ You can then navigate with the arrow keys and press the spacebar or `Del` key to
 
 Alternatively, you can use a script for a more automated approach.
 
-**For Windows (Batch Script):**
-
-```batch
-@echo off
-setlocal EnableDelayedExpansion
-
-echo Searching for and deleting all node_modules folders...
-for /d /r . %%d in (node_modules) do (
-    if exist "%%d" (
-        echo Deleting "%%d"
-        rmdir /s /q "%%d"
-    )
-)
-echo Deletion process finished.
-pause
-```
-
-**For Linux/macOS (Bash Script):**
-
-```shell
-#!/bin/bash
-echo "Searching for and deleting all node_modules folders..."
-find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
-echo "Deletion process finished."
-read -p "Press Enter to exit..."
-```
+<CodeTabsSelector tabs={nodeModulesTabs} className="my-6" />
 
 ### Clearing System Temporary Files
 
 Your operating system also has a dedicated temporary folder that can get bloated over time.
 
-**For Windows (Batch Script):**
+<CodeTabsSelector tabs={systemTempTabs} className="my-6" />
 
-```batch
-@echo off
-echo Cleaning system temporary files...
-del /q /f /s "%TEMP%\*"
-for /d %%x in ("%TEMP%\*") do rmdir /s /q "%%x"
-echo Temporary files cleaned.
-pause
-```
-
-**For Linux/macOS (Bash Script):**
-
-_Caution: Be very careful with this command. Running `rm -rf` in the wrong directory can have disastrous consequences._
-
-```shell
-#!/bin/bash
-echo "Cleaning system temporary files..."
-# The /tmp directory is usually cleared on reboot automatically on most systems.
-# If you need to clear it manually, use the following command with caution:
-rm -rf /tmp/*
-rm -rf /var/tmp/*
-echo "Temporary files cleaned."
-read -p "Press Enter to exit..."
-```
+<InfoBox title="Caution" variant="warning" className="my-6">
+	Be very careful with these commands, especially the Linux/macOS version. Running <code>rm -rf</code> in the wrong directory can have disastrous consequences.
+</InfoBox>
 
 ## Final Thoughts
 

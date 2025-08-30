@@ -94,6 +94,10 @@
 		// ensure content is rendered
 		setTimeout(setupCodeBlocks, 1000);
 
+		window.addEventListener('code-tabs-updated', () => {
+			setTimeout(setupCodeBlocks, 50);
+		});
+
 		// watch for dynamically added code blocks
 		observer = new MutationObserver((mutations) => {
 			mutations.forEach((mutation) => {
@@ -121,6 +125,7 @@
 
 		return () => {
 			observer?.disconnect();
+			window.removeEventListener('code-tabs-updated', () => {});
 		};
 	});
 </script>
