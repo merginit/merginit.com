@@ -9,7 +9,7 @@ categories:
 published: true
 author: 'Jonas Fröller'
 readingTime: '8 min'
-tags: ["git", "security", "nodejs", "clean-code", "workflow"]
+tags: ['scripting', 'automation', 'git', 'dev-environment', 'security']
 ---
 
 # A Developer's Guide to a Tidy Workspace
@@ -20,11 +20,11 @@ In the lifecycle of any software project, from a quick prototype to a large-scal
 
 Before we dive into the "how," let's identify the common culprits of a messy project folder and understand why tidying up is crucial.
 
-*   **Generateables:** These are files and folders created by your tools and frameworks during development. A prime example is the notorious `node_modules` folder in NodeJS projects. While essential for running your application, these can often be massive and can be easily regenerated from your `package.json` file. Other examples include `build` or `dist` folders, and `__pycache__` directories in Python. Removing them before archiving or sharing a project can drastically reduce file size.
+- **Generateables:** These are files and folders created by your tools and frameworks during development. A prime example is the notorious `node_modules` folder in NodeJS projects. While essential for running your application, these can often be massive and can be easily regenerated from your `package.json` file. Other examples include `build` or `dist` folders, and `__pycache__` directories in Python. Removing them before archiving or sharing a project can drastically reduce file size.
 
-*   **Temporary Files:** Operating systems and development environments often create temporary files (`.tmp`, `.log`, `.cache`). While usually harmless, they contribute to disk usage and are generally unnecessary to keep.
+- **Temporary Files:** Operating systems and development environments often create temporary files (`.tmp`, `.log`, `.cache`). While usually harmless, they contribute to disk usage and are generally unnecessary to keep.
 
-*   **Sensitive Data:** This is the most critical category to manage. Files like `.env` (environment variables) and `.pem` (private keys) often contain confidential information such as API keys and database credentials. Accidentally uploading these to a public repository can lead to serious security breaches.
+- **Sensitive Data:** This is the most critical category to manage. Files like `.env` (environment variables) and `.pem` (private keys) often contain confidential information such as API keys and database credentials. Accidentally uploading these to a public repository can lead to serious security breaches.
 
 ## Prevention First: The Power of `.gitignore`
 
@@ -200,6 +200,7 @@ Over time, you might accumulate numerous `node_modules` folders from old project
 A fantastic tool for this is **`npkill`**. You can run it without installation using `npx`. It interactively shows you all `node_modules` directories, their size, and allows you to delete them with a single keypress.
 
 To use it, simply run this command in your terminal:
+
 ```shell
 npx npkill
 ```
@@ -252,7 +253,7 @@ pause
 
 **For Linux/macOS (Bash Script):**
 
-*Caution: Be very careful with this command. Running `rm -rf` in the wrong directory can have disastrous consequences.*
+_Caution: Be very careful with this command. Running `rm -rf` in the wrong directory can have disastrous consequences._
 
 ```shell
 #!/bin/bash
