@@ -2,8 +2,8 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import BorderBeam from '$lib/components/BorderBeam.svelte';
-	import BlogLoader from '$lib/components/BlogLoader.svelte';
-	import BlogFilters from '$lib/components/BlogFilters.svelte';
+	import BlogLoader from '$lib/components/blog/BlogLoader.svelte';
+	import BlogFilters from '$lib/components/blog/BlogFilters.svelte';
 	import type { Post } from '$lib/types';
 
 	let { data } = $props();

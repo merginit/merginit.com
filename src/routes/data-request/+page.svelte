@@ -27,11 +27,11 @@
 		<div class="flex justify-center mb-16">
 			<a
 				href="/"
-				class="text-gray-400 hover:text-gray-200 transition-colors duration-300 flex items-center gap-2 group"
+				class="text-gray-400 hover:text-gray-200 transition-colors duration-300 flex items-center gap-2"
 			>
 				<Icon
 					icon="mdi:arrow-left"
-					class="w-4 h-4 group-hover:-translate-x-0.5 transition-transform"
+					class="w-4 h-4"
 				/>
 				Back to Home
 			</a>
@@ -75,13 +75,13 @@
 									href="https://www.ocrmd.com/settings"
 									target="_blank"
 									rel="noopener noreferrer"
-									class="inline-flex items-center gap-2 bg-[#ffaa40] text-black px-6 py-3 rounded-lg font-medium hover:bg-[#ff9520] transition-colors duration-300 group"
+									class="inline-flex items-center gap-2 bg-[#ffaa40] text-black px-6 py-3 rounded-lg font-medium hover:bg-[#ff9520] transition-colors duration-300"
 								>
 									<Icon icon="mdi:account-cog" class="w-5 h-5" />
 									Access Your Data
 									<Icon
 										icon="mdi:external-link"
-										class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
+										class="w-4 h-4"
 									/>
 								</a>
 							</div>
@@ -216,13 +216,13 @@
 					<div class="flex flex-col sm:flex-row gap-4">
 						<a
 							href="mailto:jonas@merginit.com?subject=Data Request"
-							class="inline-flex items-center gap-2 bg-gray-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-600 transition-colors duration-300 group"
+							class="inline-flex items-center gap-2 bg-gray-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-600 transition-colors duration-300"
 						>
 							<Icon icon="mdi:email" class="w-5 h-5" />
 							Contact Support
 							<Icon
 								icon="mdi:arrow-right"
-								class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
+								class="w-4 h-4"
 							/>
 						</a>
 

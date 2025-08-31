@@ -4,7 +4,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import { slide } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
-	import TagInput from './TagInput.svelte';
+	import TagInput from '../TagInput.svelte';
 
 	interface FilterState {
 		search: string;
