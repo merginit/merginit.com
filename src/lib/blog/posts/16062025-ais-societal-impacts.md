@@ -1,6 +1,6 @@
 ---
-title: 'Neon Shadows: How AI, $100K Bitcoin & Pervasive Surveillance Built Our Cyberpunk Reality'
-description: 'An analytical deep-dive into how AI, Bitcoin at $100K, and modern surveillance tech have ushered in a cyberpunk-style dystopia—and why most people remain unfazed.'
+title: 'AI Surveillance Capitalism: Are We in a Cyberpunk Dystopia?'
+description: 'AI surveillance capitalism, $100K Bitcoin, and facial recognition are shaping a cyberpunk reality. See how work, privacy, and power shift in 2025—read now.'
 date: '2025-06-16'
 categories:
   - ai-ml

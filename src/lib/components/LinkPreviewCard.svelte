@@ -6,6 +6,7 @@
 
 	let dominantColor = '#f5f5f5';
 	let imageElement: HTMLImageElement;
+	let isFaviconLoaded = false;
 
 	function extractDominantColor(img: HTMLImageElement): string {
 		try {
@@ -71,6 +72,10 @@
 			dominantColor = extractDominantColor(imageElement);
 		}
 	}
+
+	$: if (preview?.favicon) {
+		isFaviconLoaded = false;
+	}
 </script>
 
 <div
@@ -103,6 +108,13 @@
 				class="w-7 h-7 rounded border border-neutral-200 dark:border-neutral-700 shadow-sm bg-white/80 block"
 				loading="lazy"
 				style="margin:0; padding:0;"
+				style:display={isFaviconLoaded ? 'block' : 'none'}
+				on:load={() => {
+					isFaviconLoaded = true;
+				}}
+				on:error={() => {
+					isFaviconLoaded = false;
+				}}
 			/>
 		{/if}
 		<a

@@ -1,6 +1,6 @@
 ---
-title: "A Developer's Guide to a Tidy Workspace"
-description: 'Learn how to efficiently delete generateables, temporary files, and sensitive data from your development projects to save space, enhance security, and streamline collaboration.'
+title: "Developer Workspace Cleanup: The Complete 2025 Guide"
+description: 'Developer workspace cleanup: remove node_modules, temp files, and sensitive data safely. Use .gitignore, scripts, and npkill to free disk space.'
 date: '2025-08-30'
 categories:
   - developer-tools

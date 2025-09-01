@@ -1,6 +1,6 @@
 ---
-title: 'Oracle DML Explained: Advanced SQL from INSERT to MERGE'
-description: 'Master Oracle SQL DML commands including INSERT, UPDATE, DELETE, and MERGE with practical examples and advanced techniques for efficient data manipulation.'
+title: 'Oracle DML Guide: INSERT, UPDATE, DELETE, MERGE Explained'
+description: 'Master Oracle DML with examples of INSERT, UPDATE, DELETE and MERGE, plus advanced features: INSERT ALL, RETURNING, error logging, and performance tips.'
 date: '2025-06-25'
 categories:
   - database

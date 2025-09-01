@@ -1,6 +1,6 @@
 ---
-title: 'Comprehensive Comparison of Major Payment Processors for Online Businesses'
-description: 'Complete guide comparing Stripe, Paddle, PayPal, Braintree, Adyen, Square, and Authorize.Net - covering pricing, features, EU compliance, and merchant of record capabilities for SaaS and digital businesses.'
+title: 'Payment Processors for Online Business: 2025 MoR Comparison'
+description: 'Compare 2025 payment processors for your online business. Stripe, Paddle, Lemon Squeezy, PayPal & more. Pricing, EU VAT compliance, and merchant of record options.'
 date: '2025-06-30'
 categories:
   - comparison

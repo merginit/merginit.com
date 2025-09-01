@@ -1,6 +1,6 @@
 ---
-title: "The Strange Case of JavaScript's Trademark: A Fight for Freedom"
-description: "An in-depth look at why Oracle owns the 'JavaScript' trademark, the legal battle led by Deno's Ryan Dahl to free it, and what's next for the world's most popular programming language."
+title: "JavaScript Trademark Fight: Deno vs Oracle Explained (2025)"
+description: "Get the facts on the JavaScript trademark fight: why Oracle owns the name, Deno's USPTO challenge, what genericness and abandonment mean, and what's next."
 date: '2025-08-28'
 categories:
   - web-development

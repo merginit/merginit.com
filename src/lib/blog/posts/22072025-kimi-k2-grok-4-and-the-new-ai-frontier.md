@@ -1,6 +1,6 @@
 ---
-title: "AI's Blistering Pace: Kimi K2, Grok-4, and the New Frontier of Open Models"
-description: "A deep dive into the latest groundbreaking AI developments. We explore the powerhouse open-weight model Kimi K2, the controversial launch of Grok-4, Mistral's new speech and coding models, Anthropic's strategic moves, and Amazon's entry into AI code editors."
+title: "Kimi K2 vs Grok-4: Open-Weight Breakthroughs Explained"
+description: "Kimi K2 vs Grok-4: benchmarks, tool-use, costs, and real-world quality. Plus Mistral Voxtral/Devstral, Anthropic's DoD deal, and Amazon Kiro."
 date: '2025-07-22'
 updateDate: '2025-07-23'
 categories:

@@ -1,6 +1,6 @@
 ---
-title: 'Idempotency: The Key to Building Resilient and Trustworthy APIs'
-description: 'Learn how to prevent costly errors like duplicate charges with idempotency. This practical post explains the basics of how to design robust APIs that can withstand real-world chaos like network failures and duplicate requests.'
+title: 'Idempotency for APIs: Stop Duplicate Charges and Requests'
+description: 'Idempotency for APIs: prevent duplicate charges and requests. Learn idempotency keys, HTTP methods, and client‑generated IDs to build retry‑safe APIs.'
 date: '2025-06-18'
 categories:
   - api-design
@@ -15,7 +15,7 @@ tags: ['idempotency', 'backend']
   import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
 </script>
 
-# A Practical Guide to Idempotency
+# A Practical Guide to Idempotency: The Key to Building Resilient and Trustworthy APIs
 
 <AudioNativePlayer />
 

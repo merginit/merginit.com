@@ -1,6 +1,6 @@
 ---
-title: "The Unseen Threat: How Social Media Fuels a Scammer's Paradise"
-description: 'A deep dive into the rising tide of online fraud originating from social media platforms and what can be done to combat it.'
+title: "Social Media Scams 2025: Data, Risks, and Protection"
+description: 'Social media scams are surging. Explore data on Meta-driven online fraud, top tactics, and concrete steps to protect your money and accounts.'
 date: '2025-07-28'
 categories:
   - cybersecurity

@@ -1,6 +1,6 @@
 ---
-title: 'Automated Multi-Platform Releases with semantic-release'
-description: 'Learn how to automate your release process with semantic-release. Complete guide covering setup, npm publishing, GitHub releases, Docker image publishing, and CI/CD integration using conventional commits for seamless multi-platform deployments.'
+title: 'semantic-release Guide 2025: Automate npm, GitHub & Docker'
+description: 'Automate releases with semantic-release. Learn setup, Conventional Commits, npm publish, GitHub Releases, Docker tagging, and CI via GitHub Actions.'
 date: '2025-06-29'
 categories:
   - devops

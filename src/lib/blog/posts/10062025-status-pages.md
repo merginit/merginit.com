@@ -1,6 +1,6 @@
 ---
-title: 'Status Page Services 2025'
-description: 'Comprehensive comparison of free and paid status page services in 2025. From self-hosted open source solutions to enterprise platforms - find the right status page for your needs and budget.'
+title: 'Best Status Page Software 2025: Free to Enterprise'
+description: 'See the best status page software for 2025—compare free, open‑source, and enterprise options, features, pricing, and use cases. Make the right choice now.'
 date: '2025-06-10'
 categories:
   - devops

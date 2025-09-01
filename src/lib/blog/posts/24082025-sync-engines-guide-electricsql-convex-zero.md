@@ -1,6 +1,6 @@
 ---
-title: 'The Power of Sync Engines: Choosing the Right One for Your Next Project'
-description: 'A comprehensive guide to sync engines including ElectricSQL, Convex, and Zero by Rocicorp. Learn their architectures, features, and how to choose the right one for your application.'
+title: 'Sync Engines Compared: ElectricSQL vs Convex vs Zero (2025)'
+description: 'Compare ElectricSQL, Convex and Zero to choose the best sync engine. Learn architectures, CRDTs vs reactivity, query-driven sync, offline-first.'
 date: '2025-08-24'
 categories:
   - web-development

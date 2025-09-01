@@ -1,6 +1,6 @@
 ---
-title: '7 Steps to Google #1 Ranking: Complete SEO Guide'
-description: 'Complete guide to ranking #1 on Google: website optimization, content strategy, local SEO, link building, AI automation, and performance analysis. Actionable steps for better search visibility.'
+title: 'How to Rank #1 on Google: 7-Step SEO Guide (2025)'
+description: 'Learn how to rank #1 on Google with a 7-step SEO guide covering site speed, content strategy, local SEO, link building, AI automation, and SEO analytics.'
 date: '2025-08-23'
 categories:
   - web-development

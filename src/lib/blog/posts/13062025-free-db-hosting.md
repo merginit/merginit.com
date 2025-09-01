@@ -1,6 +1,6 @@
 ---
-title: 'FREE Database Hosting in 2025'
-description: 'The best free database hosting options in 2025. Complete guide covering PostgreSQL, MySQL, NoSQL, time-series, and vector databases with detailed comparisons of Neon, Supabase, MongoDB Atlas, and more.'
+title: 'Free Database Hosting 2025: Best Postgres, MySQL, NoSQL'
+description: 'Find the best free database hosting in 2025. Compare Postgres, MySQL, MongoDB, Redis, vector options with storage limits, features, and caveats. See our picks.'
 date: '2025-06-13'
 categories:
   - database

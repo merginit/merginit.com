@@ -1,6 +1,6 @@
 ---
-title: 'Stack Overflow 2025 Survey: AI Adoption Soars as Developer Trust Plummets'
-description: 'In-depth analysis of the 2025 Stack Overflow Developer Survey. Explore the key findings on AI tools, including the paradox of rising adoption vs. declining trust, and what it means for the future of software development.'
+title: 'Stack Overflow Developer Survey 2025: AI Up, Trust Down'
+description: 'Stack Overflow Developer Survey 2025 shows soaring AI adoption but falling developer trust. Explore key stats and language trends.'
 date: '2025-07-29'
 categories:
   - data-analytics

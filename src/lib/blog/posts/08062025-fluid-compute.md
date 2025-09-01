@@ -1,6 +1,6 @@
 ---
-title: 'Fluid Compute'
-description: 'A technical deep-dive into Vercel''s Fluid Compute - examining the architecture changes, performance claims, and real-world trade-offs of this serverless evolution. Is it truly "Serverless 2.0" or just clever marketing?'
+title: 'Vercel Fluid Compute vs Serverless: What Changes in 2025?'
+description: 'See what''s new in Vercel Fluid Compute in 2025 — concurrency, fewer cold starts, and smarter scaling for I/O‑heavy apps. Learn trade‑offs and when to use it.'
 date: '2025-06-08'
 categories:
   - cloud-computing

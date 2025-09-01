@@ -1,6 +1,6 @@
 ---
-title: 'The Scarcity of Time: How Much Do We Really Have?'
-description: "An in-depth exploration of human lifespan and how it's allocated to essential activities like sleep, work, screens, chores, eating, and commuting, backed by data from multiple countries and reliable sources to reveal the surprisingly limited discretionary time available."
+title: 'How Much Free Time Do You Really Have? Lifetime Breakdown.'
+description: "Discover how much free time you really have. Data-backed breakdown of lifetime hours spent on sleep, work, screen time, chores, eating and commuting."
 date: '2025-08-27'
 categories:
   - career
@@ -14,6 +14,15 @@ tags: ['lifespan', 'time-use', 'global-data', 'productivity', 'wellbeing']
 
 <script>
   import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
+  import LinkPreviewCard from '$lib/components/LinkPreviewCard.svelte';
+  import { onMount } from 'svelte';
+
+  let preview = null;
+  let url = 'https://www.bryanbraun.com/your-life/weeks.html';
+  onMount(async () => {
+    const res = await fetch(`/api/preview?url=${encodeURIComponent(url)}`);
+    preview = await res.json();
+  });
 </script>
 
 # The Scarcity of Time
@@ -21,6 +30,10 @@ tags: ['lifespan', 'time-use', 'global-data', 'productivity', 'wellbeing']
 <AudioNativePlayer />
 
 ## You Have Less Than You Think
+
+{#if preview}
+<LinkPreviewCard {preview} />
+{/if}
 
 We often live as if time is endless, but crunching the numbers on an average human lifespan paints a sobering picture. Research suggests that after accounting for necessities and obligations, the discretionary time we control is far more limited than most realize, prompting a reevaluation of priorities. This perspective, popularized in discussions by authors like Mark Manson, highlights how quickly years slip away.
 

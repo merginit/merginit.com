@@ -1,6 +1,6 @@
 ---
-title: 'Complete Guide to All 47 Open Source Licenses | Choose the Right One in 2025'
-description: 'Comprehensive guide to all 47 open source licenses from ChooseALicense.com. Compare MIT, GPL, Apache, BSD licenses with clear usage recommendations and examples.'
+title: '47 Open Source Licenses: Complete Guide (2025)'
+description: 'Compare all 47 open source licenses with MIT, GPL, Apache and BSD summaries, plus when to use each. Choose the right license for your project in 2025.'
 date: '2025-08-01'
 categories:
   - open-source
@@ -23,7 +23,7 @@ tags:
   ]
 ---
 
-# 47 open source licenses
+# 47 Open Source Licenses
 
 ## A Developer's Guide to Open Source Licenses: Understanding Your Options and When to Use Them
 

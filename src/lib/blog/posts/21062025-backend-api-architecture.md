@@ -1,6 +1,6 @@
 ---
-title: 'Backend API Architecture'
-description: 'The Great API Debate: Richardson Maturity Model (REST) vs. GraphQL mess.'
+title: 'GraphQL vs REST: Richardson Maturity Model Explained 2025'
+description: 'GraphQL vs REST through the Richardson Maturity Model: levels 0-3, HATEOAS, data-fetching trade-offs, and when to use each. Get a 2025 guide for API design.'
 date: '2025-06-21'
 categories:
   - api-design

@@ -1,6 +1,6 @@
 ---
-title: 'A Complete Guide to Improving Your Domain Rating (DR) for Better SEO Rankings'
-description: 'Learn proven strategies to boost your Domain Rating through high-authority backlinks from Wikipedia, Reddit, GitHub, and many other platforms. 100% FREE methods included.'
+title: 'How to Increase Domain Rating (DR) with Free Backlinks'
+description: 'Increase Domain Rating with free, high-authority backlinks. Learn Reddit, Wikipedia, top directories, and subdomain tactics in a clear, step-by-step plan.'
 date: '2025-07-24'
 updateDate: '2025-07-26'
 categories:

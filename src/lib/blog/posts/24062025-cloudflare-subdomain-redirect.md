@@ -1,6 +1,6 @@
 ---
-title: 'How to Set Up Cloudflare Subdomain Redirect (Free Plan 2025)'
-description: "Learn the simple two-step process to set up a subdomain redirect on Cloudflare's free plan. This guide explains how to create a proxied DNS record and a redirect rule to create clean, professional vanity URLs for your services."
+title: 'Cloudflare Subdomain Redirect: Step-by-Step Free Setup (2025)'
+description: "Learn Cloudflare subdomain redirect on the free plan in two steps: create a proxied DNS record and a redirect rule. Get tips and fixes for 525 SSL errors."
 date: '2025-06-24'
 updateDate: '2025-07-26'
 categories:

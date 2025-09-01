@@ -1,6 +1,6 @@
 ---
-title: 'Redefining Career Success: Choosing Meaning Over Prestige'
-description: 'How professionals are reshaping success by prioritizing purpose, values, and agency over titles and prestige. Why quiet courage and meaningful work matter more than ever.'
+title: 'Career Success Redefined: Choose Meaning Over Prestige'
+description: 'Rethink career success by prioritizing meaningful work, values, and agency. Learn when to say no, build quiet courage, and define success on your terms.'
 date: '2025-06-20'
 categories:
   - career

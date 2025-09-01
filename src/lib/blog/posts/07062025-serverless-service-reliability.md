@@ -1,6 +1,6 @@
 ---
-title: 'Serverless Service Reliability'
-description: 'Serverless computing promises scalability and reduced overhead, but reliability challenges like cost unpredictability and vendor issues require careful attention and best practices.'
+title: 'Serverless Reliability: Vercel, Cloudflare & Best Practices'
+description: 'Serverless reliability lessons from Vercel and Cloudflare: cold starts, timeouts, and surprise costs. Learn monitoring, pricing, and vendor-risk best practices.'
 date: '2025-06-07'
 categories:
   - cloud-computing

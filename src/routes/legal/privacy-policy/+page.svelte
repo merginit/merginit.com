@@ -922,7 +922,7 @@
 																									To save or protect an individual's vital interest.
 																								</strong>
 																								We may process your information when necessary to save
-																								or protect an individual’s vital interest, such as to
+																								or protect an individual's vital interest, such as to
 																								prevent harm.
 																							</span>
 																						</span>
@@ -1719,7 +1719,7 @@
 																													as specified by law in your jurisdictionor
 																													that you are the parent or guardian of
 																													such a minor and consent to such minor
-																													dependent’s use of the Services. If we
+																													dependent's use of the Services. If we
 																													learn that personal information from users
 																													less than 18 years of ageor the equivalent
 																													age as specified by law in your
@@ -2708,7 +2708,7 @@
 																																	collected personal information
 																																	listed above to create a profile
 																																	or summary about, for example, an
-																																	individual’s preferences and
+																																	individual's preferences and
 																																	characteristics
 																																</span>
 																															</span>
@@ -3074,7 +3074,7 @@
 																																		>
 																																		of the processing of your personal
 																																		data if it is used for targeted advertising
-																																		(or sharing as defined under California’s
+																																		(or sharing as defined under California's
 																																		privacy law), the sale of personal
 																																		data, or profiling in furtherance
 																																		of decisions that produce legal or

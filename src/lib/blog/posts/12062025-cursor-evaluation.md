@@ -1,6 +1,6 @@
 ---
-title: "Is Cursor's $9.9B Valuation Justified?"
-description: "An analysis of Cursor's $9.9 billion valuation against the competitive landscape, examining whether the AI coding startup's meteoric rise is justified amid fierce competition from GitHub Copilot, Windsurf, and dozens of other tools."
+title: "Cursor Valuation 2025: Is $9.9B Justified vs Copilot?"
+description: "Cursor valuation analyzed: is $9.9B justified vs GitHub Copilot's 15M users? Get data-driven ARR context, market share reality, and 2025 competitive outlook."
 date: '2025-06-12'
 updateDate: '2025-07-23'
 categories:

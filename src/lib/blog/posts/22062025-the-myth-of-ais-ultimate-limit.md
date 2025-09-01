@@ -1,6 +1,6 @@
 ---
-title: "Gödel, Penrose, and the Myth of AI's Ultimate Limit: A Critique"
-description: "Some people claim a simple Gödel sentence proves human superiority over AI. This post critiques the Lucas-Penrose argument, revealing its philosophical flaws and why AI's ultimate limits are far from settled."
+title: "Lucas-Penrose Argument on AI: Why It Falls Short"
+description: "Debunk the Lucas-Penrose argument on AI limits. Clear analysis of Gödel's incompleteness, consistency assumptions, and moving-goalpost flaws."
 date: '2025-06-22'
 categories:
   - opinion

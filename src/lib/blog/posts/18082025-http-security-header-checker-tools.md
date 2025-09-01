@@ -1,6 +1,6 @@
 ---
-title: 'Open-Source HTTP Security Header Checkers: Comprehensive Comparison (2025)'
-description: 'In-depth comparison of humble, shcheck, hsecscan, testssl.sh, and DrHEADer: licenses, REST API availability, commercial use, supported checks, outputs, setup, community, and recommendations.'
+title: 'Best HTTP Security Headers Checker Tools (Open Source, 2025)'
+description: 'Compare the best HTTP security headers checker tools of 2025. See open-source options like humble, shcheck, hsecscan, testssl.sh, and DrHEADer, REST API readiness, checks, outputs, and integration tips.'
 date: '2025-08-18'
 categories:
   - cybersecurity

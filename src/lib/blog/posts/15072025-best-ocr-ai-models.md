@@ -1,6 +1,6 @@
 ---
 title: 'The Best Open-Source and Open-Weight AI Models for OCR'
-description: 'A comprehensive guide to the leading open-source and open-weight OCR models, their capabilities, hardware requirements, and performance benchmarks for text recognition and document understanding.'
+description: 'Open-source OCR models ranked by 2025 metrics, VRAM, and setup. Includes Tesseract, EasyOCR, PaddleOCR, TrOCR, Qwen2.5‑VL. Pick the best for your workload.'
 date: '2025-07-15'
 categories:
   - ai-ml

@@ -1,6 +1,6 @@
 ---
-title: 'The Complete Guide to CAPTCHA Solutions in 2025: Pricing, Performance, and Implementation Comparison'
-description: 'A comprehensive comparison of 16+ major CAPTCHA providers including Cloudflare Turnstile, Google reCAPTCHA, hCaptcha, and more. Learn their features, pricing, security effectiveness, and how to choose the right solution for your website.'
+title: 'CAPTCHA Solutions 2025: Pricing & Performance Comparison'
+description: 'Compare 2025 CAPTCHA solutions—Cloudflare Turnstile, reCAPTCHA, hCaptcha, and more. See pricing, performance, security, and implementation tips.'
 date: '2025-08-25'
 categories:
   - web-development

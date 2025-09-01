@@ -1,6 +1,6 @@
 ---
-title: "Beyond Prompts: Mastering Context Engineering and Avoiding 'Context Rot' in LLMs"
-description: "A deep dive into Context Engineering, the essential skill for building advanced AI agents. Learn the four key strategies and how to combat 'Context Rot'—the performance degradation in LLMs with large context windows."
+title: "Context Engineering: How to Prevent LLM Context Rot"
+description: "Learn context engineering to prevent LLM context rot. Master writing, selection, compression, and isolation, plus RAG and LangChain/LangGraph."
 date: '2025-07-30'
 categories:
   - ai-ml
@@ -25,7 +25,7 @@ tags:
   import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
 </script>
 
-# Beyond Prompts: Mastering Context Engineering and Avoiding 'Context Rot' in LLMs
+# Beyond Prompts: Mastering Context Engineering and Avoiding "Context Rot" in LLMs
 
 <AudioNativePlayer />
 

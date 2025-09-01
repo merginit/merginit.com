@@ -1,6 +1,6 @@
 ---
-title: "Your Data on the Menu: A Cascade of Security Failures at McDonald's and its Partners"
-description: "An analysis of the recent data breach affecting millions of McDonald's job applicants, exposing critical security flaws at both the fast-food giant and its AI hiring partner, Paradox.ai."
+title: "McDonald's Data Breach: 64M Exposed via Paradox.ai"
+description: "Inside the McDonald's data breach: 64M applicants exposed via Paradox.ai and lax internal controls. Learn key security lessons, supply chain risks, and fixes."
 date: '2025-08-26'
 categories:
   - cybersecurity
