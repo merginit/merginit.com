@@ -26,6 +26,10 @@ export interface Product {
 	icon: string;
 }
 
+export interface WebsiteProduct extends Product {
+	githubUrl: string;
+}
+
 export const CATEGORIES = [
 	'web-development', // Frontend, backend, full-stack development
 	'devops', // CI/CD, deployment, infrastructure
