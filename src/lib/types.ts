@@ -17,6 +17,7 @@ export interface ProjectItem {
 	iconSrc: string;
 	url: string;
 	productName: string;
+	videoUrl?: string;
 }
 
 export interface Product {

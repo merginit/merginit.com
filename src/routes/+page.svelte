@@ -11,6 +11,7 @@
 	let isFirefox = $state(false);
 	let currentFaviconElement = $state<HTMLElement | null>(null);
 	let currentWebsiteUrl = $state<string | null>(null);
+	let currentVideoUrl = $state<string | undefined>(undefined);
 	let hoverTimeout: ReturnType<typeof setTimeout> | undefined = undefined;
 	let videoPreviewRef: any = $state();
 	let showVideo = $state(false);
@@ -102,7 +103,9 @@
 			currentFaviconElement = faviconImg;
 			// Get the project data to extract the website URL
 			const cardIndex = parseInt(faviconImg.id.split('-')[1]);
-			currentWebsiteUrl = projects[cardIndex]?.url || null;
+			const project = projects[cardIndex];
+			currentWebsiteUrl = project?.url || null;
+			currentVideoUrl = project?.videoUrl;
 
 			showVideo = true;
 			hoveredCardIndex = null; // Hide play button
@@ -136,6 +139,7 @@
 		showVideo = false;
 		currentFaviconElement = null;
 		currentWebsiteUrl = null;
+		currentVideoUrl = undefined;
 	}
 
 	const projects: ProjectItem[] = [
@@ -149,7 +153,9 @@
 			description:
 				'OCRMD.com transforms scanned images and PDFs into editable Markdown. Features include AI-enhanced text recognition with formatting, math equations, tables, and image detection at 90-99% accuracy. Secure cloud storage and full-text search capabilities make your documents accessible anywhere.',
 			iconSrc: 'https://ocrmd.com/favicon.png',
-			url: 'https://ocrmd.com'
+			url: 'https://ocrmd.com',
+			videoUrl:
+				'https://player.vimeo.com/video/1102620409?badge=0&autopause=0&player_id=0&app_id=58479'
 		},
 		{
 			projectType: 'Open Source Website & AI',
@@ -348,6 +354,7 @@
 		bind:this={videoPreviewRef}
 		bind:faviconElement={currentFaviconElement}
 		websiteUrl={currentWebsiteUrl ?? undefined}
+		videoUrl={currentVideoUrl}
 		onClose={handleAnimationComplete}
 		onCloseRequest={handleVideoClose}
 	/>

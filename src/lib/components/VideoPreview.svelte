@@ -14,7 +14,7 @@
 
 	let {
 		faviconElement = $bindable(),
-		videoUrl = 'https://player.vimeo.com/video/1102620409?badge=0&autopause=0&player_id=0&app_id=58479',
+		videoUrl = 'https://player.vimeo.com/video/1116177739?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
 		websiteUrl,
 		onClose,
 		onCloseRequest
