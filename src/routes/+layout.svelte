@@ -6,6 +6,7 @@
 	import { fly } from 'svelte/transition';
 	import { cubicIn, cubicOut } from 'svelte/easing';
 	import Icon from '@iconify/svelte';
+	import { page } from '$app/state';
 
 	const pageLinks: LinkItem[] = [
 		{ text: 'Home', href: '/' },
@@ -50,9 +51,36 @@
 	const transitionOut = { easing: cubicIn, y: -y, duration };
 </script>
 
-<CookieStyler cookieCategories={customCookieCategories}>
-	<CookiePopup />
-</CookieStyler>
+<svelte:head>
+	<link rel="canonical" href={page.url.href} />
+	<meta property="og:site_name" content="MerginIT e.U." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={page.url.href} />
+	<meta property="og:title" content="MerginIT e.U." />
+	<meta property="og:description" content="Professional software development and SaaS solutions" />
+	<meta property="og:image" content={'/og?url=' + encodeURIComponent(page.url.href)} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@merginit" />
+	<meta name="twitter:creator" content="@jonasfroeller" />
+	<meta name="twitter:url" content={page.url.href} />
+	<meta name="twitter:title" content="MerginIT e.U." />
+	<meta name="twitter:description" content="Professional software development and SaaS solutions" />
+	<meta name="twitter:image" content={'/og?url=' + encodeURIComponent(page.url.href)} />
+</svelte:head>
+
+{#if data?.noCookie}
+	{@html `<style>
+		:where([role='dialog'], .cookie, .cookies, .cookiiies, .cookie-popup, [data-cookie], #cookieConsent, #usercentrics-root){display:none !important}
+	</style>`}
+{/if}
+
+{#if !data?.noCookie}
+	<CookieStyler cookieCategories={customCookieCategories}>
+		<CookiePopup />
+	</CookieStyler>
+{/if}
 
 <ClarityAnalytics />
 
