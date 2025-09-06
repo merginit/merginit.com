@@ -2,6 +2,7 @@
 	import type { Product, WebsiteProduct } from '$lib/types';
 	import Icon from '@iconify/svelte';
 	import BorderBeam from '$lib/components/BorderBeam.svelte';
+	import { onMount } from 'svelte';
 
 	const websiteProducts: WebsiteProduct[] = [
 		{
@@ -42,24 +43,81 @@
 			icon: 'mdi:youtube'
 		}
 	];
+
+	const npmProducts: Product[] = [
+		{
+			name: 'Svelte Cookiiies',
+			url: 'https://www.npmjs.com/package/cookiiies',
+			githubUrl: 'https://github.com/jonasfroeller/cookiiies',
+			description: 'A GDPR compliant cookie banner for Svelte 5',
+			icon: 'mdi:cookie',
+			npmPackage: 'cookiiies'
+		},
+		{
+			name: 'Astro Light Box',
+			url: 'https://www.npmjs.com/package/astro-light-box',
+			githubUrl: 'https://github.com/jonasfroeller/astro.image.lightbox',
+			description: 'Lightbox component for Astro',
+			icon: 'mdi:image-multiple',
+			npmPackage: 'astro-light-box'
+		},
+		{
+			name: 'Astro Async Loader',
+			url: 'https://www.npmjs.com/package/astro-async-loader',
+			githubUrl: 'https://github.com/jonasfroeller/astro.async.loader',
+			description: 'Async loader component for Astro',
+			icon: 'mdi:loading',
+			npmPackage: 'astro-async-loader'
+		}
+	];
+
+	async function fetchDownloadStats() {
+		const updatedProducts = [...npmProducts];
+
+		for (let i = 0; i < updatedProducts.length; i++) {
+			const product = updatedProducts[i];
+			if (product.npmPackage) {
+				try {
+					console.log(`Fetching stats for ${product.npmPackage}...`);
+					const response = await fetch(`/api/npm-stats?package=${product.npmPackage}`);
+					if (response.ok) {
+						const data = await response.json();
+						console.log(`Stats for ${product.npmPackage}:`, data);
+						updatedProducts[i] = { ...product, downloads: data.downloads };
+					} else {
+						console.error(`API error for ${product.npmPackage}:`, response.status);
+					}
+				} catch (error) {
+					console.error(`Failed to fetch stats for ${product.npmPackage}:`, error);
+				}
+			}
+		}
+
+		npmProducts.length = 0;
+		npmProducts.push(...updatedProducts);
+	}
+
+	onMount(() => {
+		fetchDownloadStats();
+	});
 </script>
 
 <svelte:head>
 	<title>Free Products - MerginIT e.U.</title>
 	<meta
 		name="description"
-		content="Discover our free websites and browser extensions: HTML to Skeleton Converter, Security Header Analyzer, Page To Markdown, and YouTube Subscriptions Exporter."
+		content="Discover our free websites, browser extensions, and npm packages: HTML to Skeleton Converter, Security Header Analyzer, Element Snap, Cookiiies, and more."
 	/>
 	<meta property="og:title" content="Free Products - MerginIT e.U." />
 	<meta
 		property="og:description"
-		content="Discover our free websites and browser extensions: HTML to Skeleton Converter, Security Header Analyzer, Page To Markdown, and YouTube Subscriptions Exporter."
+		content="Discover our free websites, browser extensions, and npm packages: HTML to Skeleton Converter, Security Header Analyzer, Element Snap, Cookiiies, and more."
 	/>
 	<meta property="og:url" content="https://merginit.com/free-products" />
 	<meta name="twitter:title" content="Free Products - MerginIT e.U." />
 	<meta
 		name="twitter:description"
-		content="Discover our free websites and browser extensions: HTML to Skeleton Converter, Security Header Analyzer, Page To Markdown, and YouTube Subscriptions Exporter."
+		content="Discover our free websites, browser extensions, and npm packages: HTML to Skeleton Converter, Security Header Analyzer, Element Snap, Cookiiies, and more."
 	/>
 </svelte:head>
 
@@ -70,7 +128,8 @@
 				Free Products
 			</h1>
 			<p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-				A collection of useful websites and browser extensions I made available for free
+				A collection of useful websites, browser extensions, and npm packages made by MerginIT e.U.
+				that are available for free.
 			</p>
 		</div>
 
@@ -241,6 +300,98 @@
 									<Icon icon="mdi:github" width="22" height="22" /> Click to view on GitHub
 								</a>
 							{/if}
+						</div>
+					</article>
+				{/each}
+			</div>
+		</div>
+
+		<!-- NPM Packages Section -->
+		<div class="max-w-4xl mx-auto mt-16">
+			<h2 class="mb-5 text-2xl sm:text-3xl font-semibold text-gray-100">
+				<span class="text-[#ffaa40]">NPM Packages</span>
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{#each npmProducts as product, i}
+					<article
+						class="group relative flex h-full flex-col items-start justify-between rounded-3xl p-6 sm:p-8 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-md hover:shadow-brand/20 transition-all duration-300 ease-in-out hover:border-brand/70 transform hover:-translate-y-1"
+					>
+						<BorderBeam
+							size={180}
+							duration={12}
+							delay={i * 0.3}
+							anchor={i % 2 === 0 ? 10 : 80}
+							class="absolute top-0 left-0 w-full h-full z-0 opacity-30 group-hover:opacity-60 transition-opacity"
+						/>
+
+						<a
+							href={product.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="absolute inset-0 z-20"
+							aria-label={`View ${product.name} on NPM`}
+						></a>
+
+						<div class="relative z-10 flex w-full items-center justify-center mb-6">
+							<div
+								class="flex justify-center items-center w-16 h-16 flex-shrink-0 text-brand bg-brand/10 rounded-full border border-brand/30 group-hover:bg-brand/20 group-hover:border-brand/50 transition-all duration-300"
+							>
+								<Icon icon={product.icon} width="32" height="32" />
+							</div>
+							{#if product.downloads}
+								<div
+									class="absolute -top-2 -right-2 bg-green-600 text-white text-xs px-2 py-1 rounded-full font-semibold shadow-lg"
+								>
+									{new Intl.NumberFormat('en-US', {
+										notation: 'compact',
+										maximumFractionDigits: 1
+									}).format(product.downloads)} downloads
+								</div>
+							{:else}
+								<div
+									class="absolute -top-2 -right-2 bg-gray-500 text-white text-xs px-2 py-1 rounded-full font-semibold shadow-lg"
+								>
+									Loading...
+								</div>
+							{/if}
+						</div>
+
+						<div
+							class="relative z-10 text-center flex-grow flex flex-col justify-center items-center w-full"
+						>
+							<h3
+								class="text-xl sm:text-2xl font-semibold leading-7 text-gray-100 group-hover:text-white transition-colors mb-4"
+							>
+								{product.name}
+							</h3>
+							<p
+								class="text-sm sm:text-base leading-relaxed text-gray-300 group-hover:text-gray-200 transition-colors"
+							>
+								{product.description}
+							</p>
+						</div>
+
+						<div
+							class="relative z-30 mt-6 w-full pt-4 border-t border-gray-700/50 flex items-center justify-center gap-3"
+						>
+							<a
+								href={product.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-2 rounded-full border border-brand/50 bg-brand/10 hover:bg-brand/20 text-brand px-4 py-2 text-sm transition-colors"
+								aria-label={`View ${product.name} on NPM`}
+							>
+								<Icon icon="simple-icons:npm" width="18" height="18" /> NPM
+							</a>
+							<a
+								href={product.githubUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-2 rounded-full border border-gray-600/60 hover:border-gray-400/60 bg-transparent text-gray-200 hover:text-white px-4 py-2 text-sm transition-colors"
+								aria-label={`View ${product.name} on GitHub`}
+							>
+								<Icon icon="mdi:github" width="22" height="22" /> GitHub
+							</a>
 						</div>
 					</article>
 				{/each}

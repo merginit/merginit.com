@@ -26,6 +26,8 @@ export interface Product {
 	description: string;
 	icon: string;
 	githubUrl?: string;
+	downloads?: number;
+	npmPackage?: string;
 }
 
 export interface WebsiteProduct extends Product {
