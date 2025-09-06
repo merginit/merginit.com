@@ -1,7 +1,6 @@
 import satori from 'satori';
 import type { SatoriOptions } from 'satori';
-import { Resvg } from '@resvg/resvg-js';
-import { initWasm as resvgInitWasm } from '@resvg/resvg-wasm';
+import { Resvg, initWasm as resvgInitWasm } from '@resvg/resvg-wasm';
 // @ts-ignore - ?url returns a string at runtime
 import resvgWasmUrl from '@resvg/resvg-wasm/index_bg.wasm?url';
 import { env as privateEnv } from '$env/dynamic/private';
