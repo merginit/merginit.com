@@ -25,6 +25,7 @@ export interface Product {
 	url: string;
 	description: string;
 	icon: string;
+	githubUrl?: string;
 }
 
 export interface WebsiteProduct extends Product {
