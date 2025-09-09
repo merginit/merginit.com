@@ -50,6 +50,8 @@ This incident serves as a stark reminder of the fragility of the open-source sof
 
 The September 2025 NPM supply chain attack was a wake-up call for the entire JavaScript community. While the direct financial damage was limited, the incident exposed the significant potential for widespread disruption and underscored the need for greater security awareness and more robust security practices in the world of open-source software.
 
+<div class="hidden-from-reader">
+
 ## Affected Packages
 
 ```text
@@ -81,6 +83,8 @@ wrap-ansi@9.0.1
 proto-tinker-wc@0.1.87
 ...
 ```
+
+</div>
 
 <div id="research-sources">
 
