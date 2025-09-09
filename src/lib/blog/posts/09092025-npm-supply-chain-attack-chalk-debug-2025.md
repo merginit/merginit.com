@@ -52,7 +52,7 @@ The September 2025 NPM supply chain attack was a wake-up call for the entire Jav
 
 ## Affected Packages
 
-```
+```text
 ansi-regex@6.2.1
 ansi-styles@6.2.2
 backslash@0.2.1
@@ -82,6 +82,8 @@ proto-tinker-wc@0.1.87
 ...
 ```
 
+<div id="research-sources">
+
 ## Sources
 
 [NPM Supply Chain Attack: Massive Compromise of debug, chalk, and 16 Other Packages](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOCq_gBgeTXm4ocejkS6IdLYcrLLVoXmKCX0-JcsAgBU3hnVkiexOiHGBOgAooLpVlczUwFzGhyC460TPn4AvAtI4pM4DTHzX8LGsMSdMM4t5Wa5UpbJxGNmSsfoCHWGVKdkzp6rNZMUMoQHS9aKShk2cLy0Rn38c0hmRKd5rLYrKIiWIjBLt3iby7QdMfAHham7sg6sLH8QB5Va9fvwD6MGw8eAs=)  
@@ -89,3 +91,5 @@ proto-tinker-wc@0.1.87
 [Major Supply Chain Attack Compromises Popular npm Packages Including chalk and debug](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhY04lQuKbyyOoZpH08pd5wDPmX1YqTnHHHevTey7T_dyK2vClK3hinXOAyA3pI6zPFEHXiY8MG6JESz1YKrSSRw7KJUtO_BEJeyvdLc_p0kYq-zG-GMzRIxlmKOmkxS5GiHPl7iown63GSyxRn10DHu45qhlDNb6cO1QDuYE-NsLGGMMxrTkVPogL4QiPWJjzCNrEAHttLEKeuybttgNnBAMJju3Zm3jrEWMh8jtB)  
 [Security Alert | chalk, debug and color on npm compromised in new supply chain attack](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcSlOUhsf82wMke0e_TXT1_X8kFXBvEiRtiXgnzXr5zWGBt0MoyxgcPI-GLaEJ-7twAMdS9Z3LgTTKHkx5BBOfQ0Nl4G34-1PWUnXYU1qSNBEi4sw35WavWSUkQiLlVAGvTZQXpswAsaafBTYAyM5C6PXwHLVTvUHf4ympRN7IKfX-Jwu2LueUjhLeA4rBEvSjfFvJJsnuvrnzWHB3)  
 [20 Popular npm Packages With 2 Billion Weekly Downloads Compromised in Supply Chain Attack - The Hacker News](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbgcUtCq5w7PlYrXIyTwlIkAY9rnleymzdvQmnLm3HaUw2VWzBdmLkBuF-v6GvJdA-9IgMZa06a_dkfEdoKWkT_Wc7vn3pZqrY9XOHhQIIC4VeI_7HWa9WLa_E8W7dfN6tlDIKAii6Gf5zusX4xD49fleB2BwHuYK5lSmiJGflIKyWhzoRiY_z)
+
+</div>
