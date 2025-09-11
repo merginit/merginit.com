@@ -15,14 +15,6 @@ tags: ['lifespan', 'time-use', 'global-data', 'productivity', 'wellbeing']
 <script>
   import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
   import LinkPreviewCard from '$lib/components/LinkPreviewCard.svelte';
-  import { onMount } from 'svelte';
-
-  let preview = null;
-  let url = 'https://www.bryanbraun.com/your-life/weeks.html';
-  onMount(async () => {
-    const res = await fetch(`/api/preview?url=${encodeURIComponent(url)}`);
-    preview = await res.json();
-  });
 </script>
 
 # The Scarcity of Time
@@ -31,9 +23,7 @@ tags: ['lifespan', 'time-use', 'global-data', 'productivity', 'wellbeing']
 
 ## You Have Less Than You Think
 
-{#if preview}
-<LinkPreviewCard {preview} />
-{/if}
+<LinkPreviewCard url="https://www.bryanbraun.com/your-life/weeks.html" />
 
 We often live as if time is endless, but crunching the numbers on an average human lifespan paints a sobering picture. Research suggests that after accounting for necessities and obligations, the discretionary time we control is far more limited than most realize, prompting a reevaluation of priorities. This perspective, popularized in discussions by authors like Mark Manson, highlights how quickly years slip away.
 

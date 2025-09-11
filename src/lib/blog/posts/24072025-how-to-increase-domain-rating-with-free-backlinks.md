@@ -23,19 +23,10 @@ Domain Rating is a metric developed by Ahrefs that measures the strength of a we
 **Check your current DR:**
 
 <script lang="ts">
-  import LinkPreviewCard from '$lib/components/LinkPreviewCard.svelte';
-  import { onMount } from 'svelte';
-  let preview = null;
-  let url = 'https://ahrefs.com/website-authority-checker';
-  onMount(async () => {
-    const res = await fetch(`/api/preview?url=${encodeURIComponent(url)}`);
-    preview = await res.json();
-  });
+   import LinkPreviewCard from '$lib/components/LinkPreviewCard.svelte';
 </script>
 
-{#if preview}
-<LinkPreviewCard {preview} />
-{/if}
+<LinkPreviewCard url="https://ahrefs.com/website-authority-checker" />
 
 ## Quick Overview: Top DR Improvement Strategies
 

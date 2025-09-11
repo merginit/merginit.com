@@ -204,18 +204,9 @@ Use it in the browser or integrate it via a free API.
 
 <script lang="ts">
   import LinkPreviewCard from '$lib/components/LinkPreviewCard.svelte';
-  import { onMount } from 'svelte';
-  let preview = null;
-  let url = 'https://sha.merginit.com';
-  onMount(async () => {
-    const res = await fetch(`/api/preview?url=${encodeURIComponent(url)}`);
-    preview = await res.json();
-  });
-  </script>
+</script>
 
-{#if preview}
-<LinkPreviewCard {preview} />
-{/if}
+<LinkPreviewCard url="https://sha.merginit.com" />
 
 ### API Documentation (Free)
 

@@ -56,7 +56,7 @@
 		</span>
 	{/if}
 	<div class="flex-1">
-		<div class={cn('font-semibold text-lg mb-1', textTitleByVariant[variant])}>{title}</div>
+		<div class={cn('font-semibold text-lg mb-1 mt-1.5', textTitleByVariant[variant])}>{title}</div>
 		<div class={cn('text-base', textBodyByVariant[variant])}>
 			<slot />
 		</div>
