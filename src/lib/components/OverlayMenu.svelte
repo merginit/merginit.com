@@ -682,7 +682,7 @@
 		class="container relative w-full min-h-screen origin-right-top [will-change:transform]"
 	>
 		<section
-			class="hero relative w-full h-dvh p-10 flex flex-col justify-end items-start overflow-hidden"
+			class="hero relative w-screen h-dvh p-10 flex flex-col justify-end items-start overflow-hidden"
 		>
 			<div class="hero-img absolute top-0 left-0 w-full h-full -z-10">
 				<img
