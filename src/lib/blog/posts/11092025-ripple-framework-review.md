@@ -32,7 +32,7 @@ The framework introduces several key concepts that differentiate it from existin
 
 The framework implements reactivity through `$` prefixed variables and object properties. This approach mirrors Svelte's reactivity model while extending it to object properties for more complex state scenarios.
 
-```javascript
+```jsx
 let $count = 0;
 let $user = { name: 'John', age: 30 };
 
@@ -45,7 +45,7 @@ $user.age = 31; // also triggers re-render
 
 Components are defined using the `component` keyword with TypeScript interfaces for props. The syntax supports both traditional props and shorthand notation:
 
-```javascript
+```jsx
 export component Button(props: { text: string, onClick: () => void }) {
   <button onClick={props.onClick}>
     {props.text}
@@ -57,7 +57,7 @@ export component Button(props: { text: string, onClick: () => void }) {
 
 Ripple allows standard JavaScript control flow (`if`, `for`, `try`) directly in templates without special syntax or helper functions:
 
-```javascript
+```jsx
 export component TodoList({ todos }: Props) {
   <ul>
     for (const todo of todos) { // no "key" needed!
@@ -78,7 +78,7 @@ This eliminates the need for array methods like `map()` or special directives li
 
 Components support scoped CSS through `<style>` elements. The framework includes Prettier support for `.ripple` modules and provides comprehensive VSCode integration with diagnostics and IntelliSense.
 
-```javascript
+```jsx
 export component Card({ title, content }: Props) {
   <div class="card">
     <h3>{title}</h3>
@@ -109,7 +109,7 @@ Ripple combines familiar concepts from established frameworks while introducing 
 
 <LinkPreviewCard url="https://www.ripplejs.com/playground" />
 
-```javascript
+```jsx
 import { Button } from './Button.ripple';
 
 export component TodoList({ todos, addTodo }: Props) {
