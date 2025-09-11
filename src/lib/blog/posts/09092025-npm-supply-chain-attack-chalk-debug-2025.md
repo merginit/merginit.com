@@ -1,6 +1,6 @@
 ---
-title: "2.5 Billion Downloads Compromised: Inside the NPM 'chalk' & 'debug' Hack"
-description: "A breakdown of the sophisticated supply chain attack that compromised 20+ popular NPM packages, including 'chalk' and 'debug'. See how a simple phishing email put millions of projects at risk and what it means for JavaScript security."
+title: "2.5 Billion Downloads Compromised: Inside the NPM \"chalk\" & \"debug\" Hack"
+description: "A breakdown of the sophisticated supply chain attack that compromised 20+ popular NPM packages, including \"chalk\" and \"debug\". See how a simple phishing email put millions of projects at risk and what it means for JavaScript security."
 date: '2025-09-09'
 categories:
   - cybersecurity
