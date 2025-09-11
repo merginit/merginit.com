@@ -63,7 +63,7 @@
 							<img
 								src="https://ocrmd.com/favicon.png"
 								alt="OCRMD logo"
-								class="w-12 h-12 rounded-lg bg-gray-700 p-2 object-contain border border-gray-600"
+								class="w-16 h-16 rounded-lg bg-gray-700 p-2 object-contain border border-gray-600"
 							/>
 							<div class="flex-1">
 								<h3 class="text-xl font-semibold text-white mb-2">OCRMD</h3>
