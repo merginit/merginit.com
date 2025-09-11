@@ -473,7 +473,7 @@
 
 <div class="font-custom bg-brand-dark text-white leading-normal overflow-hidden">
 	<nav
-		class="fixed top-0 left-0 w-screen p-10 flex justify-between items-center z-[100] text-white"
+		class="fixed top-0 inset-x-0 p-10 flex justify-between items-center z-[100] text-white"
 	>
 		<div class="logo">
 			<a href="/" class="font-semibold text-[1.5rem] flex items-center">
@@ -505,7 +505,7 @@
 
 	<div
 		bind:this={menuOverlayEl}
-		class="menu-overlay fixed top-0 left-0 w-screen h-dvh bg-brand-dark z-50 overflow-hidden"
+		class="menu-overlay fixed inset-0 bg-brand-dark z-50 overflow-hidden"
 		style="clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);"
 	>
 		<div
@@ -682,7 +682,7 @@
 		class="container relative w-full min-h-screen origin-right-top [will-change:transform]"
 	>
 		<section
-			class="hero relative w-screen h-dvh p-10 flex flex-col justify-end items-start overflow-hidden"
+			class="hero relative w-full h-dvh p-10 flex flex-col justify-end items-start overflow-hidden"
 		>
 			<div class="hero-img absolute top-0 left-0 w-full h-full -z-10">
 				<img

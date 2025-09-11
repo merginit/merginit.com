@@ -29,6 +29,10 @@ body {
 	line-height: 1.5;
 }
 
+html {
+	overflow-x: clip;
+}
+
 :root {
 	--color-1: 0 100% 63%;
 	--color-2: 270 100% 63%;
@@ -211,4 +215,14 @@ table td {
 .prose h5 a:hover,
 .prose h6 a:hover {
 	text-decoration: none;
+}
+
+.prose a {
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
+.prose {
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
