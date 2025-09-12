@@ -159,6 +159,17 @@
 						<Icon icon="mdi:github" class="w-6 h-6" />
 					</a>
 				</div>
+				<div class="mt-3 text-center md:text-left">
+					<a
+						href="https://how-well-i-pull.nuxt.dev"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-sm text-neutral-400 hover:text-neutral-200 transition-colors duration-300"
+						aria-label="Open Source Contributions"
+					>
+						Open Source Contributions
+					</a>
+				</div>
 			</div>
 		</div>
 		<div class="border-t border-gray-700/50 pt-6 text-center">
