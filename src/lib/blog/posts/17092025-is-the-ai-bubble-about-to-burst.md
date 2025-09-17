@@ -48,7 +48,7 @@ One of the most touted use cases for AI is in software development, with AI-powe
 Furthermore, there are growing concerns about the quality and security of AI-generated code. Research has shown that code produced by AI assistants can introduce significantly more security vulnerabilities and design flaws than human-written code. For instance, by mid-2025, AI-generated code was linked to over 10,000 new security findings per month in studied repositories, representing a 10x increase in risks. Vulnerabilities include privilege escalation issues (up 322%) and other flaws tied to 38 Common Weakness Enumeration (CWE) categories. This creates a new set of problems for developers, who must now spend more time reviewing and debugging AI-generated code, potentially negating any initial time savings.
 
 <ImageWithCaption 
-  src="/blog/17092025-is-the-ai-bubble-about-to-burst/[4] AI Suppresses Shallow Bugs, Amplifies Deep Flaws.png"
+  src="/blog/17092025-is-the-ai-bubble-about-to-burst/3.png"
   alt="Chart showing how AI coding assistants suppress shallow bugs while amplifying deep security flaws in software development"
   className="my-4 rounded-lg shadow-lg"
 />
@@ -56,7 +56,7 @@ Furthermore, there are growing concerns about the quality and security of AI-gen
 > *Source: Apiiro Ltd.*
 
 <ImageWithCaption 
-  src="/blog/17092025-is-the-ai-bubble-about-to-burst/[3] AI Code Pushed 10,000+ New Issues in a Single Month - a 10x Spike in 6 Months.png"
+  src="/blog/17092025-is-the-ai-bubble-about-to-burst/2.png"
   alt="Graph showing a dramatic 10x spike in security issues from AI-generated code, with over 10,000 new issues in a single month"
   className="my-4 rounded-lg shadow-lg"
 />
@@ -64,7 +64,7 @@ Furthermore, there are growing concerns about the quality and security of AI-gen
 > *Source: Apiiro Ltd.*
 
 <ImageWithCaption 
-  src="/blog/17092025-is-the-ai-bubble-about-to-burst/[2] Risks Surge 10x as PRs Decline.png"
+  src="/blog/17092025-is-the-ai-bubble-about-to-burst/1.png"
   alt="Chart demonstrating the inverse relationship between declining pull requests and surging security risks in AI-assisted development"
   className="my-4 rounded-lg shadow-lg"
 />
