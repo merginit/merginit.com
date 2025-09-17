@@ -12,13 +12,10 @@ tags: ['ai-bubble', 'generative-ai', 'tech-investment', 'roi', 'infrastructure']
 ---
 
 <script>
-  import AudioNativePlayer from '$lib/components/AudioNativePlayer.svelte';
   import ImageWithCaption from '$lib/components/ImageWithCaption.svelte';
 </script>
 
 # The AI Bubble: Are We on the Brink of a Burst?
-
-<AudioNativePlayer />
 
 ### Key Points on the AI Bubble
 - **Private Markets vs. Public Companies**: The AI bubble is more pronounced in private markets, where venture capital fuels high valuations for startups like OpenAI, often based on hype rather than proven revenue. In contrast, large public companies like Google and Meta benefit from diversified revenue streams, making them more resilient to a potential burst.
@@ -114,8 +111,6 @@ While the evidence for an AI bubble is compelling, it's important to note that a
 
 A similar scenario is likely for AI. The current hype may be unsustainable, and a market correction may be inevitable. However, the underlying technology is real and transformative. The companies that survive the correction will be those that can demonstrate real-world value and a clear path to profitability. For now, the message is clear: proceed with caution. The AI revolution is here to stay, but the road ahead may be bumpy, especially as infrastructure limits and ROI realities set in.
 
-<div id="research-sources">
-
 ## Sources
 
 [AI's Trillion-Dollar Shakeout: Navigating a Potential Bubble, Correction, Or Market Reset - Forbes](https://www.forbes.com/sites/markminevich/2025/08/26/ais-1-trillion-shakeout-bubble-correction-or-market-reset)  
@@ -133,5 +128,3 @@ A similar scenario is likely for AI. The current hype may be unsustainable, and 
 [MIT Report Finds 95% of Corporate Generative AI Pilots Are Unsuccessful - Fortune](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo)  
 [Sam Altman's Warning of an AI Bubble and Overvaluation Concerns - Yahoo Finance](https://finance.yahoo.com/news/sam-altman-warns-ai-bubble-163209545.html)  
 [OpenAI's Projected Business Losses of $115 Billion Through 2029 - Reuters](https://www.reuters.com/technology/openai-expects-business-burn-115-billion-through-2029-information-reports-2025-09-06)
-
-</div>
