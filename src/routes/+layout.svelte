@@ -10,10 +10,9 @@
 
 	const pageLinks: LinkItem[] = [
 		{ text: 'Home', href: '/' },
+		{ text: 'About', href: '/about' },
 		{ text: 'Blog', href: '/blog' },
-		{ text: 'Free', href: '/free-products' },
-		{ text: 'Contact', href: '/contact' }
-		/* { text: 'About', href: '/about' } */
+		{ text: 'Free', href: '/free-products' }
 	];
 
 	const legalPageLinks: LinkItem[] = [
@@ -168,6 +167,13 @@
 						aria-label="Open Source Contributions"
 					>
 						Open Source Contributions
+					</a>
+					<a
+						href="/contact"
+						class="ml-4 text-sm text-neutral-400 hover:text-neutral-200 transition-colors duration-300"
+						aria-label="Contact Page"
+					>
+						Contact
 					</a>
 				</div>
 			</div>
