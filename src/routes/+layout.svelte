@@ -11,9 +11,9 @@
 	const pageLinks: LinkItem[] = [
 		{ text: 'Home', href: '/' },
 		{ text: 'Blog', href: '/blog' },
-		{ text: 'Free', href: '/free-products' }
-		/* { text: 'About', href: '/about' },
-		{ text: 'Contact', href: '/contact' } */
+		{ text: 'Free', href: '/free-products' },
+		{ text: 'Contact', href: '/contact' }
+		/* { text: 'About', href: '/about' } */
 	];
 
 	const legalPageLinks: LinkItem[] = [
