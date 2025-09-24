@@ -7,7 +7,7 @@
 	const websiteProducts: WebsiteProduct[] = [
 		{
 			name: 'HTML to Skeleton Converter',
-			url: 'https://skeleton.merginit.com/',
+			url: 'https://skeleton.merginit.com',
 			githubUrl: 'https://github.com/jonasfroeller/html-to-skeleton',
 			description:
 				'Paste Tailwind-styled HTML to generate a React skeleton component with live preview. Output uses Tailwind classes, too.',
@@ -15,10 +15,17 @@
 		},
 		{
 			name: 'Security Header Analyzer',
-			url: 'https://sha.merginit.com/',
+			url: 'https://sha.merginit.com',
 			githubUrl: 'https://github.com/jonasfroeller/header-checker',
 			description: 'Analyze HTTP security headers with scoring.',
 			icon: 'mdi:shield-check'
+		},
+		{
+			name: 'Markdown to Image',
+			url: 'https://md.merginit.com',
+			githubUrl: 'https://github.com/jonasfroeller/markdown2image',
+			description: 'Convert Markdown to clean images (PNG/JPG), PDF, and HTML with live preview, multiple code-block themes, and light/dark modes.',
+			icon: 'mdi:language-markdown'
 		}
 	];
 
