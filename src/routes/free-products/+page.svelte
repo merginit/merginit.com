@@ -26,6 +26,13 @@
 			githubUrl: 'https://github.com/jonasfroeller/markdown2image',
 			description: 'Convert Markdown to clean images (PNG/JPG), PDF, and HTML with live preview, multiple code-block themes, and light/dark modes.',
 			icon: 'mdi:language-markdown'
+		},
+		{
+			name: 'Disposable Email Domains Checker',
+			url: 'https://ded.merginit.com',
+			githubUrl: 'https://github.com/jonasfroeller/disposable-email-domains',
+			description: 'Disposable Email Domains Service Checker.',
+			icon: 'mdi:email-search'
 		}
 	];
 
