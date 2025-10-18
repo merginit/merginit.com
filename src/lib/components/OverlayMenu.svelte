@@ -9,8 +9,6 @@
 	import { isMobile } from '$lib/stores/viewport';
 
 	import 'swiper/css';
-	import 'swiper/css/navigation';
-	import 'swiper/css/pagination';
 
 	// --- STATE ---
 	let isOpen = $state(false);
