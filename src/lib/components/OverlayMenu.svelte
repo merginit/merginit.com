@@ -274,20 +274,10 @@
 			});
 
 			const prevButton = document.createElement('div');
-			prevButton.className =
-				'custom-swiper-button-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/40 backdrop-blur-sm text-white rounded-full flex items-center justify-center cursor-pointer z-10 hover:bg-black/60 transition-all duration-300 border border-white/20 hover:border-white/40';
-			prevButton.style.width = '40px';
-			prevButton.style.height = '40px';
-			prevButton.style.minWidth = '40px';
-			prevButton.style.minHeight = '40px';
+			prevButton.className = 'custom-swiper-button-prev';
 
 			const nextButton = document.createElement('div');
-			nextButton.className =
-				'custom-swiper-button-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/40 backdrop-blur-sm text-white rounded-full flex items-center justify-center cursor-pointer z-10 hover:bg-black/60 transition-all duration-300 border border-white/20 hover:border-white/40';
-			nextButton.style.width = '40px';
-			nextButton.style.height = '40px';
-			nextButton.style.minWidth = '40px';
-			nextButton.style.minHeight = '40px';
+			nextButton.className = 'custom-swiper-button-next';
 
 			const prevIcon = document.createElement('div');
 			prevIcon.innerHTML = `
@@ -332,80 +322,80 @@
 			swiperContainer.appendChild(pagination);
 			menuPreviewImgContainerEl.appendChild(swiperContainer);
 
-			import('swiper').then(({ Swiper }) => {
-				import('swiper/modules').then(({ Navigation, Pagination, EffectFade }) => {
-					const swiper = new Swiper(swiperContainer, {
-						modules: [Navigation, Pagination, EffectFade],
-						effect: 'slide',
-						speed: 400,
-						navigation: {
-							nextEl: '.custom-swiper-button-next',
-							prevEl: '.custom-swiper-button-prev',
-							disabledClass: 'swiper-button-disabled-custom'
-						},
-						pagination: {
-							el: pagination,
-							clickable: true,
-							bulletClass: 'swiper-pagination-bullet',
-							bulletActiveClass: 'swiper-pagination-bullet-active',
-							type: 'bullets',
-							dynamicBullets: false,
-							hideOnClick: false,
-							renderBullet: function (index: number, className: string) {
-								return `<span class="${className}" style="display: inline-block; width: 8px; height: 8px; background: rgba(245, 215, 0, 0.4); border-radius: 50%; margin: 0 6px; cursor: pointer; transition: all 0.3s ease;"></span>`;
-							}
-						},
-						loop: false,
-						allowTouchMove: true,
-						keyboard: true,
-						on: {
-							init: function () {
-								updateButtonStates(this);
-							},
-							slideChange: function () {
-								updateButtonStates(this);
-							}
+			setTimeout(async () => {
+				const { Swiper } = await import('swiper');
+				const { Navigation, Pagination, EffectFade } = await import('swiper/modules');
+				const swiper = new Swiper(swiperContainer, {
+					modules: [Navigation, Pagination, EffectFade],
+					effect: 'slide',
+					speed: 400,
+					navigation: {
+						nextEl: '.custom-swiper-button-next',
+						prevEl: '.custom-swiper-button-prev',
+						disabledClass: 'swiper-button-disabled-custom'
+					},
+					pagination: {
+						el: pagination,
+						clickable: true,
+						bulletClass: 'swiper-pagination-bullet',
+						bulletActiveClass: 'swiper-pagination-bullet-active',
+						type: 'bullets',
+						dynamicBullets: false,
+						hideOnClick: false,
+						renderBullet: function (index: number, className: string) {
+							return `<span class="${className}" style="display: inline-block; width: 8px; height: 8px; background: rgba(245, 215, 0, 0.4); border-radius: 50%; margin: 0 6px; cursor: pointer; transition: all 0.3s ease;"></span>`;
 						}
-					});
-
-					function updateButtonStates(swiperInstance: any) {
-						const isBeginning = swiperInstance.isBeginning;
-						const isEnd = swiperInstance.isEnd;
-
-						if (isBeginning) {
-							prevButton.style.opacity = '0.3';
-							prevButton.style.cursor = 'not-allowed';
-							prevButton.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
-							prevButton.style.pointerEvents = 'none';
-						} else {
-							prevButton.style.opacity = '1';
-							prevButton.style.cursor = 'pointer';
-							prevButton.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
-							prevButton.style.pointerEvents = 'auto';
-						}
-
-						if (isEnd) {
-							nextButton.style.opacity = '0.3';
-							nextButton.style.cursor = 'not-allowed';
-							nextButton.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
-							nextButton.style.pointerEvents = 'none';
-						} else {
-							nextButton.style.opacity = '1';
-							nextButton.style.cursor = 'pointer';
-							nextButton.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
-							nextButton.style.pointerEvents = 'auto';
+					},
+					loop: false,
+					allowTouchMove: true,
+					keyboard: true,
+					on: {
+						init: function () {
+							updateButtonStates(this);
+						},
+						slideChange: function () {
+							updateButtonStates(this);
 						}
 					}
-
-					gsap.to(swiperContainer, {
-						opacity: 1,
-						scale: 1,
-						rotation: 0,
-						duration: 0.75,
-						ease: 'power2.out'
-					});
 				});
-			});
+
+				function updateButtonStates(swiperInstance: any) {
+					const isBeginning = swiperInstance.isBeginning;
+					const isEnd = swiperInstance.isEnd;
+
+					if (isBeginning) {
+						prevButton.style.opacity = '0.3';
+						prevButton.style.cursor = 'not-allowed';
+						prevButton.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+						prevButton.style.pointerEvents = 'none';
+					} else {
+						prevButton.style.opacity = '1';
+						prevButton.style.cursor = 'pointer';
+						prevButton.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
+						prevButton.style.pointerEvents = 'auto';
+					}
+
+					if (isEnd) {
+						nextButton.style.opacity = '0.3';
+						nextButton.style.cursor = 'not-allowed';
+						nextButton.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+						nextButton.style.pointerEvents = 'none';
+					} else {
+						nextButton.style.opacity = '1';
+						nextButton.style.cursor = 'pointer';
+						nextButton.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
+						nextButton.style.pointerEvents = 'auto';
+					}
+				}
+
+				gsap.to(swiperContainer, {
+					opacity: 1,
+					scale: 1,
+					rotation: 0,
+					duration: 0.75,
+					ease: 'power2.out'
+				});
+			}, 100);
 		} else {
 			let imgSrc = linkItem.img;
 			if (!imgSrc) return;
@@ -472,9 +462,7 @@
 </script>
 
 <div class="font-custom bg-brand-dark text-white leading-normal overflow-hidden">
-	<nav
-		class="fixed top-0 inset-x-0 p-10 flex justify-between items-center z-[100] text-white"
-	>
+	<nav class="fixed top-0 inset-x-0 p-10 flex justify-between items-center z-[100] text-white">
 		<div class="logo">
 			<a href="/" class="font-semibold text-[1.5rem] flex items-center">
 				<img src="/favicon.png" alt="MerginIT Favicon" class="h-[calc(1.5rem*1.5)] mr-2" />
