@@ -722,17 +722,17 @@
 		color: inherit;
 	}
 
-	.swiper-button-next,
-	.swiper-button-prev {
+	:global(.swiper-button-next),
+	:global(.swiper-button-prev) {
 		display: none !important;
 	}
 
-	.custom-swiper-button-prev,
-	.custom-swiper-button-next {
+	:global(.custom-swiper-button-prev),
+	:global(.custom-swiper-button-next) {
 		display: flex !important;
 	}
 
-	.swiper-pagination {
+	:global(.swiper-pagination) {
 		position: absolute !important;
 		bottom: 16px !important;
 		left: 50% !important;
@@ -744,7 +744,7 @@
 		align-items: center !important;
 	}
 
-	.swiper-pagination-bullet {
+	:global(.swiper-pagination-bullet) {
 		background: rgba(245, 215, 0, 0.4) !important;
 		opacity: 1 !important;
 		width: 8px !important;
@@ -753,12 +753,12 @@
 		transition: all 0.3s ease !important;
 	}
 
-	.swiper-pagination-bullet-active {
+	:global(.swiper-pagination-bullet-active) {
 		background: #f5d700 !important;
 		transform: scale(1.25) !important;
 	}
 
-	.swiper-pagination-bullet:hover {
+	:global(.swiper-pagination-bullet:hover) {
 		background: rgba(245, 215, 0, 0.7) !important;
 	}
 </style>
