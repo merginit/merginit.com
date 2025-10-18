@@ -721,44 +721,4 @@
 		border: none;
 		color: inherit;
 	}
-
-	:global(.swiper-button-next),
-	:global(.swiper-button-prev) {
-		display: none !important;
-	}
-
-	:global(.custom-swiper-button-prev),
-	:global(.custom-swiper-button-next) {
-		display: flex !important;
-	}
-
-	:global(.swiper-pagination) {
-		position: absolute !important;
-		bottom: 16px !important;
-		left: 50% !important;
-		transform: translateX(-50%) !important;
-		width: auto !important;
-		text-align: center !important;
-		display: flex !important;
-		justify-content: center !important;
-		align-items: center !important;
-	}
-
-	:global(.swiper-pagination-bullet) {
-		background: rgba(245, 215, 0, 0.4) !important;
-		opacity: 1 !important;
-		width: 8px !important;
-		height: 8px !important;
-		margin: 0 6px !important;
-		transition: all 0.3s ease !important;
-	}
-
-	:global(.swiper-pagination-bullet-active) {
-		background: #f5d700 !important;
-		transform: scale(1.25) !important;
-	}
-
-	:global(.swiper-pagination-bullet:hover) {
-		background: rgba(245, 215, 0, 0.7) !important;
-	}
 </style>
