@@ -55,6 +55,12 @@
 			url: 'https://github.com/jonasfroeller/youtube-subscriptions-exporter-extension',
 			description: 'Export YouTube subscriptions easily',
 			icon: 'mdi:youtube'
+		},
+		{
+			name: 'LinkedIn Notification Filter',
+			url: 'https://github.com/jonasfroeller/linkedin-notification-filter-extension',
+			description: 'Hide LinkedIn notifications you do not want to see. Toggle categories and matching notifications are hidden in real time.',
+			icon: 'mdi:linkedin'
 		}
 	];
 
