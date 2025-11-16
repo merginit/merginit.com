@@ -36,7 +36,9 @@
 		await Promise.all([
 			import('prismjs/components/prism-bash'),
 			import('prismjs/components/prism-batch'),
-			import('prismjs/components/prism-powershell').catch(() => undefined)
+			import('prismjs/components/prism-powershell'),
+			import('prismjs/components/prism-json'),
+			import('prismjs/components/prism-yaml')
 		]);
 	}
 

@@ -12,6 +12,47 @@ readingTime: '2 min'
 tags: ['TOON', 'JSON', 'Serialization', 'LLM Prompts', 'AI Efficiency']
 ---
 
+<script>
+  import CodeTabsSelector from '$lib/components/CodeTabsSelector.svelte';
+
+  const toonComparisonTabs = [
+    {
+      id: 'json',
+      label: 'JSON',
+      icon: 'mdi:code-json',
+      language: 'json',
+      code: String.raw`{
+  "users": [
+    { "id": 1, "name": "Alice", "role": "admin" },
+    { "id": 2, "name": "Bob", "role": "user" }
+  ]
+}`
+    },
+    {
+      id: 'yaml',
+      label: 'YAML',
+      icon: 'vscode-icons:file-type-yaml-official',
+      language: 'yaml',
+      code: String.raw`users:
+  - id: 1
+    name: Alice
+    role: admin
+  - id: 2
+    name: Bob
+    role: user`
+    },
+    {
+      id: 'toon',
+      label: 'TOON',
+      icon: 'mdi:table',
+      language: 'text',
+      code: String.raw`users[2]{id,name,role}:
+  1,Alice,admin
+  2,Bob,user`
+    }
+  ];
+</script>
+
 # TOON: Efficient Data Format for LLMs
 
 TOON (Token-Oriented Object Notation) is a compact, human-readable serialization of JSON for LLM prompts. It minimizes tokens while maintaining structure.
@@ -29,11 +70,9 @@ TOON (Token-Oriented Object Notation) is a compact, human-readable serialization
 - Objects: `key: value` (indented nesting).
 - Arrays: `[N]` for length, `{fields}` for headers.
 - Values: Unquoted unless needed.
-- Example:
-```
-users[2]{id,name,role}: 1,Alice,admin
-2,Bob,user
-```
+- Example comparison:
+
+<CodeTabsSelector tabs={toonComparisonTabs} className="my-6" />
 
 ## Comparisons
 
