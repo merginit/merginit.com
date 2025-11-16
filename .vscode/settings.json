@@ -1,5 +1,8 @@
 {
-	"cSpell.words": ["mergin"],
+	"cSpell.words": [
+		"Fröller",
+		"mergin"
+	],
 	"files.associations": {
 		"*.svx": "svelte"
 	}
