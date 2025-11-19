@@ -38,7 +38,11 @@
 			import('prismjs/components/prism-batch'),
 			import('prismjs/components/prism-powershell'),
 			import('prismjs/components/prism-json'),
-			import('prismjs/components/prism-yaml')
+			import('prismjs/components/prism-yaml'),
+			import('prismjs/components/prism-javascript'),
+			import('prismjs/components/prism-typescript'),
+			import('prismjs/components/prism-jsx'),
+			import('prismjs/components/prism-tsx')
 		]);
 	}
 

@@ -117,21 +117,26 @@
 	});
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window onkeydown={handleKeydown} />
 
 {#if lightboxOpen}
 	<div
 		class="lightbox-backdrop fixed inset-0 bg-black/90 z-50 flex items-center justify-center backdrop-blur-sm"
-		on:click={close}
+		onclick={close}
+		onkeydown={(e) => (e.key === 'Enter' || e.key === ' ' || e.code === 'Space') && close()}
 		role="dialog"
 		aria-modal="true"
+		tabindex="0"
 	>
 		<div
 			class="lightbox-container relative w-full h-full max-w-7xl max-h-[90vh] p-4 perspective-1000"
-			on:click|stopPropagation
+			onclick={(e) => e.stopPropagation()}
+			onkeydown={(e) => e.stopPropagation()}
+			role="presentation"
+			tabindex="-1"
 		>
 			<button
-				on:click={close}
+				onclick={close}
 				class="absolute top-4 right-4 z-10 text-white text-4xl hover:text-gray-300 transition-all duration-200 hover:scale-110 hover:rotate-90 bg-black/20 rounded-full p-2 backdrop-blur-sm"
 				aria-label="Close lightbox"
 			>

@@ -4,6 +4,8 @@
 	let loading = $state(true);
 	let container: HTMLDivElement | undefined;
 
+	let { children } = $props();
+
 	$effect(() => {
 		if (!browser || !container) return;
 
@@ -37,11 +39,11 @@
 
 <div class="async-iframe__wrapper">
 	<div class="async-iframe__loader-container" class:async-iframe__hidden={!loading}>
-		<div class="async-iframe__loader" />
+		<div class="async-iframe__loader"></div>
 	</div>
 
 	<div bind:this={container} class="async-iframe__container">
-		<slot />
+		{@render children()}
 	</div>
 </div>
 

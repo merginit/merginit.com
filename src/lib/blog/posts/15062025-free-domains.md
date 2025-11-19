@@ -42,7 +42,7 @@ tags:
 > [View on scribehow.com](https://scribehow.com/shared/Registering_a_Domain_and_Setting_Up_DNS_Management__NKD-wXRdQBuPTtBHPiKunw)
 
 <AsyncIframe>
-    <iframe src="https://scribehow.com/embed/Registering_a_Domain_and_Setting_Up_DNS_Management__NKD-wXRdQBuPTtBHPiKunw" allow="fullscreen"></iframe>
+    <iframe title="Registering a Domain and Setting Up DNS Management" src="https://scribehow.com/embed/Registering_a_Domain_and_Setting_Up_DNS_Management__NKD-wXRdQBuPTtBHPiKunw" allow="fullscreen"></iframe>
 </AsyncIframe>
 
 ## Good Alternatives

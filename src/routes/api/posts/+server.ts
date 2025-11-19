@@ -1,10 +1,14 @@
-import { json } from '@sveltejs/kit';
+import { json, type RequestEvent } from '@sveltejs/kit';
 import type { Post, Categories } from '$lib/types';
 
 async function getPosts() {
 	let posts: (Post & { content: string })[] = [];
 
-	const paths = import.meta.glob('/src/lib/blog/posts/*.md', { eager: true, as: 'raw' });
+	const paths = import.meta.glob('/src/lib/blog/posts/*.md', {
+		eager: true,
+		query: '?raw',
+		import: 'default'
+	});
 	const pathsWithMetadata = import.meta.glob('/src/lib/blog/posts/*.md', { eager: true });
 
 	for (const path in pathsWithMetadata) {
@@ -153,7 +157,7 @@ function filterPosts(
 	});
 }
 
-export async function GET({ url }) {
+export async function GET({ url }: RequestEvent) {
 	const posts = await getPosts();
 
 	// Extract filter parameters

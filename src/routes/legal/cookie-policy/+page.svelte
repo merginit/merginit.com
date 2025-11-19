@@ -326,13 +326,6 @@
 					browser to browser, you should visit your browser's help menu for more information. The
 					following is information about how to manage cookies on the most popular browsers:
 				</span>
-				<span>
-					<a
-						href="https://support.google.com/chrome/answer/95647#zippy=%2Callow-or-block-cookies"
-						rel="noopener noreferrer"
-						target="_blank"
-					></a>
-				</span>
 			</div>
 			<ul>
 				<li>
@@ -407,9 +400,6 @@
 					In addition, most advertising networks offer you a way to opt out of targeted advertising.
 					If you would like to find out more information, please visit:
 				</span>
-				<span>
-					<a href="http://www.aboutads.info/choices/" rel="noopener noreferrer" target="_blank"></a>
-				</span>
 			</div>
 			<ul>
 				<li>
@@ -418,19 +408,12 @@
 							<span>Digital Advertising Alliance</span>
 						</a>
 					</span>
-					<span>
-						<a href="https://youradchoices.ca/" rel="noopener noreferrer" target="_blank"></a>
-					</span>
 				</li>
 				<li>
 					<span>
 						<a href="https://youradchoices.ca/" rel="noopener noreferrer" target="_blank">
 							<span>Digital Advertising Alliance of Canada</span>
 						</a>
-					</span>
-					<span>
-						<a href="http://www.youronlinechoices.com/" rel="noopener noreferrer" target="_blank"
-						></a>
 					</span>
 				</li>
 				<li>
