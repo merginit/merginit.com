@@ -212,6 +212,12 @@
 		}
 	}
 
+	function handleOverlayKeydown(event: KeyboardEvent) {
+		if (event.key === 'Enter' || event.key === ' ' || event.code === 'Space') {
+			handleOverlayClick();
+		}
+	}
+
 	function handleKeydown(event: KeyboardEvent) {
 		if (event.key === 'Escape' && !isAnimating) {
 			if (onCloseRequest) {
@@ -230,6 +236,7 @@
 	bind:this={overlay}
 	class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center"
 	onclick={handleOverlayClick}
+	onkeydown={handleOverlayKeydown}
 	role="button"
 	tabindex="0"
 >
@@ -238,8 +245,10 @@
 		bind:this={videoContainer}
 		class="absolute bg-black overflow-hidden shadow-2xl"
 		onclick={(e) => e.stopPropagation()}
+		onkeydown={(e) => e.stopPropagation()}
 		role="dialog"
-		tabindex="-1"
+		aria-modal="true"
+		tabindex="0"
 	>
 		<!-- Video iframe -->
 		<iframe
