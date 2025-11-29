@@ -28,6 +28,8 @@ export interface Product {
 	githubUrl?: string;
 	downloads?: number;
 	npmPackage?: string;
+	windowsDownloadUrl?: string;
+	macDownloadUrl?: string;
 }
 
 export interface WebsiteProduct extends Product {
