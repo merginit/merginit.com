@@ -42,8 +42,8 @@
 			url: 'https://jonasfroeller.itch.io/pixtotext',
 			description: 'Turn screenshots into editable text in seconds. Fully local, no login, no data leaves your PC. Supports Tesseract, PaddleOCR, and Native Windows/macOS OCR.',
 			icon: 'mdi:monitor-screenshot',
-			windowsDownloadUrl: '/pixtotext/pixtotext_0.1.33_x64-setup.exe',
-			macDownloadUrl: '/pixtotext/pixtotext_0.1.33_aarch64.dmg'
+			windowsDownloadUrl: 'https://mega.nz/file/QRsCzaSC#az_XFpnQR-lI0bPHBpjAb0Cb2g4KaEZRBoNe0Kda7a0',
+			macDownloadUrl: 'https://mega.nz/file/Fc9BSTIQ#A5M1-zSwH9HNh5H1CHyJLKrO071PLaXOGhLOTd874MU'
 		}
 	];
 
