@@ -51,7 +51,7 @@
 
 	$: title = page.data.meta?.title ?? 'MerginIT e.U.';
 	$: description = page.data.meta?.description ?? 'Professional software development and SaaS solutions';
-	$: ogImage = `/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(description)}&url=${encodeURIComponent(page.url.href)}`;
+	$: ogImage = `${page.url.origin}/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(description)}&url=${encodeURIComponent(page.url.href)}`;
 </script>
 
 <svelte:head>
