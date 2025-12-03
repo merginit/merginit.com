@@ -8,11 +8,6 @@
 		name="description"
 		content="Cookie Policy for MerginIT e.U. Learn how we use cookies and similar technologies on our website, how to control them, and your privacy rights."
 	/>
-	<meta property="og:title" content="Cookie Policy - MerginIT e.U." />
-	<meta
-		property="og:description"
-		content="Cookie Policy for MerginIT e.U. Learn how we use cookies and similar technologies on our website, how to control them, and your privacy rights."
-	/>
 </svelte:head>
 
 <main class="bg-white">

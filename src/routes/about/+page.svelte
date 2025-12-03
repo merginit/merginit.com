@@ -10,11 +10,6 @@
 		name="description"
 		content="Learn about MerginIT e.U. and founder Jonas Fröller. We specialize in professional software development, SaaS solutions, and innovative web technologies."
 	/>
-	<meta property="og:title" content="About - MerginIT e.U." />
-	<meta
-		property="og:description"
-		content="Learn about MerginIT e.U. and founder Jonas Fröller. We specialize in professional software development, SaaS solutions, and innovative web technologies."
-	/>
 </svelte:head>
 
 <div class="min-h-screen bg-brand-dark px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 pt-32 pb-16">

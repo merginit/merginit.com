@@ -23,8 +23,8 @@
 			title = page.data.meta.title;
 			date = page.data.meta.date;
 			updateDate = page.data.meta.updateDate;
-			author = page.data.meta.author;
-			description = page.data.meta.description;
+			author = page.data.meta.author || '';
+			description = page.data.meta.description || '';
 			readingTime = page.data.meta.readingTime;
 			tags = page.data.meta.tags;
 			categories = page.data.meta.categories;

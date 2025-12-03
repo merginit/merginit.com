@@ -10,11 +10,6 @@
 		name="description"
 		content="Get in touch with MerginIT e.U. for professional software development and SaaS solutions. Contact Jonas Fröller for your next project."
 	/>
-	<meta property="og:title" content="Contact - MerginIT e.U." />
-	<meta
-		property="og:description"
-		content="Get in touch with MerginIT e.U. for professional software development and SaaS solutions. Contact Jonas Fröller for your next project."
-	/>
 </svelte:head>
 
 <div class="min-h-screen bg-brand-dark px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 pt-32 pb-16">

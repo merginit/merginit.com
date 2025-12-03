@@ -139,17 +139,6 @@
 		name="description"
 		content="Discover our free websites, desktop apps, browser extensions, and npm packages: HTML to Skeleton Converter, PixToText, Security Header Analyzer, Element Snap, Cookiiies, and more."
 	/>
-	<meta property="og:title" content="Free Products - MerginIT e.U." />
-	<meta
-		property="og:description"
-		content="Discover our free websites, desktop apps, browser extensions, and npm packages: HTML to Skeleton Converter, PixToText, Security Header Analyzer, Element Snap, Cookiiies, and more."
-	/>
-	<meta property="og:url" content="https://merginit.com/free-products" />
-	<meta name="twitter:title" content="Free Products - MerginIT e.U." />
-	<meta
-		name="twitter:description"
-		content="Discover our free websites, desktop apps, browser extensions, and npm packages: HTML to Skeleton Converter, PixToText, Security Header Analyzer, Element Snap, Cookiiies, and more."
-	/>
 </svelte:head>
 
 <div class="min-h-screen bg-brand-dark px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 py-20">

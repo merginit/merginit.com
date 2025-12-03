@@ -8,11 +8,6 @@
 		name="description"
 		content="Read MerginIT e.U.'s comprehensive privacy policy. Learn how we collect, use, and protect your personal data."
 	/>
-	<meta property="og:title" content="Privacy Policy - MerginIT e.U." />
-	<meta
-		property="og:description"
-		content="Read MerginIT e.U.'s comprehensive privacy policy. Learn how we collect, use, and protect your personal data."
-	/>
 </svelte:head>
 
 <main class="bg-white">

@@ -44,11 +44,6 @@
 		name="description"
 		content="Filterable regex library for MerginIT e.U. including common regex patterns and VS Code replacements."
 	/>
-	<meta property="og:title" content="Regex Library - MerginIT e.U." />
-	<meta
-		property="og:description"
-		content="Filterable regex library for MerginIT e.U. including common regex patterns and VS Code replacements."
-	/>
 </svelte:head>
 
 <div class="container mx-auto px-4 py-12 min-h-screen">
