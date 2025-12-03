@@ -232,52 +232,60 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform }) 
   });
   const element = toReactNode(decodeHtmlEntities(`${body}${head}`));
 
-  const fontAbsUrl = new URL(localFontUrl, url.origin).toString();
-  const fontData = await fetch(fontAbsUrl).then((r) => r.arrayBuffer());
-  const fonts: SatoriOptions['fonts'] = [
-    { name: 'Noto Sans', data: fontData, style: 'normal', weight: 900 }
-  ];
-
-  const svg = await satori(element as any, {
-    width: size.width,
-    height: size.height,
-    fonts
-  });
-
   try {
-    await ensureResvgWasm(url.origin);
-    const resvg = new Resvg(svg, {
-      fitTo: { mode: 'width', value: size.width },
-      background: 'transparent'
+    const fontAbsUrl = new URL(localFontUrl, url.origin).toString();
+    const fontData = await fetch(fontAbsUrl).then((r) => {
+      if (!r.ok) throw new Error(`Failed to load font: ${r.status}`);
+      return r.arrayBuffer();
     });
-    const png = resvg.render().asPng();
+    const fonts: SatoriOptions['fonts'] = [
+      { name: 'Noto Sans', data: fontData, style: 'normal', weight: 900 }
+    ];
 
-    const response = new Response(png, {
-      headers: {
-        'content-type': 'image/png',
-        'cache-control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=2592000',
-        'access-control-allow-origin': '*',
-        'access-control-allow-methods': 'GET, OPTIONS'
-      }
+    const svg = await satori(element as any, {
+      width: size.width,
+      height: size.height,
+      fonts
     });
-    if (!disableCache && cfCaches?.default) {
-      await cfCaches.default.put(stableOgCacheKey(url), response.clone());
-    }
-    return response;
-  } catch (e) {
-    console.error('Resvg rendering failed:', e);
-    // Fallback to SVG if PNG rendering fails for any reason
-    const response = new Response(svg, {
-      headers: {
-        'content-type': 'image/svg+xml',
-        'cache-control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=2592000',
-        'access-control-allow-origin': '*',
-        'access-control-allow-methods': 'GET, OPTIONS'
+
+    try {
+      await ensureResvgWasm(url.origin);
+      const resvg = new Resvg(svg, {
+        fitTo: { mode: 'width', value: size.width },
+        background: 'transparent'
+      });
+      const png = resvg.render().asPng();
+
+      const response = new Response(png, {
+        headers: {
+          'content-type': 'image/png',
+          'cache-control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=2592000',
+          'access-control-allow-origin': '*',
+          'access-control-allow-methods': 'GET, OPTIONS'
+        }
+      });
+      if (!disableCache && cfCaches?.default) {
+        await cfCaches.default.put(stableOgCacheKey(url), response.clone());
       }
-    });
-    if (!disableCache && cfCaches?.default) {
-      await cfCaches.default.put(stableOgCacheKey(url), response.clone());
+      return response;
+    } catch (e) {
+      console.error('Resvg rendering failed:', e);
+      // Fallback to SVG if PNG rendering fails for any reason
+      const response = new Response(svg, {
+        headers: {
+          'content-type': 'image/svg+xml',
+          'cache-control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=2592000',
+          'access-control-allow-origin': '*',
+          'access-control-allow-methods': 'GET, OPTIONS'
+        }
+      });
+      if (!disableCache && cfCaches?.default) {
+        await cfCaches.default.put(stableOgCacheKey(url), response.clone());
+      }
+      return response;
     }
-    return response;
+  } catch (e: any) {
+    console.error('OG Generation failed:', e);
+    return new Response(`Failed to generate OG image: ${e.message}`, { status: 500 });
   }
 };
