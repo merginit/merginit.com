@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Component } from 'svelte';
+	import { page } from '$app/state';
 
 	interface MetaData {
 		title: string;
@@ -37,6 +38,14 @@
 		<meta
 			name="twitter:description"
 			content={data.meta.description ?? `${data.meta.title} - MerginIT Blog Post`}
+		/>
+		<meta
+			property="og:image"
+			content={`/og?title=${encodeURIComponent(data.meta.title)}&subtitle=${encodeURIComponent(data.meta.description ?? '')}&url=${encodeURIComponent(page.url.href)}`}
+		/>
+		<meta
+			name="twitter:image"
+			content={`/og?title=${encodeURIComponent(data.meta.title)}&subtitle=${encodeURIComponent(data.meta.description ?? '')}&url=${encodeURIComponent(page.url.href)}`}
 		/>
 	{/if}
 </svelte:head>

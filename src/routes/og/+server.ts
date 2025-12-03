@@ -13,9 +13,12 @@ import localFontUrl from '$lib/fonts/Noto_Sans/static/NotoSans_Condensed-Black.t
 const size = { width: 1200, height: 630 } as const;
 
 let resvgWasmReady: Promise<void> | undefined;
-async function ensureResvgWasm(): Promise<void> {
+async function ensureResvgWasm(origin: string): Promise<void> {
   if (!resvgWasmReady) {
-    resvgWasmReady = resvgInitWasm(fetch(resvgWasmUrl as string));
+    const wasmUrl = (resvgWasmUrl as string).startsWith('http')
+      ? resvgWasmUrl
+      : new URL(resvgWasmUrl as string, origin).toString();
+    resvgWasmReady = resvgInitWasm(fetch(wasmUrl as string));
   }
   return resvgWasmReady;
 }
@@ -242,7 +245,7 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform }) 
   });
 
   try {
-    await ensureResvgWasm();
+    await ensureResvgWasm(url.origin);
     const resvg = new Resvg(svg, {
       fitTo: { mode: 'width', value: size.width },
       background: 'transparent'
@@ -261,7 +264,8 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform }) 
       await cfCaches.default.put(stableOgCacheKey(url), response.clone());
     }
     return response;
-  } catch {
+  } catch (e) {
+    console.error('Resvg rendering failed:', e);
     // Fallback to SVG if PNG rendering fails for any reason
     const response = new Response(svg, {
       headers: {
