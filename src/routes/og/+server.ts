@@ -147,21 +147,46 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
 
   async function getPreviewDataUrl(target: string, plat?: Readonly<Record<string, unknown>>): Promise<string | undefined> {
     const withFlag = buildAbsoluteTarget(target);
-    try {
-      const cfEnv = (plat as Readonly<Record<string, unknown>>)?.env as Readonly<Record<string, unknown>> | undefined;
-      const key = (cfEnv?.SCREEN_SHOT_MACHINE_API_KEY as string | undefined) || privateEnv?.SCREEN_SHOT_MACHINE_API_KEY || (globalThis as unknown as { process?: { env?: Record<string, string | undefined> } }).process?.env?.SCREEN_SHOT_MACHINE_API_KEY;
-      if (key) {
+    const cfEnv = (plat as Readonly<Record<string, unknown>>)?.env as Readonly<Record<string, unknown>> | undefined;
+    
+    const getEnvKey = (name: string): string | undefined => 
+      (cfEnv?.[name] as string | undefined) || 
+      (privateEnv as Record<string, string | undefined>)?.[name] || 
+      (globalThis as unknown as { process?: { env?: Record<string, string | undefined> } }).process?.env?.[name];
+
+    // Try APIFlash first
+    const apiFlashKey = getEnvKey('APIFLASH_API_KEY');
+    if (apiFlashKey) {
+      try {
+        const api = new URL('https://api.apiflash.com/v1/urltoimage');
+        api.searchParams.set('access_key', apiFlashKey);
+        api.searchParams.set('url', withFlag);
+        api.searchParams.set('width', '1200');
+        api.searchParams.set('height', '630');
+        api.searchParams.set('wait_until', 'page_loaded');
+        api.searchParams.set('delay', '1');
+        api.searchParams.set('format', 'png');
+        return await toDataUrl(api.toString());
+      } catch (e) {
+        console.error('APIFlash screenshot failed:', e);
+      }
+    }
+
+    // Fallback to ScreenshotMachine
+    const ssmKey = getEnvKey('SCREEN_SHOT_MACHINE_API_KEY');
+    if (ssmKey) {
+      try {
         const api = new URL('https://api.screenshotmachine.com');
-        api.searchParams.set('key', key);
+        api.searchParams.set('key', ssmKey);
         api.searchParams.set('url', withFlag);
         api.searchParams.set('dimension', '1200x630');
         api.searchParams.set('format', 'png');
         api.searchParams.set('cacheLimit', '0');
         api.searchParams.set('delay', '800');
         return await toDataUrl(api.toString());
+      } catch (e) {
+        console.error('ScreenshotMachine screenshot failed:', e);
       }
-    } catch {
-      return undefined;
     }
 
     return undefined;
