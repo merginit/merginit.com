@@ -1,47 +1,39 @@
-import satori, { init as initSatori } from 'satori';
-import type { SatoriOptions } from 'satori';
-import { Resvg, initWasm as initResvg } from '@resvg/resvg-wasm';
-import initYoga from 'yoga-wasm-web';
-import RESVG_WASM from '@resvg/resvg-wasm/index_bg.wasm?url';
-// @ts-ignore - ?url returns a string at runtime
-import YOGA_WASM from 'yoga-wasm-web/dist/yoga.wasm?url';
+import { ImageResponse } from 'workers-og';
 import { env as privateEnv } from '$env/dynamic/private';
-import { html as toReactNode } from 'satori-html';
 import { decodeHtmlEntities } from '$lib/utils';
 import OgCard from '$lib/og.svelte';
 import { render as ssrRender } from 'svelte/server';
 import localFontUrl from '$lib/fonts/Noto_Sans/static/NotoSans_Condensed-Black.ttf?url';
 
 const size = { width: 1200, height: 630 } as const;
-let initialized = false;
+
+type CfPage = {
+  setViewportSize(opts: { width: number; height: number }): Promise<void>;
+  addStyleTag(opts: { content: string }): Promise<void>;
+  goto(url: string, opts: { waitUntil: 'networkidle' }): Promise<void>;
+  waitForTimeout(ms: number): Promise<void>;
+  screenshot(opts: { type: 'png' }): Promise<Uint8Array | ArrayBuffer>;
+};
+
+type CfBrowser = {
+  newPage(): Promise<CfPage>;
+  close(): Promise<void>;
+};
 
 export const OPTIONS: import('./$types').RequestHandler = async ({ request }) => {
-  const acrh = request.headers.get('access-control-request-headers') || '*';
+  const acrHeaders = request.headers.get('access-control-request-headers') || '*';
   return new Response(null, {
     status: 204,
     headers: {
       'access-control-allow-origin': '*',
       'access-control-allow-methods': 'GET, OPTIONS',
-      'access-control-allow-headers': acrh,
+      'access-control-allow-headers': acrHeaders,
       'access-control-max-age': '86400'
     }
   });
 };
 
 export const GET: import('./$types').RequestHandler = async ({ url, platform, fetch }) => {
-  const { default: resvgwasm } = await import(/* @vite-ignore */ `${RESVG_WASM}?module`);
-  const { default: yogawasm } = await import(/* @vite-ignore */ `${YOGA_WASM}?module`);
-
-  try {
-    if (!initialized) {
-      await initResvg(resvgwasm);
-      await initSatori(await initYoga(yogawasm) as any);
-      initialized = true;
-    }
-  } catch (e) {
-    initialized = true;
-  }
-
   function isAllowedHostname(hostname: string): boolean {
     const hn = hostname.toLowerCase();
     if (hn === 'localhost' || hn === '127.0.0.1' || hn === '::1') return true;
@@ -54,11 +46,16 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
     clean.searchParams.delete('no_cache');
     const nested = clean.searchParams.get('url');
     if (nested) {
+      let nestedParsed: URL | undefined;
       try {
-        const nestedUrl = new URL(nested, u.origin);
-        nestedUrl.searchParams.delete('cb');
-        clean.searchParams.set('url', nestedUrl.toString());
-      } catch { }
+        nestedParsed = new URL(nested, u.origin);
+      } catch {
+        nestedParsed = undefined;
+      }
+      if (nestedParsed) {
+        nestedParsed.searchParams.delete('cb');
+        clean.searchParams.set('url', nestedParsed.toString());
+      }
     }
     const sorted = new URLSearchParams();
     Array.from(clean.searchParams.entries())
@@ -69,9 +66,9 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
   }
 
   const disableCache = url.searchParams.get('no_cache') === '1';
-  const cfCaches: any = (globalThis as any).caches;
-  if (!disableCache && cfCaches?.default) {
-    const match = await cfCaches.default.match(stableOgCacheKey(url));
+  const cacheDefault = (globalThis as unknown as { caches?: { default?: Cache } }).caches?.default;
+  if (!disableCache && cacheDefault) {
+    const match = await cacheDefault.match(stableOgCacheKey(url));
     if (match) return match;
   }
 
@@ -108,19 +105,18 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
     }
   }
 
-  function arrayBufferToBase64(arrayBuf: ArrayBuffer): string {
+  function arrayBufferToBase64(arrayBuffer: ArrayBuffer): string {
     if (typeof Buffer !== 'undefined') {
-      return Buffer.from(arrayBuf).toString('base64');
+      return Buffer.from(arrayBuffer).toString('base64');
     }
+    const bytes = new Uint8Array(arrayBuffer);
     let binary = '';
-    const bytes = new Uint8Array(arrayBuf);
     const chunkSize = 0x8000;
     for (let i = 0; i < bytes.length; i += chunkSize) {
       binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
     }
-    // btoa is available in Edge/Workers
-    // eslint-disable-next-line no-undef
-    return btoa(binary);
+    const btoaFn = (globalThis as unknown as { btoa?: (data: string) => string }).btoa;
+    return btoaFn ? btoaFn(binary) : binary;
   }
 
   async function toDataUrl(inputUrl: string): Promise<string> {
@@ -150,11 +146,11 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
     return urlObj.toString();
   }
 
-  async function getPreviewDataUrl(target: string, plat?: Readonly<unknown>): Promise<string | undefined> {
+  async function getPreviewDataUrl(target: string, plat?: Readonly<Record<string, unknown>>): Promise<string | undefined> {
     const withFlag = buildAbsoluteTarget(target);
     try {
-      const cfEnv: any = (plat as any)?.env;
-      const key = cfEnv?.SCREEN_SHOT_MACHINE_API_KEY || privateEnv?.SCREEN_SHOT_MACHINE_API_KEY || (globalThis as any).process?.env?.SCREEN_SHOT_MACHINE_API_KEY;
+      const cfEnv = (plat as Readonly<Record<string, unknown>>)?.env as Readonly<Record<string, unknown>> | undefined;
+      const key = (cfEnv?.SCREEN_SHOT_MACHINE_API_KEY as string | undefined) || privateEnv?.SCREEN_SHOT_MACHINE_API_KEY || (globalThis as unknown as { process?: { env?: Record<string, string | undefined> } }).process?.env?.SCREEN_SHOT_MACHINE_API_KEY;
       if (key) {
         const api = new URL('https://api.screenshotmachine.com');
         api.searchParams.set('key', key);
@@ -165,7 +161,9 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
         api.searchParams.set('delay', '800');
         return await toDataUrl(api.toString());
       }
-    } catch { }
+    } catch {
+      return undefined;
+    }
 
     return undefined;
   }
@@ -181,7 +179,7 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
       const targetAbs = previewTargetAbs;
       if (!targetAbs) return undefined;
       // Prefer Worker Browser Rendering when available (Cloudflare only)
-      const cfEnv: any = (platform as any)?.env;
+      const cfEnv = (platform as Readonly<Record<string, unknown>>)?.env as Readonly<Record<string, unknown>> | undefined;
       if (cfEnv && 'BROWSER' in cfEnv) {
         const absolute = targetAbs.startsWith('http') ? targetAbs : new URL(targetAbs, url.origin).toString();
         const u = new URL(absolute);
@@ -192,26 +190,29 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
         const uClean = new URL(u.toString());
         uClean.searchParams.delete('cb');
         const cacheKey = new Request(`og:snap:${uClean.toString()}`, { method: 'GET' });
-        const cfCaches: any = (globalThis as any).caches;
-        const cached = cfCaches?.default ? await cfCaches.default.match(cacheKey) : undefined;
+        const cached = cacheDefault ? await cacheDefault.match(cacheKey) : undefined;
         if (cached) return await cached.text();
 
-        // @ts-ignore - BROWSER binding is provisioned by wrangler
-        const browser = await cfEnv.BROWSER.launch();
+        const browserBinding = cfEnv.BROWSER as { launch: () => Promise<CfBrowser> };
+        const browser = await browserBinding.launch();
         const page = await browser.newPage();
         await page.setViewportSize({ width: 1200, height: 630 });
         await page.addStyleTag({ content: "[role='dialog'],.cookie,.cookies,.cookie-popup,[data-cookie],#cookieConsent,#usercentrics-root{display:none!important}" });
         await page.goto(u.toString(), { waitUntil: 'networkidle' });
         await page.waitForTimeout(600);
-        const shot: any = await page.screenshot({ type: 'png' });
-        const u8: Uint8Array = shot instanceof Uint8Array ? shot : new Uint8Array(shot as ArrayBuffer);
-        const buf: ArrayBuffer = new Uint8Array(u8).slice().buffer as ArrayBuffer;
+        const shot = await page.screenshot({ type: 'png' });
+        function isArrayBuffer(v: unknown): v is ArrayBuffer {
+          return v instanceof ArrayBuffer || (typeof v === 'object' && v !== null && 'byteLength' in v);
+        }
+        const u8 = shot instanceof Uint8Array ? shot : isArrayBuffer(shot) ? new Uint8Array(shot) : undefined;
+        if (!u8) return undefined;
+        const buf = new Uint8Array(u8).slice().buffer;
         await browser.close();
 
         // Convert to data URL for Satori (avoid runtime fetch)
         const base64 = arrayBufferToBase64(buf);
         const dataUrl = `data:image/png;base64,${base64}`;
-        if (cfCaches?.default) await cfCaches.default.put(cacheKey, new Response(dataUrl, {
+        if (cacheDefault) await cacheDefault.put(cacheKey, new Response(dataUrl, {
           headers: {
             'content-type': 'text/plain',
             'cache-control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=2592000'
@@ -221,74 +222,52 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
       }
 
       // Node/vite fallback provider (requires SCREEN_SHOT_MACHINE_API_KEY)
-      return await getPreviewDataUrl(targetAbs, platform as any);
+      return await getPreviewDataUrl(targetAbs, platform);
     } catch {
       return undefined;
     }
   })();
 
-  const [resolvedImage, resolvedPreview] = await Promise.all([
-    resolvedImagePromise,
-    resolvedPreviewPromise
-  ]);
+  const [resolvedImage, resolvedPreview] = await Promise.all([resolvedImagePromise, resolvedPreviewPromise]);
 
   const { body, head } = ssrRender(OgCard, {
     props: { title, subtitle, image: resolvedImage, preview: resolvedPreview }
   });
-  const element = toReactNode(decodeHtmlEntities(`${body}${head}`));
+  const html = decodeHtmlEntities(`${body}${head}`);
 
   try {
     const fontData = await fetch(localFontUrl).then((r) => {
       if (!r.ok) throw new Error(`Failed to load font: ${r.status}`);
       return r.arrayBuffer();
     });
-    const fonts: SatoriOptions['fonts'] = [
-      { name: 'Noto Sans', data: fontData, style: 'normal', weight: 900 }
-    ];
 
-    const svg = await satori(element as any, {
-      width: size.width,
-      height: size.height,
-      fonts
-    });
-
-    try {
-      const resvg = new Resvg(svg, {
-        fitTo: { mode: 'width', value: size.width },
-        background: 'transparent'
-      });
-      const png = resvg.render().asPng();
-
-      const response = new Response(png, {
-        headers: {
-          'content-type': 'image/png',
-          'cache-control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=2592000',
-          'access-control-allow-origin': '*',
-          'access-control-allow-methods': 'GET, OPTIONS'
-        }
-      });
-      if (!disableCache && cfCaches?.default) {
-        await cfCaches.default.put(stableOgCacheKey(url), response.clone());
+    const response = new ImageResponse(
+      html,
+      {
+        width: size.width,
+        height: size.height,
+        fonts: [
+          {
+            name: 'Noto Sans',
+            data: fontData,
+            style: 'normal',
+            weight: 900
+          }
+        ]
       }
-      return response;
-    } catch (e) {
-      console.error('Resvg rendering failed:', e);
-      // Fallback to SVG if PNG rendering fails for any reason
-      const response = new Response(svg, {
-        headers: {
-          'content-type': 'image/svg+xml',
-          'cache-control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=2592000',
-          'access-control-allow-origin': '*',
-          'access-control-allow-methods': 'GET, OPTIONS'
-        }
-      });
-      if (!disableCache && cfCaches?.default) {
-        await cfCaches.default.put(stableOgCacheKey(url), response.clone());
-      }
-      return response;
+    );
+
+    response.headers.set('cache-control', 'public, max-age=0, s-maxage=604800, stale-while-revalidate=2592000');
+    response.headers.set('access-control-allow-origin', '*');
+    response.headers.set('access-control-allow-methods', 'GET, OPTIONS');
+
+    if (!disableCache && cacheDefault) {
+      await cacheDefault.put(stableOgCacheKey(url), response.clone());
     }
-  } catch (e: any) {
+
+    return response;
+  } catch (e: unknown) {
     console.error('OG Generation failed:', e);
-    return new Response(`Failed to generate OG image: ${e.message}`, { status: 500 });
+    return new Response(`Failed to generate OG image: ${e instanceof Error ? e.message : 'Unknown error'}`, { status: 500 });
   }
 };
