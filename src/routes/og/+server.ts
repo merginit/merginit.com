@@ -13,12 +13,16 @@ import localFontUrl from '$lib/fonts/Noto_Sans/static/NotoSans_Condensed-Black.t
 const size = { width: 1200, height: 630 } as const;
 
 let resvgWasmReady: Promise<void> | undefined;
-async function ensureResvgWasm(origin: string): Promise<void> {
+async function ensureResvgWasm(fetchImpl: typeof fetch): Promise<void> {
   if (!resvgWasmReady) {
-    const wasmUrl = (resvgWasmUrl as string).startsWith('http')
-      ? resvgWasmUrl
-      : new URL(resvgWasmUrl as string, origin).toString();
-    resvgWasmReady = resvgInitWasm(fetch(wasmUrl as string));
+    try {
+      const resp = await fetchImpl(resvgWasmUrl as string);
+      if (!resp.ok) throw new Error(`Failed to load WASM: ${resp.status}`);
+      resvgWasmReady = resvgInitWasm(resp);
+    } catch (err) {
+      console.error('WASM Init failed:', err);
+      throw err;
+    }
   }
   return resvgWasmReady;
 }
@@ -36,7 +40,7 @@ export const OPTIONS: import('./$types').RequestHandler = async ({ request }) =>
   });
 };
 
-export const GET: import('./$types').RequestHandler = async ({ url, platform }) => {
+export const GET: import('./$types').RequestHandler = async ({ url, platform, fetch }) => {
   function isAllowedHostname(hostname: string): boolean {
     const hn = hostname.toLowerCase();
     if (hn === 'localhost' || hn === '127.0.0.1' || hn === '::1') return true;
@@ -233,8 +237,7 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform }) 
   const element = toReactNode(decodeHtmlEntities(`${body}${head}`));
 
   try {
-    const fontAbsUrl = new URL(localFontUrl, url.origin).toString();
-    const fontData = await fetch(fontAbsUrl).then((r) => {
+    const fontData = await fetch(localFontUrl).then((r) => {
       if (!r.ok) throw new Error(`Failed to load font: ${r.status}`);
       return r.arrayBuffer();
     });
@@ -249,7 +252,7 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform }) 
     });
 
     try {
-      await ensureResvgWasm(url.origin);
+      await ensureResvgWasm(fetch);
       const resvg = new Resvg(svg, {
         fitTo: { mode: 'width', value: size.width },
         background: 'transparent'
