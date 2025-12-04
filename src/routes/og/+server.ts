@@ -61,7 +61,7 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
       .sort(([a], [b]) => a.localeCompare(b))
       .forEach(([k, v]) => sorted.append(k, v));
     clean.search = sorted.toString();
-    return new Request(`og:img:${clean.pathname}?${clean.search}`, { method: 'GET' });
+    return new Request(`og:img:v2:${clean.pathname}?${clean.search}`, { method: 'GET' });
   }
 
   const disableCache = url.searchParams.get('no_cache') === '1';
@@ -213,7 +213,7 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
         // Stabilize snapshot cache key by excluding the cb param
         const uClean = new URL(u.toString());
         uClean.searchParams.delete('cb');
-        const cacheKey = new Request(`og:snap:${uClean.toString()}`, { method: 'GET' });
+        const cacheKey = new Request(`og:snap:v2:${uClean.toString()}`, { method: 'GET' });
         const cached = cacheDefault ? await cacheDefault.match(cacheKey) : undefined;
         if (cached) return await cached.text();
 
