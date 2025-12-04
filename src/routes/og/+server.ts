@@ -152,10 +152,10 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
   async function getPreviewDataUrl(target: string, plat?: Readonly<Record<string, unknown>>): Promise<string | undefined> {
     const withFlag = buildAbsoluteTarget(target);
     const cfEnv = (plat as Readonly<Record<string, unknown>>)?.env as Readonly<Record<string, unknown>> | undefined;
-    
-    const getEnvKey = (name: string): string | undefined => 
-      (cfEnv?.[name] as string | undefined) || 
-      (privateEnv as Record<string, string | undefined>)?.[name] || 
+
+    const getEnvKey = (name: string): string | undefined =>
+      (cfEnv?.[name] as string | undefined) ||
+      (privateEnv as Record<string, string | undefined>)?.[name] ||
       (globalThis as unknown as { process?: { env?: Record<string, string | undefined> } }).process?.env?.[name];
 
     // Try APIFlash first
@@ -208,57 +208,63 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
     try {
       const targetAbs = previewTargetAbs;
       if (!targetAbs) return undefined;
+
       // Prefer Worker Browser Rendering when available (Cloudflare only)
       const cfEnv = (platform as Readonly<Record<string, unknown>>)?.env as Readonly<Record<string, unknown>> | undefined;
       console.log('BROWSER binding available:', !!(cfEnv && 'BROWSER' in cfEnv));
+
       if (cfEnv && 'BROWSER' in cfEnv) {
-        const absolute = targetAbs.startsWith('http') ? targetAbs : new URL(targetAbs, url.origin).toString();
-        const u = new URL(absolute);
-        u.searchParams.set('no_cookie', '1');
-        u.searchParams.set('cb', Date.now().toString());
+        try {
+          const absolute = targetAbs.startsWith('http') ? targetAbs : new URL(targetAbs, url.origin).toString();
+          const u = new URL(absolute);
+          u.searchParams.set('no_cookie', '1');
+          u.searchParams.set('cb', Date.now().toString());
 
-        // Stabilize snapshot cache key by excluding the cb param
-        const uClean = new URL(u.toString());
-        uClean.searchParams.delete('cb');
-        const cacheKey = new Request(`https://og-cache.internal/snap?url=${encodeURIComponent(uClean.toString())}`, { method: 'GET' });
-        const cached = cacheDefault ? await cacheDefault.match(cacheKey) : undefined;
-        if (cached) return await cached.text();
+          // Stabilize snapshot cache key by excluding the cb param
+          const uClean = new URL(u.toString());
+          uClean.searchParams.delete('cb');
+          const cacheKey = new Request(`https://og-cache.internal/snap?url=${encodeURIComponent(uClean.toString())}`, { method: 'GET' });
+          const cached = cacheDefault ? await cacheDefault.match(cacheKey) : undefined;
+          if (cached) return await cached.text();
 
-        const browserBinding = cfEnv.BROWSER as { launch: () => Promise<CfBrowser> };
-        const browser = await browserBinding.launch();
-        const page = await browser.newPage();
-        await page.setViewportSize({ width: 1200, height: 630 });
-        await page.addStyleTag({ content: "[role='dialog'],.cookie,.cookies,.cookie-popup,[data-cookie],#cookieConsent,#usercentrics-root{display:none!important}" });
-        await page.goto(u.toString(), { waitUntil: 'networkidle' });
-        await page.waitForTimeout(600);
-        const shot = await page.screenshot({ type: 'png' });
-        function isArrayBuffer(v: unknown): v is ArrayBuffer {
-          return v instanceof ArrayBuffer || (typeof v === 'object' && v !== null && 'byteLength' in v);
-        }
-        const u8 = shot instanceof Uint8Array ? shot : isArrayBuffer(shot) ? new Uint8Array(shot) : undefined;
-        if (!u8) return undefined;
-        const buf = new Uint8Array(u8).slice().buffer;
-        await browser.close();
-
-        // Convert to data URL for Satori (avoid runtime fetch)
-        const base64 = arrayBufferToBase64(buf);
-        const dataUrl = `data:image/png;base64,${base64}`;
-        if (cacheDefault) {
-          try {
-            await cacheDefault.put(cacheKey, new Response(dataUrl, {
-              headers: {
-                'content-type': 'text/plain',
-                'cache-control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=2592000'
-              }
-            }));
-          } catch (e) {
-            console.error('Snapshot cache put failed:', e);
+          const browserBinding = cfEnv.BROWSER as { launch: () => Promise<CfBrowser> };
+          const browser = await browserBinding.launch();
+          const page = await browser.newPage();
+          await page.setViewportSize({ width: 1200, height: 630 });
+          await page.addStyleTag({ content: "[role='dialog'],.cookie,.cookies,.cookie-popup,[data-cookie],#cookieConsent,#usercentrics-root{display:none!important}" });
+          await page.goto(u.toString(), { waitUntil: 'networkidle' });
+          await page.waitForTimeout(600);
+          const shot = await page.screenshot({ type: 'png' });
+          function isArrayBuffer(v: unknown): v is ArrayBuffer {
+            return v instanceof ArrayBuffer || (typeof v === 'object' && v !== null && 'byteLength' in v);
           }
+          const u8 = shot instanceof Uint8Array ? shot : isArrayBuffer(shot) ? new Uint8Array(shot) : undefined;
+          if (!u8) return undefined;
+          const buf = new Uint8Array(u8).slice().buffer;
+          await browser.close();
+
+          // Convert to data URL for Satori (avoid runtime fetch)
+          const base64 = arrayBufferToBase64(buf);
+          const dataUrl = `data:image/png;base64,${base64}`;
+          if (cacheDefault) {
+            try {
+              await cacheDefault.put(cacheKey, new Response(dataUrl, {
+                headers: {
+                  'content-type': 'text/plain',
+                  'cache-control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=2592000'
+                }
+              }));
+            } catch (e) {
+              console.error('Snapshot cache put failed:', e);
+            }
+          }
+          return dataUrl;
+        } catch (e) {
+          console.error('Browser rendering failed, falling back to screenshot API:', e);
         }
-        return dataUrl;
       }
 
-      // Node/vite fallback provider (requires SCREEN_SHOT_MACHINE_API_KEY or APIFLASH_API_KEY)
+      // Fallback to screenshot APIs (APIFlash or ScreenshotMachine)
       const result = await getPreviewDataUrl(targetAbs, platform);
       if (!result) {
         console.warn('No screenshot API key found or all screenshot APIs failed. Set APIFLASH_API_KEY or SCREEN_SHOT_MACHINE_API_KEY.');
@@ -280,10 +286,10 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
   try {
     const { ImageResponse } = await import('workers-og');
 
-    const absoluteFontUrl = localFontUrl.startsWith('http') 
-      ? localFontUrl 
+    const absoluteFontUrl = localFontUrl.startsWith('http')
+      ? localFontUrl
       : new URL(localFontUrl, url.origin).toString();
-    
+
     const fontData = await fetch(absoluteFontUrl).then((r) => {
       if (!r.ok) throw new Error(`Failed to load font: ${r.status} from ${absoluteFontUrl}`);
       return r.arrayBuffer();
@@ -321,7 +327,7 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
   } catch (e: unknown) {
     const errMsg = e instanceof Error ? `${e.message}\n${e.stack}` : String(e);
     console.error('OG Generation failed:', errMsg);
-    return new Response(`Failed to generate OG image: ${errMsg}`, { 
+    return new Response(`Failed to generate OG image: ${errMsg}`, {
       status: 500,
       headers: { 'content-type': 'text/plain' }
     });
