@@ -61,14 +61,18 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
       .sort(([a], [b]) => a.localeCompare(b))
       .forEach(([k, v]) => sorted.append(k, v));
     clean.search = sorted.toString();
-    return new Request(`og:img:v2:${clean.pathname}?${clean.search}`, { method: 'GET' });
+    return new Request(`https://og-cache.internal${clean.pathname}?${clean.search}`, { method: 'GET' });
   }
 
   const disableCache = url.searchParams.get('no_cache') === '1';
   const cacheDefault = (globalThis as unknown as { caches?: { default?: Cache } }).caches?.default;
   if (!disableCache && cacheDefault) {
-    const match = await cacheDefault.match(stableOgCacheKey(url));
-    if (match) return match;
+    try {
+      const match = await cacheDefault.match(stableOgCacheKey(url));
+      if (match) return match;
+    } catch (e) {
+      console.error('Cache match failed:', e);
+    }
   }
 
   const title = url.searchParams.get('title') ?? 'MerginIT e.U.';
@@ -213,7 +217,7 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
         // Stabilize snapshot cache key by excluding the cb param
         const uClean = new URL(u.toString());
         uClean.searchParams.delete('cb');
-        const cacheKey = new Request(`og:snap:v2:${uClean.toString()}`, { method: 'GET' });
+        const cacheKey = new Request(`https://og-cache.internal/snap?url=${encodeURIComponent(uClean.toString())}`, { method: 'GET' });
         const cached = cacheDefault ? await cacheDefault.match(cacheKey) : undefined;
         if (cached) return await cached.text();
 
@@ -236,12 +240,18 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
         // Convert to data URL for Satori (avoid runtime fetch)
         const base64 = arrayBufferToBase64(buf);
         const dataUrl = `data:image/png;base64,${base64}`;
-        if (cacheDefault) await cacheDefault.put(cacheKey, new Response(dataUrl, {
-          headers: {
-            'content-type': 'text/plain',
-            'cache-control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=2592000'
+        if (cacheDefault) {
+          try {
+            await cacheDefault.put(cacheKey, new Response(dataUrl, {
+              headers: {
+                'content-type': 'text/plain',
+                'cache-control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=2592000'
+              }
+            }));
+          } catch (e) {
+            console.error('Snapshot cache put failed:', e);
           }
-        }));
+        }
         return dataUrl;
       }
 
@@ -292,7 +302,11 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
     response.headers.set('access-control-allow-methods', 'GET, OPTIONS');
 
     if (!disableCache && cacheDefault) {
-      await cacheDefault.put(stableOgCacheKey(url), response.clone());
+      try {
+        await cacheDefault.put(stableOgCacheKey(url), response.clone());
+      } catch (e) {
+        console.error('OG cache put failed:', e);
+      }
     }
 
     return response;
