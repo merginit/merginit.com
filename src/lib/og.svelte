@@ -15,18 +15,19 @@
 		flex-direction: column;
 		background-color: #f0f0f0;
 		font-family: 'Noto Sans', sans-serif;
-		padding-top: 40px;
+		padding: 32px 48px 0 48px;
+		overflow: hidden;
 	"
 >
 	<div
 		style="
 			display: flex;
 			justify-content: center;
+			text-align: center;
 			width: 100%;
-			font-size: 56px;
+			font-size: {preview ? '42px' : '56px'};
 			color: black;
-			margin-top: 10px;
-			line-height: 1.2;
+			line-height: 1.1;
 			font-weight: 900;
 		"
 	>
@@ -36,28 +37,27 @@
 		style="
 			display: flex;
 			justify-content: center;
+			text-align: center;
 			width: 100%;
-			font-size: 24px;
+			font-size: {preview ? '18px' : '24px'};
 			color: #666;
 			margin-top: 8px;
-			line-height: 1.4;
-			padding-left: 40px;
-			padding-right: 40px;
+			line-height: 1.3;
 		"
 	>
 		{subtitle || 'Professional Software Development & SaaS Solutions'}
 	</div>
 	{#if preview}
-		<div style="position: relative; width: 1000px; height: 420px; margin-top: auto; display: flex;">
+		<div style="position: relative; width: 1120px; height: 440px; margin-top: auto; display: flex; overflow: hidden; border-top-left-radius: 16px; border-top-right-radius: 16px;">
 			<img
 				src={preview}
 				alt="Page preview"
-				style="width: 1000px; height: 420px; object-fit: cover; border-top-left-radius: 16px; border-top-right-radius: 16px;"
+				style="width: 1120px; height: 440px; object-fit: cover; object-position: top;"
 			/>
 			<img
 				src={image ?? 'https://merginit.com/favicon.png'}
 				alt="Logo"
-				style="position: absolute; right: 16px; bottom: 16px; width: 72px; height: 72px; border-radius: 9999px; background-color: white; border: 2px solid white;"
+				style="position: absolute; right: 20px; bottom: 20px; width: 64px; height: 64px; border-radius: 9999px; background-color: white; border: 3px solid white;"
 			/>
 		</div>
 	{/if}
