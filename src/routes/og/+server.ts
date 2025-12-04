@@ -1,8 +1,10 @@
-import satori from 'satori';
+import satori, { init as initSatori } from 'satori';
 import type { SatoriOptions } from 'satori';
-import { Resvg, initWasm as resvgInitWasm } from '@resvg/resvg-wasm';
+import { Resvg, initWasm as initResvg } from '@resvg/resvg-wasm';
+import initYoga from 'yoga-wasm-web';
+import RESVG_WASM from '@resvg/resvg-wasm/index_bg.wasm?url';
 // @ts-ignore - ?url returns a string at runtime
-import resvgWasmUrl from '@resvg/resvg-wasm/index_bg.wasm?url';
+import YOGA_WASM from 'yoga-wasm-web/dist/yoga.wasm?url';
 import { env as privateEnv } from '$env/dynamic/private';
 import { html as toReactNode } from 'satori-html';
 import { decodeHtmlEntities } from '$lib/utils';
@@ -11,21 +13,7 @@ import { render as ssrRender } from 'svelte/server';
 import localFontUrl from '$lib/fonts/Noto_Sans/static/NotoSans_Condensed-Black.ttf?url';
 
 const size = { width: 1200, height: 630 } as const;
-
-let resvgWasmReady: Promise<void> | undefined;
-async function ensureResvgWasm(fetchImpl: typeof fetch): Promise<void> {
-  if (!resvgWasmReady) {
-    try {
-      const resp = await fetchImpl(resvgWasmUrl as string);
-      if (!resp.ok) throw new Error(`Failed to load WASM: ${resp.status}`);
-      resvgWasmReady = resvgInitWasm(resp);
-    } catch (err) {
-      console.error('WASM Init failed:', err);
-      throw err;
-    }
-  }
-  return resvgWasmReady;
-}
+let initialized = false;
 
 export const OPTIONS: import('./$types').RequestHandler = async ({ request }) => {
   const acrh = request.headers.get('access-control-request-headers') || '*';
@@ -41,6 +29,19 @@ export const OPTIONS: import('./$types').RequestHandler = async ({ request }) =>
 };
 
 export const GET: import('./$types').RequestHandler = async ({ url, platform, fetch }) => {
+  const { default: resvgwasm } = await import(/* @vite-ignore */ `${RESVG_WASM}?module`);
+  const { default: yogawasm } = await import(/* @vite-ignore */ `${YOGA_WASM}?module`);
+
+  try {
+    if (!initialized) {
+      await initResvg(resvgwasm);
+      await initSatori(await initYoga(yogawasm) as any);
+      initialized = true;
+    }
+  } catch (e) {
+    initialized = true;
+  }
+
   function isAllowedHostname(hostname: string): boolean {
     const hn = hostname.toLowerCase();
     if (hn === 'localhost' || hn === '127.0.0.1' || hn === '::1') return true;
@@ -252,7 +253,6 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
     });
 
     try {
-      await ensureResvgWasm(fetch);
       const resvg = new Resvg(svg, {
         fitTo: { mode: 'width', value: size.width },
         background: 'transparent'
