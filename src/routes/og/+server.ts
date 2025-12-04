@@ -160,6 +160,7 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
 
     // Try APIFlash first
     const apiFlashKey = getEnvKey('APIFLASH_API_KEY');
+    console.log('APIFLASH_API_KEY found:', !!apiFlashKey);
     if (apiFlashKey) {
       try {
         const api = new URL('https://api.apiflash.com/v1/urltoimage');
@@ -178,6 +179,7 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
 
     // Fallback to ScreenshotMachine
     const ssmKey = getEnvKey('SCREEN_SHOT_MACHINE_API_KEY');
+    console.log('SCREEN_SHOT_MACHINE_API_KEY found:', !!ssmKey);
     if (ssmKey) {
       try {
         const api = new URL('https://api.screenshotmachine.com');
@@ -208,6 +210,7 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
       if (!targetAbs) return undefined;
       // Prefer Worker Browser Rendering when available (Cloudflare only)
       const cfEnv = (platform as Readonly<Record<string, unknown>>)?.env as Readonly<Record<string, unknown>> | undefined;
+      console.log('BROWSER binding available:', !!(cfEnv && 'BROWSER' in cfEnv));
       if (cfEnv && 'BROWSER' in cfEnv) {
         const absolute = targetAbs.startsWith('http') ? targetAbs : new URL(targetAbs, url.origin).toString();
         const u = new URL(absolute);
@@ -255,9 +258,14 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
         return dataUrl;
       }
 
-      // Node/vite fallback provider (requires SCREEN_SHOT_MACHINE_API_KEY)
-      return await getPreviewDataUrl(targetAbs, platform);
-    } catch {
+      // Node/vite fallback provider (requires SCREEN_SHOT_MACHINE_API_KEY or APIFLASH_API_KEY)
+      const result = await getPreviewDataUrl(targetAbs, platform);
+      if (!result) {
+        console.warn('No screenshot API key found or all screenshot APIs failed. Set APIFLASH_API_KEY or SCREEN_SHOT_MACHINE_API_KEY.');
+      }
+      return result;
+    } catch (e) {
+      console.error('Preview resolution failed:', e);
       return undefined;
     }
   })();
