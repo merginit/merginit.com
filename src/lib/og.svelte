@@ -48,11 +48,13 @@
 		{subtitle || 'Professional Software Development & SaaS Solutions'}
 	</div>
 	{#if preview}
-		<div style="position: relative; width: 1120px; height: 440px; margin-top: auto; display: flex; overflow: hidden; border-top-left-radius: 16px; border-top-right-radius: 16px;">
+		<div
+			style="position: relative; width: 1120px; height: 440px; margin-top: auto; display: flex; overflow: hidden; border-top-left-radius: 16px; border-top-right-radius: 16px;"
+		>
 			<img
 				src={preview}
 				alt="Page preview"
-				style="width: 1120px; height: 440px; object-fit: cover; object-position: top;"
+				style="width: 1120px; min-height: 440px; position: absolute; top: 0; left: 0;"
 			/>
 			<img
 				src={image ?? 'https://merginit.com/favicon.png'}
