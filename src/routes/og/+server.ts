@@ -237,8 +237,12 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
   try {
     const { ImageResponse } = await import('workers-og');
 
-    const fontData = await fetch(localFontUrl).then((r) => {
-      if (!r.ok) throw new Error(`Failed to load font: ${r.status}`);
+    const absoluteFontUrl = localFontUrl.startsWith('http') 
+      ? localFontUrl 
+      : new URL(localFontUrl, url.origin).toString();
+    
+    const fontData = await fetch(absoluteFontUrl).then((r) => {
+      if (!r.ok) throw new Error(`Failed to load font: ${r.status} from ${absoluteFontUrl}`);
       return r.arrayBuffer();
     });
 
@@ -268,7 +272,11 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
 
     return response;
   } catch (e: unknown) {
-    console.error('OG Generation failed:', e);
-    return new Response(`Failed to generate OG image: ${e instanceof Error ? e.message : 'Unknown error'}`, { status: 500 });
+    const errMsg = e instanceof Error ? `${e.message}\n${e.stack}` : String(e);
+    console.error('OG Generation failed:', errMsg);
+    return new Response(`Failed to generate OG image: ${errMsg}`, { 
+      status: 500,
+      headers: { 'content-type': 'text/plain' }
+    });
   }
 };
