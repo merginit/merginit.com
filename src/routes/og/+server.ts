@@ -1,4 +1,3 @@
-import { ImageResponse } from 'workers-og';
 import { env as privateEnv } from '$env/dynamic/private';
 import { decodeHtmlEntities } from '$lib/utils';
 import OgCard from '$lib/og.svelte';
@@ -236,6 +235,8 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
   const html = decodeHtmlEntities(`${body}${head}`);
 
   try {
+    const { ImageResponse } = await import('workers-og');
+
     const fontData = await fetch(localFontUrl).then((r) => {
       if (!r.ok) throw new Error(`Failed to load font: ${r.status}`);
       return r.arrayBuffer();
