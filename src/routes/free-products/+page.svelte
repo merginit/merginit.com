@@ -1,8 +1,14 @@
 <script lang="ts">
-	import type { Product, WebsiteProduct } from '$lib/types';
+	import type { DownloadPlatform, Product, WebsiteProduct } from '$lib/types';
 	import Icon from '@iconify/svelte';
 	import BorderBeam from '$lib/components/BorderBeam.svelte';
 	import { onMount } from 'svelte';
+
+	const platformIcons: Record<DownloadPlatform, string> = {
+		windows: 'mdi:microsoft-windows',
+		mac: 'mdi:apple',
+		linux: 'mdi:linux'
+	};
 
 	const websiteProducts: WebsiteProduct[] = [
 		{
@@ -24,7 +30,8 @@
 			name: 'Markdown to Image',
 			url: 'https://md.merginit.com',
 			githubUrl: 'https://github.com/jonasfroeller/markdown2image',
-			description: 'Convert Markdown to clean images (PNG/JPG), PDF, and HTML with live preview, multiple code-block themes, and light/dark modes.',
+			description:
+				'Convert Markdown to clean images (PNG/JPG), PDF, and HTML with live preview, multiple code-block themes, and light/dark modes.',
 			icon: 'mdi:language-markdown'
 		},
 		{
@@ -40,10 +47,31 @@
 		{
 			name: 'PixToText',
 			url: 'https://jonasfroeller.itch.io/pixtotext',
-			description: 'Turn screenshots into editable text in seconds. Fully local, no login, no data leaves your PC. Supports Tesseract, PaddleOCR, and Native Windows/macOS OCR.',
+			description:
+				'Turn screenshots into editable text in seconds. Fully local, no login, no data leaves your PC. Supports Tesseract, PaddleOCR, and Native Windows/macOS OCR.',
 			icon: 'mdi:monitor-screenshot',
-			windowsDownloadUrl: 'https://mega.nz/file/QRsCzaSC#az_XFpnQR-lI0bPHBpjAb0Cb2g4KaEZRBoNe0Kda7a0',
-			macDownloadUrl: 'https://mega.nz/file/Fc9BSTIQ#A5M1-zSwH9HNh5H1CHyJLKrO071PLaXOGhLOTd874MU'
+			downloadLinks: [
+				{
+					platform: 'mac',
+					label: 'macOS (Apple Silicon)',
+					url: 'https://mega.nz/file/xZkFlDZT#jy8vhASdkjvpoTSFMub-CPZSDHIqnknHZ-8lbHdhdOQ'
+				},
+				{
+					platform: 'mac',
+					label: 'macOS (Intel)',
+					url: 'https://mega.nz/file/FQMGUZLL#sCiCXVjHP7lARNICHmEdHWXR56iq0jQ--P3DBST1fcQ'
+				},
+				{
+					platform: 'linux',
+					label: 'Linux (AppImage, amd64)',
+					url: 'https://mega.nz/file/hc1ikSJa#OxWZwevkYgUTHqHUdltBG7htT_3tPCLPJMkH1kvdJlM'
+				},
+				{
+					platform: 'windows',
+					label: 'Windows (x64)',
+					url: 'https://mega.nz/file/sMEF2CqJ#gbN9a7YkJbvHRKUgvCMfOAsXS640D-qqMPozOGNWlAQ'
+				}
+			]
 		}
 	];
 
@@ -70,7 +98,8 @@
 		{
 			name: 'LinkedIn Notification Filter',
 			url: 'https://github.com/jonasfroeller/linkedin-notification-filter-extension',
-			description: 'Hide LinkedIn notifications you do not want to see. Toggle categories and matching notifications are hidden in real time.',
+			description:
+				'Hide LinkedIn notifications you do not want to see. Toggle categories and matching notifications are hidden in real time.',
 			icon: 'mdi:linkedin'
 		}
 	];
@@ -148,8 +177,8 @@
 				Free Products
 			</h1>
 			<p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-				A collection of useful websites, desktop apps, browser extensions, and npm packages made by MerginIT e.U.
-				that are available for free.
+				A collection of useful websites, desktop apps, browser extensions, and npm packages made by
+				MerginIT e.U. that are available for free.
 			</p>
 		</div>
 
@@ -290,25 +319,39 @@
 						<div
 							class="relative z-30 mt-6 w-full pt-4 border-t border-gray-700/50 flex flex-wrap items-center justify-center gap-3"
 						>
-							{#if product.windowsDownloadUrl}
-								<a
-									href={product.windowsDownloadUrl}
-									download
-									class="inline-flex items-center gap-2 rounded-full border border-brand/50 bg-brand/10 hover:bg-brand/20 text-brand px-4 py-2 text-sm transition-colors"
-									aria-label={`Download ${product.name} for Windows`}
-								>
-									<Icon icon="mdi:microsoft-windows" width="20" height="20" /> Windows
-								</a>
-							{/if}
-							{#if product.macDownloadUrl}
-								<a
-									href={product.macDownloadUrl}
-									download
-									class="inline-flex items-center gap-2 rounded-full border border-brand/50 bg-brand/10 hover:bg-brand/20 text-brand px-4 py-2 text-sm transition-colors"
-									aria-label={`Download ${product.name} for macOS`}
-								>
-									<Icon icon="mdi:apple" width="20" height="20" /> macOS
-								</a>
+							{#if product.downloadLinks?.length}
+								{#each product.downloadLinks as download}
+									<a
+										href={download.url}
+										download
+										class="inline-flex items-center gap-2 rounded-full border border-brand/50 bg-brand/10 hover:bg-brand/20 text-brand px-4 py-2 text-sm transition-colors"
+										aria-label={`Download ${product.name} for ${download.label}`}
+									>
+										<Icon icon={platformIcons[download.platform]} width="20" height="20" />
+										{download.label}
+									</a>
+								{/each}
+							{:else}
+								{#if product.windowsDownloadUrl}
+									<a
+										href={product.windowsDownloadUrl}
+										download
+										class="inline-flex items-center gap-2 rounded-full border border-brand/50 bg-brand/10 hover:bg-brand/20 text-brand px-4 py-2 text-sm transition-colors"
+										aria-label={`Download ${product.name} for Windows`}
+									>
+										<Icon icon="mdi:microsoft-windows" width="20" height="20" /> Windows
+									</a>
+								{/if}
+								{#if product.macDownloadUrl}
+									<a
+										href={product.macDownloadUrl}
+										download
+										class="inline-flex items-center gap-2 rounded-full border border-brand/50 bg-brand/10 hover:bg-brand/20 text-brand px-4 py-2 text-sm transition-colors"
+										aria-label={`Download ${product.name} for macOS`}
+									>
+										<Icon icon="mdi:apple" width="20" height="20" /> macOS
+									</a>
+								{/if}
 							{/if}
 							<a
 								href={product.url}

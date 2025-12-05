@@ -20,6 +20,14 @@ export interface ProjectItem {
 	videoUrl?: string;
 }
 
+export type DownloadPlatform = 'windows' | 'mac' | 'linux';
+
+export interface DownloadLink {
+	platform: DownloadPlatform;
+	label: string;
+	url: string;
+}
+
 export interface Product {
 	name: string;
 	url: string;
@@ -28,6 +36,7 @@ export interface Product {
 	githubUrl?: string;
 	downloads?: number;
 	npmPackage?: string;
+	downloadLinks?: DownloadLink[];
 	windowsDownloadUrl?: string;
 	macDownloadUrl?: string;
 }
