@@ -27,6 +27,14 @@
 			icon: 'mdi:shield-check'
 		},
 		{
+			name: 'Veo Video Studio',
+			url: 'https://veo.merginit.com',
+			githubUrl: 'https://github.com/merginit/veo-video-studio',
+			description:
+				'Browser-based studio for Google Veo with local service-account auth so keys stay on-device.',
+			icon: 'mdi:movie-open-play'
+		},
+		{
 			name: 'Markdown to Image',
 			url: 'https://md.merginit.com',
 			githubUrl: 'https://github.com/jonasfroeller/markdown2image',
@@ -101,6 +109,13 @@
 			description:
 				'Hide LinkedIn notifications you do not want to see. Toggle categories and matching notifications are hidden in real time.',
 			icon: 'mdi:linkedin'
+		},
+		{
+			name: 'X Spam Sweeper',
+			url: 'https://github.com/merginit/x-spam-sweeper.extension',
+			description:
+				'Chrome extension to batch review and report spam message requests on X with a native-feeling multi-select UI.',
+			icon: 'mdi:shield-account'
 		}
 	];
 
@@ -166,7 +181,7 @@
 	<title>Free Products - MerginIT e.U.</title>
 	<meta
 		name="description"
-		content="Discover our free websites, desktop apps, browser extensions, and npm packages: HTML to Skeleton Converter, PixToText, Security Header Analyzer, Element Snap, Cookiiies, and more."
+		content="Discover our free websites, desktop apps, browser extensions, and npm packages: HTML to Skeleton Converter, Veo Video Studio, X Spam Sweeper, PixToText, Security Header Analyzer, Element Snap, Cookiiies, and more."
 	/>
 </svelte:head>
 
