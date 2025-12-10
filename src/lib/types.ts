@@ -45,6 +45,18 @@ export interface WebsiteProduct extends Product {
 	githubUrl: string;
 }
 
+export type FreeProductCategory = 'website' | 'desktop' | 'extension' | 'npm';
+
+export interface FreeProduct extends Product {
+	slug: string;
+	type: FreeProductCategory;
+	image: string;
+	imageAlt: string;
+	longDescription: string;
+	features: string[];
+	keywords?: string[];
+}
+
 export const CATEGORIES = [
 	'web-development', // Frontend, backend, full-stack development
 	'devops', // CI/CD, deployment, infrastructure

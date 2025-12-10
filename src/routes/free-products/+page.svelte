@@ -1,175 +1,31 @@
 <script lang="ts">
-	import type { DownloadPlatform, Product, WebsiteProduct } from '$lib/types';
 	import Icon from '@iconify/svelte';
 	import BorderBeam from '$lib/components/BorderBeam.svelte';
 	import { onMount } from 'svelte';
+	import {
+		desktopProducts,
+		extensionProducts,
+		npmProducts,
+		platformIcons,
+		refreshNpmDownloads,
+		websiteProducts
+	} from '$lib/data/free-products';
 
-	const platformIcons: Record<DownloadPlatform, string> = {
-		windows: 'mdi:microsoft-windows',
-		mac: 'mdi:apple',
-		linux: 'mdi:linux'
-	};
+	let npmList = [...npmProducts];
 
-	const websiteProducts: WebsiteProduct[] = [
-		{
-			name: 'HTML to Skeleton Converter',
-			url: 'https://skeleton.merginit.com',
-			githubUrl: 'https://github.com/jonasfroeller/html-to-skeleton',
-			description:
-				'Paste Tailwind-styled HTML to generate a React skeleton component with live preview. Output uses Tailwind classes, too.',
-			icon: 'mdi:code-braces'
-		},
-		{
-			name: 'Security Header Analyzer',
-			url: 'https://sha.merginit.com',
-			githubUrl: 'https://github.com/jonasfroeller/header-checker',
-			description: 'Analyze HTTP security headers with scoring.',
-			icon: 'mdi:shield-check'
-		},
-		{
-			name: 'Veo Video Studio',
-			url: 'https://veo.merginit.com',
-			githubUrl: 'https://github.com/merginit/veo-video-studio',
-			description:
-				'Browser-based studio for Google Veo with local service-account auth so keys stay on-device.',
-			icon: 'mdi:movie-open-play'
-		},
-		{
-			name: 'Markdown to Image',
-			url: 'https://md.merginit.com',
-			githubUrl: 'https://github.com/jonasfroeller/markdown2image',
-			description:
-				'Convert Markdown to clean images (PNG/JPG), PDF, and HTML with live preview, multiple code-block themes, and light/dark modes.',
-			icon: 'mdi:language-markdown'
-		},
-		{
-			name: 'Disposable Email Domains Checker',
-			url: 'https://ded.merginit.com',
-			githubUrl: 'https://github.com/jonasfroeller/disposable-email-domains',
-			description: 'Disposable Email Domains Service Checker.',
-			icon: 'mdi:email-search'
-		}
-	];
+	const extensionPrimaryLabel = (url: string) =>
+		url.includes('chromewebstore') ? 'Install' : 'Open';
 
-	const desktopProducts: Product[] = [
-		{
-			name: 'PixToText',
-			url: 'https://jonasfroeller.itch.io/pixtotext',
-			description:
-				'Turn screenshots into editable text in seconds. Fully local, no login, no data leaves your PC. Supports Tesseract, PaddleOCR, and Native Windows/macOS OCR.',
-			icon: 'mdi:monitor-screenshot',
-			downloadLinks: [
-				{
-					platform: 'mac',
-					label: 'macOS (Apple Silicon)',
-					url: 'https://mega.nz/file/xZkFlDZT#jy8vhASdkjvpoTSFMub-CPZSDHIqnknHZ-8lbHdhdOQ'
-				},
-				{
-					platform: 'mac',
-					label: 'macOS (Intel)',
-					url: 'https://mega.nz/file/FQMGUZLL#sCiCXVjHP7lARNICHmEdHWXR56iq0jQ--P3DBST1fcQ'
-				},
-				{
-					platform: 'linux',
-					label: 'Linux (AppImage, amd64)',
-					url: 'https://mega.nz/file/hc1ikSJa#OxWZwevkYgUTHqHUdltBG7htT_3tPCLPJMkH1kvdJlM'
-				},
-				{
-					platform: 'windows',
-					label: 'Windows (x64)',
-					url: 'https://mega.nz/file/sMEF2CqJ#gbN9a7YkJbvHRKUgvCMfOAsXS640D-qqMPozOGNWlAQ'
-				}
-			]
-		}
-	];
-
-	const extensionProducts: Product[] = [
-		{
-			name: 'Element Snap',
-			url: 'https://chromewebstore.google.com/detail/nldbbahmckpcjcbikdaopeaiidhdomkf',
-			githubUrl: 'https://github.com/jonasfroeller/element-snap',
-			description: 'Capture pixel-perfect screenshots of any HTML element',
-			icon: 'mdi:camera-outline'
-		},
-		{
-			name: 'Page To Markdown Extension',
-			url: 'https://github.com/jonasfroeller/page-to-markdown-extension',
-			description: 'Convert web pages to Markdown format',
-			icon: 'mdi:language-markdown'
-		},
-		{
-			name: 'Youtube Subscriptions Exporter',
-			url: 'https://github.com/jonasfroeller/youtube-subscriptions-exporter-extension',
-			description: 'Export YouTube subscriptions easily',
-			icon: 'mdi:youtube'
-		},
-		{
-			name: 'LinkedIn Notification Filter',
-			url: 'https://github.com/jonasfroeller/linkedin-notification-filter-extension',
-			description:
-				'Hide LinkedIn notifications you do not want to see. Toggle categories and matching notifications are hidden in real time.',
-			icon: 'mdi:linkedin'
-		},
-		{
-			name: 'X Spam Sweeper',
-			url: 'https://github.com/merginit/x-spam-sweeper.extension',
-			description:
-				'Chrome extension to batch review and report spam message requests on X with a native-feeling multi-select UI.',
-			icon: 'mdi:shield-account'
-		}
-	];
-
-	const npmProducts: Product[] = [
-		{
-			name: 'Svelte Cookiiies',
-			url: 'https://www.npmjs.com/package/cookiiies',
-			githubUrl: 'https://github.com/jonasfroeller/cookiiies',
-			description: 'A GDPR compliant cookie banner for Svelte 5',
-			icon: 'mdi:cookie',
-			npmPackage: 'cookiiies'
-		},
-		{
-			name: 'Astro Light Box',
-			url: 'https://www.npmjs.com/package/astro-light-box',
-			githubUrl: 'https://github.com/jonasfroeller/astro.image.lightbox',
-			description: 'Lightbox component for Astro',
-			icon: 'mdi:image-multiple',
-			npmPackage: 'astro-light-box'
-		},
-		{
-			name: 'Astro Async Loader',
-			url: 'https://www.npmjs.com/package/astro-async-loader',
-			githubUrl: 'https://github.com/jonasfroeller/astro.async.loader',
-			description: 'Async loader component for Astro',
-			icon: 'mdi:loading',
-			npmPackage: 'astro-async-loader'
-		}
-	];
+	const extensionPrimaryIcon = (url: string) =>
+		url.includes('chromewebstore') ? 'devicon-plain:chrome' : 'mdi:open-in-new';
 
 	async function fetchDownloadStats() {
-		const updatedProducts = [...npmProducts];
-
-		for (let i = 0; i < updatedProducts.length; i++) {
-			const product = updatedProducts[i];
-			if (product.npmPackage) {
-				try {
-					console.log(`Fetching stats for ${product.npmPackage}...`);
-					const response = await fetch(`/api/npm-stats?package=${product.npmPackage}`);
-					if (response.ok) {
-						const data = await response.json();
-						console.log(`Stats for ${product.npmPackage}:`, data);
-						updatedProducts[i] = { ...product, downloads: data.downloads };
-					} else {
-						console.error(`API error for ${product.npmPackage}:`, response.status);
-					}
-				} catch (error) {
-					console.error(`Failed to fetch stats for ${product.npmPackage}:`, error);
-				}
-			}
+		try {
+			await refreshNpmDownloads(fetch);
+			npmList = [...npmProducts];
+		} catch (error) {
+			console.error('Failed to refresh npm download stats', error);
 		}
-
-		npmProducts.length = 0;
-		npmProducts.push(...updatedProducts);
 	}
 
 	onMount(() => {
@@ -225,11 +81,9 @@
 						/>
 
 						<a
-							href={product.url}
-							target="_blank"
-							rel="noopener noreferrer"
+							href={`/free-products/${product.slug}`}
 							class="absolute inset-0 z-20"
-							aria-label={`Open ${product.name}`}
+							aria-label={`Open ${product.name} details`}
 						></a>
 
 						<div class="relative z-10 flex w-full items-center justify-center mb-6">
@@ -301,11 +155,9 @@
 						/>
 
 						<a
-							href={product.url}
-							target="_blank"
-							rel="noopener noreferrer"
+							href={`/free-products/${product.slug}`}
 							class="absolute inset-0 z-20"
-							aria-label={`Open ${product.name}`}
+							aria-label={`Open ${product.name} details`}
 						></a>
 
 						<div class="relative z-10 flex w-full items-center justify-center mb-6">
@@ -402,11 +254,9 @@
 						/>
 
 						<a
-							href={product.url}
-							target="_blank"
-							rel="noopener noreferrer"
+							href={`/free-products/${product.slug}`}
 							class="absolute inset-0 z-20"
-							aria-label={`View ${product.name}`}
+							aria-label={`Open ${product.name} details`}
 						></a>
 
 						<div class="relative z-10 flex w-full items-center justify-center mb-6">
@@ -441,9 +291,10 @@
 									target="_blank"
 									rel="noopener noreferrer"
 									class="inline-flex items-center gap-2 rounded-full border border-brand/50 bg-brand/10 hover:bg-brand/20 text-brand px-4 py-2 text-sm transition-colors"
-									aria-label={`Install ${product.name}`}
+									aria-label={`${extensionPrimaryLabel(product.url)} ${product.name}`}
 								>
-									<Icon icon="devicon-plain:chrome" width="20" height="20" /> Install
+									<Icon icon={extensionPrimaryIcon(product.url)} width="20" height="20" />
+									{extensionPrimaryLabel(product.url)}
 								</a>
 								<a
 									href={product.githubUrl}
@@ -477,7 +328,7 @@
 				<span class="text-[#ffaa40]">NPM Packages</span>
 			</h2>
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{#each npmProducts as product, i}
+				{#each npmList as product, i}
 					<article
 						class="group relative flex h-full flex-col items-start justify-between rounded-3xl p-6 sm:p-8 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-md hover:shadow-brand/20 transition-all duration-300 ease-in-out hover:border-brand/70 transform hover:-translate-y-1"
 					>
@@ -490,11 +341,9 @@
 						/>
 
 						<a
-							href={product.url}
-							target="_blank"
-							rel="noopener noreferrer"
+							href={`/free-products/${product.slug}`}
 							class="absolute inset-0 z-20"
-							aria-label={`View ${product.name} on NPM`}
+							aria-label={`Open ${product.name} details`}
 						></a>
 
 						<div class="relative z-10 flex w-full items-center justify-center mb-6">

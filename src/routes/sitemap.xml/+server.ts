@@ -1,3 +1,4 @@
+import { freeProducts } from '$lib/data/free-products';
 import type { Post } from '$lib/types';
 
 const SITE_NAME = 'https://merginit.com';
@@ -43,6 +44,17 @@ export async function GET() {
 		)
 		.join('');
 
+	const freeProductEntries = freeProducts
+		.map(
+			(product) => `
+		<url>
+			<loc>${SITE_NAME}/free-products/${product.slug}</loc>
+			<changefreq>weekly</changefreq>
+			<priority>0.6</priority>
+		</url>`
+		)
+		.join('');
+
 	const dynamicEntries = blogEntries
 		.map(
 			(entry) => `
@@ -67,6 +79,7 @@ export async function GET() {
 			xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
 		>
 		${sitemapEntries}
+		${freeProductEntries}
 		${dynamicEntries}
 		</urlset>`.trim(),
 		{
