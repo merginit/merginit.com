@@ -157,7 +157,7 @@
 			videoUrl:
 				'https://player.vimeo.com/video/1102620409?badge=0&autopause=0&player_id=0&app_id=58479'
 		},
-		{
+		/* {
 			projectType: 'Open Source Website & AI',
 			category: 'Configuration Platform',
 			productName: 'NeptunAI',
@@ -180,7 +180,7 @@
 				'Founded in 2022, this Linz-based indie-pop band blends funk, rock, and jazz elements into their unique sound. The five-piece band has released multiple singles and built a dedicated following through their distinctive style and energetic live performances.',
 			iconSrc: 'https://taeglichfrischesobst.com/assets/images/fruit.png',
 			url: 'https://taeglichfrischesobst.com'
-		}
+		} */
 	];
 </script>
 
