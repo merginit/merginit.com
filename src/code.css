@@ -122,6 +122,14 @@ pre[class*='language-'] {
 	cursor: help;
 }
 
+.code-block-wrapper {
+	position: relative;
+}
+
+.code-block-wrapper:hover .code-copy-btn {
+	opacity: 1;
+}
+
 /* Copy button styles */
 .code-copy-btn {
 	position: absolute;
@@ -148,9 +156,7 @@ pre[class*='language-'] {
 }
 
 .code-copy-btn:hover {
-	background: rgba(248, 248, 242, 0.15);
-	border-color: rgba(248, 248, 242, 0.3);
-	transform: translateY(-1px);
+	opacity: 0.8;
 }
 
 .code-copy-btn.copied {
@@ -159,11 +165,38 @@ pre[class*='language-'] {
 	color: #50fa7b;
 }
 
-pre[class*='language-']:hover .code-copy-btn {
-	opacity: 1;
-}
-
 .code-copy-btn svg {
 	width: 1.125rem;
 	height: 1.125rem;
+}
+
+/* Custom scrollbar for code blocks */
+pre[class*='language-'] {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(139, 233, 253, 0.4) rgba(40, 42, 54, 0.5);
+}
+
+pre[class*='language-']::-webkit-scrollbar {
+	height: 8px;
+	width: 8px;
+}
+
+pre[class*='language-']::-webkit-scrollbar-track {
+	background: rgba(40, 42, 54, 0.5);
+	border-radius: 4px;
+}
+
+pre[class*='language-']::-webkit-scrollbar-thumb {
+	background: linear-gradient(135deg, rgba(139, 233, 253, 0.4), rgba(189, 147, 249, 0.4));
+	border-radius: 4px;
+	border: 2px solid transparent;
+	background-clip: padding-box;
+}
+
+pre[class*='language-']::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(135deg, rgba(139, 233, 253, 0.6), rgba(189, 147, 249, 0.6));
+}
+
+pre[class*='language-']::-webkit-scrollbar-corner {
+	background: rgba(40, 42, 54, 0.5);
 }

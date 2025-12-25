@@ -19,21 +19,30 @@
 	let categories = $state<string[]>([]);
 
 	$effect(() => {
-		if (page.data?.meta) {
-			title = page.data.meta.title;
-			date = page.data.meta.date;
-			updateDate = page.data.meta.updateDate;
-			author = page.data.meta.author || '';
-			description = page.data.meta.description || '';
-			readingTime = page.data.meta.readingTime;
-			tags = page.data.meta.tags;
-			categories = page.data.meta.categories;
+		const meta = page.data?.meta;
+		if (meta) {
+			title = meta.title;
+			date = meta.date;
+			updateDate = meta.updateDate ?? '';
+			author = meta.author || '';
+			description = meta.description || '';
+			readingTime = meta.readingTime;
+			tags = meta.tags;
+			categories = meta.categories;
 		}
 	});
 
 	function addCopyButtonToCodeBlock(pre: HTMLPreElement) {
 		if (pre.querySelector('.code-copy-btn') || pre.classList.contains('mermaid')) return;
+		
+		if (!pre.parentElement?.classList.contains('code-block-wrapper')) {
+			const wrapper = document.createElement('div');
+			wrapper.className = 'code-block-wrapper';
+			pre.parentNode?.insertBefore(wrapper, pre);
+			wrapper.appendChild(pre);
+		}
 
+		const wrapper = pre.parentElement!;
 		const button = document.createElement('button');
 		button.className = 'code-copy-btn';
 		button.type = 'button';
@@ -62,7 +71,7 @@
 			}
 		});
 
-		pre.appendChild(button);
+		wrapper.appendChild(button);
 	}
 
 	function setupCodeBlocks() {
