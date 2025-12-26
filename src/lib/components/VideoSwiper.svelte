@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	interface Props {
 		videos: string[];
 		aspectRatio?: '9/16' | '16/9' | '1/1';
@@ -11,7 +13,53 @@
 	let isMuted = $state(true);
 	let containerRef: HTMLDivElement;
 	let videoRefs: HTMLVideoElement[] = [];
+	let slideRefs: HTMLDivElement[] = [];
 	let loadingStates = $state<boolean[]>(videos.map(() => true));
+	let loadedVideos = $state<Set<number>>(new Set());
+
+	// Generate poster URL from video URL (e.g., video.mp4 -> video-thumb.webp)
+	function getPosterUrl(videoUrl: string): string {
+		return videoUrl.replace(/\.mp4$/, '-thumb.webp');
+	}
+
+	onMount(() => {
+		// Intersection Observer for lazy loading
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					const index = slideRefs.indexOf(entry.target as HTMLDivElement);
+					if (index === -1) return;
+
+					if (entry.isIntersecting && !loadedVideos.has(index)) {
+						// Start loading this video and adjacent ones
+						const indicesToLoad = [index - 1, index, index + 1].filter(
+							(i) => i >= 0 && i < videos.length && !loadedVideos.has(i)
+						);
+
+						indicesToLoad.forEach((i) => {
+							loadedVideos.add(i);
+							loadedVideos = new Set(loadedVideos);
+							const video = videoRefs[i];
+							if (video) {
+								video.load();
+							}
+						});
+					}
+				});
+			},
+			{ root: containerRef, threshold: 0.1 }
+		);
+
+		slideRefs.forEach((slide) => {
+			if (slide) observer.observe(slide);
+		});
+
+		// Load first video immediately
+		loadedVideos.add(0);
+		loadedVideos = new Set(loadedVideos);
+
+		return () => observer.disconnect();
+	});
 
 	function handleScroll() {
 		if (!containerRef) return;
@@ -63,8 +111,8 @@
 		class="video-swiper-container"
 		onscroll={handleScroll}
 	>
-		{#each videos as videoUrl, index}
-			<div class="video-slide" style="--aspect-ratio: {aspectRatio};">
+	{#each videos as videoUrl, index}
+			<div bind:this={slideRefs[index]} class="video-slide" style="--aspect-ratio: {aspectRatio};">
 				{#if loadingStates[index]}
 					<div class="loading-overlay">
 						<div class="spinner"></div>
@@ -72,13 +120,14 @@
 				{/if}
 				<video
 					bind:this={videoRefs[index]}
-					src={videoUrl}
+					src={loadedVideos.has(index) ? videoUrl : undefined}
+					poster={getPosterUrl(videoUrl)}
 					class="video-element"
-					autoplay
+					autoplay={index === 0}
 					loop
 					muted={isMuted}
 					playsinline
-					preload="auto"
+					preload={loadedVideos.has(index) ? 'auto' : 'none'}
 					oncanplaythrough={() => handleVideoLoaded(index)}
 				>
 					<track kind="captions" />
@@ -160,7 +209,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: #0f0f0f;
+		background: transparent;
 		z-index: 5;
 	}
 
@@ -171,6 +220,8 @@
 		border-top-color: #f5d700;
 		border-radius: 50%;
 		animation: spin 0.8s linear infinite;
+		background: rgba(0, 0, 0, 0.5);
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 	}
 
 	@keyframes spin {
