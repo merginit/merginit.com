@@ -11,6 +11,7 @@
 	let isMuted = $state(true);
 	let containerRef: HTMLDivElement;
 	let videoRefs: HTMLVideoElement[] = [];
+	let loadingStates = $state<boolean[]>(videos.map(() => true));
 
 	function handleScroll() {
 		if (!containerRef) return;
@@ -50,6 +51,10 @@
 			if (video) video.muted = isMuted;
 		});
 	}
+
+	function handleVideoLoaded(index: number) {
+		loadingStates[index] = false;
+	}
 </script>
 
 <div class="video-swiper-wrapper" style="--swiper-height: {height};">
@@ -60,6 +65,11 @@
 	>
 		{#each videos as videoUrl, index}
 			<div class="video-slide" style="--aspect-ratio: {aspectRatio};">
+				{#if loadingStates[index]}
+					<div class="loading-overlay">
+						<div class="spinner"></div>
+					</div>
+				{/if}
 				<video
 					bind:this={videoRefs[index]}
 					src={videoUrl}
@@ -69,6 +79,7 @@
 					muted={isMuted}
 					playsinline
 					preload="auto"
+					oncanplaythrough={() => handleVideoLoaded(index)}
 				>
 					<track kind="captions" />
 				</video>
@@ -141,6 +152,31 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+	}
+
+	.loading-overlay {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #0f0f0f;
+		z-index: 5;
+	}
+
+	.spinner {
+		width: 40px;
+		height: 40px;
+		border: 3px solid rgba(245, 215, 0, 0.2);
+		border-top-color: #f5d700;
+		border-radius: 50%;
+		animation: spin 0.8s linear infinite;
+	}
+
+	@keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
 	}
 
 	.video-index {
