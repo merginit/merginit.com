@@ -34,7 +34,7 @@ The goal was to reach at least 100 followers and get at least one viral video be
 
 I failed and barely got past 1k views per video, ending up with 61 followers and around 952 likes at 70% completion of the challenge.
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/analytics-overview.png" alt="TikTok Analytics Overview showing 29K video views, 1.1K likes" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/analytics-overview.webp" alt="TikTok Analytics Overview showing 29K video views, 1.1K likes" />
 
 The glassfruit idea went ok, but a lot of accounts posted similar content with worse quality while getting more views, likes, and followers. Some might have been bought accounts, but that's just speculation.
 
@@ -50,7 +50,7 @@ I made some with slime, sand and soap. The slime ones worked out a bit better.
 I generated some hydraulic press videos that went ok but didn't turn out that well.  
 I tried only posting those that had relatively proper physics, but I didn't have enough videos in stock at times so I posted some slop too, sadly.
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/top-posts-by-views.png" alt="Top posts sorted by views" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/top-posts-by-views.webp" alt="Top posts sorted by views" />
 
 I continued with more realistic ones like slime balls and mixed in a realistic minecraft block which went a lot worse than I expected and only got 10 likes and 373 views as of now.
 
@@ -84,33 +84,33 @@ I consistently didn't get too many views, likes, bookmarks or comments. The most
 
 ### Top Posts
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/top-posts-new-viewers.png" alt="Top posts by new viewers reached" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/top-posts-new-viewers.webp" alt="Top posts by new viewers reached" />
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/top-posts-by-likes.png" alt="Top posts sorted by likes" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/top-posts-by-likes.webp" alt="Top posts sorted by likes" />
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/top-posts-new-followers.png" alt="Top posts by new followers gained" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/top-posts-new-followers.webp" alt="Top posts by new followers gained" />
 
 ### Viewer Analytics
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/total-viewers-chart.png" alt="Total viewers chart showing spike in late November" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/total-viewers-chart.webp" alt="Total viewers chart showing spike in late November" />
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/creators-viewers-watched.png" alt="Creators your viewers also watched" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/creators-viewers-watched.webp" alt="Creators your viewers also watched" />
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/posts-viewers-viewed.png" alt="Posts your viewers also viewed" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/posts-viewers-viewed.webp" alt="Posts your viewers also viewed" />
 
 ### Audience Demographics
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/audience-gender.png" alt="Audience gender: 64% Female, 27% Male, 9% Other" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/audience-gender.webp" alt="Audience gender: 64% Female, 27% Male, 9% Other" />
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/audience-age.png" alt="Audience age: 44.6% are 18-24, 27.5% are 25-34" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/audience-age.webp" alt="Audience age: 44.6% are 18-24, 27.5% are 25-34" />
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/audience-locations.png" alt="Audience locations: Austria 17.1%, Sweden 16%, Denmark 4.9%" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/audience-locations.webp" alt="Audience locations: Austria 17.1%, Sweden 16%, Denmark 4.9%" />
 
 ### Best Posting Times
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/most-active-days.png" alt="Most active days: Sunday is the best" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/most-active-days.webp" alt="Most active days: Sunday is the best" />
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/most-active-hours.png" alt="Most active hours: 5-6 PM" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/most-active-hours.webp" alt="Most active hours: 5-6 PM" />
 
 ## Coolest results in my opinion
 
@@ -143,7 +143,7 @@ I consistently didn't get too many views, likes, bookmarks or comments. The most
 
 I used Google Cloud Vertex AI to generate the videos with the ~$250 credits you get when you sign up. I also used a few more credits from a friend who also signed up around that time and said he wasn't using all of them anyway. So all I paid was time and patience: Generating was free, although I almost paid a bit since Google always lags behind many hours till the UI finally updates. I lost track of spending at the beginning since I was using the UI in Google Cloud itself which is hidden somewhere in this horrible UX mess named Google Cloud Console.
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/preview.png" alt="Veo Studio interface showing Magnetic Ferro Slime generation" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/preview.webp" alt="Veo Studio interface showing Magnetic Ferro Slime generation" />
 
 I made a simple UI if you want to try the same challenge as me and open sourced it here. Demo at [veo.merginit.com](https://veo.merginit.com).
 
@@ -226,10 +226,10 @@ You can test ~30 times 3 = 90 prompts that way for free, maybe even ~30 times 5 
 I think YouTube would be a better place to post them since ad revenue is a lot better there and I could actually get monetized there.  
 I didn't post there though and wanted to test the TikTok waters, since the only substantial account I have ever built was a meme account on Instagram. It might be interesting to also post the videos on YouTube in the future and compare the results, but I don't think it would really be worth it.
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/monetization-ineligible.png" alt="TikTok Monetization page showing Video Gifts and Subscription as Ineligible" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/monetization-ineligible.webp" alt="TikTok Monetization page showing Video Gifts and Subscription as Ineligible" />
 
 ## The TikTok account
 
-<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/follower-growth-chart.png" alt="Follower growth chart showing steady increase to 61 followers" />
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/follower-growth-chart.webp" alt="Follower growth chart showing steady increase to 61 followers" />
 
 Check out the experiment: [@aiasmrlvr on TikTok](https://www.tiktok.com/@aiasmrlvr)
