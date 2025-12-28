@@ -147,16 +147,40 @@
 			projectType: 'SaaS Website',
 			category: 'OCR Solution',
 			productName: 'OCRMD',
-			date: '2025',
-			datetime: '2025-01-01',
+			date: 'launched April 2025',
+			datetime: '2025-04-22',
 			mainTech: 'React',
 			description:
-				'OCRMD.com transforms scanned images and PDFs into editable Markdown. Features include AI-enhanced text recognition with formatting, math equations, tables, and image detection at 90-99% accuracy. Secure cloud storage and full-text search capabilities make your documents accessible anywhere.',
+				'OCRMD.com transforms scanned images and PDFs into editable Markdown. Features include AI-enhanced text recognition with formatting, math equations, tables, and image detection at high accuracy. Secure cloud storage and full-text search capabilities make your documents accessible anywhere.',
 			iconSrc: 'https://ocrmd.com/favicon.png',
 			url: 'https://ocrmd.com',
 			videoUrl:
 				'https://player.vimeo.com/video/1102620409?badge=0&autopause=0&player_id=0&app_id=58479'
 		},
+		{
+			projectType: 'Desktop App',
+			category: 'Offline OCR',
+			productName: 'PixToText',
+			date: 'launched November 2025',
+			datetime: '2025-11-28',
+			mainTech: 'Tauri & SolidJS',
+			description:
+				'Turn screenshots into editable text in seconds. PixToText provides free offline OCR using Tesseract, PaddleOCR, and native system engines, plus document conversion and translation. Fully local and private.',
+			iconSrc: '/pix-to-text.png',
+			url: 'https://jonasfroeller.itch.io/pixtotext'
+		},
+		{
+			projectType: 'Desktop App',
+			category: 'Screen Recorder',
+			productName: 'AUFZEICHNA',
+			date: 'will launch January 2026',
+			datetime: '2026-01-01',
+			mainTech: 'Tauri & Svelte',
+			description:
+				'AUFZEICHNA is a cross-platform screen recorder with cinematic auto-zoom, smooth cursors, and motion blur. It includes the AUFMOTZA editor to tune recordings with one-click zooms and motion blur effects.',
+			iconSrc: 'https://aufzeichna.merginit.com/favicon.png',
+			url: 'https://aufzeichna.merginit.com'
+		}
 		/* {
 			projectType: 'Open Source Website & AI',
 			category: 'Configuration Platform',
@@ -296,7 +320,7 @@
 								id={faviconId}
 								src={project.iconSrc}
 								alt={`${project.projectType} favicon`}
-								class="h-10 w-10 rounded-full bg-gray-700 p-1 object-contain border border-gray-600 shadow favicon-trigger"
+								class="h-10 w-10 rounded-full bg-gray-700 p-[1.3px] object-contain border border-gray-600 shadow favicon-trigger"
 							/>
 
 							{#if hoveredCardIndex === i || playButtonOutIndex === i}
