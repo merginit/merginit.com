@@ -170,6 +170,19 @@
 			url: 'https://jonasfroeller.itch.io/pixtotext'
 		},
 		{
+			projectType: 'Chrome Browser Extension',
+			category: 'Productivity Tool',
+			productName: 'Element Snap',
+			date: 'launched September 2025',
+			datetime: '2025-09-02',
+			mainTech: 'Vanilla JS & Chrome API',
+			description:
+				'The lightweight, reliable way to capture pixel-perfect screenshots of any visible HTML element. Features include pixel-perfect capture, live padding controls, rounded corners, and full element stitching. Built with zero libraries for maximum speed and privacy.',
+			iconSrc:
+				'https://raw.githubusercontent.com/merginit/element-snap.extension/main/assets/icon-128.png',
+			url: 'https://chromewebstore.google.com/detail/element-snap/nldbbahmckpcjcbikdaopeaiidhdomkf'
+		},
+		{
 			projectType: 'Desktop App',
 			category: 'Screen Recorder',
 			productName: 'AUFZEICHNA',
@@ -237,7 +250,7 @@
 		<div
 			class="whitespace-pre-wrap text-6xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-medium tracking-tighter text-white"
 		>
-			<NumberTicker value={3 + 18} initial={0} duration={1500} />+
+			<NumberTicker value={1 + 3 + 18 + 2 + 3} initial={0} duration={1500} />+
 		</div>
 		<h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-center text-white mt-2 md:mt-4">
 			Websites Built
@@ -320,7 +333,9 @@
 								id={faviconId}
 								src={project.iconSrc}
 								alt={`${project.projectType} favicon`}
-								class="h-10 w-10 rounded-full bg-gray-700 p-[1.3px] object-contain border border-gray-600 shadow favicon-trigger"
+								class="h-10 w-10 rounded-full bg-gray-700 {project.productName === 'Element Snap'
+									? 'p-0.5'
+									: 'p-[1.3px]'} object-contain border border-gray-600 shadow favicon-trigger"
 							/>
 
 							{#if hoveredCardIndex === i || playButtonOutIndex === i}
