@@ -264,11 +264,11 @@
 		>
 			Our Main Projects
 		</h2>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
+		<div class="flex flex-wrap justify-center gap-8 w-full max-w-7xl">
 			{#each projects as project, i}
 				{@const faviconId = `favicon-${i}`}
 				<article
-					class="group relative flex h-full flex-col items-start justify-between rounded-3xl p-6 sm:p-7 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-md hover:shadow-brand/20 transition-all duration-300 ease-in-out hover:border-brand/70 transform hover:-translate-y-1"
+					class="group relative flex flex-col items-start justify-between rounded-3xl p-6 sm:p-7 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-md hover:shadow-brand/20 transition-all duration-300 ease-in-out hover:border-brand/70 transform hover:-translate-y-1 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
 					onmouseenter={() => handleCardMouseEnter(i)}
 					onmouseleave={handleCardMouseLeave}
 				>
