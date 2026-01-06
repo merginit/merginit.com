@@ -182,18 +182,18 @@
 				'https://raw.githubusercontent.com/merginit/element-snap.extension/main/assets/icon-128.png',
 			url: 'https://chromewebstore.google.com/detail/element-snap/nldbbahmckpcjcbikdaopeaiidhdomkf'
 		},
-		{
+		/* {
 			projectType: 'Desktop App',
 			category: 'Screen Recorder',
 			productName: 'AUFZEICHNA',
-			date: 'will launch January 2026',
+			date: 'will launch 2026',
 			datetime: '2026-01-01',
 			mainTech: 'Tauri & Svelte',
 			description:
 				'AUFZEICHNA is a cross-platform screen recorder with cinematic auto-zoom, smooth cursors, and motion blur. It includes the AUFMOTZA editor to tune recordings with one-click zooms and motion blur effects.',
 			iconSrc: 'https://aufzeichna.merginit.com/favicon.png',
 			url: 'https://aufzeichna.merginit.com'
-		}
+		} */
 		/* {
 			projectType: 'Open Source Website & AI',
 			category: 'Configuration Platform',
