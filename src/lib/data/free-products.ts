@@ -129,22 +129,32 @@ export const freeProducts: FreeProduct[] = [
 			{
 				platform: 'mac',
 				label: 'macOS (Apple Silicon)',
-				url: 'https://mega.nz/file/xZkFlDZT#jy8vhASdkjvpoTSFMub-CPZSDHIqnknHZ-8lbHdhdOQ'
+				url: 'https://mega.nz/file/JME1yKaS#FIs1tJggGHZp4cW8ken1ELZ0SJe8v9alsqvHcmyt1iU'
 			},
 			{
 				platform: 'mac',
 				label: 'macOS (Intel)',
-				url: 'https://mega.nz/file/FQMGUZLL#sCiCXVjHP7lARNICHmEdHWXR56iq0jQ--P3DBST1fcQ'
+				url: 'https://mega.nz/file/cE8jyaqL#4PVY77CHYCnfFKm2J_AoVEnwiK42U3TM_KJ7uWkZ93o'
 			},
 			{
 				platform: 'linux',
-				label: 'Linux (AppImage, amd64)',
-				url: 'https://mega.nz/file/hc1ikSJa#OxWZwevkYgUTHqHUdltBG7htT_3tPCLPJMkH1kvdJlM'
+				label: 'Linux (AppImage)',
+				url: 'https://mega.nz/file/lctVURYA#nu4ErG3Ba9KOhZUBNrX3EfaHUPjxpXI5qZDW4dmbN4U'
+			},
+			{
+				platform: 'linux',
+				label: 'Linux (.deb)',
+				url: 'https://mega.nz/file/tAsngCSb#tXbTOlQR8SQ9H0D8Nzoj9fTp1KLOSsX43Huflq5zM6c'
 			},
 			{
 				platform: 'windows',
-				label: 'Windows (x64)',
-				url: 'https://mega.nz/file/sMEF2CqJ#gbN9a7YkJbvHRKUgvCMfOAsXS640D-qqMPozOGNWlAQ'
+				label: 'Windows (.msi)',
+				url: 'https://mega.nz/file/lQVBGALQ#BfcWEJd8-7mA_nFrjZpcPPMRDguiE0wS-QuJZwfjWEM'
+			},
+			{
+				platform: 'windows',
+				label: 'Windows (.exe)',
+				url: 'https://mega.nz/file/sdEDBKKZ#wqGErnSqeas-IHiJWIo9Jgx1pFjxba-i2vs_0VhSQiI'
 			}
 		]
 	},
