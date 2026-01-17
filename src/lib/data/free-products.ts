@@ -175,7 +175,8 @@ export const freeProducts: FreeProduct[] = [
 			'Avoids manual cropping by targeting elements directly',
 			'Exports clean PNGs for reviews and bug reports'
 		],
-		keywords: ['screenshot', 'browser extension', 'frontend']
+		keywords: ['screenshot', 'browser extension', 'frontend'],
+		chromeExtensionId: 'nldbbahmckpcjcbikdaopeaiidhdomkf'
 	},
 	{
 		slug: 'page-to-markdown-extension',
@@ -347,6 +348,26 @@ export async function refreshNpmDownloads(fetcher: typeof fetch) {
 				product.downloads = data.downloads;
 
 				return { slug: product.slug, downloads: data.downloads as number };
+			})
+	);
+
+	return results.flatMap((result) => (result.status === 'fulfilled' ? [result.value] : []));
+}
+
+export async function refreshChromeStats(fetcher: typeof fetch) {
+	const results = await Promise.allSettled(
+		extensionProducts
+			.filter((product) => Boolean(product.chromeExtensionId))
+			.map(async (product) => {
+				const response = await fetcher(`/api/chrome-stats?id=${product.chromeExtensionId}`);
+				if (!response.ok) {
+					throw new Error(`Failed to load stats for ${product.chromeExtensionId}`);
+				}
+
+				const data = await response.json();
+				product.downloads = data.users;
+
+				return { slug: product.slug, users: data.users as number };
 			})
 	);
 

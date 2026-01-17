@@ -7,11 +7,13 @@
 		extensionProducts,
 		npmProducts,
 		platformIcons,
+		refreshChromeStats,
 		refreshNpmDownloads,
 		websiteProducts
 	} from '$lib/data/free-products';
 
 	let npmList = [...npmProducts];
+	let extensionList = [...extensionProducts];
 
 	const extensionPrimaryLabel = (url: string) =>
 		url.includes('chromewebstore') ? 'Install' : 'Open';
@@ -21,8 +23,9 @@
 
 	async function fetchDownloadStats() {
 		try {
-			await refreshNpmDownloads(fetch);
+			await Promise.allSettled([refreshNpmDownloads(fetch), refreshChromeStats(fetch)]);
 			npmList = [...npmProducts];
+			extensionList = [...extensionProducts];
 		} catch (error) {
 			console.error('Failed to refresh npm download stats', error);
 		}
@@ -241,7 +244,7 @@
 				<span class="text-[#ffaa40]">Browser Extensions</span>
 			</h2>
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{#each extensionProducts as product, i}
+				{#each extensionList as product, i}
 					<article
 						class="group relative flex h-full flex-col items-start justify-between rounded-3xl p-6 sm:p-8 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-md hover:shadow-brand/20 transition-all duration-300 ease-in-out hover:border-brand/70 transform hover:-translate-y-1"
 					>
@@ -265,6 +268,22 @@
 							>
 								<Icon icon={product.icon} width="32" height="32" />
 							</div>
+							{#if product.downloads}
+								<div
+									class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-semibold shadow-lg"
+								>
+									{new Intl.NumberFormat('en-US', {
+										notation: 'compact',
+										maximumFractionDigits: 1
+									}).format(product.downloads)} active users
+								</div>
+							{:else if product.chromeExtensionId}
+								<div
+									class="absolute -top-2 -right-2 bg-gray-500 text-white text-xs px-2 py-1 rounded-full font-semibold shadow-lg"
+								>
+									Loading...
+								</div>
+							{/if}
 						</div>
 
 						<div

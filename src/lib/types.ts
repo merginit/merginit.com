@@ -36,6 +36,7 @@ export interface Product {
 	githubUrl?: string;
 	downloads?: number;
 	npmPackage?: string;
+	chromeExtensionId?: string;
 	downloadLinks?: DownloadLink[];
 	windowsDownloadUrl?: string;
 	macDownloadUrl?: string;
