@@ -183,6 +183,54 @@
 			url: 'https://chromewebstore.google.com/detail/element-snap/nldbbahmckpcjcbikdaopeaiidhdomkf'
 		},
 		/* {
+			projectType: 'SaaS Website',
+			category: 'Productivity Tool',
+			productName: 'Markdown Blog',
+			date: 'launched February 2026',
+			datetime: '2026-02-01',
+			mainTech: 'React',
+			description:
+				'Markdown Blog is a Markdown blog-post generator with focus on accuracy and SEO.',
+			iconSrc: '/markdownblog.ico',
+			url: 'https://markdownblog.dev'
+		}, */
+		/* {
+			projectType: 'Desktop App',
+			category: 'Branding',
+			productName: 'Brand Peel',
+			date: 'launched February 2026',
+			datetime: '2026-02-01',
+			mainTech: 'Neutralinojs & Vue',
+			description:
+				'Brand Peel is a brand kit generator that helps you create stunning logos and complete design systems. Skip the expensive designer and build a professional brand identity in minutes, not months.',
+			iconSrc: '/unpeeled.png',
+			url: 'https://brandpeel.merginit.com'
+		}, */
+		/* {
+			projectType: 'Desktop App',
+			category: 'Image Processing',
+			productName: 'Foddo',
+			date: 'launched March 2026',
+			datetime: '2026-03-01',
+			mainTech: 'Photino & Blazor',
+			description:
+				'High-performance batch image processing tool. Change file formats, resize, rotate, crop, do color adjustments, apply filters, and much more. Also supports image compression and watermartking both visible and invisible.',
+			iconSrc: '/foddo.ico',
+			url: 'https://foddo.merginit.com'
+		},
+		{
+			projectType: 'Desktop App',
+			category: 'Productivity Tool',
+			productName: 'Dupe Zappa',
+			date: 'launched May 2026',
+			datetime: '2026-05-01',
+			mainTech: 'Wails & React',
+			description:
+				'Deduplicate your files with ease to save space and time.',
+			iconSrc: '/dupezappa.png',
+			url: 'https://dupezappa.merginit.com'
+		},
+		{
 			projectType: 'Desktop App',
 			category: 'Screen Recorder',
 			productName: 'AUFZEICHNA',
@@ -193,7 +241,31 @@
 				'AUFZEICHNA is a cross-platform screen recorder with cinematic auto-zoom, smooth cursors, and motion blur. It includes the AUFMOTZA editor to tune recordings with one-click zooms and motion blur effects.',
 			iconSrc: 'https://aufzeichna.merginit.com/favicon.png',
 			url: 'https://aufzeichna.merginit.com'
-		} */
+		},
+		{
+			projectType: 'SaaS Website',
+			category: 'Product Directory',
+			productName: '42 Websites',
+			date: 'will launch 2026',
+			datetime: '2026-01-01',
+			mainTech: 'Next.js',
+			description:
+				'A product directory with a focus on SEO and Changelog capabilities.',
+			iconSrc: '/42websites.png',
+			url: 'https://42websites.com'
+		},
+		{
+			projectType: 'Mobile App',
+			category: 'Social Media',
+			productName: 'NASDA',
+			date: 'will launch 2026',
+			datetime: '2026-01-01',
+			mainTech: 'React Native',
+			description:
+				'Nua a Schweindal drinkt alla.',
+			iconSrc: '/nasdaapp.png',
+			url: 'https://nasdaapp.com'
+		}, */
 		/* {
 			projectType: 'Open Source Website & AI',
 			category: 'Configuration Platform',
