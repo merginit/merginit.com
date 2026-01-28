@@ -338,11 +338,16 @@
 		<div class="flex flex-wrap justify-center gap-8 w-full max-w-7xl">
 			{#each projects as project, i}
 				{@const faviconId = `favicon-${i}`}
-				<article
-					class="group relative flex flex-col items-start justify-between rounded-3xl p-6 sm:p-7 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-md hover:shadow-brand/20 transition-all duration-300 ease-in-out hover:border-brand/70 transform hover:-translate-y-1 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
+				<div
+					class="group relative w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
 					onmouseenter={() => handleCardMouseEnter(i)}
 					onmouseleave={handleCardMouseLeave}
+					role="group"
+					aria-label={project.productName}
 				>
+					<article
+						class="flex flex-col items-start justify-between rounded-3xl p-6 sm:p-7 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-md group-hover:shadow-brand/20 transition-all duration-300 ease-in-out group-hover:border-brand/70 transform group-hover:-translate-y-1 w-full h-full relative"
+					>
 					<BorderBeam
 						size={180}
 						duration={10}
@@ -438,7 +443,8 @@
 							</p>
 						</div>
 					</div>
-				</article>
+					</article>
+				</div>
 			{/each}
 		</div>
 	</section>
