@@ -5,7 +5,7 @@ declare global {
 		// interface Error {}
 		// interface Locals {}
 		interface PageData {
-			meta?: import('$lib/types').Post;
+			meta?: import('$lib/types').Post | import('$lib/types').BasicMeta;
 		}
 		// interface PageState {}
 		// interface Platform {}

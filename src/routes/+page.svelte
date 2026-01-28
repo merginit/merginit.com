@@ -152,7 +152,7 @@
 			mainTech: 'React',
 			description:
 				'OCRMD.com transforms scanned images and PDFs into editable Markdown. Features include AI-enhanced text recognition with formatting, math equations, tables, and image detection at high accuracy. Secure cloud storage and full-text search capabilities make your documents accessible anywhere.',
-			iconSrc: 'https://ocrmd.com/favicon.png',
+			iconSrc: '/ocrmd-icon.webp',
 			url: 'https://ocrmd.com',
 			videoUrl:
 				'https://player.vimeo.com/video/1102620409?badge=0&autopause=0&player_id=0&app_id=58479'
@@ -166,7 +166,7 @@
 			mainTech: 'Tauri & SolidJS',
 			description:
 				'Turn screenshots into editable text in seconds. PixToText provides free offline OCR using Tesseract, PaddleOCR, and native system engines, plus document conversion and translation. Fully local and private.',
-			iconSrc: '/pix-to-text.png',
+			iconSrc: '/pix-to-text.webp',
 			url: 'https://jonasfroeller.itch.io/pixtotext'
 		},
 		{
@@ -178,8 +178,7 @@
 			mainTech: 'Vanilla JS & Chrome API',
 			description:
 				'The lightweight, reliable way to capture pixel-perfect screenshots of any visible HTML element. Features include pixel-perfect capture, live padding controls, rounded corners, and full element stitching. Built with zero libraries for maximum speed and privacy.',
-			iconSrc:
-				'https://raw.githubusercontent.com/merginit/element-snap.extension/main/assets/icon-128.png',
+			iconSrc: '/element-snap.webp',
 			url: 'https://chromewebstore.google.com/detail/element-snap/nldbbahmckpcjcbikdaopeaiidhdomkf'
 		},
 		/* {
@@ -275,7 +274,7 @@
 			mainTech: 'Nuxt',
 			description:
 				'NeptunAI is a comprehensive configuration platform combining a CLI tool, WebUI, and AI trained on CICD and web development technologies to streamline your configuration workflow.',
-			iconSrc: 'https://neptunai.tech/favicon.png',
+			iconSrc: '/neptunai-icon.webp',
 			url: 'https://neptunai.tech'
 		},
 		{
@@ -369,7 +368,7 @@
 						</span>
 					</div>
 
-					<div class="relative z-10 mt-4 flex-grow">
+					<div class="relative z-10 mt-4 grow">
 						<h3
 							class="text-xl font-semibold leading-7 text-gray-100 group-hover:text-white transition-colors"
 						>
@@ -387,13 +386,13 @@
 							href={project.url}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-brand transition-colors relative z-40 group-link min-h-[20px]"
+							class="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-brand transition-colors relative z-40 group-link min-h-[48px] px-2"
 							onclick={(e) => e.stopPropagation()}
 						>
 							<span class="whitespace-nowrap"
 								>{new URL(project.url).hostname.replace('www.', '')}</span
 							>
-							<Icon icon="lucide:external-link" class="w-4 h-4 flex-shrink-0" />
+							<Icon icon="lucide:external-link" class="w-4 h-4 shrink-0" />
 						</a>
 					</div>
 
@@ -405,6 +404,8 @@
 								id={faviconId}
 								src={project.iconSrc}
 								alt={`${project.projectType} favicon`}
+								width="40"
+								height="40"
 								class="h-10 w-10 rounded-full bg-gray-700 {project.productName === 'Element Snap'
 									? 'p-0.5'
 									: 'p-[1.3px]'} object-contain border border-gray-600 shadow favicon-trigger"

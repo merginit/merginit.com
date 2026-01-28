@@ -1,0 +1,12 @@
+diff --git a/node_modules/cookiiies/dist/components/CookiePreferencesContent.svelte b/node_modules/cookiiies/dist/components/CookiePreferencesContent.svelte
+index ccecb19..30065c6 100644
+--- a/node_modules/cookiiies/dist/components/CookiePreferencesContent.svelte
++++ b/node_modules/cookiiies/dist/components/CookiePreferencesContent.svelte
+@@ -59,6 +59,7 @@
+ 		{#each categoriesToDisplay as category (category.id)}
+ 			<div class={cn('cc:flex cc:items-start cc:p-4 cc:space-x-4 cc:rounded cc:border', styleCtx.categoryItemClass)}>
+ 				<Switch
++					aria-label={category.name}
+ 					class={styleCtx.categorySwitchClass}
+ 					checked={category.checked}
+ 					disabled={category.required}

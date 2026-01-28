@@ -65,7 +65,7 @@
 		setTimeout(() => {
 			isInitialized = true;
 			if (faviconElement) {
-				showVideo();
+				requestAnimationFrame(() => showVideo());
 			}
 		}, 50);
 
@@ -234,7 +234,7 @@
 <!-- Video overlay -->
 <div
 	bind:this={overlay}
-	class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center"
+	class="fixed inset-0 bg-black/80 backdrop-blur-sm z-9999 flex items-center justify-center"
 	onclick={handleOverlayClick}
 	onkeydown={handleOverlayKeydown}
 	role="button"

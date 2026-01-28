@@ -57,7 +57,7 @@
 				style="width: 1120px; min-height: 440px; position: absolute; top: 0; left: 0;"
 			/>
 			<img
-				src={image ?? 'https://merginit.com/favicon.png'}
+				src={image ?? 'https://merginit.com/icon-small.webp'}
 				alt="Logo"
 				style="position: absolute; right: 20px; bottom: 20px; width: 64px; height: 64px; border-radius: 9999px; background-color: white; border: 3px solid white;"
 			/>

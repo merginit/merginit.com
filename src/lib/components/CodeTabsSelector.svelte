@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
-	import { onMount, tick } from 'svelte';
+	import { onMount, tick, untrack } from 'svelte';
 
 	type PrismStatic = typeof import('prismjs');
 
@@ -21,7 +21,7 @@
 
 	let { tabs, className = '', defaultTab }: Props = $props();
 
-	let activeTab = $state(defaultTab || tabs[0]?.id || '');
+	let activeTab = $state(untrack(() => defaultTab) || untrack(() => tabs)[0]?.id || '');
 	let copyStates = $state<Record<string, boolean>>({});
 
 	const activeTabData = $derived(tabs.find((tab) => tab.id === activeTab) || tabs[0]);
@@ -83,9 +83,9 @@
 	}
 </script>
 
-<div class={cn('relative rounded-2xl overflow-hidden border border-neutral-500/30 bg-[var(--color-brand-dark)]', className)}>
+<div class={cn('relative rounded-2xl overflow-hidden border border-neutral-500/30 bg-brand-dark', className)}>
 	<!-- Tab Headers -->
-	<div class="flex rounded-t-2xl bg-[var(--color-brand-dark)]/80 border-b border-neutral-500/30 backdrop-blur-md">
+	<div class="flex rounded-t-2xl bg-brand-dark/80 border-b border-neutral-500/30 backdrop-blur-md">
 		{#each tabs as tab}
 			<button
 				onclick={() => setActiveTab(tab.id)}
@@ -94,7 +94,7 @@
 					'focus:outline-none focus:ring-2 focus:ring-accent/50 focus:ring-inset',
 					activeTab === tab.id
 						? 'bg-white/5 text-white border-b-2 border-accent'
-						: 'text-[var(--color-text-muted)] border-b-2 border-transparent hover:text-[var(--color-text-primary)] hover:bg-white/5'
+						: 'text-text-muted border-b-2 border-transparent hover:text-text-primary hover:bg-white/5'
 				)}
 				type="button"
 				aria-pressed={activeTab === tab.id}

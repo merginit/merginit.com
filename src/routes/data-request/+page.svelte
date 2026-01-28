@@ -61,8 +61,10 @@
 					<div class="bg-gray-800/50 border border-gray-600/50 rounded-2xl p-6 mb-6">
 						<div class="flex items-start gap-4">
 							<img
-								src="https://ocrmd.com/favicon.png"
+								src="/ocrmd-icon.webp"
 								alt="OCRMD logo"
+								width="64"
+								height="64"
 								class="w-16 h-16 rounded-lg bg-gray-700 p-2 object-contain border border-gray-600"
 							/>
 							<div class="flex-1">
@@ -90,7 +92,7 @@
 
 					<div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-4">
 						<div class="flex items-start gap-3">
-							<Icon icon="mdi:information" class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+							<Icon icon="mdi:information" class="w-5 h-5 text-blue-400 mt-0.5 shrink-0" />
 							<div class="text-sm text-blue-200">
 								<strong>Commercial services</strong> store user data and provide account management features.
 								You can request, export, or delete your data through the service settings.
@@ -124,8 +126,10 @@
 						<div class="bg-gray-800/50 border border-gray-600/50 rounded-xl p-4">
 							<div class="flex items-center gap-3 mb-2">
 								<img
-									src="https://neptunai.tech/favicon.png"
+									src="/neptunai-icon.webp"
 									alt="NeptunAI logo"
+									width="32"
+									height="32"
 									class="w-8 h-8 rounded object-contain"
 								/>
 								<h3 class="text-lg font-medium text-white">NeptunAI</h3>
@@ -157,8 +161,10 @@
 						<div class="bg-gray-800/50 border border-gray-600/50 rounded-xl p-4">
 							<div class="flex items-center gap-3 mb-2">
 								<img
-									src="https://taeglichfrischesobst.com/assets/images/fruit.png"
+									src="/taeglichfrischesobst.com.webp"
 									alt="Täglich frisches Obst logo"
+									width="32"
+									height="32"
 									class="w-8 h-8 rounded object-contain"
 								/>
 								<h3 class="text-lg font-medium text-white">Täglich frisches Obst</h3>
@@ -177,7 +183,7 @@
 
 					<div class="bg-gray-900/60 border border-gray-600/50 rounded-xl p-4">
 						<div class="flex items-start gap-3">
-							<Icon icon="mdi:shield-outline" class="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
+							<Icon icon="mdi:shield-outline" class="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
 							<div class="text-sm text-gray-300">
 								<strong>Open source, contract and free services</strong> have varying data collection
 								practices. Some may require accounts for functionality but prioritize user control and

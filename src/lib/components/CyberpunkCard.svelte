@@ -90,6 +90,8 @@
 		on:mousemove={handleMouseMove}
 		on:mouseenter={handleMouseEnter}
 		on:mouseleave={handleMouseLeave}
+		role="group"
+		aria-label={title}
 	>
 		<Container>
 			<div class="p-3 w-full flex justify-center items-center">

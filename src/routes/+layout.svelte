@@ -198,7 +198,7 @@
 				</a>
 			</div>
 
-			<p class="text-xs mt-4 text-neutral-500">
+			<p class="text-xs mt-4 text-neutral-400">
 				&copy; {new Date().getFullYear()} MerginIT e.U. All rights reserved.
 			</p>
 		</div>

@@ -32,16 +32,16 @@
 	const visionLinks: LinkItem[] = [
 		{
 			text: 'Täglich Frisches Obst',
-			img: 'taeglichfrischesobst.com.png',
+			img: 'taeglichfrischesobst.com.webp',
 			href: 'https://taeglichfrischesobst.com'
 		},
 		{
 			text: 'NeptunAI',
-			img: '/neptunai.tech-dashboard-chat.png',
-			images: ['/neptunai.tech-dashboard-chat.png', '/neptunai.tech.png'],
+			img: '/neptunai.tech-dashboard-chat.webp',
+			images: ['/neptunai.tech-dashboard-chat.webp', '/neptunai.tech.webp'],
 			href: 'https://neptunai.tech'
 		},
-		{ text: 'OCRMD', img: 'ocrmd.com.png', href: 'https://ocrmd.com' }
+		{ text: 'OCRMD', img: 'ocrmd.com.webp', href: 'https://ocrmd.com' }
 	];
 
 	const socialLinks: LinkItem[] = [
@@ -54,7 +54,7 @@
 		{
 			text: 'Founder',
 			href: 'https://jonasfroeller.is-a.dev',
-			icon: 'https://jonasfroeller.is-a.dev/favicon-dark.ico',
+			icon: '/jonasfroeller-icon.webp',
 			area: 'lg'
 		},
 		{
@@ -65,7 +65,7 @@
 		}
 	];
 
-	const defaultPreviewImageSrc = '/taeglichfrischesobst.com.png';
+	const defaultPreviewImageSrc = '/taeglichfrischesobst.com.webp';
 
 	// --- UTILITY FUNCTIONS ---
 	function resetPreviewImage(): void {
@@ -224,7 +224,7 @@
 				isOpen = false;
 				isAnimating = false;
 				if (allLinks.length > 0) {
-					gsap.set(allLinks, { y: '120%', opacity: 0.25 });
+					gsap.set(allLinks, { y: '120%', opacity: 0 });
 				}
 				resetPreviewImage();
 			}
@@ -408,13 +408,15 @@
 			newPreviewImg.className =
 				'absolute top-0 left-0 w-full h-full object-cover opacity-0 scale-[1.25] rotate-[10deg] [will-change:transform,opacity]';
 			menuPreviewImgContainerEl.appendChild(newPreviewImg);
-
-			gsap.to(newPreviewImg, {
-				opacity: 1,
-				scale: 1,
-				rotation: 0,
-				duration: 0.75,
-				ease: 'power2.out'
+			
+			requestAnimationFrame(() => {
+				gsap.to(newPreviewImg, {
+					opacity: 1,
+					scale: 1,
+					rotation: 0,
+					duration: 0.75,
+					ease: 'power2.out'
+				});
 			});
 		}
 	}
@@ -442,7 +444,7 @@
 		].filter((el) => el !== null) as HTMLElement[];
 
 		if (allLinksOnInit.length > 0) {
-			gsap.set(allLinksOnInit, { y: '120%', opacity: 0.25 });
+			gsap.set(allLinksOnInit, { y: '120%', opacity: 0 });
 		}
 		resetPreviewImage();
 
@@ -460,10 +462,10 @@
 </script>
 
 <div class="font-custom bg-brand-dark text-white leading-normal overflow-hidden">
-	<nav class="fixed top-0 inset-x-0 p-10 flex justify-between items-center z-[100] text-white">
+	<nav class="fixed top-0 inset-x-0 p-10 flex justify-between items-center z-100 text-white">
 		<div class="logo">
 			<a href="/" class="font-semibold text-[1.5rem] flex items-center">
-				<img src="/favicon.png" alt="MerginIT Favicon" class="h-[calc(1.5rem*1.5)] mr-2" />
+				<img src="/icon-small.webp" alt="MerginIT Favicon" width="36" height="36" class="h-9 mr-2" />
 				MerginIT
 			</a>
 		</div>
@@ -476,13 +478,13 @@
 		>
 			<p
 				bind:this={menuOpenLabelEl}
-				class="absolute top-0 left-0 w-full h-full text-right font-normal origin-top-left flex items-center justify-end [will-change:transform,opacity]"
+				class="absolute top-0 left-0 w-full h-full text-right font-normal origin-top-left flex items-center justify-end will-change-[transform,opacity]"
 			>
 				References
 			</p>
 			<p
 				bind:this={menuCloseLabelEl}
-				class="absolute top-0 left-0 w-full h-full text-right font-normal origin-top-left flex items-center justify-end [will-change:transform,opacity]"
+				class="absolute top-0 left-0 w-full h-full text-right font-normal origin-top-left flex items-center justify-end will-change-[transform,opacity]"
 			>
 				Close
 			</p>
@@ -496,18 +498,18 @@
 	>
 		<div
 			bind:this={menuContentEl}
-			class="menu-content relative w-full h-full flex flex-col justify-center items-center origin-left-bottom [will-change:transform,opacity]"
+			class="menu-content relative w-full h-full flex flex-col justify-center items-center origin-left-bottom will-change-[transform,opacity]"
 		>
 			<div
-				class="menu-items w-full p-10 flex md:flex-row flex-col gap-10 flex-grow items-center md:pt-0 pt-32 max-md:pt-[8rem] bg-brand-dark"
+				class="menu-items w-full p-10 flex md:flex-row flex-col gap-10 grow items-center md:pt-0 pt-32 max-md:pt-32 bg-brand-dark"
 			>
-				<div class="col-lg md:flex-[3] hidden md:block w-[45%] h-full max-h-[600px]">
+				<div class="col-lg md:flex-3 hidden md:block w-[45%] h-full max-h-[600px]">
 					<div
 						bind:this={menuPreviewImgContainerEl}
 						class="menu-preview-img relative w-full h-full overflow-hidden"
 					></div>
 				</div>
-				<div class="col-sm md:flex-[2] w-full md:w-auto">
+				<div class="col-sm md:flex-2 w-full md:w-auto">
 					<div class="menu-links flex flex-col gap-2">
 						{#each visionLinks as item, i}
 							<div class="link">
@@ -518,11 +520,11 @@
 									rel="noopener noreferrer"
 									onmouseover={() => handleLinkHoverFocus(item)}
 									onfocus={() => handleLinkHoverFocus(item)}
-									class="text-[2.5rem] md:text-[3.5rem] font-medium tracking-[-0.02em] relative inline-block transition-colors duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-neutral-400 group menu-link-item [will-change:transform]"
+									class="text-[2.5rem] md:text-[3.5rem] font-medium tracking-[-0.02em] relative inline-block transition-colors duration-300 ease-custom hover:text-neutral-400 group menu-link-item will-change-transform"
 								>
 									{item.text}
 									<span
-										class="absolute left-0 bottom-0 h-[2px] bg-white w-full scale-x-0 origin-left group-hover:scale-x-100 group-hover:origin-right transition-transform duration-300 ease-[cubic-bezier(0.6,0,0.4,1)] hidden md:inline-block max-md:hidden"
+										class="absolute left-0 bottom-0 h-[2px] bg-white w-full scale-x-0 origin-left group-hover:scale-x-100 group-hover:origin-right transition-transform duration-300 ease-underline hidden md:inline-block max-md:hidden"
 									></span>
 								</a>
 							</div>
@@ -536,7 +538,7 @@
 									href={item.href}
 									target="_blank"
 									rel="noopener noreferrer"
-									class="text-base font-light text-neutral-500 relative inline-block transition-colors duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white group menu-link-item [will-change:transform]"
+									class="text-base font-light text-neutral-500 relative inline-block transition-colors duration-300 ease-custom hover:text-white group menu-link-item will-change-transform"
 								>
 									{item.text}
 								</a>
@@ -546,14 +548,14 @@
 				</div>
 			</div>
 			<div
-				class="menu-footer absolute bottom-0 w-full p-10 flex md:flex-row flex-col gap-4 text-[0.9rem] max-md:gap-[1rem]"
+				class="menu-footer absolute bottom-0 w-full p-10 flex md:flex-row flex-col gap-4 text-[0.9rem] max-md:gap-4"
 			>
-				<div class="col-lg md:flex-[3]">
+				<div class="col-lg md:flex-3">
 					{#if footerLinks[0]}
 						<a
 							bind:this={footerLinksElements[0]}
 							href={footerLinks[0].href}
-							class="relative transition-colors duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-neutral-400 group menu-link-item [will-change:transform] {footerLinks[0]
+							class="relative transition-colors duration-300 ease-custom hover:text-neutral-400 group menu-link-item will-change-transform {footerLinks[0]
 								.icon && footerLinks[0].text
 								? 'inline-flex items-center'
 								: 'inline-block'}"
@@ -564,6 +566,8 @@
 									<img
 										src={footerLinks[0].icon}
 										alt=""
+										width="24"
+										height="24"
 										class="ml-1 w-6 h-6 rounded-full object-contain"
 									/>
 								{:else}
@@ -574,6 +578,8 @@
 									<img
 										src={footerLinks[0].icon}
 										alt={footerLinks[0].text || 'MerginIT e.U. icon'}
+										width="24"
+										height="24"
 										class="w-6 h-6 rounded-full object-contain"
 									/>
 								{:else}
@@ -586,13 +592,13 @@
 					{/if}
 				</div>
 				<div
-					class="col-sm md:flex-[2] flex flex-col md:flex-row md:justify-between items-start md:gap-0 gap-2 max-md:gap-[0.5rem] max-md:items-start"
+					class="col-sm md:flex-2 flex flex-col md:flex-row md:justify-between items-start md:gap-0 gap-2 max-md:gap-2 max-md:items-start"
 				>
 					{#if footerLinks[1]}
 						<a
 							bind:this={footerLinksElements[1]}
 							href={footerLinks[1].href}
-							class="relative transition-colors duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-neutral-400 group menu-link-item [will-change:transform] {footerLinks[1]
+							class="relative transition-colors duration-300 ease-custom hover:text-neutral-400 group menu-link-item will-change-transform {footerLinks[1]
 								.icon && footerLinks[1].text
 								? 'inline-flex items-center'
 								: 'inline-block'}"
@@ -602,6 +608,8 @@
 									<img
 										src={footerLinks[1].icon}
 										alt=""
+										width="24"
+										height="24"
 										class="mr-1 w-6 h-6 rounded-full object-contain"
 									/>
 								{:else}
@@ -613,6 +621,8 @@
 									<img
 										src={footerLinks[1].icon}
 										alt={footerLinks[1].text || 'Founder icon'}
+										width="24"
+										height="24"
 										class="w-6 h-6 rounded-full object-contain"
 									/>
 								{:else}
@@ -627,7 +637,7 @@
 						<a
 							bind:this={footerLinksElements[2]}
 							href={footerLinks[2].href}
-							class="relative transition-colors duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-neutral-400 group menu-link-item [will-change:transform] {footerLinks[2]
+							class="relative transition-colors duration-300 ease-custom hover:text-neutral-400 group menu-link-item will-change-transform {footerLinks[2]
 								.icon && footerLinks[2].text
 								? 'inline-flex items-center'
 								: 'inline-block'}"
@@ -638,6 +648,8 @@
 									<img
 										src={footerLinks[2].icon}
 										alt=""
+										width="24"
+										height="24"
 										class="ml-1 w-6 h-6 rounded-full object-contain"
 									/>
 								{:else}
@@ -648,6 +660,8 @@
 									<img
 										src={footerLinks[2].icon}
 										alt={footerLinks[2].text || 'Open Source Work icon'}
+										width="24"
+										height="24"
 										class="w-6 h-6 rounded-full object-contain"
 									/>
 								{:else}
@@ -665,7 +679,7 @@
 
 	<div
 		bind:this={containerEl}
-		class="container relative w-full min-h-screen origin-right-top [will-change:transform]"
+		class="container relative w-full min-h-screen origin-right-top will-change-transform"
 	>
 		<section
 			class="hero relative w-screen h-dvh p-10 flex flex-col justify-end items-start overflow-hidden"
@@ -687,7 +701,7 @@
 				words={$isMobile
 					? 'We merge<br>features<br>into reality,<br>one iteration<br>at a time.'
 					: 'We merge features into reality,<br>one iteration at a time.'}
-				class="font-display text-left text-4xl font-bold tracking-[-0.1em] text-white md:text-7xl md:leading-[5rem] w-full md:w-4/5"
+				class="font-display text-left text-4xl font-bold -tracking-widest text-white md:text-7xl md:leading-20 w-full md:w-4/5"
 			/>
 			<div class="absolute bottom-10 right-10">
 				<SpinningText children="We Build SaaS • We Build Websites • " radius={6.8} />
@@ -699,7 +713,7 @@
 <style>
 	.menu-link-item {
 		transform: translateY(120%);
-		opacity: 0.25;
+		opacity: 0;
 	}
 	.menu-toggle {
 		padding: 0;

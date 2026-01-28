@@ -226,8 +226,10 @@
 						<!-- OCRMD -->
 						<div class="text-center p-6 rounded-2xl border border-gray-700/50 bg-gray-900/30">
 							<img
-								src="https://ocrmd.com/favicon.png"
+								src="/ocrmd-icon.webp"
 								alt="OCRMD"
+								width="48"
+								height="48"
 								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-700 p-2"
 							/>
 							<h3 class="text-lg font-semibold text-white mb-2">OCRMD</h3>
@@ -249,8 +251,10 @@
 						<!-- NeptunAI -->
 						<div class="text-center p-6 rounded-2xl border border-gray-700/50 bg-gray-900/30">
 							<img
-								src="https://neptunai.tech/favicon.png"
+								src="/neptunai-icon.webp"
 								alt="NeptunAI"
+								width="48"
+								height="48"
 								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-700 p-2"
 							/>
 							<h3 class="text-lg font-semibold text-white mb-2">NeptunAI</h3>
@@ -272,8 +276,10 @@
 						<!-- Täglich frisches Obst -->
 						<div class="text-center p-6 rounded-2xl border border-gray-700/50 bg-gray-900/30">
 							<img
-								src="https://taeglichfrischesobst.com/assets/images/fruit.png"
+								src="/taeglichfrischesobst.com.webp"
 								alt="Täglich frisches Obst"
+								width="48"
+								height="48"
 								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-700 p-2"
 							/>
 							<h3 class="text-lg font-semibold text-white mb-2">Täglich frisches Obst</h3>

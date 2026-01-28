@@ -79,10 +79,14 @@ export const CATEGORIES = [
 
 export type Categories = (typeof CATEGORIES)[number];
 
-export type Post = {
+export interface BasicMeta {
 	title: string;
-	slug: string;
 	description: string;
+	type?: string;
+}
+
+export type Post = BasicMeta & {
+	slug: string;
 	date: string;
 	updateDate?: string;
 	categories: Categories[];

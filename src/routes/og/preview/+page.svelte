@@ -77,7 +77,7 @@
 								id="image"
 								type="text"
 								bind:value={imageUrl}
-								placeholder="https://merginit.com/favicon.png"
+								placeholder="https://merginit.com/icon-small.webp"
 								class="w-full px-4 py-2.5 bg-brand-dark border border-gray-700 rounded-xl focus:ring-2 focus:ring-brand focus:border-transparent text-white placeholder-gray-500 transition-all"
 							/>
 						</div>
@@ -103,7 +103,7 @@
 								id="mockPreview"
 								type="text"
 								bind:value={mockPreviewImage}
-								placeholder="https://merginit.com/ocrmd.com.png"
+								placeholder="https://merginit.com/ocrmd-icon.webp"
 								class="w-full px-4 py-2.5 bg-brand-dark border border-gray-700 rounded-xl focus:ring-2 focus:ring-brand focus:border-transparent text-white placeholder-gray-500 transition-all"
 							/>
 							<p class="text-xs text-text-muted mt-1.5">

@@ -108,7 +108,7 @@
 <div class="relative">
 	<!-- Tag input container -->
 	<div
-		class="min-h-[2.75rem] w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg text-white transition-colors"
+		class="min-h-11 w-full px-3 py-2 bg-gray-900/50 border border-gray-600/50 rounded-lg text-white transition-colors"
 	>
 		<div class="flex flex-wrap gap-2 items-center">
 			<!-- Selected tags -->

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, untrack } from 'svelte';
 
 	interface Props {
 		videos: string[];
@@ -14,7 +14,7 @@
 	let containerRef: HTMLDivElement;
 	let videoRefs: HTMLVideoElement[] = [];
 	let slideRefs: HTMLDivElement[] = [];
-	let loadingStates = $state<boolean[]>(videos.map(() => true));
+	let loadingStates = $state<boolean[]>(untrack(() => videos).map(() => true));
 	let loadedVideos = $state<Set<number>>(new Set());
 
 	// Generate poster URL from video URL (e.g., video.mp4 -> video-thumb.webp)

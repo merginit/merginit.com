@@ -314,7 +314,7 @@
 			<!-- Date Range -->
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 				<div>
-					<label class="block text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
+					<label class="text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
 						<Icon icon="tabler:calendar" class="text-accent w-5 h-5" />
 						From Date
 					</label>
@@ -327,7 +327,7 @@
 					/>
 				</div>
 				<div>
-					<label class="block text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
+					<label class="text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
 						<Icon icon="tabler:calendar" class="text-accent w-5 h-5" />
 						To Date
 					</label>

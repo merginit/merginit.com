@@ -14,7 +14,7 @@
 	this={Tag}
 	bind:this={element}
 	class={cn(
-		'group relative w-auto cursor-pointer overflow-hidden rounded-full border-[#f5007d] border-2 bg-black text-white py-2 pl-4 pr-6 font-semibold',
+		'group relative w-auto cursor-pointer overflow-hidden rounded-full border-accent border-2 bg-black text-white py-2 pl-4 pr-6 font-semibold',
 		_class
 	)}
 	role={href ? 'button' : undefined}

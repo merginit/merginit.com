@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, untrack } from 'svelte';
 	import { Tween } from 'svelte/motion';
 	import { cn } from '$lib/utils';
 	import { cubicOut } from 'svelte/easing';
@@ -18,12 +18,12 @@
 		[key: string]: any;
 	}>();
 
-	const numTween = new Tween<number>(initial, {
-		duration: duration,
+	const numTween = new Tween<number>(untrack(() => initial), {
+		duration: untrack(() => duration),
 		easing: cubicOut
 	});
 
-	let currentTweenValue = $state<number>(initial);
+	let currentTweenValue = $state<number>(untrack(() => initial));
 
 	$effect(() => {
 		currentTweenValue = numTween.current;

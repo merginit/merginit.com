@@ -1,5 +1,6 @@
 import { env as privateEnv } from '$env/dynamic/private';
 import { decodeHtmlEntities } from '$lib/utils';
+// @ts-ignore
 import OgCard from '$lib/og.svelte';
 import { render as ssrRender } from 'svelte/server';
 import localFontUrl from '$lib/fonts/Noto_Sans/static/NotoSans_Condensed-Black.ttf?url';
@@ -133,7 +134,7 @@ export const GET: import('./$types').RequestHandler = async ({ url, platform, fe
 
   const resolvedImagePromise = (async () => {
     try {
-      const source = imageParam ?? new URL('/favicon.png', url.origin).toString();
+      const source = imageParam ?? new URL('/icon-small.webp', url.origin).toString();
       return await toDataUrl(source);
     } catch {
       return undefined;

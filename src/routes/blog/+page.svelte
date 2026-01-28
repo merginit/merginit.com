@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, untrack } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import BorderBeam from '$lib/components/BorderBeam.svelte';
 	import BlogLoader from '$lib/components/blog/BlogLoader.svelte';
@@ -7,10 +7,10 @@
 	import type { Post } from '$lib/types';
 
 	let { data } = $props();
-	let posts = $state<Post[]>(data.posts);
+	let posts = $state<Post[]>(untrack(() => data.posts));
 	let loading = $state(false);
 	let filters = $state(
-		data.filters || {
+		untrack(() => data.filters) || {
 			search: '',
 			searchScope: 'all' as const,
 			categories: [],
@@ -23,6 +23,13 @@
 			maxReadTime: 60
 		}
 	);
+
+	$effect(() => {
+		posts = data.posts;
+		if (data.filters) {
+			filters = data.filters;
+		}
+	});
 
 	let debounceTimer: ReturnType<typeof setTimeout>;
 

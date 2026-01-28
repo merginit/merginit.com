@@ -96,7 +96,7 @@
 	>
 		{#if preview.image}
 			<div
-				class="md:w-[60%] w-full flex-shrink-0 flex items-center justify-center relative transition-colors duration-500 overflow-hidden"
+				class="md:w-[60%] w-full shrink-0 flex items-center justify-center relative transition-colors duration-500 overflow-hidden"
 				style="background-color: {dominantColor}"
 			>
 				<img
@@ -109,7 +109,7 @@
 					on:error={() => console.warn('Image failed to load')}
 				/>
 				<div
-					class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"
+					class="absolute inset-0 bg-linear-to-t from-black/40 to-transparent pointer-events-none"
 				></div>
 			</div>
 		{/if}
@@ -134,13 +134,13 @@
 				href={preview.url}
 				target="_blank"
 				rel="noopener"
-				class="block font-extrabold text-xl md:text-2xl text-accent no-underline group-hover:underline break-words leading-tight mt-2"
+				class="block font-extrabold text-xl md:text-2xl text-accent no-underline group-hover:underline wrap-break-word leading-tight mt-2"
 				style="word-break: break-word; padding:0;"
 			>
 				{decodeHtmlEntities(preview.title)}
 			</a>
 			<div
-				class="text-base text-neutral-700 dark:text-neutral-200 break-words whitespace-pre-line font-medium opacity-90 mt-2"
+				class="text-base text-neutral-700 dark:text-neutral-200 wrap-break-word whitespace-pre-line font-medium opacity-90 mt-2"
 				style="padding:0;"
 			>
 				{decodeHtmlEntities(preview.description)}

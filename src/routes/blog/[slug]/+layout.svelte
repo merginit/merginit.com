@@ -22,13 +22,23 @@
 		const meta = page.data?.meta;
 		if (meta) {
 			title = meta.title;
-			date = meta.date;
-			updateDate = meta.updateDate ?? '';
-			author = meta.author || '';
 			description = meta.description || '';
-			readingTime = meta.readingTime;
-			tags = meta.tags;
-			categories = meta.categories;
+			
+			if ('date' in meta) {
+				date = meta.date;
+				updateDate = meta.updateDate ?? '';
+				author = meta.author || '';
+				readingTime = meta.readingTime;
+				tags = meta.tags;
+				categories = meta.categories;
+			} else {
+				date = '';
+				updateDate = '';
+				author = '';
+				readingTime = '';
+				tags = [];
+				categories = [];
+			}
 		}
 	});
 
