@@ -142,23 +142,18 @@ The AI landscape remains a whirlwind of innovation and fierce competition. The a
 
 ## Sources
 
-- **Anthropic:**
-  - Valuation News: [https://x.com/sundeep/status/1945533127998247158](https://x.com/sundeep/status/1945533127998247158)
-  - Department of Defense Contract: [https://www.anthropic.com/news/anthropic-and-the-department-of-defense-to-advance-responsible-ai-in-defense-operations](https://www.anthropic.com/news/anthropic-and-the-department-of-defense-to-advance-responsible-ai-in-defense-operations)
-- **Mistral:**
-  - Voxtral Announcement: [https://x.com/mistralai/status/1945130173751288311](https://x.com/mistralai/status/1945130173751288311)
-  - Voxtral Blog Post: [https://mistral.ai/news/voxtral](https://mistral.ai/news/voxtral)
-  - Voxtral on Hugging Face: [https://huggingface.co/mistralai/Voxtral-Small-24B-2507](https://huggingface.co/mistralai/Voxtral-Small-24B-2507)
-  - Devstral on Hugging Face: [https://huggingface.co/mistralai/Devstral-Small-2507](https://huggingface.co/mistralai/Devstral-Small-2507)
-- **Kimi K2:**
-  - Performance vs. Claude: [https://x.com/jasonzhou1993/status/1944320164889284947](https://x.com/jasonzhou1993/status/1944320164889284947)
-  - API & Pricing: [https://platform.moonshot.ai/docs/introduction#text-generation-model](https://platform.moonshot.ai/docs/introduction#text-generation-model)
-  - Technical Report: [https://moonshotai.github.io/Kimi-K2/](https://moonshotai.github.io/Kimi-K2)
-  - GitHub Repository & License: [https://github.com/MoonshotAI/Kimi-K2](https://github.com/MoonshotAI/Kimi-K2)
-  - OpenRouter Rankings: [https://openrouter.ai/rankings?view=trending](https://openrouter.ai/rankings?view=trending)
-  - Claude Code Router for Kimi: [https://github.com/musistudio/claude-code-router](https://github.com/musistudio/claude-code-router)
-- **Grok-4:**
-  - "Snitch" Analysis: [https://x.com/xlr8harder/status/1943920338733051918](https://x.com/xlr8harder/status/1943920338733051918)
-  - SnitchBench: [https://snitchbench.t3.gg/](https://snitchbench.t3.gg)
-- **Amazon Kiro:**
-  - Official Website: [https://kiro.dev](https://kiro.dev)
+[Anthropic: Valuation News](https://x.com/sundeep/status/1945533127998247158)  
+[Anthropic: Department of Defense Contract](https://www.anthropic.com/news/anthropic-and-the-department-of-defense-to-advance-responsible-ai-in-defense-operations)  
+[Mistral: Voxtral Announcement](https://x.com/mistralai/status/1945130173751288311)  
+[Mistral: Voxtral Blog Post](https://mistral.ai/news/voxtral)  
+[Mistral: Voxtral on Hugging Face](https://huggingface.co/mistralai/Voxtral-Small-24B-2507)  
+[Mistral: Devstral on Hugging Face](https://huggingface.co/mistralai/Devstral-Small-2507)  
+[Kimi K2: Performance vs. Claude](https://x.com/jasonzhou1993/status/1944320164889284947)  
+[Kimi K2: API & Pricing](https://platform.moonshot.ai/docs/introduction#text-generation-model)  
+[Kimi K2: Technical Report](https://moonshotai.github.io/Kimi-K2)  
+[Kimi K2: GitHub Repository & License](https://github.com/MoonshotAI/Kimi-K2)  
+[Kimi K2: OpenRouter Rankings](https://openrouter.ai/rankings?view=trending)  
+[Kimi K2: Claude Code Router for Kimi](https://github.com/musistudio/claude-code-router)  
+[Grok-4: "Snitch" Analysis](https://x.com/xlr8harder/status/1943920338733051918)  
+[Grok-4: SnitchBench](https://snitchbench.t3.gg)  
+[Amazon Kiro: Official Website](https://kiro.dev)
