@@ -232,4 +232,6 @@ I didn't post there though and wanted to test the TikTok waters, since the only 
 
 <ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/follower-growth-chart.webp" alt="Follower growth chart showing steady increase to 61 followers" />
 
+<ImageWithCaption src="/blog/25122025-ai-generated-tiktok-videos-experiment-veo-google-cloud/aiasmrlvr.webp" alt="Final TikTok profile with 100+ AI-generated ASMR videos, 95 followers, and 1250+ likes" />
+
 Check out the experiment: [@aiasmrlvr on TikTok](https://www.tiktok.com/@aiasmrlvr)
