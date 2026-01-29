@@ -12,15 +12,16 @@
 
 	let cardRef: HTMLElement | undefined;
 	let isMouseOver = false;
+	let cachedRect: DOMRect | null = null;
 
 	function handleMouseMove(event: MouseEvent) {
-		if (!cardRef || !isMouseOver) return;
-		const rect = cardRef.getBoundingClientRect();
-		const x = event.clientX - rect.left;
-		const y = event.clientY - rect.top;
+		if (!cardRef || !isMouseOver || !cachedRect) return;
+		
+		const x = event.clientX - cachedRect.left;
+		const y = event.clientY - cachedRect.top;
 
-		const centerX = rect.width / 2;
-		const centerY = rect.height / 2;
+		const centerX = cachedRect.width / 2;
+		const centerY = cachedRect.height / 2;
 
 		const rotateX = ((y - centerY) / centerY) * -7;
 		const rotateY = ((x - centerX) / centerX) * 7;
@@ -37,6 +38,7 @@
 	function handleMouseEnter() {
 		isMouseOver = true;
 		if (cardRef) {
+			cachedRect = cardRef.getBoundingClientRect();
 			gsap.to(cardRef, {
 				duration: 0.2,
 				ease: 'power2.out'

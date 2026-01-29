@@ -12,8 +12,8 @@
 	let currentIndex = $state(0);
 	let isMuted = $state(true);
 	let containerRef: HTMLDivElement;
-	let videoRefs: HTMLVideoElement[] = [];
-	let slideRefs: HTMLDivElement[] = [];
+	let videoRefs = $state<HTMLVideoElement[]>([]);
+	let slideRefs = $state<HTMLDivElement[]>([]);
 	let loadingStates = $state<boolean[]>(untrack(() => videos).map(() => true));
 	let loadedVideos = $state<Set<number>>(new Set());
 
@@ -23,12 +23,19 @@
 	}
 
 	onMount(() => {
-		// Intersection Observer for lazy loading
+		// Intersection Observer for both lazy loading AND active index tracking
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					const index = slideRefs.indexOf(entry.target as HTMLDivElement);
 					if (index === -1) return;
+
+					if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+						if (currentIndex !== index) {
+							currentIndex = index;
+							updateVideoPlayback();
+						}
+					}
 
 					if (entry.isIntersecting && !loadedVideos.has(index)) {
 						// Start loading this video and adjacent ones
@@ -41,13 +48,16 @@
 							loadedVideos = new Set(loadedVideos);
 							const video = videoRefs[i];
 							if (video) {
-								video.load();
+								video.load(); // Just ensure it's loaded, play/pause is handled by updateVideoPlayback
 							}
 						});
 					}
 				});
 			},
-			{ root: containerRef, threshold: 0.1 }
+			{ 
+				root: containerRef, 
+				threshold: [0.6]
+			}
 		);
 
 		slideRefs.forEach((slide) => {
@@ -57,26 +67,19 @@
 		// Load first video immediately
 		loadedVideos.add(0);
 		loadedVideos = new Set(loadedVideos);
+		// Ensure first video plays if it's the initial state
+		updateVideoPlayback();
 
 		return () => observer.disconnect();
 	});
-
-	function handleScroll() {
-		if (!containerRef) return;
-		const scrollTop = containerRef.scrollTop;
-		const itemHeight = containerRef.clientHeight;
-		const newIndex = Math.round(scrollTop / itemHeight);
-		if (newIndex !== currentIndex) {
-			currentIndex = newIndex;
-			updateVideoPlayback();
-		}
-	}
 
 	function updateVideoPlayback() {
 		videoRefs.forEach((video, index) => {
 			if (!video) return;
 			if (index === currentIndex) {
-				video.play();
+				video.play().catch(() => {
+					// Auto-play might be blocked or not ready
+				});
 			} else {
 				video.pause();
 				video.currentTime = 0;
@@ -109,7 +112,6 @@
 	<div
 		bind:this={containerRef}
 		class="video-swiper-container"
-		onscroll={handleScroll}
 	>
 	{#each videos as videoUrl, index}
 			<div bind:this={slideRefs[index]} class="video-slide" style="--aspect-ratio: {aspectRatio};">

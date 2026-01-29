@@ -73,8 +73,10 @@
 				}
 			}
 			return `rgb(${picked.r},${picked.g},${picked.b})`;
-		} catch (err) {
-			console.warn('Could not extract dominant color:', err);
+		} catch (err: any) {
+			if (err.name !== 'SecurityError') {
+				console.warn('Could not extract dominant color:', err);
+			}
 			return 'rgb(71, 85, 105)';
 		}
 	}

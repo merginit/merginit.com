@@ -74,6 +74,8 @@
 			const defaultPreviewImg = document.createElement('img');
 			defaultPreviewImg.src = defaultPreviewImageSrc;
 			defaultPreviewImg.alt = 'Preview Image';
+			defaultPreviewImg.width = 1262;
+			defaultPreviewImg.height = 600;
 			defaultPreviewImg.className =
 				'absolute top-0 left-0 w-full h-full object-cover [will-change:transform,opacity]';
 			menuPreviewImgContainerEl.appendChild(defaultPreviewImg);
@@ -405,6 +407,8 @@
 			const newPreviewImg = document.createElement('img');
 			newPreviewImg.src = imgSrc;
 			newPreviewImg.alt = 'Preview Image';
+			newPreviewImg.width = 1200;
+			newPreviewImg.height = 800;
 			newPreviewImg.className =
 				'absolute top-0 left-0 w-full h-full object-cover opacity-0 scale-[1.25] rotate-[10deg] [will-change:transform,opacity]';
 			menuPreviewImgContainerEl.appendChild(newPreviewImg);
@@ -689,6 +693,8 @@
 					src="cyberpunk-city.webp"
 					alt="Hero Background"
 					class="w-full h-full object-cover brightness-75"
+					fetchpriority="high"
+					loading="eager"
 				/>
 			</div>
 			<CallToAction
