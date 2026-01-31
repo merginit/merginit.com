@@ -111,6 +111,7 @@ export const freeProducts: FreeProduct[] = [
 		slug: 'pixtotext',
 		type: 'desktop',
 		name: 'PixToText',
+		version: '0.1.115',
 		url: 'https://jonasfroeller.itch.io/pixtotext',
 		description:
 			'Turn screenshots into editable text in seconds. Fully local, no login, no data leaves your PC. Supports Tesseract, PaddleOCR, and Native Windows/macOS OCR.',
@@ -129,32 +130,42 @@ export const freeProducts: FreeProduct[] = [
 			{
 				platform: 'mac',
 				label: 'macOS (Apple Silicon)',
-				url: 'https://mega.nz/file/JME1yKaS#FIs1tJggGHZp4cW8ken1ELZ0SJe8v9alsqvHcmyt1iU'
+				url: 'https://mega.nz/file/RE9CQISS#DYflnfOn83GP53PEnpf4z-1y8aYbJFz0OccbMFR7U_s'
 			},
 			{
 				platform: 'mac',
 				label: 'macOS (Intel)',
-				url: 'https://mega.nz/file/cE8jyaqL#4PVY77CHYCnfFKm2J_AoVEnwiK42U3TM_KJ7uWkZ93o'
+				url: 'https://mega.nz/file/4Y8AyC5a#wx_ELRw1EFmXNSwAvumOohVzHdf3fPW6IVOgmeH7qyg'
 			},
 			{
 				platform: 'linux',
 				label: 'Linux (AppImage)',
-				url: 'https://mega.nz/file/lctVURYA#nu4ErG3Ba9KOhZUBNrX3EfaHUPjxpXI5qZDW4dmbN4U'
+				url: 'https://mega.nz/file/5Q1HiKrC#FHWNPGr86jjMdUGpwZiP2wYCfv0cVXaxaMAek3pZd6s'
 			},
 			{
 				platform: 'linux',
 				label: 'Linux (.deb)',
-				url: 'https://mega.nz/file/tAsngCSb#tXbTOlQR8SQ9H0D8Nzoj9fTp1KLOSsX43Huflq5zM6c'
+				url: 'https://mega.nz/file/QQ1VyYIC#GNb4w1Jo5vyu9Emt9KN5GHWZSx7rzhoKxQALF-oaesI'
 			},
 			{
 				platform: 'windows',
 				label: 'Windows (.msi)',
-				url: 'https://mega.nz/file/lQVBGALQ#BfcWEJd8-7mA_nFrjZpcPPMRDguiE0wS-QuJZwfjWEM'
+				url: 'https://mega.nz/file/gZ1ykQAR#8_x0gENGRpdrjNq0GUWwxduyGXukKCklyx3_05mOhvs'
 			},
 			{
 				platform: 'windows',
 				label: 'Windows (.exe)',
-				url: 'https://mega.nz/file/sdEDBKKZ#wqGErnSqeas-IHiJWIo9Jgx1pFjxba-i2vs_0VhSQiI'
+				url: 'https://mega.nz/file/RdsniD4T#O-vlpfNEKmGcwOZKgt_EShAf4XtoEgNKimQFN6Yyg6U'
+			},
+			{
+				platform: 'windows',
+				label: 'Windows ARM64 (.msi)',
+				url: 'https://mega.nz/file/dI1mmISJ#1WCjB0y_YUKMmYxbEG0CMKvkaxKjCEMWROpD84rKF3M'
+			},
+			{
+				platform: 'windows',
+				label: 'Windows ARM64 (.exe)',
+				url: 'https://mega.nz/file/pUMCETLD#5kfDhB2iT9sV0s5fglOtIN3FSZRn1ljsC7g5oCt8JH0'
 			}
 		]
 	},

@@ -40,6 +40,7 @@ export interface Product {
 	downloadLinks?: DownloadLink[];
 	windowsDownloadUrl?: string;
 	macDownloadUrl?: string;
+	version?: string;
 }
 
 export interface WebsiteProduct extends Product {
