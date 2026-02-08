@@ -248,22 +248,21 @@
 							</a>
 						</div>
 
-						<!-- NeptunAI -->
+						<!-- PixToText -->
 						<div class="text-center p-6 rounded-2xl border border-gray-700/50 bg-gray-900/30">
 							<img
-								src="/neptunai-icon.webp"
-								alt="NeptunAI"
+								src="/pix-to-text.webp"
+								alt="PixToText"
 								width="48"
 								height="48"
-								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-700 p-2"
+								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-700 p-[1.3px]"
 							/>
-							<h3 class="text-lg font-semibold text-white mb-2">NeptunAI</h3>
+							<h3 class="text-lg font-semibold text-white mb-2">PixToText</h3>
 							<p class="text-gray-400 text-sm leading-relaxed">
-								Comprehensive configuration platform with CLI, WebUI, and AI trained on CI/CD and
-								web development.
+								Turn screenshots into editable text in seconds. PixToText provides free offline OCR using Tesseract, PaddleOCR, and native system engines.
 							</p>
 							<a
-								href="https://neptunai.tech"
+								href="https://jonasfroeller.itch.io/pixtotext"
 								target="_blank"
 								rel="noopener noreferrer"
 								class="inline-flex items-center gap-1 text-brand hover:text-white transition-colors duration-300 text-sm mt-3"
@@ -273,22 +272,21 @@
 							</a>
 						</div>
 
-						<!-- Täglich frisches Obst -->
+						<!-- Element Snap -->
 						<div class="text-center p-6 rounded-2xl border border-gray-700/50 bg-gray-900/30">
 							<img
-								src="/taeglichfrischesobst.com.webp"
-								alt="Täglich frisches Obst"
+								src="/element-snap.webp"
+								alt="Element Snap"
 								width="48"
 								height="48"
-								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-700 p-2"
+								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-700 p-0.5"
 							/>
-							<h3 class="text-lg font-semibold text-white mb-2">Täglich frisches Obst</h3>
+							<h3 class="text-lg font-semibold text-white mb-2">Element Snap</h3>
 							<p class="text-gray-400 text-sm leading-relaxed">
-								Modern website for Linz-based indie-pop band showcasing their unique musical
-								style and live performances.
+								The lightweight, reliable way to capture pixel-perfect screenshots of any visible HTML element. Built with zero libraries.
 							</p>
 							<a
-								href="https://taeglichfrischesobst.com"
+								href="https://chromewebstore.google.com/detail/element-snap/nldbbahmckpcjcbikdaopeaiidhdomkf"
 								target="_blank"
 								rel="noopener noreferrer"
 								class="inline-flex items-center gap-1 text-brand hover:text-white transition-colors duration-300 text-sm mt-3"
