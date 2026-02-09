@@ -190,6 +190,46 @@ export const freeProducts: FreeProduct[] = [
 		chromeExtensionId: 'nldbbahmckpcjcbikdaopeaiidhdomkf'
 	},
 	{
+		slug: 'contexxt',
+		type: 'extension',
+		name: 'Contexxt',
+		url: 'https://github.com/merginit/contexxt.extension',
+		githubUrl: 'https://github.com/merginit/contexxt.extension',
+		description: 'Get contexxt of media and HTML elements on the page.',
+		longDescription:
+			'Powerful, overlay-based tool to inspect images, videos, and element styles directly on the page without digging through the developer tools.',
+		icon: 'mdi:magnify-expand',
+		image: placeholderImage,
+		imageAlt: 'Contexxt extension placeholder preview',
+		features: [
+			'Multimedia Inspection: Instantly view details for images and videos',
+			'Element Insights: Inspect any HTML element for styles and classes',
+			'One-Click Actions: Download assets or open in a new tab',
+			'Smart Overlay: Non-intrusive metadata popup near your cursor'
+		],
+		keywords: ['inspector', 'browser extension', 'frontend', 'multimedia']
+	},
+	{
+		slug: 'no-jack-zone',
+		type: 'extension',
+		name: 'NoJack Zone',
+		url: 'https://github.com/merginit/no-jack-zone.extension',
+		githubUrl: 'https://github.com/merginit/no-jack-zone.extension',
+		description: "Prevents websites from hijacking your browser's keyboard shortcuts.",
+		longDescription:
+			"NoJack Zone ensures that you stay in control of your browser. It prevents websites from overriding standard browser keyboard shortcuts, preserving your preferred workflow.",
+		icon: 'mdi:keyboard-off',
+		image: placeholderImage,
+		imageAlt: 'NoJack Zone extension placeholder preview',
+		features: [
+			"Prevent keyboard shortcut hijacking by websites",
+			'Preserve standard browser shortcuts (Ctrl+T, Ctrl+W, etc.)',
+			'Lightweight and privacy-focused',
+			'Set it and forget it'
+		],
+		keywords: ['keyboard shortcuts', 'productivity', 'privacy', 'browser control']
+	},
+	{
 		slug: 'page-to-markdown-extension',
 		type: 'extension',
 		name: 'Page To Markdown Extension',

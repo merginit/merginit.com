@@ -295,6 +295,50 @@
 								<Icon icon="lucide:external-link" class="w-3 h-3" />
 							</a>
 						</div>
+
+						<!-- Contexxt -->
+						<div class="text-center p-6 rounded-2xl border border-gray-700/50 bg-gray-900/30">
+							<div
+								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-800 border border-brand/30 flex items-center justify-center"
+							>
+								<Icon icon="mdi:magnify-expand" class="w-6 h-6 text-brand" />
+							</div>
+							<h3 class="text-lg font-semibold text-white mb-2">Contexxt</h3>
+							<p class="text-gray-400 text-sm leading-relaxed">
+								Powerful overlay-based tool to inspect images, videos, and element styles directly on the page.
+							</p>
+							<a
+								href="https://github.com/merginit/contexxt.extension"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-1 text-brand hover:text-white transition-colors duration-300 text-sm mt-3"
+							>
+								Visit Site
+								<Icon icon="lucide:external-link" class="w-3 h-3" />
+							</a>
+						</div>
+
+						<!-- NoJack Zone -->
+						<div class="text-center p-6 rounded-2xl border border-gray-700/50 bg-gray-900/30">
+							<div
+								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-800 border border-brand/30 flex items-center justify-center"
+							>
+								<Icon icon="mdi:keyboard-off" class="w-6 h-6 text-brand" />
+							</div>
+							<h3 class="text-lg font-semibold text-white mb-2">NoJack Zone</h3>
+							<p class="text-gray-400 text-sm leading-relaxed">
+								Prevents websites from hijacking your browser's keyboard shortcuts, ensuring you stay in control.
+							</p>
+							<a
+								href="https://github.com/merginit/no-jack-zone.extension"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-1 text-brand hover:text-white transition-colors duration-300 text-sm mt-3"
+							>
+								Visit Site
+								<Icon icon="lucide:external-link" class="w-3 h-3" />
+							</a>
+						</div>
 					</div>
 				</div>
 			</article>

@@ -181,6 +181,30 @@
 			iconSrc: '/element-snap.webp',
 			url: 'https://chromewebstore.google.com/detail/element-snap/nldbbahmckpcjcbikdaopeaiidhdomkf'
 		},
+		{
+			projectType: 'Chrome Browser Extension',
+			category: 'Element Inspector',
+			productName: 'Contexxt',
+			date: 'launched February 2026',
+			datetime: '2026-02-06',
+			mainTech: 'WXT & TS',
+			description:
+				'Powerful, overlay-based tool to inspect images, videos, and element styles directly on the page. Get instant access to source URLs, dimensions, file sizes, and computed CSS without digging through DevTools.',
+			iconSrc: '/icon-small.webp',
+			url: 'https://github.com/merginit/contexxt.extension'
+		},
+		{
+			projectType: 'Chrome Browser Extension',
+			category: 'Privacy Tool',
+			productName: 'NoJack Zone',
+			date: 'launched February 2026',
+			datetime: '2026-02-09',
+			mainTech: 'Plasmo & TSX React',
+			description:
+				"Prevents websites from hijacking your browser's keyboard shortcuts. NoJack Zone ensures your standard browser shortcuts always work, keeping you in control of your browsing workflow.",
+			iconSrc: '/icon-small.webp',
+			url: 'https://github.com/merginit/no-jack-zone.extension'
+		},
 		/* {
 			projectType: 'SaaS Website',
 			category: 'Productivity Tool',
