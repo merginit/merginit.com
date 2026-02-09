@@ -10,6 +10,44 @@
 
 	const regexes: RegexEntry[] = [
 		{
+			title: 'BibTeX Source Fixer',
+			description: 'Fixes BibTeX source entries by removing surrounding braces and trailing comma.',
+			pattern: '\\{([a-zA-Z0-9])\\},',
+			replace: '$1'
+		},
+		{
+			title: 'Email Address',
+			description: 'Matches most common email address formats.',
+			pattern: "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
+		},
+		{
+			title: 'URL',
+			description: 'Matches standard URLs (HTTP/HTTPS).',
+			pattern: "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
+		},
+		{
+			title: 'IPv4 Address',
+			description: 'Matches valid IPv4 addresses.',
+			pattern: "\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+		},
+		{
+			title: 'Date (ISO 8601)',
+			description: 'Matches dates in YYYY-MM-DD format.',
+			pattern: "^\\d{4}-\\d{2}-\\d{2}$"
+		},
+		{
+			title: 'Slugify',
+			description: 'Replaces non-alphanumeric characters with hyphens (useful for URLs).',
+			pattern: "[^a-z0-9]+",
+			replace: "-"
+		},
+		{
+			title: 'Remove HTML Tags',
+			description: 'Matches HTML tags (useful for stripping HTML).',
+			pattern: "<[^>]*>",
+			replace: ""
+		},
+		{
 			title: 'Markdown Heading',
 			description: 'Matches markdown heading lines (levels 1-6).',
 			pattern: '^#{1,6}\\s+.*$'
