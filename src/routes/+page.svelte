@@ -351,19 +351,17 @@
 			Websites Built
 		</h2>
 	</section>
-	<section
-		class="bg-brand-dark flex flex-col justify-center items-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 py-20"
-	>
+	<section class="bg-brand-dark flex flex-col justify-center items-center py-20">
 		<h2
 			class="text-4xl sm:text-5xl md:text-6xl font-bold text-[#ffaa40] mb-12 sm:mb-16 text-center tracking-tight"
 		>
 			Our Main Projects
 		</h2>
-		<div class="flex flex-wrap justify-center gap-8 w-full max-w-7xl">
+		<div class="projects-grid gap-8 w-full max-w-7xl min-[1800px]:max-w-none min-[1800px]:px-12">
 			{#each projects as project, i}
 				{@const faviconId = `favicon-${i}`}
 				<div
-					class="group relative w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
+					class="group relative w-full"
 					onmouseenter={() => handleCardMouseEnter(i)}
 					onmouseleave={handleCardMouseLeave}
 					role="group"
@@ -573,5 +571,22 @@
 		text-decoration: underline;
 		text-decoration-thickness: 1px;
 		text-underline-offset: 2px;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+
+	@media (min-width: 900px) {
+		.projects-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (min-width: 1800px) {
+		.projects-grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
 	}
 </style>
