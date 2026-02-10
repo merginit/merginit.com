@@ -397,7 +397,7 @@
 						</span>
 					</div>
 
-					<div class="relative z-10 mt-4 grow">
+					<div class="relative z-10 mt-4">
 						<h3
 							class="text-xl font-semibold leading-7 text-gray-100 group-hover:text-white transition-colors"
 						>
@@ -410,12 +410,12 @@
 						</p>
 					</div>
 
-					<div class="relative z-10 mt-4 mb-2 w-full flex justify-end">
+					<div class="relative z-10 mt-auto mb-1 w-full flex justify-end">
 						<a
 							href={project.url}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-brand transition-colors relative z-40 group-link min-h-[48px] px-2"
+							class="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-brand transition-colors relative z-40 group-link min-h-[40px] px-2"
 							onclick={(e) => e.stopPropagation()}
 						>
 							<span class="whitespace-nowrap"
@@ -426,7 +426,7 @@
 					</div>
 
 					<div
-						class="relative z-10 mt-6 flex items-center gap-x-4 w-full pt-4 border-t border-gray-700/50"
+						class="relative z-10 mt-2 flex items-center gap-x-4 w-full pt-4 border-t border-gray-700/50"
 					>
 						<div class="relative favicon-container">
 							<img
