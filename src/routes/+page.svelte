@@ -190,7 +190,7 @@
 			mainTech: 'WXT & TS',
 			description:
 				'Powerful, overlay-based tool to inspect images, videos, and element styles directly on the page. Get instant access to source URLs, dimensions, file sizes, and computed CSS without digging through DevTools.',
-			iconSrc: '/icon-small.webp',
+			iconSrc: '/contexxt.webp',
 			url: 'https://github.com/merginit/contexxt.extension'
 		},
 		{
@@ -202,7 +202,7 @@
 			mainTech: 'Plasmo & TSX React',
 			description:
 				"Prevents websites from hijacking your browser's keyboard shortcuts. NoJack Zone ensures your standard browser shortcuts always work, keeping you in control of your browsing workflow.",
-			iconSrc: '/icon-small.webp',
+			iconSrc: '/no-jack-zone.webp',
 			url: 'https://github.com/merginit/no-jack-zone.extension'
 		},
 		/* {
