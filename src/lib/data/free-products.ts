@@ -213,7 +213,7 @@ export const freeProducts: FreeProduct[] = [
 		slug: 'no-jack-zone',
 		type: 'extension',
 		name: 'NoJack Zone',
-		url: 'https://github.com/merginit/no-jack-zone.extension',
+		url: 'https://chromewebstore.google.com/detail/no-jack-zone/bfhgdjekhemknjpejfedllkcegdaogia',
 		githubUrl: 'https://github.com/merginit/no-jack-zone.extension',
 		description: "Prevents websites from hijacking your browser's keyboard shortcuts.",
 		longDescription:
@@ -227,7 +227,8 @@ export const freeProducts: FreeProduct[] = [
 			'Lightweight and privacy-focused',
 			'Set it and forget it'
 		],
-		keywords: ['keyboard shortcuts', 'productivity', 'privacy', 'browser control']
+		keywords: ['keyboard shortcuts', 'productivity', 'privacy', 'browser control'],
+		chromeExtensionId: 'bfhgdjekhemknjpejfedllkcegdaogia'
 	},
 	{
 		slug: 'page-to-markdown-extension',

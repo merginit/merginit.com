@@ -203,7 +203,7 @@
 			description:
 				"Prevents websites from hijacking your browser's keyboard shortcuts. NoJack Zone ensures your standard browser shortcuts always work, keeping you in control of your browsing workflow.",
 			iconSrc: '/no-jack-zone.webp',
-			url: 'https://github.com/merginit/no-jack-zone.extension'
+			url: 'https://chromewebstore.google.com/detail/no-jack-zone/bfhgdjekhemknjpejfedllkcegdaogia'
 		},
 		/* {
 			projectType: 'SaaS Website',

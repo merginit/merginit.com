@@ -330,7 +330,7 @@
 								Prevents websites from hijacking your browser's keyboard shortcuts, ensuring you stay in control.
 							</p>
 							<a
-								href="https://github.com/merginit/no-jack-zone.extension"
+								href="https://chromewebstore.google.com/detail/no-jack-zone/bfhgdjekhemknjpejfedllkcegdaogia"
 								target="_blank"
 								rel="noopener noreferrer"
 								class="inline-flex items-center gap-1 text-brand hover:text-white transition-colors duration-300 text-sm mt-3"
