@@ -191,7 +191,7 @@
 			description:
 				'Powerful, overlay-based tool to inspect images, videos, and element styles directly on the page. Get instant access to source URLs, dimensions, file sizes, and computed CSS without digging through DevTools.',
 			iconSrc: '/contexxt.webp',
-			url: 'https://github.com/merginit/contexxt.extension'
+			url: 'https://chromewebstore.google.com/detail/ikklhbkccgdmipofidjdmclbehiojjmh'
 		},
 		{
 			projectType: 'Chrome Browser Extension',
@@ -204,7 +204,7 @@
 				"Prevents websites from hijacking your browser's keyboard shortcuts. NoJack Zone ensures your standard browser shortcuts always work, keeping you in control of your browsing workflow.",
 			iconSrc: '/no-jack-zone.webp',
 			url: 'https://chromewebstore.google.com/detail/no-jack-zone/bfhgdjekhemknjpejfedllkcegdaogia'
-		},
+		}
 		/* {
 			projectType: 'SaaS Website',
 			category: 'Productivity Tool',
@@ -370,101 +370,101 @@
 					<article
 						class="flex flex-col items-start justify-between rounded-3xl p-6 sm:p-7 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md shadow-md group-hover:shadow-brand/20 transition-all duration-300 ease-in-out group-hover:border-brand/70 transform group-hover:-translate-y-1 w-full h-full relative"
 					>
-					<BorderBeam
-						size={180}
-						duration={10}
-						delay={i * 0.2}
-						anchor={[10, 45, 80][i % 3]}
-						class="absolute top-0 left-0 w-full h-full z-0 opacity-30 group-hover:opacity-60 transition-opacity"
-					/>
+						<BorderBeam
+							size={180}
+							duration={10}
+							delay={i * 0.2}
+							anchor={[10, 45, 80][i % 3]}
+							class="absolute top-0 left-0 w-full h-full z-0 opacity-30 group-hover:opacity-60 transition-opacity"
+						/>
 
-					<a
-						href={project.url}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="absolute inset-0 z-10"
-						aria-label={'View ' + project.projectType}
-					></a>
-
-					<div class="relative z-10 flex w-full items-center justify-between gap-x-4 text-xs">
-						<time datetime={project.datetime} class="text-gray-400">{project.date}</time>
-						<span
-							class="cursor-default relative z-30 rounded-full bg-gray-800/80 px-3 py-1.5 font-medium text-white border border-gray-400/60 shadow-sm"
-						>
-							{project.mainTech}
-						</span>
-					</div>
-
-					<div class="relative z-10 mt-4">
-						<h3
-							class="text-xl font-semibold leading-7 text-gray-100 group-hover:text-white transition-colors"
-						>
-							{project.productName}
-						</h3>
-						<p
-							class="mt-3 text-sm leading-relaxed text-gray-300 group-hover:text-gray-200 transition-colors line-clamp-6"
-						>
-							{project.description}
-						</p>
-					</div>
-
-					<div class="relative z-10 mt-auto mb-1 w-full flex justify-end">
 						<a
 							href={project.url}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-brand transition-colors relative z-40 group-link min-h-[40px] px-2"
-							onclick={(e) => e.stopPropagation()}
-						>
-							<span class="whitespace-nowrap"
-								>{new URL(project.url).hostname.replace('www.', '')}</span
+							class="absolute inset-0 z-10"
+							aria-label={'View ' + project.projectType}
+						></a>
+
+						<div class="relative z-10 flex w-full items-center justify-between gap-x-4 text-xs">
+							<time datetime={project.datetime} class="text-gray-400">{project.date}</time>
+							<span
+								class="cursor-default relative z-30 rounded-full bg-gray-800/80 px-3 py-1.5 font-medium text-white border border-gray-400/60 shadow-sm"
 							>
-							<Icon icon="lucide:external-link" class="w-4 h-4 shrink-0" />
-						</a>
-					</div>
+								{project.mainTech}
+							</span>
+						</div>
 
-					<div
-						class="relative z-10 mt-2 flex items-center gap-x-4 w-full pt-4 border-t border-gray-700/50"
-					>
-						<div class="relative favicon-container">
-							<img
-								id={faviconId}
-								src={project.iconSrc}
-								alt={`${project.projectType} favicon`}
-								width="40"
-								height="40"
-								class="h-10 w-10 rounded-full bg-gray-700 {project.productName === 'Element Snap'
-									? 'p-0.5'
-									: 'p-[1.3px]'} object-contain border border-gray-600 shadow favicon-trigger"
-							/>
+						<div class="relative z-10 mt-4">
+							<h3
+								class="text-xl font-semibold leading-7 text-gray-100 group-hover:text-white transition-colors"
+							>
+								{project.productName}
+							</h3>
+							<p
+								class="mt-3 text-sm leading-relaxed text-gray-300 group-hover:text-gray-200 transition-colors line-clamp-6"
+							>
+								{project.description}
+							</p>
+						</div>
 
-							{#if hoveredCardIndex === i || playButtonOutIndex === i}
-								<button
-									class="absolute inset-0 flex items-center justify-center bg-black/70 rounded-full backdrop-blur-sm transition-all duration-300 ease-out play-button z-50 {playButtonOutIndex ===
-									i
-										? 'out'
-										: ''}"
-									onclick={(e) => {
-										e.preventDefault();
-										e.stopPropagation();
-										const faviconImg = document.getElementById(faviconId);
-										if (faviconImg) handlePlayButtonClick(e, faviconImg);
-									}}
-									aria-label="Play project demo video"
+						<div class="relative z-10 mt-auto mb-1 w-full flex justify-end">
+							<a
+								href={project.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-brand transition-colors relative z-40 group-link min-h-[40px] px-2"
+								onclick={(e) => e.stopPropagation()}
+							>
+								<span class="whitespace-nowrap"
+									>{new URL(project.url).hostname.replace('www.', '')}</span
 								>
-									<Icon icon="lucide:play" class="w-4 h-4 text-white ml-0.5" />
-								</button>
-							{/if}
+								<Icon icon="lucide:external-link" class="w-4 h-4 shrink-0" />
+							</a>
 						</div>
-						<div class="text-sm leading-5">
-							<p class="font-semibold text-gray-200 group-hover:text-white transition-colors">
-								{project.category}
-							</p>
-							<p class="text-gray-400 group-hover:text-gray-300 transition-colors text-xs">
-								{project.projectType}
-							</p>
+
+						<div
+							class="relative z-10 mt-2 flex items-center gap-x-4 w-full pt-4 border-t border-gray-700/50"
+						>
+							<div class="relative favicon-container">
+								<img
+									id={faviconId}
+									src={project.iconSrc}
+									alt={`${project.projectType} favicon`}
+									width="40"
+									height="40"
+									class="h-10 w-10 rounded-full bg-gray-700 {project.productName === 'Element Snap'
+										? 'p-0.5'
+										: 'p-[1.3px]'} object-contain border border-gray-600 shadow favicon-trigger"
+								/>
+
+								{#if hoveredCardIndex === i || playButtonOutIndex === i}
+									<button
+										class="absolute inset-0 flex items-center justify-center bg-black/70 rounded-full backdrop-blur-sm transition-all duration-300 ease-out play-button z-50 {playButtonOutIndex ===
+										i
+											? 'out'
+											: ''}"
+										onclick={(e) => {
+											e.preventDefault();
+											e.stopPropagation();
+											const faviconImg = document.getElementById(faviconId);
+											if (faviconImg) handlePlayButtonClick(e, faviconImg);
+										}}
+										aria-label="Play project demo video"
+									>
+										<Icon icon="lucide:play" class="w-4 h-4 text-white ml-0.5" />
+									</button>
+								{/if}
+							</div>
+							<div class="text-sm leading-5">
+								<p class="font-semibold text-gray-200 group-hover:text-white transition-colors">
+									{project.category}
+								</p>
+								<p class="text-gray-400 group-hover:text-gray-300 transition-colors text-xs">
+									{project.projectType}
+								</p>
+							</div>
 						</div>
-					</div>
 					</article>
 				</div>
 			{/each}

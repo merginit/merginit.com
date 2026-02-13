@@ -193,7 +193,7 @@ export const freeProducts: FreeProduct[] = [
 		slug: 'contexxt',
 		type: 'extension',
 		name: 'Contexxt',
-		url: 'https://github.com/merginit/contexxt.extension',
+		url: 'https://chromewebstore.google.com/detail/ikklhbkccgdmipofidjdmclbehiojjmh',
 		githubUrl: 'https://github.com/merginit/contexxt.extension',
 		description: 'Get contexxt of media and HTML elements on the page.',
 		longDescription:
@@ -217,12 +217,12 @@ export const freeProducts: FreeProduct[] = [
 		githubUrl: 'https://github.com/merginit/no-jack-zone.extension',
 		description: "Prevents websites from hijacking your browser's keyboard shortcuts.",
 		longDescription:
-			"NoJack Zone ensures that you stay in control of your browser. It prevents websites from overriding standard browser keyboard shortcuts, preserving your preferred workflow.",
+			'NoJack Zone ensures that you stay in control of your browser. It prevents websites from overriding standard browser keyboard shortcuts, preserving your preferred workflow.',
 		icon: 'mdi:keyboard-off',
 		image: placeholderImage,
 		imageAlt: 'NoJack Zone extension placeholder preview',
 		features: [
-			"Prevent keyboard shortcut hijacking by websites",
+			'Prevent keyboard shortcut hijacking by websites',
 			'Preserve standard browser shortcuts (Ctrl+T, Ctrl+W, etc.)',
 			'Lightweight and privacy-focused',
 			'Set it and forget it'
