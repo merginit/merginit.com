@@ -175,7 +175,7 @@
 			productName: 'Element Snap',
 			date: 'launched September 2025',
 			datetime: '2025-09-02',
-			mainTech: 'Vanilla JS & Chrome API',
+			mainTech: 'Chrome API & Vanilla JS',
 			description:
 				'The lightweight, reliable way to capture pixel-perfect screenshots of any visible HTML element. Features include pixel-perfect capture, live padding controls, rounded corners, and full element stitching. Built with zero libraries for maximum speed and privacy.',
 			iconSrc: '/element-snap.webp',
