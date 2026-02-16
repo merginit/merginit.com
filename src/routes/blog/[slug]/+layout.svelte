@@ -3,6 +3,7 @@
 	import { page } from '$app/state';
 	import { fade } from 'svelte/transition';
 	import BorderBeam from '$lib/components/BorderBeam.svelte';
+	import BlogHeaderSkeleton from '$lib/components/BlogHeaderSkeleton.svelte';
 	import mermaid from 'mermaid';
 	import '../../../code.css';
 
@@ -161,127 +162,131 @@
 		{/if}
 
 		<!-- Blog Header -->
-		{#if mounted && page.route.id !== '/blog'}
-			<header
-				class="relative mb-12 rounded-3xl p-8 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md"
-				transition:fade
-			>
-				<BorderBeam
-					size={180}
-					duration={10}
-					anchor={45}
-					class="absolute top-0 left-0 w-full h-full z-0 opacity-30 group-hover:opacity-60 transition-opacity"
-				/>
+		{#if page.route.id !== '/blog'}
+			{#if mounted}
+				<header
+					class="relative mb-12 rounded-3xl p-8 border border-gray-700/70 bg-blue-950/10 backdrop-blur-md"
+					transition:fade
+				>
+					<BorderBeam
+						size={180}
+						duration={10}
+						anchor={45}
+						class="absolute top-0 left-0 w-full h-full z-0 opacity-30 group-hover:opacity-60 transition-opacity"
+					/>
 
-				<div class="relative z-10">
-					<!-- Post Metadata -->
-					<div class="flex flex-wrap items-center text-sm text-gray-400 mb-4 justify-between gap-4">
-						<div class="flex flex-wrap gap-5">
-							{#if updateDate}
-								<time datetime={new Date(updateDate).toISOString()}>
-									Updated {new Date(updateDate).toLocaleDateString('en-US', {
-										year: 'numeric',
-										month: 'long',
-										day: 'numeric'
-									})}
-								</time>
-							{:else}
-								<time datetime={new Date(date).toISOString()}>
-									{new Date(date).toLocaleDateString('en-US', {
-										year: 'numeric',
-										month: 'long',
-										day: 'numeric'
-									})}
-								</time>
-							{/if}
-							{#if author}
-								<span class="flex items-center gap-1.5">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="20"
-										height="20"
-										viewBox="0 0 24 24"
-										fill="none"
-										stroke="currentColor"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										><path d="M18 20a6 6 0 0 0-12 0" /><circle cx="12" cy="10" r="4" /><circle
-											cx="12"
-											cy="12"
-											r="10"
-										/></svg
-									>
-									{author}
-								</span>
-							{/if}
-							{#if readingTime}
-								<span class="flex items-center gap-1.5">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="20"
-										height="20"
-										viewBox="0 0 24 24"
-										fill="none"
-										stroke="currentColor"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg
-									>
-									{readingTime} read
-								</span>
-							{/if}
-						</div>
-
-						{#if tags && tags.length > 0}
-							<div>
-								<div class="flex flex-wrap gap-2">
-									{#each tags as tag}
-										<span
-											class="px-2.5 py-1 text-xs font-medium text-sky-400 bg-sky-400/10 rounded-full border border-sky-400/30 hover:bg-sky-400/20 transition-colors"
+					<div class="relative z-10">
+						<!-- Post Metadata -->
+						<div class="flex flex-wrap items-center text-sm text-gray-400 mb-4 justify-between gap-4">
+							<div class="flex flex-wrap gap-5">
+								{#if updateDate}
+									<time datetime={new Date(updateDate).toISOString()}>
+										Updated {new Date(updateDate).toLocaleDateString('en-US', {
+											year: 'numeric',
+											month: 'long',
+											day: 'numeric'
+										})}
+									</time>
+								{:else}
+									<time datetime={new Date(date).toISOString()}>
+										{new Date(date).toLocaleDateString('en-US', {
+											year: 'numeric',
+											month: 'long',
+											day: 'numeric'
+										})}
+									</time>
+								{/if}
+								{#if author}
+									<span class="flex items-center gap-1.5">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="20"
+											height="20"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											><path d="M18 20a6 6 0 0 0-12 0" /><circle cx="12" cy="10" r="4" /><circle
+												cx="12"
+												cy="12"
+												r="10"
+											/></svg
 										>
-											{tag}
-										</span>
-									{/each}
-								</div>
+										{author}
+									</span>
+								{/if}
+								{#if readingTime}
+									<span class="flex items-center gap-1.5">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="20"
+											height="20"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg
+										>
+										{readingTime} read
+									</span>
+								{/if}
 							</div>
-						{/if}
-					</div>
 
-					<!-- Post Title & Description -->
-					<h2
-						class="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-accent transition-colors"
-					>
-						{title}
-					</h2>
-					<p class="text-gray-300 mb-4 line-clamp-3">
-						{description}
-					</p>
-
-					<!-- Categories & Tags -->
-					{#if (categories && categories.length > 0) || (tags && tags.length > 0)}
-						<div class="mt-6 space-y-4">
-							{#if categories && categories.length > 0}
+							{#if tags && tags.length > 0}
 								<div>
-									<h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-										Categories
-									</h4>
 									<div class="flex flex-wrap gap-2">
-										{#each categories as category}
+										{#each tags as tag}
 											<span
-												class="px-2.5 py-1 text-xs font-medium text-accent bg-accent/10 rounded-full border border-accent/30 hover:bg-accent/20 transition-colors"
+												class="px-2.5 py-1 text-xs font-medium text-sky-400 bg-sky-400/10 rounded-full border border-sky-400/30 hover:bg-sky-400/20 transition-colors"
 											>
-												{category}
+												{tag}
 											</span>
 										{/each}
 									</div>
 								</div>
 							{/if}
 						</div>
-					{/if}
-				</div>
-			</header>
+
+						<!-- Post Title & Description -->
+						<h2
+							class="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-accent transition-colors"
+						>
+							{title}
+						</h2>
+						<p class="text-gray-300 mb-4 line-clamp-3">
+							{description}
+						</p>
+
+						<!-- Categories & Tags -->
+						{#if (categories && categories.length > 0) || (tags && tags.length > 0)}
+							<div class="mt-6 space-y-4">
+								{#if categories && categories.length > 0}
+									<div>
+										<h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+											Categories
+										</h4>
+										<div class="flex flex-wrap gap-2">
+											{#each categories as category}
+												<span
+													class="px-2.5 py-1 text-xs font-medium text-accent bg-accent/10 rounded-full border border-accent/30 hover:bg-accent/20 transition-colors"
+												>
+													{category}
+												</span>
+											{/each}
+										</div>
+									</div>
+								{/if}
+							</div>
+						{/if}
+					</div>
+				</header>
+			{:else}
+				<BlogHeaderSkeleton />
+			{/if}
 		{/if}
 
 		<!-- Blog Content -->
