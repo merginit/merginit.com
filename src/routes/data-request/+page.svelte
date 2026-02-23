@@ -65,7 +65,7 @@
 								alt="OCRMD logo"
 								width="64"
 								height="64"
-								class="w-16 h-16 rounded-lg bg-gray-700 p-2 object-contain border border-gray-600"
+								class="w-16 h-16 object-contain"
 							/>
 							<div class="flex-1">
 								<h3 class="text-xl font-semibold text-white mb-2">OCRMD</h3>
@@ -75,6 +75,37 @@
 								</p>
 								<a
 									href="https://www.ocrmd.com/settings"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="inline-flex items-center gap-2 bg-[#ffaa40] text-black px-6 py-3 rounded-lg font-medium hover:bg-[#ff9520] transition-colors duration-300"
+								>
+									<Icon icon="mdi:account-cog" class="w-5 h-5" />
+									Access Your Data
+									<Icon
+										icon="mdi:external-link"
+										class="w-4 h-4"
+									/>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="bg-gray-800/50 border border-gray-600/50 rounded-2xl p-6 mb-6">
+						<div class="flex items-start gap-4">
+							<img
+								src="/markdownblog.ico"
+								alt="Markdownblog logo"
+								width="64"
+								height="64"
+								class="w-16 h-16 object-contain"
+							/>
+							<div class="flex-1">
+								<h3 class="text-xl font-semibold text-white mb-2">Markdownblog</h3>
+								<p class="text-gray-300 mb-4">
+									Markdown blog-post generator with focus on accuracy and SEO.
+								</p>
+								<a
+									href="https://markdownblog.dev/dashboard/settings/account"
 									target="_blank"
 									rel="noopener noreferrer"
 									class="inline-flex items-center gap-2 bg-[#ffaa40] text-black px-6 py-3 rounded-lg font-medium hover:bg-[#ff9520] transition-colors duration-300"
