@@ -170,6 +170,18 @@
 			url: 'https://jonasfroeller.itch.io/pixtotext'
 		},
 		{
+			projectType: 'SaaS Website',
+			category: 'Productivity Tool',
+			productName: 'Markdown Blog',
+			date: 'launched February 2026',
+			datetime: '2026-02-01',
+			mainTech: 'React',
+			description:
+				'Markdown Blog is a Markdown blog-post generator with focus on accuracy and SEO.',
+			iconSrc: '/markdownblog.ico',
+			url: 'https://markdownblog.dev'
+		},
+		{
 			projectType: 'Chrome Browser Extension',
 			category: 'Productivity Tool',
 			productName: 'Element Snap',
@@ -205,18 +217,6 @@
 			iconSrc: '/no-jack-zone.webp',
 			url: 'https://chromewebstore.google.com/detail/no-jack-zone/bfhgdjekhemknjpejfedllkcegdaogia'
 		}
-		/* {
-			projectType: 'SaaS Website',
-			category: 'Productivity Tool',
-			productName: 'Markdown Blog',
-			date: 'launched February 2026',
-			datetime: '2026-02-01',
-			mainTech: 'React',
-			description:
-				'Markdown Blog is a Markdown blog-post generator with focus on accuracy and SEO.',
-			iconSrc: '/markdownblog.ico',
-			url: 'https://markdownblog.dev'
-		}, */
 		/* {
 			projectType: 'Desktop App',
 			category: 'Branding',

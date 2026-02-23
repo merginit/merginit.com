@@ -223,6 +223,30 @@
 					</div>
 
 					<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+						<!-- Markdown Blog -->
+						<div class="text-center p-6 rounded-2xl border border-gray-700/50 bg-gray-900/30">
+							<img
+								src="/markdownblog.ico"
+								alt="Markdown Blog"
+								width="48"
+								height="48"
+								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-700 p-2"
+							/>
+							<h3 class="text-lg font-semibold text-white mb-2">Markdown Blog</h3>
+							<p class="text-gray-400 text-sm leading-relaxed">
+								Markdown Blog is a Markdown blog-post generator with focus on accuracy and SEO.
+							</p>
+							<a
+								href="https://markdownblog.dev"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-1 text-brand hover:text-white transition-colors duration-300 text-sm mt-3"
+							>
+								Visit Site
+								<Icon icon="lucide:external-link" class="w-3 h-3" />
+							</a>
+						</div>
+
 						<!-- OCRMD -->
 						<div class="text-center p-6 rounded-2xl border border-gray-700/50 bg-gray-900/30">
 							<img
@@ -298,11 +322,13 @@
 
 						<!-- Contexxt -->
 						<div class="text-center p-6 rounded-2xl border border-gray-700/50 bg-gray-900/30">
-							<div
-								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-800 border border-brand/30 flex items-center justify-center"
-							>
-								<Icon icon="mdi:magnify-expand" class="w-6 h-6 text-brand" />
-							</div>
+							<img
+								src="/contexxt.webp"
+								alt="Contexxt"
+								width="48"
+								height="48"
+								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-700 p-2"
+							/>
 							<h3 class="text-lg font-semibold text-white mb-2">Contexxt</h3>
 							<p class="text-gray-400 text-sm leading-relaxed">
 								Powerful overlay-based tool to inspect images, videos, and element styles directly on the page.
@@ -320,11 +346,13 @@
 
 						<!-- NoJack Zone -->
 						<div class="text-center p-6 rounded-2xl border border-gray-700/50 bg-gray-900/30">
-							<div
-								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-800 border border-brand/30 flex items-center justify-center"
-							>
-								<Icon icon="mdi:keyboard-off" class="w-6 h-6 text-brand" />
-							</div>
+							<img
+								src="/no-jack-zone.webp"
+								alt="NoJack Zone"
+								width="48"
+								height="48"
+								class="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-700 p-2"
+							/>
 							<h3 class="text-lg font-semibold text-white mb-2">NoJack Zone</h3>
 							<p class="text-gray-400 text-sm leading-relaxed">
 								Prevents websites from hijacking your browser's keyboard shortcuts, ensuring you stay in control.
