@@ -9,6 +9,21 @@
     "/*.webp",
     "/*.png",
     "/*.ico",
-    "/*.svg"
+    "/*.svg",
+    "/*.js",
+    "/*.css",
+    "/*.ttf",
+    "/*.woff2",
+    "/*.txt",
+    "/*.xml",
+    "/*.webmanifest",
+    "/",
+    "/about",
+    "/contact",
+    "/legal/*",
+    "/free-products/*",
+    "/regex-library",
+    "/data-request",
+    "/demo/*"
   ]
 }
