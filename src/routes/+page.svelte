@@ -149,7 +149,7 @@
 			productName: 'OCRMD',
 			date: 'launched April 2025',
 			datetime: '2025-04-22',
-			mainTech: 'React',
+			mainTech: 'TanStack Router & React',
 			description:
 				'OCRMD.com transforms scanned images and PDFs into editable Markdown. Features include AI-enhanced text recognition with formatting, math equations, tables, and image detection at high accuracy. Secure cloud storage and full-text search capabilities make your documents accessible anywhere.',
 			iconSrc: '/ocrmd-icon.webp',
@@ -175,7 +175,7 @@
 			productName: 'Markdown Blog',
 			date: 'launched February 2026',
 			datetime: '2026-02-01',
-			mainTech: 'React',
+			mainTech: 'TanStack Start & React',
 			description:
 				'Markdown Blog is a Markdown blog-post generator with focus on accuracy and SEO.',
 			iconSrc: '/markdownblog.ico',
