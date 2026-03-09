@@ -216,19 +216,19 @@
 				"Prevents websites from hijacking your browser's keyboard shortcuts. NoJack Zone ensures your standard browser shortcuts always work, keeping you in control of your browsing workflow.",
 			iconSrc: '/no-jack-zone.webp',
 			url: 'https://chromewebstore.google.com/detail/no-jack-zone/bfhgdjekhemknjpejfedllkcegdaogia'
-		}
-		/* {
+		},
+		{
 			projectType: 'Desktop App',
 			category: 'Branding',
 			productName: 'Brand Peel',
-			date: 'launched February 2026',
-			datetime: '2026-02-01',
+			date: 'launched March 2026',
+			datetime: '2026-03-23',
 			mainTech: 'Neutralinojs & Vue',
 			description:
-				'Brand Peel is a brand kit generator that helps you create stunning logos and complete design systems. Skip the expensive designer and build a professional brand identity in minutes, not months.',
+				'Brand Peel is a brand kit generator that helps you create solid logos and complete design systems. Skip the expensive designer and build a professional brand identity in minutes, not months.',
 			iconSrc: '/unpeeled.png',
 			url: 'https://brandpeel.merginit.com'
-		}, */
+		},
 		/* {
 			projectType: 'Desktop App',
 			category: 'Image Processing',
