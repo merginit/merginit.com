@@ -145,7 +145,7 @@
 	const projects: ProjectItem[] = [
 		{
 			projectType: 'SaaS Website',
-			category: 'OCR Solution',
+			category: 'Cloud OCR',
 			productName: 'OCRMD',
 			date: 'launched April 2025',
 			datetime: '2025-04-22',
@@ -171,7 +171,7 @@
 		},
 		{
 			projectType: 'SaaS Website',
-			category: 'Productivity Tool',
+			category: 'SEO Tool',
 			productName: 'Markdown Blog',
 			date: 'launched February 2026',
 			datetime: '2026-02-01',
@@ -183,7 +183,7 @@
 		},
 		{
 			projectType: 'Chrome Browser Extension',
-			category: 'Productivity Tool',
+			category: 'Screenshot Tool',
 			productName: 'Element Snap',
 			date: 'launched September 2025',
 			datetime: '2025-09-02',
@@ -207,7 +207,7 @@
 		},
 		{
 			projectType: 'Chrome Browser Extension',
-			category: 'Privacy Tool',
+			category: 'Shortcut Protector',
 			productName: 'NoJack Zone',
 			date: 'launched February 2026',
 			datetime: '2026-02-09',
@@ -219,7 +219,7 @@
 		},
 		{
 			projectType: 'Desktop App',
-			category: 'Branding',
+			category: 'Branding Agent',
 			productName: 'Brand Peel',
 			date: 'launched March 2026',
 			datetime: '2026-03-23',
