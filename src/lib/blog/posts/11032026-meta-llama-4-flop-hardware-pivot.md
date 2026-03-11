@@ -16,7 +16,7 @@ tags: ['meta', 'llama', 'open-source', 'smart-glasses', 'hardware', 'ai-infrastr
 
 # Meta estimates annual capex for 2026 at between 115 and 135 billion US dollars.
 
-<Tweet id="2031090764642660850" minHeight="768px" />
+<Tweet id="2031090764642660850" minHeight="249px" />
 
 Meta just casually announced they'll spend up to $135 billion this year on infrastructure. That's nearly double what they burned through in 2025, and roughly the GDP of Hungary. Most of it goes toward gigawatt-scale data centers, AMD Instinct GPUs, NVIDIA Blackwell chips, and custom silicon. Zuckerberg calls it "front-loading compute capacity" for superintelligence. Wall Street calls it a bet-the-farm move.
 
