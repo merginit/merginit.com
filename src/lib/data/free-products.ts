@@ -384,6 +384,40 @@ export const freeProducts: FreeProduct[] = [
 		],
 		keywords: ['astro', 'async', 'loader'],
 		npmPackage: 'astro-async-loader'
+	},
+	{
+		slug: 'icons',
+		type: 'website',
+		name: 'Icons',
+		url: 'https://icons.merginit.com',
+		description: 'A collection of free icons for developers and designers.',
+		longDescription: 'Browse and download a curated collection of free icons tailored for developers and designers. Perfect for web and app projects.',
+		icon: 'mdi:palette',
+		image: placeholderImage,
+		imageAlt: 'Icons placeholder preview',
+		features: [
+			'Free icons for various use cases',
+			'Easy to browse and download',
+			'Optimized for web and app development'
+		],
+		keywords: ['icons', 'design', 'free resources']
+	},
+	{
+		slug: 'power-tool-gems',
+		type: 'website',
+		name: 'Power Tool Gems',
+		url: 'https://powertoolgems.com',
+		description: 'Discover hidden power tool gems for developers.',
+		longDescription: 'Explore a curated list of powerful tools and utilities that can supercharge your development workflow.',
+		icon: 'mdi:toolbox',
+		image: placeholderImage,
+		imageAlt: 'Power Tool Gems placeholder preview',
+		features: [
+			'Curated list of developer tools',
+			'Focus on productivity and efficiency',
+			'Updated regularly with new discoveries'
+		],
+		keywords: ['developer tools', 'productivity', 'utilities']
 	}
 ];
 
