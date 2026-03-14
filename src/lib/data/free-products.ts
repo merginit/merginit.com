@@ -309,6 +309,23 @@ export const freeProducts: FreeProduct[] = [
 		keywords: ['x', 'spam', 'moderation']
 	},
 	{
+		slug: 'x-search-extension',
+		type: 'extension',
+		name: 'X Search Extension',
+		url: 'https://jonasfroeller.github.io/x-search.extension',
+		githubUrl: 'https://github.com/jonasfroeller/x-search.extension',
+		description: 'Proper X search for X, the everything platform.',
+		longDescription: 'Enhance your X platform experience with proper search capabilities using the X Search Extension. Built for efficiency and accuracy.',
+		icon: 'mdi:magnify',
+		image: placeholderImage,
+		imageAlt: 'X Search Extension placeholder preview',
+		features: [
+			'Improved search functionality for the X platform',
+			'Fast and accurate results',
+		],
+		keywords: ['x platform', 'search', 'extension']
+	},
+	{
 		slug: 'svelte-cookiiies',
 		type: 'npm',
 		name: 'Svelte Cookiiies',
