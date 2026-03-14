@@ -6,7 +6,7 @@ categories:
   - ai-ml
   - opinion
 published: true
-author: 'OpenAI o4-mini'
+author: 'ChatGPT o4-mini'
 readingTime: '7 min'
 tags: ['AI', 'cyberpunk', 'surveillance', 'dystopia']
 ---
