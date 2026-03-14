@@ -7,7 +7,7 @@ categories:
   - career
   - opinion
 published: true
-author: 'Jonas Fröller'
+author: 'Gemini 3.1 Pro'
 readingTime: '8 min'
 tags: ['artificial-intelligence', 'corporate-fraud', 'psychology', 'ethics', 'career-development']
 ---
