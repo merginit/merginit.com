@@ -120,19 +120,22 @@
 								target="_blank"
 								rel="noopener noreferrer"
 								class="inline-flex items-center gap-2 rounded-full border border-brand/50 bg-brand/10 hover:bg-brand/20 text-brand px-4 py-2 text-sm transition-colors"
-								aria-label={`Visit ${product.name}`}
+								aria-label={`${extensionPrimaryLabel(product.url)} ${product.name}`}
 							>
-								<Icon icon="mdi:open-in-new" width="20" height="20" /> Website
+								<Icon icon={extensionPrimaryIcon(product.url)} width="20" height="20" />
+								{extensionPrimaryLabel(product.url)}
 							</a>
-							<a
-								href={product.githubUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="inline-flex items-center gap-2 rounded-full border border-gray-600/60 hover:border-gray-400/60 bg-transparent text-gray-200 hover:text-white px-4 py-2 text-sm transition-colors"
-								aria-label={`View ${product.name} on GitHub`}
-							>
-								<Icon icon="mdi:github" width="22" height="22" /> GitHub
-							</a>
+							{#if product.githubUrl}
+								<a
+									href={product.githubUrl}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="inline-flex items-center gap-2 rounded-full border border-gray-600/60 hover:border-gray-400/60 bg-transparent text-gray-200 hover:text-white px-4 py-2 text-sm transition-colors"
+									aria-label={`View ${product.name} on GitHub`}
+								>
+									<Icon icon="mdi:github" width="22" height="22" /> GitHub
+								</a>
+							{/if}
 						</div>
 					</article>
 				{/each}
@@ -304,17 +307,17 @@
 						<div
 							class="relative z-30 mt-6 w-full pt-4 border-t border-gray-700/50 flex items-center justify-center gap-3"
 						>
+							<a
+								href={product.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-2 rounded-full border border-brand/50 bg-brand/10 hover:bg-brand/20 text-brand px-4 py-2 text-sm transition-colors"
+								aria-label={`${extensionPrimaryLabel(product.url)} ${product.name}`}
+							>
+								<Icon icon={extensionPrimaryIcon(product.url)} width="20" height="20" />
+								{extensionPrimaryLabel(product.url)}
+							</a>
 							{#if product.githubUrl}
-								<a
-									href={product.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="inline-flex items-center gap-2 rounded-full border border-brand/50 bg-brand/10 hover:bg-brand/20 text-brand px-4 py-2 text-sm transition-colors"
-									aria-label={`${extensionPrimaryLabel(product.url)} ${product.name}`}
-								>
-									<Icon icon={extensionPrimaryIcon(product.url)} width="20" height="20" />
-									{extensionPrimaryLabel(product.url)}
-								</a>
 								<a
 									href={product.githubUrl}
 									target="_blank"
@@ -323,16 +326,6 @@
 									aria-label={`View ${product.name} on GitHub`}
 								>
 									<Icon icon="mdi:github" width="22" height="22" /> GitHub
-								</a>
-							{:else}
-								<a
-									href={product.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="text-xs text-gray-400 group-hover:text-gray-300 transition-colors flex items-center justify-center gap-2 hover:text-white"
-									aria-label={`View ${product.name} on GitHub`}
-								>
-									<Icon icon="mdi:github" width="22" height="22" /> Click to view on GitHub
 								</a>
 							{/if}
 						</div>
@@ -416,15 +409,17 @@
 							>
 								<Icon icon="simple-icons:npm" width="18" height="18" /> NPM
 							</a>
-							<a
-								href={product.githubUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="inline-flex items-center gap-2 rounded-full border border-gray-600/60 hover:border-gray-400/60 bg-transparent text-gray-200 hover:text-white px-4 py-2 text-sm transition-colors"
-								aria-label={`View ${product.name} on GitHub`}
-							>
-								<Icon icon="mdi:github" width="22" height="22" /> GitHub
-							</a>
+							{#if product.githubUrl}
+								<a
+									href={product.githubUrl}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="inline-flex items-center gap-2 rounded-full border border-gray-600/60 hover:border-gray-400/60 bg-transparent text-gray-200 hover:text-white px-4 py-2 text-sm transition-colors"
+									aria-label={`View ${product.name} on GitHub`}
+								>
+									<Icon icon="mdi:github" width="22" height="22" /> GitHub
+								</a>
+							{/if}
 						</div>
 					</article>
 				{/each}
