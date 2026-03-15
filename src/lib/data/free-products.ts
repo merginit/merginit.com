@@ -292,7 +292,7 @@ export const freeProducts: FreeProduct[] = [
 		slug: 'x-spam-sweeper',
 		type: 'extension',
 		name: 'X Spam Sweeper',
-		url: 'https://github.com/merginit/x-spam-sweeper.extension',
+		url: 'https://xspamsweeper.merginit.com',
 		githubUrl: 'https://github.com/merginit/x-spam-sweeper.extension',
 		description:
 			'Chrome extension to batch review and report spam message requests on X with a native-feeling multi-select UI.',
