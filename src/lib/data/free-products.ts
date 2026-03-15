@@ -315,14 +315,12 @@ export const freeProducts: FreeProduct[] = [
 		url: 'https://jonasfroeller.github.io/x-search.extension',
 		githubUrl: 'https://github.com/jonasfroeller/x-search.extension',
 		description: 'Proper X search for X, the everything platform.',
-		longDescription: 'Enhance your X platform experience with proper search capabilities using the X Search Extension. Built for efficiency and accuracy.',
+		longDescription:
+			'Enhance your X platform experience with proper search capabilities using the X Search Extension. Built for efficiency and accuracy.',
 		icon: 'mdi:magnify',
 		image: placeholderImage,
 		imageAlt: 'X Search Extension placeholder preview',
-		features: [
-			'Improved search functionality for the X platform',
-			'Fast and accurate results',
-		],
+		features: ['Improved search functionality for the X platform', 'Fast and accurate results'],
 		keywords: ['x platform', 'search', 'extension']
 	},
 	{
@@ -391,7 +389,8 @@ export const freeProducts: FreeProduct[] = [
 		name: 'Icons',
 		url: 'https://icons.merginit.com',
 		description: 'A collection of free icons for developers and designers.',
-		longDescription: 'Browse and download a curated collection of free icons tailored for developers and designers. Perfect for web and app projects.',
+		longDescription:
+			'Browse and download a curated collection of free icons tailored for developers and designers. Perfect for web and app projects.',
 		icon: 'mdi:palette',
 		image: placeholderImage,
 		imageAlt: 'Icons placeholder preview',
@@ -408,7 +407,8 @@ export const freeProducts: FreeProduct[] = [
 		name: 'Power Tool Gems',
 		url: 'https://powertoolgems.com',
 		description: 'Discover hidden power tool gems for developers.',
-		longDescription: 'Explore a curated list of powerful tools and utilities that can supercharge your development workflow.',
+		longDescription:
+			'Explore a curated list of powerful tools and utilities that can supercharge your development workflow.',
 		icon: 'mdi:toolbox',
 		image: placeholderImage,
 		imageAlt: 'Power Tool Gems placeholder preview',
@@ -418,6 +418,26 @@ export const freeProducts: FreeProduct[] = [
 			'Updated regularly with new discoveries'
 		],
 		keywords: ['developer tools', 'productivity', 'utilities']
+	},
+	{
+		slug: 'convert-file',
+		type: 'website',
+		name: 'Convert File',
+		url: 'https://convert-file.pages.dev',
+		githubUrl: 'https://github.com/merginit/convert-file',
+		description: 'Truly universal online file converter that works fully locally.',
+		longDescription:
+			'Convert files between any formats without uploading to servers. Supports documents, images, audio, video, and more with client-side processing for maximum privacy.',
+		icon: 'mdi:file-transfer',
+		image: placeholderImage,
+		imageAlt: 'Convert File placeholder preview',
+		features: [
+			'Convert between any file formats locally in the browser',
+			'No file uploads required - processing happens client-side',
+			'Supports documents, images, audio, video, and more',
+			'Privacy-focused with no data leaving your device'
+		],
+		keywords: ['file converter', 'universal converter', 'privacy', 'client-side']
 	}
 ];
 
