@@ -438,7 +438,24 @@ export const freeProducts: FreeProduct[] = [
 			'Privacy-focused with no data leaving your device'
 		],
 		keywords: ['file converter', 'universal converter', 'privacy', 'client-side']
-	}
+	},
+	{
+		slug: 'erowara',
+		type: 'website',
+		name: 'Erowara',
+		url: 'https://erowara.pages.dev',
+		description: 'A 2.5D browser-based Tower Defense and Strategy game.',
+		longDescription: 'Defend your Castle from endless waves of enemies while expanding your territory. You start by relying on automated defenses, but as your Hero gains experience, you unlock direct control to lead the charge.',
+		icon: 'mdi:castle',
+		image: placeholderImage,
+		imageAlt: 'Erowara game preview',
+		features: [
+			'Defend your castle from waves of enemies',
+			'Expand your territory and unlock new abilities',
+			'Control your Hero directly as you gain experience'
+		],
+		keywords: ['tower defense', 'strategy', 'browser game']
+	},
 ];
 
 export const freeProductsByType: Record<FreeProductCategory, FreeProduct[]> = {
