@@ -227,7 +227,7 @@
 			description:
 				'Brand Peel is a brand kit generator that helps you create solid logos and complete design systems. Skip the expensive designer and build a professional brand identity in minutes, not months.',
 			iconSrc: '/unpeeled.png',
-			url: 'https://brandpeel.merginit.com'
+			url: 'https://brandpeel.app'
 		},
 		/* {
 			projectType: 'Desktop App',
