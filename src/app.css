@@ -160,6 +160,14 @@ html {
 	content: none;
 }
 
+.prose iframe {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	height: auto;
+	border-radius: 0.75rem;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* --------------------------------------------------------------- */
 /* horizontal scrollable table                                     */
 /* --------------------------------------------------------------- */

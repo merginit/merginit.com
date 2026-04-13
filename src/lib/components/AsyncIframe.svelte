@@ -50,7 +50,7 @@
 <style>
 	.async-iframe__wrapper {
 		position: relative;
-		padding-top: 85%;
+		padding-top: 56.25%;
 		height: 0;
 		overflow: hidden;
 	}
