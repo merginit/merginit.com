@@ -456,6 +456,25 @@ export const freeProducts: FreeProduct[] = [
 		],
 		keywords: ['tower defense', 'strategy', 'browser game']
 	},
+	{
+		slug: 'news-ninja',
+		type: 'website',
+		name: 'News Ninja',
+		url: 'https://news-ninja.pages.dev',
+		githubUrl: 'https://github.com/merginit/news-ninja',
+		description: 'Slice the Truth. Avoid the Satire. Don\'t Let the Headlines Drop.',
+		longDescription:
+			'A fast-paced news-slicing game where you must distinguish between real headlines and satirical news. Slice the truth, avoid the satire, and don\'t let the headlines drop.',
+		icon: 'mdi:newspaper-variant-outline',
+		image: placeholderImage,
+		imageAlt: 'News Ninja placeholder preview',
+		features: [
+			'Distinguish between real and satirical news headlines in real-time',
+			'Fast-paced slicing mechanics inspired by classic arcade games',
+			'Keep the truth alive by avoiding deceptive headlines and bombs'
+		],
+		keywords: ['news', 'ninja', 'slicing game', 'satire']
+	}
 ];
 
 export const freeProductsByType: Record<FreeProductCategory, FreeProduct[]> = {
